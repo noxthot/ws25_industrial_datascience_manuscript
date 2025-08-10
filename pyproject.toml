@@ -1,0 +1,15 @@
+[project]
+name = "ws25_mci_industrial_ds_manuscript"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Gregor Ehrensperger", email = "g@ehrensperger.dev"},
+]
+dependencies = ["quarto-cli>=1.7.33"]
+requires-python = "==3.13.*"
+readme = "README.md"
+license = {text = "-"}
+
+
+[tool.pdm]
+distribution = false

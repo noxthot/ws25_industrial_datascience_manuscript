@@ -1,0 +1,12 @@
+__pycache__/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+/_freeze/
+/_manuscript/
+/.quarto/
+
+.py[cod]
+.pdm-python
+*.quarto_ipynb
