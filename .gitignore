@@ -3,6 +3,7 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 
+/_book/
 /_freeze/
 /_manuscript/
 /.quarto/

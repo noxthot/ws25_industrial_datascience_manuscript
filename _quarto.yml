@@ -1,11 +1,33 @@
 project:
-  type: manuscript
+  type: book
 
-execute:
-  freeze: auto
+book: 
+  author:
+    - name: Gregor Ehrensperger
+      orcid: 0000-0003-4816-0233
+      corresponding: true
+      email: g@ehrensperger.dev
+      affiliations:
+        - ehrensperger.dev
+  chapters:
+    - index.qmd
+  date: last-modified
+  license: "CC BY-NC-SA 4.0"
+  page-footer:
+    left: Industrial Data Science - 2025 - [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 
+    center: "Gregor Ehrensperger"
+    right: Manuscript designed with <a href="https://quarto.org/">Quarto</a>.
+  reader-mode: true
+  repo-actions: [edit, issue]
+  repo-branch: main
+  repo-url: https://github.com/noxthot/ws25_mci_industrial_ds_manuscript
+  title: Industrial Data Science
 
 format:
   html:
-    toc: true
     comments:
       hypothesis: true
+    theme:
+      light: [flatly]
+      dark: [darkly]
+    toc: true
