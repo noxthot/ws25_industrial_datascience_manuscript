@@ -28,6 +28,6 @@ format:
     comments:
       hypothesis: true
     theme:
-      light: [flatly]
-      dark: [darkly]
+      light: [simplex]
+      dark: [superhero]
     toc: true
