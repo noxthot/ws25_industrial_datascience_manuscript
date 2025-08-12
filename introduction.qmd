@@ -1,0 +1,19 @@
+# Introduction
+
+In this module we will explore _Industrial Data Science_, a term that is not widely used, defined or standardized (yet).
+
+Generally, it refers to the application of data science techniques within industrial and business domains.
+This includes optimzing operations, predictive maintenance, quality control, supply chain management and automation by leveraging large volumes of sensor and process data.
+
+Unlike typical classes that use clean, polished datasets, in this lecture we will get our hands dirty and work with raw machine data with the ultimate goal to set up a data science product on a simulated machine using live data.
+
+In @sec:act1, we will prepare ourselves by exploring curated data sets of machine sensors.
+
+@sec:act2 will spotlight a raw dataset which is the more typical case when facing data science challenges in industry.
+
+Finally, we will use everything we have learned so far to control a simulated machine in @sec:act3.
+
+Please note that Industrial Data Science is a vast and rapidly evolving field, encompassing a wide range of industries, technologies, and specialized methods. Each industrial context presents unique challenges and data architectures.
+Covering more of the relevant tools, algorithms, and real-world scenarios in depth would require far more time and resources than a single module allows.
+My focus, therefore, is to introduce key concepts and practical skills, laying a foundation 
+for further exploration.

@@ -3,5 +3,3 @@
 Industrial Data Science
 
 # Introduction
-
-tbc
