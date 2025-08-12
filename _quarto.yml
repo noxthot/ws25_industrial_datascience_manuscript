@@ -1,6 +1,9 @@
 project:
   type: book
 
+bibliography: references.bib
+number-sections: true
+
 book: 
   author:
     - name: Gregor Ehrensperger
@@ -11,10 +14,13 @@ book:
         - ehrensperger.dev
   chapters:
     - index.qmd
-    - introduction.qmd
-    - part: act1/index.qmd
-    - part: act2/index.qmd
-    - part: act3/index.qmd
+    - 1_introduction.qmd
+    - part: act1/0_index.qmd
+      chapters: 
+        - act1/1_predictive_maintenance.qmd
+    - part: act2/0_index.qmd
+    - part: act3/0_index.qmd
+    - 2_references.qmd
   date: last-modified
   license: "CC BY-NC-SA 4.0"
   page-footer:
