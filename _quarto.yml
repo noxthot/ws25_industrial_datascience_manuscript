@@ -11,6 +11,9 @@ book:
         - ehrensperger.dev
   chapters:
     - index.qmd
+    - part: act1/index.qmd
+    - part: act2/index.qmd
+    - part: act3/index.qmd
   date: last-modified
   license: "CC BY-NC-SA 4.0"
   page-footer:

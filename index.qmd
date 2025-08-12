@@ -1,21 +1,7 @@
----
-title: Industrial Data Science
-author:
-  - name: Gregor Ehrensperger
-    orcid: 0000-0003-4816-0233
-    corresponding: true
-    email: g@ehrensperger.dev
-    affiliations:
-      - ehrensperger.dev
-keywords:
-  - industrial data science
-  - machine learning
-  - python
-  - opcua
-number-sections: true
-jupyter: python3
----
+## Preface {.unnumbered}
 
-## Introduction
+Industrial Data Science
+
+# Introduction
 
 tbc
