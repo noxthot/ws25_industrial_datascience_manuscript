@@ -5,6 +5,18 @@ In this module we will explore _Industrial Data Science_, a term that is not wid
 Generally, it refers to the application of data science techniques within industrial and business domains.
 This includes optimizing processes, predictive maintenance, quality control, supply chain management and automation by leveraging large volumes of sensor and process data.
 
+The term _Industrial Artificial Intelligence_ is more common in literature and appears to be used interchangeably with the fuzzy definition of _Industrial Data Science_.
+According to @peres2020, Industrial AI distinguishes itself within the field of AI in five dimensions:
+- **Infrastructure**: Large emphasis on real-time processing capabilities.
+
+- **Data**: Often involves large volume diverse datasets from multiple sources.
+  
+- **Algorithms**: Combines physical, digital, and heuristic models, requiring complex management and deployment.
+  
+- **Decision-making**: Demands high reliability, low error tolerance, and efficient handling of uncertainty.
+
+- **Objectives**: Targets value creation, such as e.g. reducing waste, improving quality, and boosting operational efficiency.
+
 Unlike typical classes that use clean, polished datasets, in this lecture we will get our hands dirty and work with raw machine data with the ultimate goal to set up a data science product on a simulated machine using live data.
 
 In @sec-act1, we will prepare ourselves by exploring curated data sets of machine sensors.
