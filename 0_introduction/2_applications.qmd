@@ -1,0 +1,22 @@
+# Application areas {#sec-0-applications}
+
+## Process optimization
+- energy consumption prediction and optimization
+- improving production efficiency
+- improving production quality
+- demand forecasting
+
+## Quality control
+- automated visual inspection
+- defect prediction to mitigate multistage propagation
+- online quality prediction
+
+## Predictive maintenance
+- detecting possible problems before they occur
+- reduce unnecessary inspection and maintenance operations
+
+## Human-Robot collaboration and ergonomics
+- workforce training
+- task support
+- collaborative robotics
+- ergonomics

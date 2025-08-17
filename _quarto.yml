@@ -17,7 +17,7 @@ book:
     - part: 0_introduction/0_introduction.qmd
       chapters: 
         - 0_introduction/1_history.qmd
-        - 0_introduction/2_ds_in_industry.qmd
+        - 0_introduction/2_applications.qmd
     - part: act1/0_index.qmd
       chapters: 
         - act1/1_predictive_maintenance.qmd
