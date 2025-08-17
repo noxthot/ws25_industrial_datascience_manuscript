@@ -40,6 +40,7 @@ format:
   html:
     comments:
       hypothesis: true
+    page-layout: full
     theme:
       light: [simplex]
       dark: [superhero]
