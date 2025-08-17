@@ -4,7 +4,7 @@
 - energy consumption prediction and optimization
 - improving production efficiency
 - improving production quality
-- demand forecasting
+- supply chain optimization by predicting market demands
 
 ## Quality control
 - automated visual inspection
