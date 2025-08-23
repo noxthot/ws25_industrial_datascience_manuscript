@@ -1,5 +1,19 @@
-## A Quarto Manuscript Template
+## Setup
+### Ubuntu
+`gymnasium[box2d]` needs some additional system dependencies to be installed. You can do this by running the following command:
+```bash
+sudo apt-get install -y swig clang
+```
 
-This is a template repo for generating a manuscript from Quarto that accompanies the tutorial at: [Quarto Manuscripts: VS Code](https://quarto.org/docs/manuscripts/authoring/vscode.html)
+### PDM 
+tbc
 
+## Content
+    • Time Series
+    • Data Cleaning
+    • Streaming und Batchability
+    • Umgang mit heterogenen Inputdaten (Zeitreihen, Metadaten, Bilddaten)
+    • Reinforcement Learning
+    • Scheduling
+    • Pfadoptimierung
 
