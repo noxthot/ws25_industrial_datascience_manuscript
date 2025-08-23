@@ -21,6 +21,10 @@ book:
     - part: act1/0_index.qmd
       chapters: 
         - act1/1_predictive_maintenance.qmd
+        - act1/2_self_study_session1.qmd
+        - act1/2_self_study_session2.qmd
+        - act1/2_self_study_session3.qmd
+        - act1/2_self_study_session4.qmd
     - part: act2/0_index.qmd
     - part: act3/0_index.qmd
     - 2_references.qmd
