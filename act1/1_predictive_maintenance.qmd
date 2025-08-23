@@ -1,4 +1,4 @@
-# Exploratory Data Analysis {#sec-act1}
+# Predictive Maintenance via Exploratory Data Analysis {#sec-act1}
 
 In this section we will explore the concept of predictive maintenance using a synthetic dataset that reflects real predictive maintenance data encountered in industry.
 
@@ -21,7 +21,7 @@ Here is a summary of the variables present in the dataset:
 | HDF                 | Target   | Integer     |       | Heat dissipation failure                                                                                               | x      |
 | PWF                 | Target   | Integer     |       | Power failure                                                                                                          | x      |
 | OSF                 | Target   | Integer     |       | Overstrain failure                                                                                                     | x      |
-| RNF                 | Target   | Integer     |       | Random failures                                                                                                        | x      |
+| RNF                 | Target   | Integer     |       | Random failure                                                                                                         | x      |
 : {.striped .hover tbl-colwidths="[15,10,15,10,40,10]"} 
 
 ::: {.callout-note}
