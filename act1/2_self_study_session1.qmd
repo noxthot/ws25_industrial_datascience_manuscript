@@ -1,7 +1,5 @@
-# Self study
+# Self study - Session 1
 This class contains self-study sessions to reinforce your understanding of the material and explore other aspects of the topic in a self-guided manner.
-
-## Session 1 {#sec-act1-selfstudy1}
 This session introduces [JupyterLab and Jupyter Notebook](https://docs.jupyter.org/en/latest/).
 
 Jupyter Notebook is an open-source web application that allows users to create and share documents containing live code (supports over 40 programming languages including `Python`, `Julia`, `R`), visualizations, and narrative text.

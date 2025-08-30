@@ -3,6 +3,10 @@ project:
 
 bibliography: references.bib
 number-sections: true
+number-parts: true
+number-depth: 5
+toc: true
+toc-depth: 3
 
 book: 
   author:
@@ -14,19 +18,24 @@ book:
         - ehrensperger.dev
   chapters:
     - index.qmd
-    - part: 0_introduction/0_introduction.qmd
+    - part: "Introduction"
       chapters: 
+        - 0_introduction/0_introduction.qmd
         - 0_introduction/1_history.qmd
         - 0_introduction/2_applications.qmd
-    - part: act1/0_index.qmd
+    - part: "Act 1: Polished Machine Data"
       chapters: 
         - act1/1_predictive_maintenance.qmd
         - act1/2_self_study_session1.qmd
-        - act1/2_self_study_session2.qmd
-        - act1/2_self_study_session3.qmd
-        - act1/2_self_study_session4.qmd
-    - part: act2/0_index.qmd
-    - part: act3/0_index.qmd
+        - act1/3_self_study_session2.qmd
+        - act1/4_self_study_session3.qmd
+        - act1/5_self_study_session4.qmd
+    - part: "Act 2: Advanced Machine Data"
+      chapters: 
+        - act2/0_index.qmd
+    - part: "Act 3: Live stream"
+      chapters: 
+        - act3/0_index.qmd
     - 2_references.qmd
   date: last-modified
   license: "CC BY-NC-SA 4.0"
@@ -48,4 +57,3 @@ format:
     theme:
       light: [simplex]
       dark: [superhero]
-    toc: true
