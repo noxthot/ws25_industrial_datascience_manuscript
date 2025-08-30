@@ -1,1 +1,16 @@
 ## Session 3
+In this session we will generate a report from our findings.
+
+During the exploratory data analysis, we have looked at a large number of visualizations and identified key patterns and insights using different approaches.
+This is nice, but you want to report your results to your management in a concise manner, focus on key findings and make it easily digestible.
+
+::: {.callout-caution appearance="simple" collapse="true" icon=false}
+:::: {#exr-basics-mv-space}
+## Parallel coordinates plots
+::::
+Polish your document, only keep relevant insights, remove unnecessary details, focus on key findings, document with markdown cells and export the result as HTML or PDF (since your management most likely will not have JupyterLab installed).
+
+1. PDF: The document will be static version of your notebook, so make sure to include all relevant information and insights directly in the document.
+1. HTML: The document will also be a static version of your notebook (the DropDown would not work e.g.), but the interactivity of the plotly plots itself will still be available, since the HTML export retains the JavaScript functionality.
+:::
+

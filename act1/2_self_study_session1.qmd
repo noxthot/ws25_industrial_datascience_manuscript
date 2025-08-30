@@ -1,28 +1,57 @@
-# Self study
+# Self study {#sec-act1-selfstudy1}
 This class contains self-study sessions to reinforce your understanding of the material and explore other aspects of the topic in a self-guided manner.
 
 ## Session 1
-In this session, you will explore the dataset in @sec-act1 further.
+This session introduces [JupyterLab and Jupyter Notebook](https://docs.jupyter.org/en/latest/).
 
-When comparing our findings in @sec-act1-1-int-pp and @sec-act1-1-int-dt with the failure description in @sec-act1-1-reveal, we can see that we did a pretty good job in identifying failure reasons.
-However, we could have done better for `OSF`.
-
-::: {.callout-caution appearance="simple" collapse="true" icon=false}
-:::: {#exr-basics-mv-space}
-## Overstrain failure
-::::
-According to @sec-act1-1-reveal, the failure type _overstrain failure_ (`OSF`) occurs when the machine is subjected to excessive torque when a worn out tool is used.
-Also the product variant is associated to the failure rate: When the product of torque and tool wear exceeds 11.000 minNm for the L product variant (12.000 for M, 13.000 for H), the process fails due to overstrain.
-
-Are you able to verify this relationship by visualizations?
-:::
-
-Also, there seems that the description of `TWF` in @sec-act1-1-reveal is contradicting our observations.
+Jupyter Notebook is an open-source web application that allows users to create and share documents containing live code (supports over 40 programming languages including `Python`, `Julia`, `R`), visualizations, and narrative text.
+JupyterLab is a web-based _interactive development environment_ (IDE) for Jupyter Notebook.
+The Jupyter ecosystem is widely used for interactive exploration and reporting purposes.
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
 :::: {#exr-basics-mv-space}
-## Tool wear failure
+## Setup Jupyterlab
 ::::
-Identify where the description of `TWF` in @sec-act1-1-reveal does not align with your findings.
+Use (`pdm`)[https://pdm-project.org] to create a new environment and install (`jupyterlab`)[https://jupyter.org/install].
 :::
 
+::: {.callout-caution appearance="simple" collapse="true" icon=false}
+:::: {#exr-basics-mv-space}
+## Jupyterlab Introduction
+::::
+Study the [JupyterLab documentation](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html) to learn about its features and capabilities and experiment with them using your JupyterLab environment.
+
+After this exercise you should be able to answer the following questions:
+
+1. What is a Jupyter Notebook?
+1. What is JupyterLab?
+1. What are the different types of cells in a Jupyter notebook?
+
+And you should be able to do the following:
+
+1. Create notebooks.
+1. Export notebooks to other file formats (like e.g. HTML and PDF).
+1. Create and run code cells
+1. Create and format markdown cells
+1. Use raw cells for unformatted text
+:::
+
+::: {.callout-caution appearance="simple" collapse="true" icon=false}
+:::: {#exr-basics-mv-space}
+## Use Jupyterlab
+::::
+- Create a notebook from the code provided @sec-act1.
+  Be sure to divide the code into separate cells for each logical step.
+- Use markdown cells to explain and structure the code.
+- Ideally, each code cell is self-contained and focuses on a single task or concept.
+E.g. it is good practice to define and alter variables only within the same cell; especially multiple calls of a cell should not cause different results.
+:::
+
+::: {.callout-caution appearance="simple" collapse="true" icon=false}
+:::: {#exr-basics-mv-space}
+## Interactive plotting
+::::
+`seaborn` plots are not interactive by default.
+The package `ipympl` enables zooming and panning of plots in Jupyter notebooks.
+Start with the notebook from the previous exercise and activate the `ipympl` backend by following the [documentation](https://matplotlib.org/ipympl/).
+:::
