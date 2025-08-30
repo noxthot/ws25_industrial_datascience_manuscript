@@ -1,16 +1,14 @@
-## Session 3
-In this session we will generate a report from our findings.
-
-During the exploratory data analysis, we have looked at a large number of visualizations and identified key patterns and insights using different approaches.
-This is nice, but you want to report your results to your management in a concise manner, focus on key findings and make it easily digestible.
+## Session 3 {#sec-act1-selfstudy3}
+In this session, we will have a look at another dataset.
+[Kaggle](https://www.kaggle.com) is a data science competition platform under Google LLC where you can find a variety of datasets to work with.
+We will have a look at the [**Explainable AI (XAI) Drilling Dataset**](https://www.kaggle.com/datasets/raphaelwallsberger/xai-drilling-dataset/) @wallsberger2023.
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
 :::: {#exr-basics-mv-space}
-## Parallel coordinates plots
+## Exploratory data analysis
 ::::
-Polish your document, only keep relevant insights, remove unnecessary details, focus on key findings, document with markdown cells and export the result as HTML or PDF (since your management most likely will not have JupyterLab installed).
-
-1. PDF: The document will be static version of your notebook, so make sure to include all relevant information and insights directly in the document.
-1. HTML: The document will also be a static version of your notebook (the DropDown would not work e.g.), but the interactivity of the plotly plots itself will still be available, since the HTML export retains the JavaScript functionality.
+1. Register on [Kaggle](https://www.kaggle.com).
+1. Read the description of the [**Explainable AI (XAI) Drilling Dataset**](https://www.kaggle.com/datasets/raphaelwallsberger/xai-drilling-dataset/).
+1. First, pretend that you did not read the `Subgroup failures` paragraph in the description, explore the data set and find insights related to the different failure types.
+1. Do your findings agree with the `Subgroup failures` description? 
 :::
-
