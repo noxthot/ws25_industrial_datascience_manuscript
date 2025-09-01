@@ -1,4 +1,4 @@
-# Self study - Session 1
+# Self study - Session 1 {#sec-act1-selfstudy1}
 This class contains self-study sessions to reinforce your understanding of the material and explore other aspects of the topic in a self-guided manner.
 This session introduces [JupyterLab and Jupyter Notebook](https://docs.jupyter.org/en/latest/).
 
@@ -38,7 +38,7 @@ And you should be able to do the following:
 :::: {#exr-basics-mv-space}
 ## Use Jupyterlab
 ::::
-- Create a notebook from the code provided @sec-act1.
+- Create a notebook from the code provided @{sec-act1}.
   Be sure to divide the code into separate cells for each logical step.
 - Use markdown cells to explain and structure the code.
 - Ideally, each code cell is self-contained and focuses on a single task or concept.

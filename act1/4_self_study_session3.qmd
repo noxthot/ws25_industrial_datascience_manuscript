@@ -1,7 +1,7 @@
 # Self study - Session 3 {#sec-act1-selfstudy3}
 In this session, we will have a look at another dataset.
 [Kaggle](https://www.kaggle.com) is a data science competition platform under Google LLC where you can find a variety of datasets to work with.
-We will have a look at the [**Explainable AI (XAI) Drilling Dataset**](https://www.kaggle.com/datasets/raphaelwallsberger/xai-drilling-dataset/) @wallsberger2023.
+We will have a look at the [**Explainable AI (XAI) Drilling Dataset**](https://www.kaggle.com/datasets/raphaelwallsberger/xai-drilling-dataset/) @{wallsberger2023}.
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
 :::: {#exr-basics-mv-space}

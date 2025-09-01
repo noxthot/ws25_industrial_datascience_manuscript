@@ -1,7 +1,7 @@
 # Self study - Session 4
 In this session we will generate a report from our findings.
 
-During the exploratory data analysis in @sec-act1-selfstudy3, we have looked at a large number of visualizations and identified key patterns and insights using different approaches.
+During the exploratory data analysis in @{sec-act1-selfstudy3}, we have looked at a large number of visualizations and identified key patterns and insights using different approaches.
 This is nice, but you want to report your results to your management in a concise manner, focus on key findings and make it easily digestible.
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
