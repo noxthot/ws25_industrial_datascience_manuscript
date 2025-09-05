@@ -1,0 +1,31 @@
+# Levels of system integration
+| Level                                                  | Access & Action                            | Description                                                                                                                       |
+| ------------------------------------------------------ | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
+| **1. Historical Analysis (Passive Insight)**           | Data only -- no machine or data stream access | Work from static CSVs or logs, providing insights, trends, or recommendations based solely on historical data.                    |
+| **2. Monitoring & Warning (Observational)**            | Real-time data stream, no control          | Ingest live sensor or data feeds; support threshold alerts and anomaly detection but cannot affect machine behavior.              |
+| **3. Feedback Loop (Latent Influence)**                | Network access; non-real-time control      | Read from and write to systems remotely; can propose settings or adjustments (e.g., batch recalibration) but not apply instantly. |
+| **4. Real-Time Autonomous Control (Fully Integrated)** | Full local access and control              | Compute and apply decisions in real time. Includes online feature processing, low-latency inference, even continual learning.     |
+
+## Historical Analysis
+The most basic level of system integration involves working with historical data that has been collected and stored over time.
+It may provide insights, trends, or recommendations based solely on this data, but it lacks the ability to interact with live systems or influence real-time operations.
+
+E.g. analyzing historical production data to identify trends in equipment failures and recommending maintenance schedules.
+
+## Monitoring & Warning
+The second level of system integration focuses on monitoring live data streams.
+Data science products at this level can analyze real-time data to identify potential issues or deviations from expected behavior, supporting operators in maintaining system performance and reliability.
+
+E.g. detecting anomalies in the machine's behaviour as it runs and alerting operators to investigate potential system failures.
+
+## Feedback Loop
+The third level of system integration introduces a feedback loop, allowing for more dynamic interactions with the system.
+It is not possible to achieve real-time control or immediate adjustments, but it is possible to adjust machine settings or parameters based on insights gained from the data.
+
+E.g. adjust machine parameters such as pressure, temperature, flow-rate for the next production batch based on an analysis of failures in post-inspection of previous batches.
+
+## Real-Time Autonomous Control
+The fourth level of system integration enables real-time autonomous control of machines and processes.
+At this level, data science products can make decisions and take actions in real time, allowing for immediate adjustments and optimizations.
+
+E.g. automatically adjusting machine settings in real time based on live data inputs to optimize production efficiency.

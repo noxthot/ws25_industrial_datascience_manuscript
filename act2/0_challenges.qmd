@@ -1,0 +1,25 @@
+# Challenges {#sec-act2}
+
+Real machine data is often messy and requires substantial preprocessing before it can be used for analysis.
+Challenges from a data engineering perspective that often arise include:
+- (Temporary) sensor failures
+- Data gaps due to communication issues or buffer overflows
+- Incomplete data
+- Datatype inconsistencies
+- Lack of documentation
+- High data volume
+
+Once data is collected and transformed, additional challenges may arise during analysis:
+- Noisy or inconsistent measurements
+- Outliers or anomalies in the data
+- Variability in operating conditions
+- There may be variables that are not captured in the data but still relevant for the process
+- Complex relationships between variables
+- Lack of labeled data for supervised learning
+- Highly imbalanced data sets
+- Data privacy concerns
+
+Until now, we have primarily focused on static analysis of historical data.
+
+However, many industrial applications require real-time data processing and analysis to enable timely decision-making and process optimization.
+Complexity increases significantly in real-time scenarios due to the need for low-latency processing, the handling of streaming data, and possibly the integration of data from multiple sources.

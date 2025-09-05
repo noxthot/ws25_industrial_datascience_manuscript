@@ -32,7 +32,9 @@ book:
         - act1/4_self_study_session4.qmd
     - part: "Act 2: Advanced Machine Data"
       chapters: 
-        - act2/0_index.qmd
+        - act2/0_introduction.qmd
+        - act2/1_levels_of_system_integration.qmd
+        - act2/2_batch_vs_stream.qmd
     - part: "Act 3: Live stream"
       chapters: 
         - act3/0_index.qmd
