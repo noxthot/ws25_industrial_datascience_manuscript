@@ -14,6 +14,6 @@ In contrast, stream processing is designed for scenarios where immediate insight
 
 Batch processing tends to be less complex to manage because it operates on static datasets and follows a defined schedule, making it easier to plan and allocate resources.
 It is well-suited for scenarios where data consistency and completeness are more important than immediacy.
+
 Stream processing, on the other hand, requires handling continuous data flows, which can introduce additional complexity in terms of system architecture, data consistency, and fault tolerance.
 Addressing these challenges necessitates a higher level of skill and expertise and might need specialized IT infrastructure.
-
