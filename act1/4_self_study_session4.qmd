@@ -6,7 +6,7 @@ This is nice, but you want to report your results to your management in a concis
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
 :::: {#exr-basics-mv-space}
-## Parallel coordinates plots
+## Jupyter Notebook Report
 ::::
 Polish your document, only keep relevant insights, remove unnecessary details, focus on key findings, document with markdown cells and export the result as HTML or PDF (since your management most likely will not have JupyterLab installed).
 
