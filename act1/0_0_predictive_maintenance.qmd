@@ -35,6 +35,4 @@ The table shows various error types and our task is to gain insights on when the
 This is a warmup task with a polished, synthetic dataset and luckily we are provided with a description of the nature of the different failures.
 :::
 
-
-
-{{< embed /act1/1_1_ai4i.ipynb echo=true >}}
+{{< embed /act1/0_1_ai4i.ipynb echo=true >}}

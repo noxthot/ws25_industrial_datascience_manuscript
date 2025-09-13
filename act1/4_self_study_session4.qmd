@@ -1,4 +1,4 @@
-# Self study - Session 4
+# Self study - Session 4 {#sec-act1-selfstudy4}
 In this session we will generate a report from our findings.
 
 During the exploratory data analysis in @{sec-act1-selfstudy3}, we have looked at a large number of visualizations and identified key patterns and insights using different approaches.
