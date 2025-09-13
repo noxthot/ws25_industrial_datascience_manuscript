@@ -13,3 +13,18 @@ Polish your document, only keep relevant insights, remove unnecessary details, f
 1. PDF: The document will be static version of your notebook, so make sure to include all relevant information and insights directly in the document.
 1. HTML: The document will also be a static version of your notebook (the DropDown would not work e.g.), but the interactivity of the plotly plots itself will still be available, since the HTML export retains the JavaScript functionality.
 :::
+
+The resulting exports are a good start, but you may want to enhance them further using [`Quarto`](https://quarto.org/).
+Quarto is an open-source scientific and technical publishing system allowing to generate and configure dynamic documents, reports, presentations, and more.
+It is even compatible with Jupyter notebooks and e.g. allows to collapse code chunks.
+
+::: {.callout-caution appearance="simple" collapse="true" icon=false}
+:::: {#exr-basics-mv-space}
+## Quarto
+::::
+In the previous exercise, you have cleaned up your notebook and prepared for reporting.
+Use Quarto to generate a more polished report of your findings.
+Export your report as a PDF and HTML document
+
+Use [this documentation](https://quarto.org/docs/tools/jupyter-lab.html) as a starting point.
+:::
