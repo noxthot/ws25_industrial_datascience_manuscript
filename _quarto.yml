@@ -41,6 +41,11 @@ book:
     - part: "Act 3: Live stream"
       chapters: 
         - act3/0_index.qmd
+        - act3/x_self_study_session1.qmd
+        - act3/x_self_study_session2.qmd
+    - part: "Act 4: Wrap up"
+      chapters: 
+        - act4/0_index.qmd
     - 2_references.qmd
   date: last-modified
   license: "CC BY-NC-SA 4.0"
