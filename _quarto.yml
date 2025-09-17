@@ -30,7 +30,7 @@ book:
         - act1/2_self_study_session2.qmd
         - act1/3_self_study_session3.qmd
         - act1/4_self_study_session4.qmd
-    - part: "Act 2: Advanced Machine Data"
+    - part: "Act 2: Real Machine Data"
       chapters: 
         - act2/0_challenges.qmd
         - act2/1_levels_of_system_integration.qmd
