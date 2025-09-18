@@ -23,6 +23,7 @@ _MDPI's business model is based on establishing entirely open access broad-disci
 ::::
 Read @{klaeger2021}, published in MDPI.
 You should be able to discuss the following questions:
+
 - What is the typical data flow from a machine to a data store?
 - Why is data acquisition harder in brownfield environments than in labs or new machines?
 - Why is ground truth data difficult to obtain in industrial settings and what are possible implications?
