@@ -30,10 +30,12 @@ Of course, this data science department is us.
 
 ## Dataset
 The data set consists of sensor readings of a simulated industrial process and consists of two files:
+
 - `simulated_machine_data.csv` stores the sensor data
 - `simulated_inspection_data.csv` stores the human inspection results
 
 The sensor data includes the following features in a 200ms resolution:
+
 - `product_id`: Unique identifier for each product.
 - `process_step_index`: Index indicating the current step within the process.
                         The machine performs three processing steps: Moving the nozzle to the shaft, applying epoxy, and blow out residual epoxy from nozzle while moving away.
@@ -45,8 +47,10 @@ The sensor data includes the following features in a 200ms resolution:
 - `machine_temperature_C`: Temperature of the machine in degrees Celsius.
 
 The inspection data includes the `product_id` and the `error_code`:
+
 - `product_id`: Unique identifier for each product.
 - `error_code`: Code indicating the type of error detected during inspection.
+
 They used `OK` when there was no defect, `NOK_1` (excessive epoxy), `NOK_2` (insufficient epoxy), `NOK_3` (poor adhesion), `NOK_4` (uneven distribution).
 
 ## Additional information
