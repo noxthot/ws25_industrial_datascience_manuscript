@@ -5,7 +5,7 @@ description = "Default template for PDM package"
 authors = [
     {name = "Gregor Ehrensperger", email = "g@ehrensperger.dev"},
 ]
-dependencies = ["quarto-cli>=1.7.33", "matplotlib>=3.10.5", "numpy>=2.3.2", "pandas>=2.3.1", "seaborn>=0.13.2", "scikit-learn>=1.7.1", "gymnasium[box2d]>=1.2.0", "quarto>=0.1.0"]
+dependencies = ["quarto-cli>=1.7.33", "matplotlib>=3.10.5", "numpy>=2.3.2", "pandas>=2.3.1", "seaborn>=0.13.2", "scikit-learn>=1.7.1", "gymnasium[box2d]>=1.2.0", "plotly>=6.3.0"]
 requires-python = "==3.13.*"
 readme = "README.md"
 license = {text = "-"}

@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:2dbfbda1d27b136de859a836531fd0b89bcdb2fde9b26ac23151ac927a46c757"
+content_hash = "sha256:1d78cfb575425cc123e0ea6943b38775f328eff636e65f862ffa4cf753aa225b"
 
 [[metadata.targets]]
 requires_python = "==3.13.*"
@@ -1104,6 +1104,17 @@ files = [
 ]
 
 [[package]]
+name = "narwhals"
+version = "2.5.0"
+requires_python = ">=3.9"
+summary = "Extremely lightweight compatibility layer between dataframe libraries"
+groups = ["default"]
+files = [
+    {file = "narwhals-2.5.0-py3-none-any.whl", hash = "sha256:7e213f9ca7db3f8bf6f7eff35eaee6a1cf80902997e1b78d49b7755775d8f423"},
+    {file = "narwhals-2.5.0.tar.gz", hash = "sha256:8ae0b6f39597f14c0dc52afc98949d6f8be89b5af402d2d98101d2f7d3561418"},
+]
+
+[[package]]
 name = "nbclient"
 version = "0.10.2"
 requires_python = ">=3.9.0"
@@ -1379,6 +1390,21 @@ files = [
 ]
 
 [[package]]
+name = "plotly"
+version = "6.3.0"
+requires_python = ">=3.8"
+summary = "An open-source interactive data visualization library for Python"
+groups = ["default"]
+dependencies = [
+    "narwhals>=1.15.1",
+    "packaging",
+]
+files = [
+    {file = "plotly-6.3.0-py3-none-any.whl", hash = "sha256:7ad806edce9d3cdd882eaebaf97c0c9e252043ed1ed3d382c3e3520ec07806d4"},
+    {file = "plotly-6.3.0.tar.gz", hash = "sha256:8840a184d18ccae0f9189c2b9a2943923fd5cae7717b723f36eef78f444e5a73"},
+]
+
+[[package]]
 name = "prometheus-client"
 version = "0.22.1"
 requires_python = ">=3.9"
@@ -1607,24 +1633,6 @@ files = [
     {file = "pyzmq-27.0.1-cp313-cp313t-win_amd64.whl", hash = "sha256:b9fd0fda730461f510cfd9a40fafa5355d65f5e3dbdd8d6dfa342b5b3f5d1949"},
     {file = "pyzmq-27.0.1-cp313-cp313t-win_arm64.whl", hash = "sha256:56a3b1853f3954ec1f0e91085f1350cc57d18f11205e4ab6e83e4b7c414120e0"},
     {file = "pyzmq-27.0.1.tar.gz", hash = "sha256:45c549204bc20e7484ffd2555f6cf02e572440ecf2f3bdd60d4404b20fddf64b"},
-]
-
-[[package]]
-name = "quarto"
-version = "0.1.0"
-requires_python = ">=3.6"
-summary = "Python Interface to 'Quarto' Markdown Publishing System"
-groups = ["default"]
-dependencies = [
-    "ipykernel",
-    "jupyter-core",
-    "nbclient",
-    "nbformat",
-    "pyyaml",
-]
-files = [
-    {file = "quarto-0.1.0-py3-none-any.whl", hash = "sha256:8138fc9d1bee6269a5436837baedc699a262be1478f96444d6f99029f1a114f0"},
-    {file = "quarto-0.1.0.tar.gz", hash = "sha256:d9a4978110204f5b9d3af39faa9e195083efcbac8f6a23789e29cb27c72ded15"},
 ]
 
 [[package]]
