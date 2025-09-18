@@ -11,3 +11,5 @@ __pycache__/
 .py[cod]
 .pdm-python
 *.quarto_ipynb
+
+**/*.quarto_ipynb
