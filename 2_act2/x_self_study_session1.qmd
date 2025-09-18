@@ -1,0 +1,70 @@
+# Self study - Session 1 {#sec-act2-selfstudy1}
+
+In this session, we will revisit @sec-act2-eda and continue where we left off, trying to improve the process.
+
+The findings in @sec-act2-eda-summary were not sufficient to explain all defects, but we found a correlation between elevated pressure during the epoxy application step and excessive epoxy application (`NOK_1`).
+Regarding the uneven distribution of applied epoxy (`NOK_4`), the operators provided the information, that they suspect that this is caused by an insufficiently cleaned nozzle.
+The cleaning process happens at the end of the previous processing step, where the nozzle moves away from the product and blows out residual epoxy.
+
+::: {.callout-caution appearance="simple" collapse="true" icon=false}
+:::: {#exr-basics-mv-space}
+## Investigating the blow out step
+::::
+Investigate the pressure during the blow out step (process step index 3 of previous iteration) and see if you can find a correlation to `NOK_4` defects.
+:::
+
+Having more information about `NOK_1` and `NOK_4`, we can now try to finetune the machine's parameters to reduce the number of defects.
+
+::: {.callout-caution appearance="simple" collapse="true" icon=false}
+:::: {#exr-basics-mv-space}
+## Finetuning the machine parameters
+::::
+The accompanying `Readme.md` file contains information on how to run the machine again with different parameters.
+Try to improve the parameters to reduce the number of defects.
+Keep `night` shift and `NUM_PIECES` at the default values.
+
+You experience new issues or want to further finetune the parameters?
+Feel free to have a look at the new `csv` files that the machine is producing.
+
+_Hint: The process is stochastic, so you can not expect to get rid of every single defect._
+
+How do the results of the new parameters compare to the original ones?
+
+The original data set had 5000 pieces with the following distribution:
+
+| Error Code | Count | Percentage |
+|------------|-------|------------|
+| OK         | 4662  | 93.24%     |
+| NOK_1      |   62  |  1.24%     |
+| NOK_2      |    1  |  0.02%     |
+| NOK_3      |   10  |  0.20%     |
+| NOK_4      |  265  |  5.30%     |
+
+:::
+
+Great job? Everything looks good on the night shift?
+
+::: {.callout-caution appearance="simple" collapse="true" icon=false}
+:::: {#exr-basics-mv-space}
+## Try the machine on day shift
+::::
+Run the machine again with your parameters, but this time during `day` shift.
+
+How do the results of the new parameters compare to the ones from the night shift?
+
+Investigate the root cause of this difference by looking at the produced `csv` files.
+:::
+
+::: {.callout-caution appearance="simple" collapse="true" icon=false}
+:::: {#exr-basics-mv-space}
+## Finetune the parameters to work well for both shifts
+::::
+The machine is not only telling you a defect summary, but also the duration it took to produce the parts.
+Try to finetune the parameters to achieve a good compromise between quality (few defects) and speed (short duration).
+
+_Hints:_
+
+- _The machine's temperature depends on the ambient temperature, the processing speed and the pressure settings._
+- _The duration it takes to produce knifes is determined by the processing speed._
+
+:::
