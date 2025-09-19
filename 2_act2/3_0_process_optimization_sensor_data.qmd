@@ -1,4 +1,4 @@
-# Process optimization on sensor data via EDA
+# Process optimization on sensor data via EDA {#sec-act2-eda}
 In this section, we will have a look at a more realistic example of industrial data.
 
 ## Setting the stage
