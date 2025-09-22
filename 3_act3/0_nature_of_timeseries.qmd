@@ -1,0 +1,3 @@
+# Nature of Time Series {#sec-act3}
+
+TODO - Placeholder: https://baresquare.com/blog/decoding-time-series-an-in-depth-look-at-definitions-types-and-challenges

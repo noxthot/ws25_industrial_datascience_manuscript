@@ -1,0 +1,3 @@
+# Time series decomposition
+
+TODO - Placeholder: https://otexts.com/fpp2/decomposition.html - https://www.tigerdata.com/blog/time-series-introduction#what-is-time-series-data-and-how-to-use-it

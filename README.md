@@ -9,11 +9,22 @@ sudo apt-get install -y swig clang
 tbc
 
 ## Content
-    • Time Series
-    • Data Cleaning
-    • Streaming und Batchability
-    • Umgang mit heterogenen Inputdaten (Zeitreihen, Metadaten, Bilddaten)
-    • Reinforcement Learning
-    • Scheduling
-    • Pfadoptimierung
 
+Original:
+
+- Time Series
+- Data Cleaning
+- Streaming und Batchability
+- Umgang mit heterogenen Inputdaten (Zeitreihen, Metadaten, Bilddaten)
+- Reinforcement Learning
+- Scheduling
+- Pfadoptimierung
+
+
+Vorschlag:
+
+- Time series
+- Data imputation
+- Batch and Stream Processing
+- Exploratory Data Analysis
+- Predictive Maintenance
