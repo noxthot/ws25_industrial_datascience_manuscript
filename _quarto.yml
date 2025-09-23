@@ -42,10 +42,7 @@ book:
     - part: "Act 3: Miscellany -- A Curated Collection"
       chapters: 
         - 3_act3/0_nature_of_timeseries.qmd
-        - 3_act3/1_data_imputation.qmd
-        - 3_act3/2_time_series_decomposition.qmd
-        - 3_act3/3_time_series_classification.qmd
-        - 3_act3/4_time_series_regression.qmd
+        - 3_act3/1_0_data_imputation.qmd
         - 3_act3/x_self_study_session1.qmd
         - 3_act3/x_self_study_session2.qmd
     - part: "Act 4: Lost Tapes"
