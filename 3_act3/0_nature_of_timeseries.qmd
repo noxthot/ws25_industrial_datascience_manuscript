@@ -8,13 +8,14 @@ Time series are not only used in industrial contexts, but also in various other 
 
 ## Examples of Time Series Data
 TODO - add sources
+
 ### Airline passenger numbers
 This data contains monthly totals of international airline passengers from 1949 to 1960.
-![Airline passenger numbers](./data/_assets_act3/airline_passengers.png)
+![Airline passenger numbers](../data/_assets/act3/airpassengers.png)
 
 ### Atmospheric CO2 concentrations
 This time series shows the monthly average atmospheric CO2 concentrations measured at the Mauna Loa Observatory in Hawaii.
-![Atmospheric CO2 concentrations](./data/_assets_act3/co2_concentrations.png)
+![Atmospheric CO2 concentrations](../data/_assets/act3/mauna_loa_co2.png)
 
 ### Simulated Random Walk
 Just a simulated random walk time series.
@@ -25,12 +26,12 @@ import numpy as np
 random_walk = np.cumsum(np.random.randn(200))
 ```
 
-![Simulated Random Walk](./data/_assets_act3/random_walk.png)
+![Simulated Random Walk](../data/_assets/act3/random_walk.png)
 
 ### S&P 500 index
 This time series shows the daily closing prices of the S&P 500 in 2020.
-![S&P 500 index](./data/_assets_act3/sandp_500_close_2020.png)
+![S&P 500 index](../data/_assets/act3/sandp_500_close_2020.png)
 
 ### Electrocardiagram (ECG) Signal
 This time series represents an electrocardiogram (ECG) signal, which measures the electrical activity of the heart over time.
-![Electrocardiogram (ECG) Signal](./data/_assets_act3/electrocardiogram.png)
+![Electrocardiogram (ECG) Signal](../data/_assets/act3/electrocardiogram.png)
