@@ -1,7 +1,7 @@
 # Nature of Time Series {#sec-act3}
 
-A time series is a sequence of data points collected or recorded at successive points in time, typically at uniform intervals.
-Time series data is characterized by its temporal ordering, meaning that the order of the data points matters and can reveal patterns, trends, and seasonal variations over time.
+Time series data is a sequence of data points collected or recorded at successive points in time, typically at uniform intervals.
+It is characterized by its temporal ordering, meaning that the order of the data points matters and can reveal patterns, trends, and seasonal variations over time.
 Typically, time series data exhibits sequential dependencies, indicating that the value at a given time point may be influenced by previous values in the series.
 
 Time series are not only used in industrial contexts, but also in various other fields such as finance, economics, environmental science, healthcare, and social sciences.
