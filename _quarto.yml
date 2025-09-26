@@ -43,7 +43,7 @@ book:
       chapters: 
         - 3_act3/0_nature_of_timeseries.qmd
         - 3_act3/1_0_data_imputation.qmd
-        - 3_act3/2_timeseries_preprocessing.qmd
+        - 3_act3/2_1_timeseries_decomposition.qmd
         - 3_act3/3_timeseries_clustering.qmd
         - 3_act3/4_timeseries_classification.qmd
         - 3_act3/5_timeseries_regression.qmd
