@@ -1,3 +1,0 @@
-# Time Series Clustering
-
-TODO - Placeholder: https://baresquare.com/blog/decoding-time-series-an-in-depth-look-at-definitions-types-and-challenges
