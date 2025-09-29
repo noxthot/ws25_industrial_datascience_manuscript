@@ -7,4 +7,26 @@ This section is still under construction and will be completed in the near futur
 Please do not go beyond this point for now.
 :::
 
-TODO - Placeholder: https://www.intechopen.com/chapters/1185930
+Time series classification belongs to the class of supervised learning and is defined as the task of assigning a label to a time series.
+
+Again, this is a very active research area and many different methods have been proposed.
+For a good overview, check e.g. @faouzi2024, which divide time series classification methods into the following categories:
+
+- **Metric**: Distance-based methods, e.g. nearest neighbor classifiers with different distance measures.
+- **Kernels**: Methods that use kernel functions to measure similarity between time series.
+- **Shapelets**: Methods that learn discriminative subsequences (shapelets).
+- **Tree-based**: Methods that use decision trees or random forests.
+- **Bag-of-Words**: Methods that represent time series as a "bag of words".
+- **Image**: Methods that treat time series as images.
+- **Deep Learning**: Methods that use deep learning architectures.
+- **Random Convolutions**: Methods that use random convolutional filters.
+- **Ensemble**: Methods that combine multiple classifiers for improved performance.
+
+We can see that many of these categories already appeared in @{sec-act3-cluster-algorithms}.
+
+A simple metric-based (distance-based) baseline method for time series classification is to use a nearest neighbor classifier with a suitable distance measure for time series, e.g. dynamic time warping (DTW).
+This is implemented in `sktime` as [`KNeighborsTimeSeriesClassifier`](https://www.sktime.org/en/stable/api.html#sktime.classification.KNeighborsTimeSeriesClassifier) or [`KNeighborsTimeSeriesClassifierTslearn`](https://www.tslearn.org/en/stable/user_guide/classification.html#kneighborstimseriesclassifier) (latter is just a wrapper for the implementation in `tslearn`).
+These classifiers work similar to the `KNeighborsClassifier` for tabular data from `sklearn`, but use a distance measure suitable for time series.
+We have learned about `euclidean` distance and `DTW` in @{sec-act3-cluster-similaritymeasures}.
+
+In this section we will have a brief look at time series forests (tree-based) in the context of time series classification.

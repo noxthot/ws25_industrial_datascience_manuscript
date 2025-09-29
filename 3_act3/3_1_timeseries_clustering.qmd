@@ -19,7 +19,7 @@ Difficulties are:
 - *Parameter Sensitivity*: Many similarity measures come with tunable parameters that can significantly affect the results.
 
 
-## Clustering algorithms
+## Clustering algorithms {#sec-act3-cluster-algorithms}
 Time series clustering algorithms can be broadly categorized into four main types:
 - **Distance-Based**: These algorithms rely on a distance measure to quantify the similarity between time series. Examples include k-means and k-median.
 - **Distribution-Based**: These methods model the distribution (in a very general sense) of the time series data and cluster based on statistical properties or descriptive features that represent the characteristics of the time series. Examples include Gaussian Mixture Models (GMM) and DBSCAN.
@@ -31,13 +31,11 @@ Time series clustering algorithms can be broadly categorized into four main type
 In the following, we will briefly introduce distance-based clustering using two common similarity measures: Euclidean distance and Dynamic Time Warping (DTW).
 
 
-## Similarity Measures
+## Similarity Measures {#sec-act3-cluster-similaritymeasures}
 
 {{< embed /3_act3/3_2_timeseries_similaritymeasures_examples.ipynb echo=true >}}
 
 
 ## k-Means Clustering
-
-TODO https://tslearn.readthedocs.io/en/stable/auto_examples/clustering/plot_kmeans.html#sphx-glr-auto-examples-clustering-plot-kmeans-py
 
 {{< embed /3_act3/3_3_timeseries_clustering_examples.ipynb echo=true >}}
