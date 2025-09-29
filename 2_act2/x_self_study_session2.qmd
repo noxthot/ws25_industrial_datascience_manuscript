@@ -1,5 +1,13 @@
 TODO - change filename
 
 # Self study - Session 2 {#sec-act2-selfstudy2}
+
+::: {.callout-caution}
+## Still under construction
+
+This section is still under construction and will be completed in the near future.
+Please do not go beyond this point for now.
+:::
+
 TODO - Fill
 Placeholder: Live-Machine

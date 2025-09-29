@@ -1,4 +1,12 @@
 # Time Series Clustering
+
+::: {.callout-caution}
+## Still under construction
+
+This section is still under construction and will be completed in the near future.
+Please do not go beyond this point for now.
+:::
+
 The goal of clustering is to group similar time series together based on their characteristics or patterns.
 
 But what does **similar** mean in the context of time series data?
@@ -25,7 +33,7 @@ In the following, we will briefly introduce distance-based clustering using two 
 
 ## Similarity Measures
 
-{{< embed /3_act3/3_2_clustering_examples.ipynb echo=true >}}
+{{< embed /3_act3/3_2_timeseries_clustering_examples.ipynb echo=true >}}
 
 
 ## k-Means Clustering

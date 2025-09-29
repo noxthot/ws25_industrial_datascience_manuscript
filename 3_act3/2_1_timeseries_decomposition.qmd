@@ -1,4 +1,12 @@
 # Time series decomposition
+
+::: {.callout-caution}
+## Still under construction
+
+This section is still under construction and will be completed in the near future.
+Please do not go beyond this point for now.
+:::
+
 TODO - Placeholder: https://otexts.com/fpp2/decomposition.html - https://www.tigerdata.com/blog/time-series-introduction#what-is-time-series-data-and-how-to-use-it
 
 Time series data often exhibit patterns such as trends, seasonality, and cycles.

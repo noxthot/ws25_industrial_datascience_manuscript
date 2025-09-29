@@ -1,1 +1,10 @@
 # Self study - Session 1 {#sec-act3-selfstudy1}
+
+::: {.callout-caution}
+## Still under construction
+
+This section is still under construction and will be completed in the near future.
+Please do not go beyond this point for now.
+:::
+
+TODO placeholders
