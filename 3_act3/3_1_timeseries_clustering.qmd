@@ -33,9 +33,11 @@ In the following, we will briefly introduce distance-based clustering using two 
 
 ## Similarity Measures
 
-{{< embed /3_act3/3_2_timeseries_clustering_examples.ipynb echo=true >}}
+{{< embed /3_act3/3_2_timeseries_similaritymeasures_examples.ipynb echo=true >}}
 
 
 ## k-Means Clustering
 
 TODO https://tslearn.readthedocs.io/en/stable/auto_examples/clustering/plot_kmeans.html#sphx-glr-auto-examples-clustering-plot-kmeans-py
+
+{{< embed /3_act3/3_3_timeseries_clustering_examples.ipynb echo=true >}}
