@@ -25,8 +25,12 @@ For a good overview, check e.g. @faouzi2024, which divide time series classifica
 We can see that many of these categories already appeared in @{sec-act3-cluster-algorithms}.
 
 A simple metric-based (distance-based) baseline method for time series classification is to use a nearest neighbor classifier with a suitable distance measure for time series, e.g. dynamic time warping (DTW).
-This is implemented in `sktime` as [`KNeighborsTimeSeriesClassifier`](https://www.sktime.org/en/stable/api.html#sktime.classification.KNeighborsTimeSeriesClassifier) or [`KNeighborsTimeSeriesClassifierTslearn`](https://www.tslearn.org/en/stable/user_guide/classification.html#kneighborstimseriesclassifier) (latter is just a wrapper for the implementation in `tslearn`).
+This is implemented in `sktime` as [`KNeighborsTimeSeriesClassifier`](https://www.sktime.net/en/stable/api_reference/auto_generated/sktime.classification.distance_based.KNeighborsTimeSeriesClassifier.html) or [`KNeighborsTimeSeriesClassifierTslearn`](https://www.sktime.net/en/stable/api_reference/auto_generated/sktime.classification.distance_based.KNeighborsTimeSeriesClassifierTslearn.html) (latter is just a wrapper for the implementation in `tslearn`).
 These classifiers work similar to the `KNeighborsClassifier` for tabular data from `sklearn`, but use a distance measure suitable for time series.
 We have learned about `euclidean` distance and `DTW` in @{sec-act3-cluster-similaritymeasures}.
 
 In this section we will have a brief look at time series forests (tree-based) in the context of time series classification.
+
+## Time Series Forests
+
+{{< embed /3_act3/4_2_timeseries_classification_examples.ipynb echo=true >}}

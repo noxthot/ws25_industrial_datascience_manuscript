@@ -45,7 +45,7 @@ book:
         - 3_act3/1_0_data_imputation.qmd
         - 3_act3/2_1_timeseries_decomposition.qmd
         - 3_act3/3_1_timeseries_clustering.qmd
-        - 3_act3/4_timeseries_classification.qmd
+        - 3_act3/4_1_timeseries_classification.qmd
         - 3_act3/5_timeseries_regression.qmd
         - 3_act3/x_self_study_session1.qmd
         - 3_act3/x_self_study_session2.qmd
