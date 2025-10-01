@@ -1,4 +1,4 @@
-# Time series classification
+# Time Series Classification
 
 ::: {.callout-caution}
 ## Still under construction

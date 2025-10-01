@@ -1,4 +1,4 @@
-# Time series decomposition
+# Time Series Decomposition
 
 ::: {.callout-caution}
 ## Still under construction
