@@ -31,8 +31,8 @@ In this section we will have a brief look at a deep-learning based method in the
 ### Convolutional Neural Network (CNN) Regressor
 
 ::: {.callout-note}
-Due to a lack of suitable open datasets for time series regression, there will not be an example notebook for this section.
-In industry behind closed doors however, you will often find regression problems where the input data is time series (e.g. predicting end of life of machine parts based on sensor data).
+Due to the absence of suitable open datasets for time series regression, this section will not include an example notebook.
+However, in industry settings -- usually restricted by confidentiality -- time series regression is commonly employed, such as in predicting the lifespan of machinery parts based on sensor data.
 :::
 
 CNNs, by design, are able to capture local patterns in time series data through the use of convolutional layers.
