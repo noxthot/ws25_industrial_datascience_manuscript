@@ -1,4 +1,4 @@
-# Time Series Classification
+# Time Series Classification {#sec-act3-classification}
 
 ::: {.callout-caution}
 ## Still under construction
@@ -10,7 +10,7 @@ Please do not go beyond this point for now.
 Time series classification belongs to the class of supervised learning and is defined as the task of assigning a label to a time series.
 
 Again, this is a very active research area and many different methods have been proposed.
-For a good overview, check e.g. @faouzi2024, which divide time series classification methods into the following categories:
+For a good overview, check e.g. @{faouzi2024}, which divide time series classification methods into the following categories:
 
 - **Metric**: Distance-based methods, e.g. nearest neighbor classifiers with different distance measures.
 - **Kernels**: Methods that use kernel functions to measure similarity between time series.
