@@ -21,9 +21,9 @@ Unlike typical classes that use clean, polished datasets, in this lecture we wil
 
 In @{sec-act1}, we will prepare ourselves by exploring curated data sets of machine sensors.
 
-@{sec-act2} will spotlight a raw dataset which is the more typical case when facing data science challenges in industry.
+@{sec-act2} gives a brief overview over time series data, a common data type in industrial settings.
 
-Finally, we will use everything we have learned so far to control a simulated machine in @{sec-act3}.
+Finally in @{sec-act3}, we will spotlight a dataset which is the more typical case when facing data science challenges in industry and will use everything we have learned so far to control simulated machines.
 
 @{sec-0-history} is heavily based on @{mathur2022}, @{sec-0-applications} on @{peres2020}.
 

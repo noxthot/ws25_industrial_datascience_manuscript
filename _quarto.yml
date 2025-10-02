@@ -30,23 +30,23 @@ book:
         - 1_act1/2_self_study_session2.qmd
         - 1_act1/3_self_study_session3.qmd
         - 1_act1/4_self_study_session4.qmd
-    - part: "Act 2: Real Machine Data"
+    - part: "Act 2: Time series -- A Curated Collection"
       chapters: 
-        - 2_act2/0_challenges.qmd
-        - 2_act2/1_levels_of_system_integration.qmd
-        - 2_act2/2_batch_vs_stream.qmd
-        - 2_act2/3_0_process_optimization_sensor_data.qmd
-        - 2_act2/4_live_feedback.qmd
+        - 2_act2/0_nature_of_timeseries.qmd
+        - 2_act2/1_0_data_imputation.qmd
+        - 2_act2/2_1_timeseries_decomposition.qmd
+        - 2_act2/3_1_timeseries_clustering.qmd
+        - 2_act2/4_1_timeseries_classification.qmd
+        - 2_act2/5_timeseries_regression.qmd
         - 2_act2/x_self_study_session1.qmd
         - 2_act2/x_self_study_session2.qmd
-    - part: "Act 3: Miscellany -- A Curated Collection"
+    - part: "Act 3: Real Machine Data"
       chapters: 
-        - 3_act3/0_nature_of_timeseries.qmd
-        - 3_act3/1_0_data_imputation.qmd
-        - 3_act3/2_1_timeseries_decomposition.qmd
-        - 3_act3/3_1_timeseries_clustering.qmd
-        - 3_act3/4_1_timeseries_classification.qmd
-        - 3_act3/5_timeseries_regression.qmd
+        - 3_act3/0_challenges.qmd
+        - 3_act3/1_levels_of_system_integration.qmd
+        - 3_act3/2_batch_vs_stream.qmd
+        - 3_act3/3_0_process_optimization_sensor_data.qmd
+        - 3_act3/4_live_feedback.qmd
         - 3_act3/x_self_study_session1.qmd
         - 3_act3/x_self_study_session2.qmd
     - part: "Act 4: Lost Tapes"
