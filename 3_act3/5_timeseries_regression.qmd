@@ -28,7 +28,7 @@ Note that this is to date (02 10 2025) not a very parametrizable implementation;
 
 In this section we will have a brief look at a deep-learning based method in the context of time series regression, namely a convolutional neural network (CNN) based regressor.
 
-### Convolutional Neural Network (CNN) Regressor
+## Convolutional Neural Network (CNN) Regressor
 
 ::: {.callout-note}
 Due to the absence of suitable open datasets for time series regression, this section will not include an example notebook.
