@@ -7,7 +7,7 @@ This section is still under construction and will be completed in the near futur
 Please do not go beyond this point for now.
 :::
 
-TODO - Placeholder: https://otexts.com/fpp2/decomposition.html - https://www.tigerdata.com/blog/time-series-introduction#what-is-time-series-data-and-how-to-use-it
+[//]: # TODO - Placeholder: https://otexts.com/fpp2/decomposition.html - https://www.tigerdata.com/blog/time-series-introduction#what-is-time-series-data-and-how-to-use-it
 
 Time series data often exhibit patterns such as trends, seasonality, and cycles.
 Decomposing a time series into its components can help to better understand the underlying processes.

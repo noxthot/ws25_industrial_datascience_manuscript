@@ -1,4 +1,4 @@
-TODO - change filename
+[//]: # TODO - change filename
 
 # Self study - Session 2 {#sec-act3-selfstudy2}
 
@@ -9,5 +9,5 @@ This section is still under construction and will be completed in the near futur
 Please do not go beyond this point for now.
 :::
 
-TODO - Fill
+[//]: # TODO - Fill
 Placeholder: Live-Machine

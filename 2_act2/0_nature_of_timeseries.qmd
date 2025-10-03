@@ -14,7 +14,7 @@ Typically, time series data exhibits sequential dependencies, indicating that th
 Time series are not only used in industrial contexts, but also in various other fields such as finance, economics, environmental science, healthcare, and social sciences.
 
 ## Examples of Time Series Data
-TODO - add sources
+[//]: # TODO - add sources
 
 ### Airline passenger numbers
 This data contains monthly totals of international airline passengers from 1949 to 1960.

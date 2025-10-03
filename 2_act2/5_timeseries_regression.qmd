@@ -34,7 +34,7 @@ In this section we will have a brief look at a deep-learning based method in the
 Due to the absence of suitable open datasets for time series regression, this section will not include an example notebook.
 However, in industry settings -- usually restricted by confidentiality -- time series regression is commonly employed, such as in predicting the lifespan of machinery parts based on sensor data.
 
-TODO - probably there is some data here: http://tseregression.org/
+[//]: # TODO - probably there is some data here: http://tseregression.org/
 :::
 
 CNNs, by design, are able to capture local patterns in time series data through the use of convolutional layers.
