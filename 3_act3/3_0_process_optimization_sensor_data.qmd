@@ -69,5 +69,5 @@ The first processing step ensures the correct positioning of the nozzle and the 
 
 
 
-{{< embed /2_act3/3_1_eda.ipynb echo=true >}}
+{{< embed /3_act3/3_1_eda.ipynb echo=true >}}
 
