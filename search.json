@@ -1,0 +1,781 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Industrial Data Science",
+    "section": "",
+    "text": "Preface\nIndustrial Data Science",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "0_introduction/0_introduction.html",
+    "href": "0_introduction/0_introduction.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "In this module we will explore Industrial Data Science, a term that is not widely used, defined or standardized (yet).\nGenerally, it refers to the application of data science techniques within industrial and business domains. This includes optimizing processes, predictive maintenance, quality control, supply chain management and automation by leveraging large volumes of sensor and process data.\nThe term Industrial Artificial Intelligence is more common in literature and appears to be used interchangeably with the fuzzy definition of Industrial Data Science. According to Peres et al. (2020), Industrial AI distinguishes itself within the field of AI in five dimensions: - Infrastructure: Large emphasis on real-time processing capabilities.\n\nData: Often involves large volume diverse datasets from multiple sources.\nAlgorithms: Combines physical, digital, and heuristic models, requiring complex management and deployment.\nDecision-making: Demands high reliability, low error tolerance, and efficient handling of uncertainty.\nObjectives: Targets value creation, such as e.g. reducing waste, improving quality, and boosting operational efficiency.\n\nUnlike typical classes that use clean, polished datasets, in this lecture we will get our hands dirty and work with raw machine data with the ultimate goal to set up a data science product on a simulated machine using live data.\nIn Chapter 4, we will prepare ourselves by exploring curated data sets of machine sensors.\nChapter 9 gives a brief overview over time series data, a common data type in industrial settings.\nFinally in Chapter 17, we will spotlight a dataset which is the more typical case when facing data science challenges in industry and will use everything we have learned so far to control simulated machines.\nChapter 2 is heavily based on Mathur, Dabas, and Sharma (2022), Chapter 3 on Peres et al. (2020).\nPlease note that Industrial Data Science is a vast and rapidly evolving field, encompassing a wide range of industries, technologies, and specialized methods. Each industrial context presents unique challenges and data architectures. Covering more of the relevant tools, algorithms, and real-world scenarios in depth would require far more time and resources than a single module allows. My focus, therefore, is to introduce key concepts and practical skills, laying a foundation for further exploration.\n\n\n\n\nMathur, Aeshita, Ameesha Dabas, and Nikhil Sharma. 2022. “Evolution from Industry 1.0 to Industry 5.0.” In 2022 4th International Conference on Advances in Computing, Communication Control and Networking (ICAC3N), 1390–94. https://doi.org/10.1109/ICAC3N56670.2022.10074274.\n\n\nPeres, Ricardo Silva, Xiaodong Jia, Jay Lee, Keyi Sun, Armando Walter Colombo, and Jose Barata. 2020. “Industrial Artificial Intelligence in Industry 4.0 - Systematic Review, Challenges and Outlook.” IEEE Access 8: 220121–39. https://doi.org/10.1109/ACCESS.2020.3042874.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "0_introduction/1_history.html",
+    "href": "0_introduction/1_history.html",
+    "title": "2  History",
+    "section": "",
+    "text": "2.1 Industry 1.0 – Mechanisation (late 18th century)\nThe First Industrial Revolution, beginning at the end of the 18th century, introduced mechanized production systems powered by water and steam.\nThis shift significantly increased productivity, particularly in industries like textiles, mining, transportation, and agriculture. Steam engines replaced muscle power in factories, leading to rapid production and reduced costs. Innovations such as steam locomotives and steamships accelerated the delivery of commodities.\nOverall, this revolution marked a transition from an agricultural economy to one dominated by machine-driven production, setting the stage for modern advances in various sectors. However, it also precipitated sociocultural shifts, replacing manual labor with machines, leading to job insecurity, and exposing workers to harsh conditions due to inadequate regulations.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>History</span>"
+    ]
+  },
+  {
+    "objectID": "0_introduction/1_history.html#industry-2.0-electrification-late-19th-century",
+    "href": "0_introduction/1_history.html#industry-2.0-electrification-late-19th-century",
+    "title": "2  History",
+    "section": "2.2 Industry 2.0 – Electrification (late 19th century)",
+    "text": "2.2 Industry 2.0 – Electrification (late 19th century)\nDuring the late 19th century, the Second Industrial Revolution brought mass production enabled by electricity.\nThis era also saw the usage of electricity as a key source of energy, which was more efficient and less costly than earlier steam and water-powered systems. The introduction of the integrated assembly line further streamlined production.\nDespite the efficiency gains and increased output, this industrial shift also resulted in significant job losses due to automation. Consequently, while productivity increased drastically and goods became cheaper, standard labor methods used in factories were replaced with new machines and again reduced jobs.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>History</span>"
+    ]
+  },
+  {
+    "objectID": "0_introduction/1_history.html#industry-3.0-automation-mid-to-late-20th-century",
+    "href": "0_introduction/1_history.html#industry-3.0-automation-mid-to-late-20th-century",
+    "title": "2  History",
+    "section": "2.3 Industry 3.0 – Automation (mid to late 20th century)",
+    "text": "2.3 Industry 3.0 – Automation (mid to late 20th century)\nThe Digital Revolution, which began in the 1970s, marked the transition to extensive use of digital technologies such as computers, microprocessors, and the Internet.\nThis era led to significant automation across various industries, enhancing speed, accuracy, and reducing human labor through inventions like the Programmable Logic Controller (PLC). The integration of electronic hardware necessitated complementary advancements in software, boosting the software development industry and enabling improved management systems in enterprises, including resource planning and logistics. As a result, industries increasingly automated and globalized production, which contributed to the development of Supply Chain Management.\nHowever, this period also created significant environmental challenges, including substantial electronic waste and high energy consumption.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>History</span>"
+    ]
+  },
+  {
+    "objectID": "0_introduction/1_history.html#industry-4.0-digitalisation-late-20th-century-21st-century",
+    "href": "0_introduction/1_history.html#industry-4.0-digitalisation-late-20th-century-21st-century",
+    "title": "2  History",
+    "section": "2.4 Industry 4.0 – Digitalisation (late 20th century, 21st century)",
+    "text": "2.4 Industry 4.0 – Digitalisation (late 20th century, 21st century)\nIndustry 4.0 represents a significant transformation in manufacturing and production, embracing digital technologies such as the Internet of Things (IoT), cloud computing, and smart devices.\nThis evolution builds on the automation introduced in the Third Industrial Revolution but pushes further towards a fully integrated digital industrial environment, aiming for seamlessly integrated solutions. Key features of Industry include the interconnection of machines, devices and sensors, enabling real-time data exchange and intelligent decision-making, allowing for self-monitoring, predictive maintenance, and adaptive manufacturing processes. Advanced analytics and artificial intelligence are leveraged to optimize production, improve quality, and reduce downtime. Industry 4.0 not only increases efficiency and productivity but also enables new business models, such as mass customization and service-oriented manufacturing.\nChallenges include potential job losses, particularly for blue-collar workers, due to increased automation and customization. The digital nature of this industrial phase also raises cybersecurity risks. Transitioning to these new technologies demands significant capital investment and skilled workers familiar with AI/ML, adding economic and educational challenges.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>History</span>"
+    ]
+  },
+  {
+    "objectID": "0_introduction/1_history.html#industry-5.0-personalisation-21st-century-onward",
+    "href": "0_introduction/1_history.html#industry-5.0-personalisation-21st-century-onward",
+    "title": "2  History",
+    "section": "2.5 Industry 5.0 – Personalisation (21st century onward)",
+    "text": "2.5 Industry 5.0 – Personalisation (21st century onward)\nIndustry 5.0 highlights a paradigm shift focused on the synergy between humans and machines, emphasizing personal focus, resilience, and sustainability as core principles.\nThis human-centric approach supports social well-being by considering workers as valuable investments and designing technology to cater to their diverse needs and rights, such as independence, dignity, and privacy. The shift encourages continuous skill development for better job opportunities and work-life balance, and it prioritizes sustainability through resource efficiency and recycling practices. In terms of technology, Industry 5.0 integrates advances like the Internet of Everything (IoE), 4D imaging technologies, smart sensors, and humanoid robots, mainly enhancing healthcare services by improving diagnostics and patient care while ensuring safety and efficiency.\nHowever, challenges include the need for a highly skilled workforce, increased risks of cyberattacks due to digitalization, substantial initial investments, and the complexity of regulating automated, personalized production processes.",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>History</span>"
+    ]
+  },
+  {
+    "objectID": "0_introduction/2_applications.html",
+    "href": "0_introduction/2_applications.html",
+    "title": "3  Application areas",
+    "section": "",
+    "text": "3.1 Process optimization",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Application areas</span>"
+    ]
+  },
+  {
+    "objectID": "0_introduction/2_applications.html#process-optimization",
+    "href": "0_introduction/2_applications.html#process-optimization",
+    "title": "3  Application areas",
+    "section": "",
+    "text": "Energy consumption prediction and optimization\nImproving production efficiency\nImproving production quality\nSupply chain optimization by predicting market demands",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Application areas</span>"
+    ]
+  },
+  {
+    "objectID": "0_introduction/2_applications.html#quality-control",
+    "href": "0_introduction/2_applications.html#quality-control",
+    "title": "3  Application areas",
+    "section": "3.2 Quality control",
+    "text": "3.2 Quality control\n\nAutomated visual inspection\nDefect prediction to mitigate multistage propagation\nOnline quality prediction",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Application areas</span>"
+    ]
+  },
+  {
+    "objectID": "0_introduction/2_applications.html#predictive-maintenance",
+    "href": "0_introduction/2_applications.html#predictive-maintenance",
+    "title": "3  Application areas",
+    "section": "3.3 Predictive maintenance",
+    "text": "3.3 Predictive maintenance\n\nDetecting possible problems before they occur\nReducing unnecessary inspection and maintenance operations",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Application areas</span>"
+    ]
+  },
+  {
+    "objectID": "0_introduction/2_applications.html#human-robot-collaboration-and-ergonomics",
+    "href": "0_introduction/2_applications.html#human-robot-collaboration-and-ergonomics",
+    "title": "3  Application areas",
+    "section": "3.4 Human-Robot collaboration and ergonomics",
+    "text": "3.4 Human-Robot collaboration and ergonomics\n\nWorkforce training\nTask support\nCollaborative robotics\nErgonomics",
+    "crumbs": [
+      "Introduction",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Application areas</span>"
+    ]
+  },
+  {
+    "objectID": "1_act1/0_0_predictive_maintenance.html",
+    "href": "1_act1/0_0_predictive_maintenance.html",
+    "title": "4  Predictive Maintenance via Exploratory Data Analysis",
+    "section": "",
+    "text": "In this section we will explore the concept of predictive maintenance using a synthetic dataset that reflects real predictive maintenance data encountered in industry.\nYou can download the dataset “AI4I 2020 Predictive Maintenance Dataset” (2020) at this link.\nHere is a summary of the variables present in the dataset:\nThe table shows various error types and our task is to gain insights on when they occur.",
+    "crumbs": [
+      "Act 1: Polished Machine Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Predictive Maintenance via Exploratory Data Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "1_act1/0_0_predictive_maintenance.html#loading-packages",
+    "href": "1_act1/0_0_predictive_maintenance.html#loading-packages",
+    "title": "4  Predictive Maintenance via Exploratory Data Analysis",
+    "section": "4.1 Loading packages",
+    "text": "4.1 Loading packages\n\nimport matplotlib.pyplot as plt  # used for plotting\nimport numpy as np               # used for calculations\nimport pandas as pd              # used for data handling\nimport seaborn as sns            # used for plotting\nimport sklearn.tree as skt       # used for decision tree modeling",
+    "crumbs": [
+      "Act 1: Polished Machine Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Predictive Maintenance via Exploratory Data Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "1_act1/0_0_predictive_maintenance.html#loading-the-dataset",
+    "href": "1_act1/0_0_predictive_maintenance.html#loading-the-dataset",
+    "title": "4  Predictive Maintenance via Exploratory Data Analysis",
+    "section": "4.2 Loading the dataset",
+    "text": "4.2 Loading the dataset\nThe dataset is available online in form of a zipped csv file. Source: AI4I 2020 Predictive Maintenance Dataset [Dataset]. (2020). UCI Machine Learning Repository. https://doi.org/10.24432/C5HS5C.\n\ndf = pd.read_csv(\"https://archive.ics.uci.edu/static/public/601/ai4i+2020+predictive+maintenance+dataset.zip\")",
+    "crumbs": [
+      "Act 1: Polished Machine Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Predictive Maintenance via Exploratory Data Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "1_act1/0_0_predictive_maintenance.html#quick-check-data-integrity",
+    "href": "1_act1/0_0_predictive_maintenance.html#quick-check-data-integrity",
+    "title": "4  Predictive Maintenance via Exploratory Data Analysis",
+    "section": "4.3 Quick check data integrity",
+    "text": "4.3 Quick check data integrity\nIt is always good practice to check the integrity of the dataset before performing any analysis. This includes checking for missing values, duplicate entries, ensuring that the data types are appropriate for each feature, and looking at simple statistics.\n\ndf\n\n\n\n\n\n\n\n\nUDI\nProduct ID\nType\nAir temperature [K]\nProcess temperature [K]\nRotational speed [rpm]\nTorque [Nm]\nTool wear [min]\nMachine failure\nTWF\nHDF\nPWF\nOSF\nRNF\n\n\n\n\n0\n1\nM14860\nM\n298.1\n308.6\n1551\n42.8\n0\n0\n0\n0\n0\n0\n0\n\n\n1\n2\nL47181\nL\n298.2\n308.7\n1408\n46.3\n3\n0\n0\n0\n0\n0\n0\n\n\n2\n3\nL47182\nL\n298.1\n308.5\n1498\n49.4\n5\n0\n0\n0\n0\n0\n0\n\n\n3\n4\nL47183\nL\n298.2\n308.6\n1433\n39.5\n7\n0\n0\n0\n0\n0\n0\n\n\n4\n5\nL47184\nL\n298.2\n308.7\n1408\n40.0\n9\n0\n0\n0\n0\n0\n0\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n9995\n9996\nM24855\nM\n298.8\n308.4\n1604\n29.5\n14\n0\n0\n0\n0\n0\n0\n\n\n9996\n9997\nH39410\nH\n298.9\n308.4\n1632\n31.8\n17\n0\n0\n0\n0\n0\n0\n\n\n9997\n9998\nM24857\nM\n299.0\n308.6\n1645\n33.4\n22\n0\n0\n0\n0\n0\n0\n\n\n9998\n9999\nH39412\nH\n299.0\n308.7\n1408\n48.5\n25\n0\n0\n0\n0\n0\n0\n\n\n9999\n10000\nM24859\nM\n299.0\n308.7\n1500\n40.2\n30\n0\n0\n0\n0\n0\n0\n\n\n\n\n10000 rows × 14 columns\n\n\n\nJust displaying a couple of rows is useful for quickly inspecting the data structure and see if the dataset was correctly ex- and imported.\nA few remarks: - UDI appears to be some sort of linear step counter. - Apparently, Product ID also seems to be a unique identifier. - Interestingly, Rotational speed is represented as an integer (rpm), which is a discrete value, while Torque and Tool wear are continuous values. - The target variables are binary indicators of failure types, represented as integers (\\(0\\) or \\(1\\)). - The dataset contains 10.000 rows and 14 columns.\n\ndf.isna().sum()\n\nUDI                        0\nProduct ID                 0\nType                       0\nAir temperature [K]        0\nProcess temperature [K]    0\nRotational speed [rpm]     0\nTorque [Nm]                0\nTool wear [min]            0\nMachine failure            0\nTWF                        0\nHDF                        0\nPWF                        0\nOSF                        0\nRNF                        0\ndtype: int64\n\n\n\ndf.duplicated().sum()\n\nnp.int64(0)\n\n\nisna detects missing values in the dataframe and duplicated checks for duplicate entries. The dataset appears to be clean, with no missing values or duplicates detected.\n\ndf.describe().T\n\n\n\n\n\n\n\n\ncount\nmean\nstd\nmin\n25%\n50%\n75%\nmax\n\n\n\n\nUDI\n10000.0\n5000.50000\n2886.895680\n1.0\n2500.75\n5000.5\n7500.25\n10000.0\n\n\nAir temperature [K]\n10000.0\n300.00493\n2.000259\n295.3\n298.30\n300.1\n301.50\n304.5\n\n\nProcess temperature [K]\n10000.0\n310.00556\n1.483734\n305.7\n308.80\n310.1\n311.10\n313.8\n\n\nRotational speed [rpm]\n10000.0\n1538.77610\n179.284096\n1168.0\n1423.00\n1503.0\n1612.00\n2886.0\n\n\nTorque [Nm]\n10000.0\n39.98691\n9.968934\n3.8\n33.20\n40.1\n46.80\n76.6\n\n\nTool wear [min]\n10000.0\n107.95100\n63.654147\n0.0\n53.00\n108.0\n162.00\n253.0\n\n\nMachine failure\n10000.0\n0.03390\n0.180981\n0.0\n0.00\n0.0\n0.00\n1.0\n\n\nTWF\n10000.0\n0.00460\n0.067671\n0.0\n0.00\n0.0\n0.00\n1.0\n\n\nHDF\n10000.0\n0.01150\n0.106625\n0.0\n0.00\n0.0\n0.00\n1.0\n\n\nPWF\n10000.0\n0.00950\n0.097009\n0.0\n0.00\n0.0\n0.00\n1.0\n\n\nOSF\n10000.0\n0.00980\n0.098514\n0.0\n0.00\n0.0\n0.00\n1.0\n\n\nRNF\n10000.0\n0.00190\n0.043550\n0.0\n0.00\n0.0\n0.00\n1.0\n\n\n\n\n\n\n\ndescribe provides a summary of the numerical features in the dataset, including count, mean, standard deviation, min, max, and quartiles.\nThere are no obvious outliers or anomalies in the data based on this summary.\n\ndf.dtypes\n\nUDI                          int64\nProduct ID                  object\nType                        object\nAir temperature [K]        float64\nProcess temperature [K]    float64\nRotational speed [rpm]       int64\nTorque [Nm]                float64\nTool wear [min]              int64\nMachine failure              int64\nTWF                          int64\nHDF                          int64\nPWF                          int64\nOSF                          int64\nRNF                          int64\ndtype: object\n\n\ndtypes provides the data types of each feature in the dataset.\nobject types are typically storing text data. Here are no additional surprises, as we already noticed the oddities previously.\n\ndf.nunique()\n\nUDI                        10000\nProduct ID                 10000\nType                           3\nAir temperature [K]           93\nProcess temperature [K]       82\nRotational speed [rpm]       941\nTorque [Nm]                  577\nTool wear [min]              246\nMachine failure                2\nTWF                            2\nHDF                            2\nPWF                            2\nOSF                            2\nRNF                            2\ndtype: int64\n\n\nnunique counts the number of unique values in each feature.\nWe can clearly see that UDI is a unique identifier indeed, as it has a count equal to the number of rows in the dataset. Obviously Product ID is another unique identifier, which most likely does not add anything useful for the analysis. We also observe that Type indeed only contains L, M, and H. And last, we observe that all the error types are indeed binary (as expected).\nFor digging deeper, we now define two global lists for accessing continuous and error variables more easily throughout the notebook.\n\nCONTINUOUS_VARS = ['Air temperature [K]', 'Process temperature [K]', 'Rotational speed [rpm]', 'Torque [Nm]', 'Tool wear [min]']\nERROR_VARS = ['Machine failure', 'TWF', 'HDF', 'PWF', 'OSF', 'RNF']\n\n\ndf[ERROR_VARS].sum()\n\nMachine failure    339\nTWF                 46\nHDF                115\nPWF                 95\nOSF                 98\nRNF                 19\ndtype: int64\n\n\nOut of 10.000 rows, we have 339 rows that correspond to machine failures. This corresponds to 3.39% of the dataset and is a clear indication of class imbalance.\nLuckily we also have access to information of specific error types, which makes it easier to explore.",
+    "crumbs": [
+      "Act 1: Polished Machine Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Predictive Maintenance via Exploratory Data Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "1_act1/0_0_predictive_maintenance.html#exploring-continuous-variables-by-simple-plots",
+    "href": "1_act1/0_0_predictive_maintenance.html#exploring-continuous-variables-by-simple-plots",
+    "title": "4  Predictive Maintenance via Exploratory Data Analysis",
+    "section": "4.4 Exploring continuous variables by simple plots",
+    "text": "4.4 Exploring continuous variables by simple plots\nHere, we visualize the continuous variables (one by one) against the UDI (Unique Device Identifier) to get an idea of their temporal behavior.\n\nplt.figure(figsize=(20, 15))\n\nfor i, col in enumerate(CONTINUOUS_VARS, 1):\n    plt.subplot((len(CONTINUOUS_VARS) + 1) // 2, 2, i)\n    sns.lineplot(data=df, x=\"UDI\", y=col)\n    plt.title(f'{col}')\n\n\n\n\n\n\n\n\nRemember that we are working with a dataset that contains three process types? Let us explore, whether the distributions of the continuous variables differ across these process types.\n\nplt.figure(figsize=(20, 15))\n\nfor i, col in enumerate(CONTINUOUS_VARS, 1):\n    plt.subplot((len(CONTINUOUS_VARS) + 1) // 2, 2, i)\n    sns.boxplot(data=df, y=col, hue='Type')\n    plt.title(f'Boxplot of {col} by machine type')\n\n\n\n\n\n\n\n\nApparently, there are only very little differences between the three process types.\nLast, we will check for correlations between the variables.\n\ncorrelation_matrix = df[CONTINUOUS_VARS].corr()\nsns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)\nplt.title('Correlation Matrix');\n\n\n\n\n\n\n\n\nThe correlation matrix reveals: - Air temperature and process temperature are highly positively correlated, indicating that as one increases, the other tends to increase as well. - Rotational speed and torque are negatively correlated, meaning that as rotational speed increases, torque tends to decrease and vice versa.\nseaborn provides a convenient way to visualize important characteristics of the dataset using thepairplot function. The diagonal subplots show the distribution of each variable, while the off-diagonal subplots show the relationships between variables.\nWe included the UDI to have a temporal reference, allowing us to observe how the variables change over time (compare to the previous time series plots). We can also clearly see the correlating variables in this pairplots.\n\nsns.pairplot(df, vars=[\"UDI\"] + CONTINUOUS_VARS)",
+    "crumbs": [
+      "Act 1: Polished Machine Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Predictive Maintenance via Exploratory Data Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "1_act1/0_0_predictive_maintenance.html#feature-engineering",
+    "href": "1_act1/0_0_predictive_maintenance.html#feature-engineering",
+    "title": "4  Predictive Maintenance via Exploratory Data Analysis",
+    "section": "4.5 Feature Engineering",
+    "text": "4.5 Feature Engineering\nSometimes, it is easy to create new, meaningful features from the existing ones. Often, process engineers have a deep understanding of the domain and can identify potential new features that may improve model performance. So talking is key!\nWe will engineer two new features: - Temperature difference between process and ambient temperature. - Power is calculated as Torque * Rotational Speed * 2 * pi, where torque comes in Nm and rotational speed should be in revolutions per second.\n\ndf.loc[:, \"temp_diff\"] = df[\"Process temperature [K]\"] - df[\"Air temperature [K]\"]\ndf.loc[:, \"power\"] = df[\"Torque [Nm]\"] * 2 * np.pi * (df[\"Rotational speed [rpm]\"] / 60)",
+    "crumbs": [
+      "Act 1: Polished Machine Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Predictive Maintenance via Exploratory Data Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "1_act1/0_0_predictive_maintenance.html#sec-act1-1-machinefailures",
+    "href": "1_act1/0_0_predictive_maintenance.html#sec-act1-1-machinefailures",
+    "title": "4  Predictive Maintenance via Exploratory Data Analysis",
+    "section": "4.6 Investigating machine failures",
+    "text": "4.6 Investigating machine failures\nIt is easily possible to add another dimension to the visualizations. For example, let us compare the distribution of the continuous variables by machine failures.\n\nCONTINUOUS_VARS_ENG = CONTINUOUS_VARS + [\"power\", \"temp_diff\"]\n\nplt.figure(figsize=(20, 15))\n\nfor i, col in enumerate(CONTINUOUS_VARS_ENG, 1):\n    plt.subplot((len(CONTINUOUS_VARS_ENG) + 1) // 2, 2, i)\n    sns.boxplot(data=df, y=col, hue='Machine failure')\n    plt.title(f'Boxplot of {col} by machine failure')\n\n\n\n\n\n\n\n\nThe boxplots reveal: - As air temperature increases, the likelihood of machine failure also increases. - High torque, high power and low rotational speed indicate a higher probability of machine failure. - Higher tool wear comes with increased risk of machine failure. - Smaller temperature difference between machine and ambient temperature increases the likelihood of failure.\nLuckily, we have more detailed failure information available. Next, we will look at every failure type separately and plot pairplots for each. Sorry for the plot overload. Check the title of each plot and try to find patterns. Discussion follows below.\n\ndef plot_pair_with_hue(df, col):\n    pp = sns.pairplot(df.sort_values(col), vars=[\"UDI\"] + CONTINUOUS_VARS_ENG, hue=col)\n    pp.figure.suptitle(f\"Pair plot stratified by error type '{col}'\", y=1.02)\n    plt.show()\n\n\nfor col in ERROR_VARS:\n    plot_pair_with_hue(df, col)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n4.6.1 Interpretation - Pairplots\n\nThe plot for TWF clearly indicates that the failure only appears for tool wear times exceeding 200 minutes.\nHDF occurs when rotational speed is small and difference between air temperature and machine temperature is low.\nPWF clearly occurs when power is smaller than ca. 4000 or higher than 9000.\nOSF is likely when torque and tool wear are elevated.\nRNF shows no clear pattern.\n\nAlternatively, we could also use a simple explainable AI model to identify the key factors contributing to each failure type. Let us explore this approach with decision trees. Check the titles of the plots and interpret the results.\n\ndef plot_decision_tree(df, target_col, feature_cols=['Air temperature [K]', 'Process temperature [K]', 'Rotational speed [rpm]', 'Torque [Nm]', 'Tool wear [min]', 'temp_diff', 'power']):\n    X = df[feature_cols]\n    y = df[target_col]\n    \n    tree = skt.DecisionTreeClassifier(max_depth=3, random_state=42, min_samples_split=5, min_samples_leaf=5)\n    tree.fit(X, y)\n    \n    plt.figure(figsize=(20, 20))\n    skt.plot_tree(tree, feature_names=feature_cols, class_names=[\"OK\", \"ERR\"], filled=True, rounded=True)\n    plt.title(f'Decision Tree for {target_col} -- Samples with error: {y.sum()}')\n    plt.show()\n\n\nfor col in ERROR_VARS:\n    plot_decision_tree(df, col)",
+    "crumbs": [
+      "Act 1: Polished Machine Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Predictive Maintenance via Exploratory Data Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "1_act1/0_0_predictive_maintenance.html#sec-act1-1-int-dt",
+    "href": "1_act1/0_0_predictive_maintenance.html#sec-act1-1-int-dt",
+    "title": "4  Predictive Maintenance via Exploratory Data Analysis",
+    "section": "4.7 Interpretation - Decision Tree",
+    "text": "4.7 Interpretation - Decision Tree\n\nTWF: Although the classification performs poorly, the first split is made along the tool wear time (value 202.5). For smaller values the process only fails in 2 out of 9328 cases, so almost all of the failures occur with tool wear time above 202.5 min.\nHDF: Clearly shows that the failure usually occurs when temperature difference is below 8.65 and rotational speed is slower than 1380 rpm.\nPWF: Occurs when power exceeds 9001 W or is lower than 3496 W.\nOSF: The decision tree alternately looks at tool wear and torque but is not able to find a good model with a depth of 3. Note that the decision tree is only able to make horizontal or vertical cuts and is therefor sensitive to rotations of the given data. This indicates, that tool wear and torque are the main drivers of the OSF machine failure type but a simple decision tree is not able to model this relationship.\nRNF: The model completely fails and shows no pattern.\n\nPlease note that the conclusions are quite similar to the ones we made on base of the pairplots.",
+    "crumbs": [
+      "Act 1: Polished Machine Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Predictive Maintenance via Exploratory Data Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "1_act1/0_0_predictive_maintenance.html#sec-act1-1-reveal",
+    "href": "1_act1/0_0_predictive_maintenance.html#sec-act1-1-reveal",
+    "title": "4  Predictive Maintenance via Exploratory Data Analysis",
+    "section": "4.8 The great reveal",
+    "text": "4.8 The great reveal\nThe documentation of the dataset also describes the error types as follows:\n\ntool wear failure (TWF): the tool will be replaced of fail at a randomly selected tool wear time between 200 and 240 mins (120 times in our dataset). At this point in time, the tool is replaced 69 times, and fails 51 times (randomly assigned).\nheat dissipation failure (HDF): heat dissipation causes a process failure, if the difference between air- and process temperature is below 8.6 K and the tool’s rotational speed is below 1380 rpm. This is the case for 115 data points.\npower failure (PWF): the product of torque and rotational speed (in rad/s) equals the power required for the process. If this power is below 3500 W or above 9000 W, the process fails, which is the case 95 times in our dataset.\noverstrain failure (OSF): if the product of tool wear and torque exceeds 11.000 minNm for the L product variant (12.000 for M, 13.000 for H), the process fails due to overstrain. This is true for 98 datapoints.\nrandom failures (RNF): each process has a chance of 0.1 % to fail regardless of its process parameters. This is the case for only 5 datapoints, less than could be expected for 10,000 datapoints in our dataset.",
+    "crumbs": [
+      "Act 1: Polished Machine Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Predictive Maintenance via Exploratory Data Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "1_act1/0_0_predictive_maintenance.html#conclusion",
+    "href": "1_act1/0_0_predictive_maintenance.html#conclusion",
+    "title": "4  Predictive Maintenance via Exploratory Data Analysis",
+    "section": "4.9 Conclusion",
+    "text": "4.9 Conclusion\nMany roads lead to Rome. We successfully recovered most of the key factors for failure from the dataset, using clever visualizations and making use of easy to interpret AI tools.\nThese insights can help improving the reliability of the processes and reduce the likelihood of failures in the future. E.g. the tool wear failure could be mitigated by implementing more frequent tool replacements, while the heat dissipation failure could be addressed by not allowing rotational speeds below 1380rpm. The power failure could be prevented by ensuring that the product of torque and rotational speed stays within the specified limits, and the overstrain failure could be avoided by monitoring the tool wear and torque closely.",
+    "crumbs": [
+      "Act 1: Polished Machine Data",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Predictive Maintenance via Exploratory Data Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "1_act1/1_self_study_session1.html",
+    "href": "1_act1/1_self_study_session1.html",
+    "title": "5  Self study - Session 1",
+    "section": "",
+    "text": "This class contains self-study sessions to reinforce your understanding of the material and explore other aspects of the topic in a self-guided manner. This session introduces JupyterLab and Jupyter Notebook.\nJupyter Notebook is an open-source web application that allows users to create and share documents containing live code (supports over 40 programming languages including Python, Julia, R), visualizations, and narrative text. JupyterLab is a web-based interactive development environment (IDE) for Jupyter Notebook. The Jupyter ecosystem is widely used for interactive exploration and reporting purposes.\n\n\n\n\n\n\n\nExercise 5.1 (Setup Jupyterlab)  \n\nUse (pdm)[https://pdm-project.org] to create a new environment and install (jupyterlab)[https://jupyter.org/install].\n\n\n\n\n\n\n\n\n\n\nExercise 5.2 (Jupyterlab Introduction)  \n\nStudy the JupyterLab documentation to learn about its features and capabilities and experiment with them using your JupyterLab environment.\nAfter this exercise you should be able to answer the following questions:\n\nWhat is a Jupyter Notebook?\nWhat is JupyterLab?\nWhat are the different types of cells in a Jupyter notebook?\n\nAnd you should be able to do the following:\n\nCreate notebooks.\nExport notebooks to other file formats (like e.g. HTML and PDF).\nCreate and run code cells\nCreate and format markdown cells\nUse raw cells for unformatted text\n\n\n\n\n\n\n\n\n\n\n\nExercise 5.3 (Use Jupyterlab)  \n\n\nCreate a notebook from the code provided Chapter 4. Be sure to divide the code into separate cells for each logical step.\nUse markdown cells to explain and structure the code.\nIdeally, each code cell is self-contained and focuses on a single task or concept. E.g. it is good practice to define and alter variables only within the same cell; especially multiple calls of a cell should not cause different results.\n\n\n\n\n\n\n\n\n\n\n\nExercise 5.4 (Interactive plotting)  \n\nseaborn plots are not interactive by default. The package ipympl enables zooming and panning of plots in Jupyter notebooks. Start with the notebook from the previous exercise and activate the ipympl backend by following the documentation.",
+    "crumbs": [
+      "Act 1: Polished Machine Data",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Self study - Session 1</span>"
+    ]
+  },
+  {
+    "objectID": "1_act1/2_self_study_session2.html",
+    "href": "1_act1/2_self_study_session2.html",
+    "title": "6  Self study - Session 2",
+    "section": "",
+    "text": "In this session, we will explore the dataset in Chapter 4 further.\nWhen comparing our findings in Section 4.6.1 and Section 4.7 with the failure description in Section 4.8, we can see that we did a pretty good job in identifying failure reasons. However, we could have done better for OSF.\n\n\n\n\n\n\n\nExercise 6.1 (Overstrain failure)  \n\nAccording to Section 4.8, the failure type overstrain failure (OSF) occurs when the machine is subjected to excessive torque when a worn out tool is used. Also the product variant is associated to the failure rate: When the product of torque and tool wear exceeds 11.000 minNm for the L product variant (12.000 for M, 13.000 for H), the process fails due to overstrain.\nAre you able to verify this relationship by visualizations?\n\n\n\nAlso, there seems that the description of TWF in Section 4.8 is contradicting our observations.\n\n\n\n\n\n\n\nExercise 6.2 (Tool wear failure)  \n\nIdentify where the description of TWF in Section 4.8 does not align with your findings.\n\n\n\nSo far we have used seaborn to visualize the data. seaborn is based on matplotlib and provides a high-level interface for drawing statistical graphics. While matplotlib supports interactive figures that can zoom, pan and update (see here), for richer interactive visualizations we can use plotly. plotly is open-source and built on top of the Plotly JavaScript library plotly.js, thus enables users to create interactive web-based visualizations that can be displayed in Jupyter notebooks as well as in standalone HTML files. Especially for explorative data analysis, plotly offers a more user-friendly and flexible approach to create and explore complex visualizations.\n\n\n\n\n\n\n\nExercise 6.3 (Plotly introduction)  \n\nConsult the Plotly documentation for more information on how to use the library. Start with the notebook from Chapter 5, recreate the visualizations from Chapter 4 using plotly and explore the data interactively.\n\n\n\nIn Section 4.6 we used pair plots, boxplots and decision trees to investigate the relationship between different features and the machine failure types. Another approach could be to use parallel coordinates plots.\n\n\n\n\n\n\n\nExercise 6.4 (Parallel coordinates plots)  \n\nUse parallel coordinates plots to visualize the relationships between multiple features and the machine failure types: 1. Display every available continuous variable along with one selected failure type. 1. Also add Type as a categorical variable to the plot. 1. Make the failure type categorical. 1. Color the lines according to the selected failure type. 1. Allow for choosing the failure type interactively using a Dropdown widget (see Jupyter widgets) with the available failure types. 1. The parallel coordinate plot allows for dragging columns (just click and drag the title of a column) and reordering them. It also allows for selecting and highlighting specific lines, making it easier to focus on particular data points. Use these two features to get insights into the relationships between different features and the selected failure type. Can you identify the patterns which we have exploited in our previous analyses?",
+    "crumbs": [
+      "Act 1: Polished Machine Data",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Self study - Session 2</span>"
+    ]
+  },
+  {
+    "objectID": "1_act1/3_self_study_session3.html",
+    "href": "1_act1/3_self_study_session3.html",
+    "title": "7  Self study - Session 3",
+    "section": "",
+    "text": "In this session, we will have a look at another dataset. Kaggle is a data science competition platform under Google LLC where you can find a variety of datasets to work with. We will have a look at the Explainable AI (XAI) Drilling Dataset Wallsberger, Knauer, and Matzka (2023).\n\n\n\n\n\n\n\nExercise 7.1 (Exploratory data analysis)  \n\n\nRegister on Kaggle.\nRead the description of the Explainable AI (XAI) Drilling Dataset.\nDownload the dataset.\nFirst, pretend that you did not read the Subgroup failures paragraph in the description, explore the data set and find insights related to the different failure types.\nDo your findings agree with the Subgroup failures description?\n\n\n\n\n\n\n\n\nWallsberger, Raphael, Ricardo Knauer, and Stephan Matzka. 2023. “Explainable Artificial Intelligence in Mechanical Engineering: A Synthetic Dataset for Comprehensive Failure Mode Analysis.” In 2023 Fifth International Conference on Transdisciplinary AI (TransAI), 249–52. https://doi.org/10.1109/TransAI60598.2023.00032.",
+    "crumbs": [
+      "Act 1: Polished Machine Data",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Self study - Session 3</span>"
+    ]
+  },
+  {
+    "objectID": "1_act1/4_self_study_session4.html",
+    "href": "1_act1/4_self_study_session4.html",
+    "title": "8  Self study - Session 4",
+    "section": "",
+    "text": "In this session we will generate a report from our findings.\nDuring the exploratory data analysis in Chapter 7, we have looked at a large number of visualizations and identified key patterns and insights using different approaches. This is nice, but you want to report your results to your management in a concise manner, focus on key findings and make it easily digestible.\n\n\n\n\n\n\n\nExercise 8.1 (Jupyter Notebook Report)  \n\nPolish your document, only keep relevant insights, remove unnecessary details, focus on key findings, document with markdown cells and export the result as HTML or PDF (since your management most likely will not have JupyterLab installed).\n\nPDF: The document will be static version of your notebook, so make sure to include all relevant information and insights directly in the document.\nHTML: The document will also be a static version of your notebook (the DropDown would not work e.g.), but the interactivity of the plotly plots itself will still be available, since the HTML export retains the JavaScript functionality.\n\n\n\n\nThe resulting exports are a good start, but you may want to enhance them further using Quarto. Quarto is an open-source scientific and technical publishing system allowing to generate and configure dynamic documents, reports, presentations, and more. It is even compatible with Jupyter notebooks and e.g. allows to collapse code chunks.\n\n\n\n\n\n\n\nExercise 8.2 (Quarto)  \n\nIn the previous exercise, you have cleaned up your notebook and prepared for reporting. Use Quarto to generate a more polished report of your findings. Export your report as a PDF and HTML document\nUse this documentation as a starting point.",
+    "crumbs": [
+      "Act 1: Polished Machine Data",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Self study - Session 4</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/0_nature_of_timeseries.html",
+    "href": "2_act2/0_nature_of_timeseries.html",
+    "title": "9  Nature of Time Series",
+    "section": "",
+    "text": "9.1 Examples of Time Series Data\nTime series data is a sequence of data points collected or recorded at successive points in time, typically at uniform intervals. It is characterized by its temporal ordering, meaning that the order of the data points matters and can reveal patterns, trends, and seasonal variations over time. Typically, time series data exhibits sequential dependencies, indicating that the value at a given time point may be influenced by previous values in the series.\nTime series are not only used in industrial contexts, but also in various other fields such as finance, economics, environmental science, healthcare, and social sciences.",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Nature of Time Series</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/0_nature_of_timeseries.html#examples-of-time-series-data",
+    "href": "2_act2/0_nature_of_timeseries.html#examples-of-time-series-data",
+    "title": "9  Nature of Time Series",
+    "section": "",
+    "text": "9.1.1 Airline passenger numbers\nThis data contains monthly totals of international airline passengers from 1949 to 1960. \n\n\n9.1.2 Atmospheric CO2 concentrations\nThis time series shows the monthly average atmospheric CO2 concentrations measured at the Mauna Loa Observatory in Hawaii. \n\n\n9.1.3 Simulated Random Walk\nJust a simulated random walk time series. Code:\nimport numpy as np\n\nrandom_walk = np.cumsum(np.random.randn(200))\n\n\n\nSimulated Random Walk\n\n\n\n\n9.1.4 S&P 500 index\nThis time series shows the daily closing prices of the S&P 500 in 2020. \n\n\n9.1.5 Electrocardiagram (ECG) Signal\nThis time series represents an electrocardiogram (ECG) signal, which measures the electrical activity of the heart over time.",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Nature of Time Series</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/1_0_data_imputation.html",
+    "href": "2_act2/1_0_data_imputation.html",
+    "title": "10  Data imputation",
+    "section": "",
+    "text": "Real data sets often contain missing values or gaps due to various reasons such as sensor malfunctions, data corruption, or transmission errors. Handling these missing values is crucial for accurate analysis and modeling.\nIn this section we will explore common techniques for imputing missing data in time series.",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data imputation</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/1_0_data_imputation.html#visualization-of-the-temperature-data-with-and-without-gaps",
+    "href": "2_act2/1_0_data_imputation.html#visualization-of-the-temperature-data-with-and-without-gaps",
+    "title": "10  Data imputation",
+    "section": "11.1 Visualization of the temperature data with and without gaps",
+    "text": "11.1 Visualization of the temperature data with and without gaps\n\nplot_temperature_data(dftemp)",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data imputation</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/1_0_data_imputation.html#forward-fill-imputation",
+    "href": "2_act2/1_0_data_imputation.html#forward-fill-imputation",
+    "title": "10  Data imputation",
+    "section": "11.2 Forward fill imputation",
+    "text": "11.2 Forward fill imputation\nForward fill imputation (also known as last observation carried forward) is a simple and commonly used method for handling missing data in time series. It involves replacing missing values with the most recent non-missing value prior to the gap.\nAdvantages:\n\nSimple to implement and computationally efficient.\nPreserves the last known state, which can be useful in certain contexts.\nWorks well for short gaps where the last observation is a reasonable estimate for the missing values.\n\nDisadvantages: - Can introduce bias if the last observation is not representative of the missing values. - May not capture trends or patterns in the data, especially for long gaps. - Can lead to unrealistic flat segments in the time series. - Does not account for seasonality or cyclic patterns in the data.\n\ndftemp.loc[:, \"temp_ff\"] = dftemp[\"process_temperature_K_gaps\"].ffill()  # Pandas provides forward fill imputation out of the box.\n\nplot_temperature_data(dftemp, int_column=\"temp_ff\")",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data imputation</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/1_0_data_imputation.html#backward-fill-imputation",
+    "href": "2_act2/1_0_data_imputation.html#backward-fill-imputation",
+    "title": "10  Data imputation",
+    "section": "11.3 Backward fill imputation",
+    "text": "11.3 Backward fill imputation\nBackward fill imputation (also known as next observation carried backward) is another simple method for handling missing data in time series. It involves replacing missing values with the next non-missing value that follows the gap.\nAdvantages: - Simple to implement and computationally efficient. - Preserves the next known state, which can be useful in certain contexts. - Works well for short gaps where the next observation is a reasonable estimate for the missing values.\nDisadvantages: - Can introduce bias if the next observation is not representative of the missing values. - May not capture trends or patterns in the data, especially for long gaps. - Can lead to unrealistic flat segments in the time series. - Does not account for seasonality or cyclic patterns in the data.\n\ndftemp.loc[:, \"temp_bf\"] = dftemp[\"process_temperature_K_gaps\"].bfill()  # Pandas provides backward fill imputation out of the box.\n\nplot_temperature_data(dftemp, int_column=\"temp_bf\")",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data imputation</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/1_0_data_imputation.html#linear-interpolation",
+    "href": "2_act2/1_0_data_imputation.html#linear-interpolation",
+    "title": "10  Data imputation",
+    "section": "11.4 Linear Interpolation",
+    "text": "11.4 Linear Interpolation\nLinear interpolation is a method used to estimate missing values in a time series by connecting two known data points with a straight line and using that line to fill in the gaps.\nAdvantages: - Can provide more accurate estimates than forward or backward fill, especially for short gaps. - Preserves trends and patterns in the data better than simple imputation methods.\nDisadvantages: - Assumes a linear relationship between data points, which may not always be valid. - Can introduce bias if the underlying data has non-linear trends. - May not perform well for long gaps or highly volatile data.\n\ndftemp.loc[:, \"temp_linear\"] = dftemp[\"process_temperature_K_gaps\"].interpolate(\"linear\")\n\nplot_temperature_data(dftemp, int_column=\"temp_linear\")",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data imputation</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/1_0_data_imputation.html#polynomial-interpolation",
+    "href": "2_act2/1_0_data_imputation.html#polynomial-interpolation",
+    "title": "10  Data imputation",
+    "section": "11.5 Polynomial interpolation",
+    "text": "11.5 Polynomial interpolation\nPolynomial interpolation is a method used to estimate missing values in a time series by fitting a polynomial function of a given order to the known data points and using that function to fill in the gaps.\nAdvantages: - Can provide more accurate estimates than linear interpolation, especially for non-linear trends.\nDisadvantages: - More computationally expensive than other methods. - Tends to overshoot or oscillate between known data points, leading to unrealistic estimates. - May not perform well for short gaps or sparse data.\n\ndftemp.loc[:, \"temp_poly2\"] = dftemp[\"process_temperature_K_gaps\"].interpolate(\"polynomial\", order=2)\n\nplot_temperature_data(dftemp, int_column=\"temp_poly2\")\n\n                                                    \n\n\n\ndftemp.loc[:, \"temp_poly5\"] = dftemp[\"process_temperature_K_gaps\"].interpolate(\"polynomial\", order=5)\n\nplot_temperature_data(dftemp, int_column=\"temp_poly5\")",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data imputation</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/1_0_data_imputation.html#spline-interpolation",
+    "href": "2_act2/1_0_data_imputation.html#spline-interpolation",
+    "title": "10  Data imputation",
+    "section": "11.6 Spline interpolation",
+    "text": "11.6 Spline interpolation\nSpline interpolation is a method used to estimate missing values in a time series by fitting piecewise polynomial functions (splines) to the known data points and using those functions to fill in the gaps.\nThe specific type PCHIP (Piecewise Cubic Hermite Interpolating Polynomial) in particular preserves the monotonicity of the data and avoids overshooting, making it suitable for many real-world applications.\nAdvantages: - Can provide smooth and accurate estimates, especially for non-linear trends. - Can capture complex patterns in the data better than simpler methods. - Less prone to overfitting compared to high-degree polynomial interpolation.\nDisadvantages: - More computationally intensive than simpler methods. - Requires careful selection of spline parameters (e.g., degree, knots). - May not perform well for very short gaps or sparse data.\n\ndftemp.loc[:, \"temp_spline\"] = dftemp[\"process_temperature_K_gaps\"].interpolate(\"pchip\")\n\nplot_temperature_data(dftemp, int_column=\"temp_spline\")",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data imputation</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/1_0_data_imputation.html#rolling-mean-smoothing",
+    "href": "2_act2/1_0_data_imputation.html#rolling-mean-smoothing",
+    "title": "10  Data imputation",
+    "section": "12.1 Rolling mean smoothing",
+    "text": "12.1 Rolling mean smoothing\n\ndftemp[\"temp_mean_rolling3\"] = dftemp[\"process_temperature_K\"].rolling(window=3, center=True).mean()\nplot_smoothed_temperature_data(dftemp, smoothed_column=\"temp_mean_rolling3\")\n\n                                                    \n\n\n\ndftemp[\"temp_mean_rolling5\"] = dftemp[\"process_temperature_K\"].rolling(window=5, center=True).mean()\nplot_smoothed_temperature_data(dftemp, smoothed_column=\"temp_mean_rolling5\")\n\n                                                    \n\n\n\ndftemp[\"temp_mean_rolling10\"] = dftemp[\"process_temperature_K\"].rolling(window=10, center=True).mean()\nplot_smoothed_temperature_data(dftemp, smoothed_column=\"temp_mean_rolling10\")",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data imputation</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/1_0_data_imputation.html#rolling-median-smoothing",
+    "href": "2_act2/1_0_data_imputation.html#rolling-median-smoothing",
+    "title": "10  Data imputation",
+    "section": "12.2 Rolling median smoothing",
+    "text": "12.2 Rolling median smoothing\n\ndftemp[\"temp_median_rolling3\"] = dftemp[\"process_temperature_K\"].rolling(window=3, center=True).median()\nplot_smoothed_temperature_data(dftemp, smoothed_column=\"temp_median_rolling3\")\n\n                                                    \n\n\n\ndftemp[\"temp_median_rolling5\"] = dftemp[\"process_temperature_K\"].rolling(window=5, center=True).median()\nplot_smoothed_temperature_data(dftemp, smoothed_column=\"temp_median_rolling5\")\n\n                                                    \n\n\n\ndftemp[\"temp_median_rolling10\"] = dftemp[\"process_temperature_K\"].rolling(window=10, center=True).median()\nplot_smoothed_temperature_data(dftemp, smoothed_column=\"temp_median_rolling10\")",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data imputation</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/1_0_data_imputation.html#applying-smoothing-prior-to-interpolation",
+    "href": "2_act2/1_0_data_imputation.html#applying-smoothing-prior-to-interpolation",
+    "title": "10  Data imputation",
+    "section": "12.3 Applying smoothing prior to interpolation",
+    "text": "12.3 Applying smoothing prior to interpolation\nApplying smoothing prior to interpolation can help to reduce noise and improve the accuracy of the imputed values, especially for noisy data.\nNote that smoothing is applied on the gapped data, not on the original data. The argument min_periods=2 in the rolling mean function ensures that at least two non-NaN values are required to compute the mean, which helps to not further erode the gapped series.\n\ndftemp.loc[:, \"process_temperature_K_gaps_smoothed\"] = dftemp[\"process_temperature_K_gaps\"].rolling(window=10, center=True, min_periods=2).mean()\ndftemp.loc[:, \"temp_smoothed_pchip\"] = dftemp[\"process_temperature_K_gaps_smoothed\"].interpolate(\"pchip\")\n\ndftemp.loc[:, \"process_temperature_K_gaps_smoothed_plot\"] = dftemp.loc[:, \"process_temperature_K_gaps_smoothed\"]\ndftemp.loc[dftemp[\"process_temperature_K_gaps\"].isna(), \"process_temperature_K_gaps_smoothed_plot\"] = None  # Keep NaN of originally gapped column for plotting\n\nplot_temperature_data(dftemp, gap_column=\"process_temperature_K_gaps_smoothed_plot\", int_column=\"temp_smoothed_pchip\")",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Data imputation</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/2_1_timeseries_decomposition.html",
+    "href": "2_act2/2_1_timeseries_decomposition.html",
+    "title": "11  Time Series Decomposition",
+    "section": "",
+    "text": "11.1 Examples\nTime series data often exhibit patterns such as trends, seasonality, and cycles. Decomposing a time series into its components can help to better understand the underlying processes.\nTime series are usually decomposed into three components: - Trend: \\(T_t\\), long-term progression of the series (e.g., increasing or decreasing). - Seasonality: \\(S_t\\), regular patterns that repeat over a fixed period (e.g., daily, weekly, yearly). - Residual: \\(I_t\\), random noise or irregular component.\nAdditive models assume that the components add together to form the time series: \\[ Y_t = T_t + S_t + I_t \\]\nMultiplicative models assume that the components multiply together to form the time series: \\[ Y_t = T_t \\times S_t \\times I_t \\]",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Time Series Decomposition</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/2_1_timeseries_decomposition.html#examples",
+    "href": "2_act2/2_1_timeseries_decomposition.html#examples",
+    "title": "11  Time Series Decomposition",
+    "section": "",
+    "text": "Imports\nThis example uses the package statsmodels for time series decomposition.\n\nimport numpy as np\nimport pandas as pd\nimport plotly.express as px\nimport plotly.graph_objs as go\nimport plotly.io as pio\nimport plotly.subplots as sp\n\nfrom statsmodels.tsa.seasonal import seasonal_decompose, STL  # used for decomposition\n\n\npio.renderers.default = \"notebook\"  # set the default plotly renderer to \"notebook\" (necessary for quarto to render the plots)\n\nGenerating Example Data\n\nnp.random.seed(42)  # for reproducibility\n\ndate_range = pd.date_range(start=\"2010-01-01\", end=\"2024-12-31\", freq=\"MS\")\n\ntrend = 100 + 0.9 * np.arange(len(date_range))                      # nonlinear trend\nseasonality = 121 * np.sin(np.pi * (date_range.month / 12))         # yearly seasonality\n\nnoise = np.random.normal(0, 21, len(date_range))                    # random noise at each point\n\n# Add outliers with a probability of 0.05\noutlier_mask = np.random.rand(len(date_range)) &lt; 0.05\noutlier_values = np.random.normal(10, 100, len(date_range))  # large outliers\nnoise[outlier_mask] += outlier_values[outlier_mask]\n\nsales = trend + seasonality + noise                                 # final data as sum of all components\n\ndf = pd.DataFrame({\"Date\": date_range, \"Sales\": sales}).set_index(\"Date\")\n\n\nfig = px.line(df, y=\"Sales\", title=\"Sales Over Time\")\nfig.show()\n\n                                                    \n\n\nIn the above plot, we can see a clear upward trend, but identifying seasonality is more difficult.\nTo support this visual analysis, we add vertical lines at the beginning of each year.\n\nfig = px.line(df, y=\"Sales\", title=\"Sales Over Time\")\n\nfor year in range(df.index.year.min(), df.index.year.max() + 1):\n    fig.add_vline(x=pd.Timestamp(f\"{year}-01-01\"), line_dash=\"dash\", line_color=\"gray\", opacity=0.5)\n\nfig.show()\n\n                                                    \n\n\nNow it is apparent that there is a yearly seasonal pattern, with peaks around mid-year.\nAlgorithmic decomposition of a time series into its components is not a trivial task. Many algorithms exist to achieve this, each with its own advantages and disadvantages.\nIn the following, we use a very simple additive model based on moving averages to decompose our time series. First, the trend is estimated using a moving average with a smaller window size. Then, the detrended series is calculated by subtracting the trend from the original series. The seasonal component is estimated by averaging the values for each season (e.g., each month, year, ..) in the detrended time series. Finally, the residual component is calculated by subtracting both the trend and seasonal components from the original series.\nNote that this is a very naive approach and according to the documentation of seasonal_decompose a more sophisticated method should be preferred. However, it is easy to understand and serves well for demonstration purposes.\n\ndecomposed_ts = seasonal_decompose(df, model='additive')\n\n\ndecomposed_ts.plot();  # the object has a built-in plot method (based on matplotlib)\n\n\n\n\n\n\n\n\nHere is a helper function to create a plotly figure with four plots.\n\ndef seasonal_decompose_plotly(decomposed_ts, title):\n    \"\"\"\n    Plots a time series decomposition using Plotly.\n    \n    Parameters:\n    decomposed_ts (DecomposeResult): Decomposed time series result.\n\n    Returns:\n    plotly object\n    \"\"\"\n\n    # Extract components\n    observed = decomposed_ts.observed\n    trend = decomposed_ts.trend\n    seasonal = decomposed_ts.seasonal\n    resid = decomposed_ts.resid\n\n    # Create subplots\n    fig_decomp = sp.make_subplots(rows=4, cols=1, shared_xaxes=True,\n                                subplot_titles=[\"Observed\", \"Trend\", \"Seasonal\", \"Residual\"])\n\n    fig_decomp.add_trace(go.Scatter(x=observed.index, y=observed.values.flatten(), name=\"Observed\"), row=1, col=1)\n    fig_decomp.add_trace(go.Scatter(x=trend.index, y=trend, name=\"Trend\"), row=2, col=1)\n    fig_decomp.add_trace(go.Scatter(x=seasonal.index, y=seasonal, name=\"Seasonal\"), row=3, col=1)\n    fig_decomp.add_trace(go.Scatter(x=resid.index, y=resid, name=\"Residual\"), row=4, col=1)\n\n    fig_decomp.update_layout(height=900, title_text=title)\n    \n    return fig_decomp\n\nPlease note the different \\(y\\)-axes scales in the following plot.\n\nseasonal_decompose_plotly(decomposed_ts, title=\"Seasonal Decomposition of Time Series (Additive)\")\n\n                                                    \n\n\nA more robust method for time series decomposition is STL (Seasonal and Trend decomposition using Loess).\nIt not only allows for more flexibility in the decomposition process (e.g. look at seasonal changes over time), but is also more robust to outliers.\n\ndecomp_stl = STL(df, robust=True).fit()  # robust=True to be less sensitive to expected outliers\n\n\nseasonal_decompose_plotly(decomp_stl, title=\"STL Decomposition\")\n\n                                                    \n\n\nHaving the decomposed components at hand, opens a variety of applications.\n\n11.1.1 Denoising\nUsing the trend and seasonal components from the STL decomposition, we can create a denoised version of the original time series.\n\ndecomp_stl_estimated = decomp_stl.seasonal + decomp_stl.trend\n\n\nfig = px.line(decomp_stl_estimated, title=\"Estimated versus Observed Sales\", labels={\"value\": \"Sales\", \"index\": \"Date\"})\nfig.update_traces(name=\"Estimated\", showlegend=True)\n\nfig.add_trace(go.Scatter(x=df.index, y=df[\"Sales\"], mode='lines', name=\"Observed\"))\nfig.show()\n\n                                                    \n\n\nIn previous plot, we can see that the estimated values follow the observed values quite closely, indicating that the STL decomposition has effectively captured the underlying patterns in the data. But we can also see some points with larger deviations, which are likely outliers in the original data.\n\n\n11.1.2 Anomaly Detection\nOne way to quantify outliers is to apply a threshold to the residuals (e.g., 3 times the standard deviation of the residuals, also known as the 3-sigma rule).\n\nresid = decomp_stl.resid\nstd_resid = resid.std()\n\nfig = go.Figure()\nfig.add_trace(go.Scatter(x=resid.index, y=resid, mode='lines', name='Residual'))\n# Add horizontal lines for ±3 std. dev.\nfig.add_hline(y=resid.mean() + 3 * std_resid, line_dash=\"dash\", line_color=\"blue\", opacity=0.7, name=\"+3 Std. Dev.\")\nfig.add_hline(y=resid.mean() - 3 * std_resid, line_dash=\"dash\", line_color=\"blue\", opacity=0.7, name=\"-3 Std. Dev.\")\n\n# Fill area between the lines\nfig.add_traces([\n    go.Scatter(\n        x=resid.index, \n        y=[resid.mean() + 3 * std_resid] * len(resid), \n        mode='lines',\n        line=dict(width=0),\n        showlegend=False,\n        hoverinfo='skip'\n    ),\n    go.Scatter(\n        x=resid.index, \n        y=[resid.mean() - 3 * std_resid] * len(resid), \n        mode='lines',\n        fill='tonexty',\n        fillcolor='rgba(0,0,255,0.08)',\n        line=dict(width=0),\n        showlegend=False,\n        hoverinfo='skip'\n    )\n])\n\nfig.update_layout(title=\"Residual with ±3 Std. Dev. Area\", yaxis_title=\"Residual\")\nfig.show()\n\n                                                    \n\n\nSo the outliers are:\n\noutliers = df[(resid &gt; resid.mean() + 3 * std_resid) | (resid &lt; resid.mean() - 3 * std_resid)]\noutliers\n\n\n\n\n\n\n\n\nSales\n\n\nDate\n\n\n\n\n\n2014-09-01\n447.316646\n\n\n2016-07-01\n139.561235\n\n\n2018-03-01\n489.942096\n\n\n2021-06-01\n227.748919\n\n\n\n\n\n\n\n\nfig = px.line(df, y=\"Sales\", title=\"Sales with Outliers Highlighted\", labels={\"value\": \"Sales\", \"index\": \"Date\"})\nfig.add_scatter(\n    x=outliers.index,\n    y=outliers[\"Sales\"],\n    mode=\"markers\",\n    marker=dict(color=\"red\", size=10, symbol=\"x\"),\n    name=\"Outliers\"\n)\nfig.show()\n\n                                                    \n\n\n\n\n11.1.3 Detrending\nUsing the decomposed components also allows for detrending the time series, which can be useful for further analysis.\n\n# Detrend the observed series by subtracting the trend component\ndetrended = decomp_stl.observed[\"Sales\"] - decomp_stl.trend\n\nfig = px.line(detrended, title=\"Detrended Sales Over Time\", labels={\"value\": \"Detrended Sales\", \"index\": \"Date\"})\nfig.show()\n\n                                                    \n\n\n\n\n11.1.4 Deseasonalizing\nAnother important application is to deseasonalize the time series, which is often a prerequisite for forecasting models.\n\n# Deseasonalize the observed series by subtracting the seasonal component\ndeseasonalized = decomp_stl.observed[\"Sales\"] - decomp_stl.seasonal\n\nfig = px.line(deseasonalized, title=\"Deseasonalized Sales Over Time\", labels={\"value\": \"Deseasonalized Sales\", \"index\": \"Date\"})\nfig.show()",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Time Series Decomposition</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/3_1_timeseries_clustering.html",
+    "href": "2_act2/3_1_timeseries_clustering.html",
+    "title": "12  Time Series Clustering",
+    "section": "",
+    "text": "12.1 Clustering algorithms\nThe goal of clustering is to group similar time series together based on their characteristics or patterns.\nBut what does similar mean in the context of time series data? Defining similarity is not straight forward due to the inherent subjectivity involved.\nDifficulties are: - Context-Dependent: Similarity can vary based on the specific application or domain. - Human Bias: Metrics are often chosen based on human intuition, which can introduce bias. - Inconsistent Interpretations: Different experts may have different perspectives on what constitutes similarity. - Parameter Sensitivity: Many similarity measures come with tunable parameters that can significantly affect the results.\nTime series clustering algorithms can be broadly categorized into four main types: - Distance-Based: These algorithms rely on a distance measure to quantify the similarity between time series. Examples include k-means and k-median. - Distribution-Based: These methods model the distribution (in a very general sense) of the time series data and cluster based on statistical properties or descriptive features that represent the characteristics of the time series. Examples include Gaussian Mixture Models (GMM) and DBSCAN. - Subsequence-Based: These algorithms focus on clustering representative subsequences of time series data rather than the entire series. Examples include methods based on shapelets and sliding windows. - Representation-Learning-Based: These methods use techniques like autoencoders or recurrent neural networks to learn a lower-dimensional representation of the time series data, which is then clustered using traditional clustering algorithms.\nPaparrizos, Yang, and Li (2024) gives a good overview of different time series clustering methods.\nIn the following, we will briefly introduce distance-based clustering using two common similarity measures: Euclidean distance and Dynamic Time Warping (DTW).",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Time Series Clustering</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/3_1_timeseries_clustering.html#sec-act2-cluster-similaritymeasures",
+    "href": "2_act2/3_1_timeseries_clustering.html#sec-act2-cluster-similaritymeasures",
+    "title": "12  Time Series Clustering",
+    "section": "12.2 Similarity Measures",
+    "text": "12.2 Similarity Measures\n\n\nimport numpy as np\n\nimport plotly.graph_objs as go\nimport plotly.io as pio\n\npio.renderers.default = \"notebook\"  # set the default plotly renderer to \"notebook\" (necessary for quarto to render the plots)\n\n\nnr_points = 50\ninterval_start = 0\ninterval_end = 20\n\nt = np.linspace(interval_start, interval_end, nr_points)\n\n# Generate two similar shaped time series\nseries1 = 0.8 + 0.9 * np.sin(0.9 + 0.9 * t) + 0.03 * np.random.randn(nr_points) - 0.2 * (t / (interval_end - interval_start))\nseries2 = np.sin(1.05 * t) + 0.15 * np.random.randn(nr_points)\n\n\ndef plot_time_series_plotly(t, series1, series2, title):\n    fig = go.Figure()\n    fig.add_trace(go.Scatter(x=t, y=series1, mode='lines+markers', name='Series 1'))\n    fig.add_trace(go.Scatter(x=t, y=series2, mode='lines+markers', name='Series 2'))\n    fig.update_layout(\n        title=title,\n        xaxis_title='t',\n        yaxis_title='Value',\n        legend_title='Series'\n    )\n    return fig\n\n\nplot_time_series_plotly(t, series1, series2, 'Two Similar Time Series')\n\n                                                    \n\n\n\n12.2.1 Euclidean Distance\nThe Euclidean distance is the most straightforward similarity measure. It calculates the straight-line distance between two points. For time series data, this means comparing the values at each time point directly.\nHaving two time series \\(X = (x_1, x_2, \\ldots, x_n)\\) and \\(Y = (y_1, y_2, \\ldots, y_n)\\) of equal length \\(n\\), the Euclidean distance \\(d\\) between them is calculated as: \\[d(X, Y) = \\sqrt{\\sum_{i=1}^{n} (x_i - y_i)^2}\\]\n\n\nCode\ndef plot_euclidean_distance(series1, series2, t):\n    fig = go.Figure()\n    fig.add_trace(go.Scatter(x=t, y=series1, mode='lines+markers', name='Series 1'))\n    fig.add_trace(go.Scatter(x=t, y=series2, mode='lines+markers', name='Series 2'))\n\n    # Draw lines showing the Euclidean distance at each point (every 5th for clarity)\n    for i, v in enumerate(t):\n        fig.add_trace(go.Scatter(\n            x=[v, v],\n            y=[series1[i], series2[i]],\n            mode='lines',\n            line=dict(color='gray', dash='dash', width=1),\n            showlegend=False\n        ))\n\n    fig.update_layout(\n        title='Euclidean Distance Visualization Between Series 1 and Series 2',\n        xaxis_title='t',\n        yaxis_title='Value'\n    )\n    \n    return fig\n\n\n\nplot_euclidean_distance(series1, series2, t)\n\n                                                    \n\n\n\ndef euclidean_distance(series1, series2):\n    return np.sqrt(np.sum((series1 - series2) ** 2))\n\nd_euclidean = euclidean_distance(series1, series2)\nprint(f'Euclidean Distance: {d_euclidean:.2f}')\n\nEuclidean Distance: 6.35\n\n\n\n\n12.2.2 Dynamic Time Warping\nDynamic Time Warping (DTW) is a more advanced similarity measure that accounts for shifts and distortions in the time axis. It finds the optimal alignment between two time series by warping the time dimension, allowing for comparisons even when the series are out of phase or have different lengths.\n\nfrom scipy.spatial.distance import cdist\n\ndef dtw_distance(s1, s2):\n    n, m = len(s1), len(s2)\n\n    # initializing cost matrix\n    cost = np.full((n + 1, m + 1), np.inf)\n    cost[0, 0] = 0\n\n    for i in range(1, n + 1):\n        for j in range(1, m + 1):\n            dist = abs(s1[i - 1] - s2[j - 1])\n            cost[i, j] = dist + min(cost[i - 1, j],     # insertion\n                                    cost[i, j - 1],     # deletion\n                                    cost[i - 1, j - 1]) # match\n            \n    # backtracking path (just for visualization)\n    path = []\n\n    i, j = n, m\n    \n    while i &gt; 0 and j &gt; 0:\n        path.append((i - 1, j - 1))\n        steps = [(i - 1, j), (i, j - 1), (i - 1, j - 1)]\n        costs = [cost[s] if s[0] &gt;= 0 and s[1] &gt;= 0 else np.inf for s in steps]\n        min_step = steps[np.argmin(costs)]\n        i, j = min_step\n\n    path = path[::-1]\n\n    return cost[n, m], path\n\nd_dtw, path = dtw_distance(series1, series2)\n\nprint(f'Dynamic Time Warping Distance: {d_dtw:.2f}')\n\nDynamic Time Warping Distance: 21.82\n\n\nNote that this DTW implementation is using a very naive approach computing the full cost matrix. Many different variants exist that are more efficient and/or add constraints to the warping path. Lahreche and Boucheham (2021) provides a good overview.\n\ndef plot_dtw_alignment(s1, s2, t, path):\n    fig = go.Figure()\n    fig.add_trace(go.Scatter(x=t, y=s1, mode='lines+markers', name='Series 1'))\n    fig.add_trace(go.Scatter(x=t, y=s2, mode='lines+markers', name='Series 2'))\n\n    # Draw alignment lines\n    for (i, j) in path:\n        fig.add_trace(go.Scatter(\n            x=[t[i], t[j]],\n            y=[s1[i], s2[j]],\n            mode='lines',\n            line=dict(color='gray', width=1, dash='dot'),\n            showlegend=False\n        ))\n\n    fig.update_layout(\n        title='Dynamic Time Warping Alignment Between Series 1 and Series 2',\n        xaxis_title='t',\n        yaxis_title='Value'\n    )\n    return fig\n\n\nplot_dtw_alignment(series1, series2, t, path)\n\n                                                    \n\n\n\n\n12.2.3 Preprocessing\nIn the previous plots we observe that noise, outliers and positioning of the time series can have a significant impact on the similarity measures. To mitigate these effects, we can apply various preprocessing techniques such as: - Smoothing: Applying filters (e.g., moving average, Gaussian) to reducce noise. - Normalization: Scaling the time series to a common range to ensure that differences in amplitude do not dominate the similarity measure. - Detrending: Removing trends to focus on the fluctuations around a mean level.\nNote that the applied preprocessing techniques should be chosen based on the specific characteristics of the data and the analysis goals.\nHere, we first smooth the time series using a simple moving average filter. This can easily be realized by convolution with a specific kernel (a vector consisting of equal weights summing to 1, where the length of the vector is equal to the desired window size).\n\ndef moving_average(series, window_size=3):\n    kernel = np.ones(window_size) / window_size\n    return np.convolve(series, kernel, mode='same')\n\nseries1_smooth = moving_average(series1)\nseries2_smooth = moving_average(series2)\n\n\nplot_time_series_plotly(t, series1_smooth, series2_smooth, 'Two Similar Time Series Smoothed')\n\n                                                    \n\n\n\ndef normalize(series):\n    return (series - np.min(series)) / (np.max(series) - np.min(series))\n\nseries1_smooth_norm = normalize(series1_smooth)\nseries2_smooth_norm = normalize(series2_smooth)\n\n\nplot_time_series_plotly(t, series1_smooth_norm, series2_smooth_norm, 'Two Similar Time Series Smoothed and Normalized')\n\n                                                    \n\n\n\nd_euclidean_sn = euclidean_distance(series1_smooth_norm, series2_smooth_norm)\nprint(f'Euclidean Distance: {d_euclidean_sn:.2f}')\n\nplot_euclidean_distance(series1_smooth_norm, series2_smooth_norm, t)\n\nEuclidean Distance: 2.26\n\n\n                                                    \n\n\n\nd_dtw_sn, path_sn = dtw_distance(series1_smooth_norm, series2_smooth_norm)\n\nprint(f'Dynamic Time Warping Distance: {d_dtw_sn:.2f}')\n\nplot_dtw_alignment(series1_smooth_norm, series2_smooth_norm, t, path_sn)\n\nDynamic Time Warping Distance: 4.70",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Time Series Clustering</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/3_1_timeseries_clustering.html#k-means-clustering",
+    "href": "2_act2/3_1_timeseries_clustering.html#k-means-clustering",
+    "title": "12  Time Series Clustering",
+    "section": "12.3 k-Means Clustering",
+    "text": "12.3 k-Means Clustering\n\nJust like the \\(k\\)-means algorithm for tabular data, the \\(k\\)-means algorithm for time series data aims to partition a set of time series into \\(k\\) clusters, where each time series belongs to the cluster with the nearest mean (centroid) time series.\nThe algorithm works as follows:\n\nInitialization: Randomly select \\(k\\) initial centroids from the time series dataset.\nAssignment Step: Assign each time series to the cluster whose centroid is closest, based on a chosen similarity measure (e.g., Euclidean distance, Dynamic Time Warping).\nUpdate Step: Recalculate the centroids of the clusters by taking the mean of all time series assigned to each cluster.\nRepeat: Repeat the assignment and update steps until convergence (i.e., when assignments no longer change or a maximum number of iterations is reached).\n\nIn practice, calculating the centroid of a cluster needs to be compatible with the chosen similarity measure (at least it is very beneficial if it is compatible). Especially for non-Euclidean measures with time series of variable length like Dynamic Time Warping, specialized methods may be used to compute the centroid.\nHere we will have a look at an example using the sktime library. The dataset we will use is a subset of the trace dataset, which is a synthetic dataset introduced by Roverso (2002) for the purpose of plant diagnostics. The subset includes only 4 classes of univariate time series.\n\nimport numpy as np\nimport plotly.graph_objs as go\nimport plotly.io as pio\n\nfrom sklearn.preprocessing import StandardScaler\nfrom sktime.clustering.k_means import TimeSeriesKMeansTslearn\nfrom tslearn.datasets import CachedDatasets\n\npio.renderers.default = \"notebook\"  # set the default plotly renderer to \"notebook\" (necessary for quarto to render the plots)\n\n\nX_train, y_train, X_test, y_test = CachedDatasets().load_dataset(\"Trace\")\n\n# Combine train and test sets since clustering does not require a train-test split\nX = np.concatenate((X_train, X_test))\ny = np.concatenate((y_train, y_test))\n\n\nX.shape\n\n(200, 275, 1)\n\n\n\ny.shape\n\n(200,)\n\n\nWe have 200 time series in total, each of length 275.\nNote that we also have class labels, which is not the case in real clustering problems. We will solely use them in the end to evaluate the clustering performance.\n\nfig = go.Figure()\nfor i in range(X.shape[0]):\n    fig.add_trace(go.Scatter(y=X[i, :, 0], mode='lines', line=dict(width=1, color='grey'), opacity=0.2, showlegend=False))\n\nfig.update_layout(title='All Time Series in X', xaxis_title='Time', yaxis_title='Value', height=400)\nfig.show()\n\n                                                    \n\n\nWithout class labels it is hard to count the number of classes in the data, but we can see that there are some patterns in the data.\nSince normalization and scaling is important for distance-based methods, we will use the StandardScaler from sklearn to standardize the data to have zero mean and unit variance.\n\nX_scaled = StandardScaler().fit_transform(X[:, :, 0])  # In this case, the data set was already scaled beforehand, but we do it here explicitely for demonstration purposes\n\nLet us also just visualize a few time series from the dataset to get a better idea of the data.\n\nCOLORS = ['#A6CEE3', '#B2DF8A', '#FDBF6F', '#CAB2D6']  # pastel, colorblind-friendly\n\nsampled_ids = [0, 10, 25, 81]\n\nfig = go.Figure()\n\nfor idx, i in enumerate(sampled_ids):\n    fig.add_trace(go.Scatter(\n        y=X[i, :, 0],\n        mode='lines',\n        line=dict(width=3, color=COLORS[idx]),\n        name=f\"Sample {i}\"\n    ))\n\nfig.update_layout(title='Sampled Time Series from X', xaxis_title='Time', yaxis_title='Value', height=400)\nfig.show()\n\n                                                    \n\n\n\n12.3.1 Euclidean Distance Example\nIn this example we know that there are 4 classes in the data, so we will set \\(k=4\\).\nLuckily, tslearn already implements a variety of clustering algorithms that we can use out of the box, including the \\(k\\)-means algorithm.\n\nk = 4  # number of clusters\n\nclusterer = TimeSeriesKMeansTslearn(n_clusters=4, metric=\"euclidean\", random_state=42)\ny_predicted = clusterer.fit_predict(X)\n\nHelper function for plotting clusters and cluster centers\n\ndef plot_clusters(X, y, title):\n    fig = go.Figure()\n\n    for cluster_idx, cluster in enumerate(sorted(set(y))):\n        idx = np.where(y == cluster)[0]\n        show_legend = True  # Only show legend for the first trace of each cluster\n        \n        for i in idx:\n            fig.add_trace(go.Scatter(\n                y=X[i, :, 0],\n                mode='lines',\n                line=dict(width=1, color=COLORS[cluster_idx]),\n                opacity=0.5,\n                name=f'Cluster {cluster_idx + 1}' if show_legend else None,\n                legendgroup=cluster_idx,\n                showlegend=show_legend\n            ))\n            show_legend = False\n\n    fig.update_layout(\n        title=title,\n        xaxis_title='Time',\n        yaxis_title='Value',\n        height=500\n    )\n\n    fig.show()\n\n\ndef plot_centroids(clusterer):\n    fig = go.Figure()\n\n    for cluster_idx, centroid in enumerate(clusterer.cluster_centers_):\n        fig.add_trace(go.Scatter(\n            y=centroid[:, 0],\n            mode='lines',\n            line=dict(width=3, color=COLORS[cluster_idx]),\n            name=f'Centroid {cluster_idx + 1}'\n        ))\n\n    fig.update_layout(\n        title='Cluster Centroids',\n        xaxis_title='Time',\n        yaxis_title='Value',\n        height=400\n    )\n    \n    fig.show()\n\nNext, we plot the \\(k\\)-means clusters. Remember that the legend is clickable.\n\nplot_clusters(X, y_predicted, 'Time Series clustered by k-means (euclidean distance)')\n\n                                                    \n\n\nIn comparison, here are the true classes according to the labels in the dataset.\n\nplot_clusters(X, y, 'Time Series with true labels')\n\n                                                    \n\n\nThe four classes from the original data set can be described as follows: - Class A (Cluster 1 in Figure): Time series that start high, rise to a huge peak around the middle, fall back to low and then gradually rise to high again. - Class B (Cluster 2 in Figure): Time series that start high, drop to a low point around the middle, and then rise back up. - Class C (Cluster 3 in Figure): Time series that start low, quickly rise to high around the middle, and then show some oscillations on high plateau - Class D (Cluster 4 in Figure): Similiar to Class C, but without oscillations.\nThe clusters found by the \\(k\\)-means algorithm do not correspond well to these classes: - Class A and B are mixed up in Cluster 2. - Class C and D are mixed up in Cluster 1, 3, and 4.\nThis is due to the fact that the \\(k\\)-means algorithm is based on minimizing the within-cluster distances based on the euclidean distance, which does not necessarily correspond to the true classes in the data.\nThis also reflects when we visualize the cluster centers.\n\nplot_centroids(clusterer)\n\n                                                    \n\n\nNext, let us check how the clustering performs with dynamic time warping as distance measure.\n\n\n12.3.2 Dynamic Time Warping\nWhile euclidean distance also uses the mean for computing the centroid, dynamic time warping uses a more complex method called soft-DTW barycenter averaging, which is compatible with the DTW distance measure.\n\nSoft-DTW, a differentiable version of DTW, enables the use of gradient-based optimization techniques for computing the barycenter. Its differentiable nature also facilitates its integration as loss function into machine learning algorithms, in particular neural networks.\nMore information on soft-DTW can be found in the related paper Cuturi and Blondel (2017).\n\n\nk = 4  # number of clusters\n\nclusterer_dwt = TimeSeriesKMeansTslearn(n_clusters=4, metric=\"softdtw\", n_jobs=-1, random_state=1337)  # n_jobs=-1 uses all available CPU cores\ny_predicted_dwt = clusterer_dwt.fit_predict(X)\n\nHave a look at the execution times of both algorithms. While DTW is executed in parallel (n_jobs=-1), it is still significantly slower than the euclidean distance version. The reason for this is that the DTW algorithm got a time complexity of \\(O(NM)\\), where \\(N\\) and \\(M\\) are the lengths of the two time series to be compared. More sophisticated algorithms are able to slightly reduce this time complexity, but so far, the runtime complexity stays quadratic.\nHowever, the clustering results look better now.\n\nplot_clusters(X, y_predicted_dwt, 'Time Series clustered by k-means (dynamic time warping)')\n\n                                                    \n\n\n\nplot_centroids(clusterer_dwt)\n\n                                                    \n\n\nCluster 2 matches class A very well, cluster 4 matches class B. However, cluster 1 and 3 still contain a mix of class C and D.\n\n\n12.4 Elbow method for determining the number of clusters\nOne open question is how to determine the number of clusters \\(k\\). A common method is the elbow method, which plots the sum of distances to the nearest cluster center for different values of \\(k\\). The idea is to choose the value of \\(k\\) at which the rate of decrease sharply shifts, forming an elbow shape in the plot.\n\nsum_of_distances = []\nK = range(2, 10)\n\nfor k in K:\n    km = TimeSeriesKMeansTslearn(\n                          n_clusters=k,\n                          metric=\"euclidean\",\n                          random_state=1337,\n                          n_jobs=-1,\n    )\n    \n    km = km.fit(X)\n    sum_of_distances.append(km.inertia_)\n\n\nimport plotly.graph_objs as go\n\nfig = go.Figure()\n\nfig.add_trace(go.Scatter(\n    x=list(K),\n    y=sum_of_distances,\n    mode='lines+markers',\n    marker=dict(color='blue'),\n    line=dict(color='blue'),\n    name='Sum of distances'\n))\n\nfig.update_layout(\n    title='Elbow Method For Optimal k',\n    xaxis_title='k',\n    yaxis_title='Sum of distances'\n)\n\nfig.show()\n\n                                                    \n\n\nThe elbow method suggests that four clusters is a good choice for \\(k\\), which matches the true number of classes in the data.\nOften it makes sense to start with a larger number of clusters and then merge similar clusters later on. This allows to capture more subtle patterns in the data.\n\n\n12.5 Additional readings\ntslearn dtw documentation (accessed: 29 09 2025) briefly introduces dynamic time warping, barycenters and soft-DTW. To learn more about different methods used to calculate barycenters, have a look at the tslearn barycenter documentation (accessed: 29 09 2025).\nTo learn more about dynamic time warping, the wikipedia article on dynamic time warping (accessed: 29 09 2025) is a good starting point.\n\\(k\\)-means clustering in time series is still a very active research area. A recent preprint by Holder, Bagnall, and Lines (2024) gives a nice overview over the variants of \\(k\\)-means for time series and discusses their pros and cons.\n\n\n\n\n\n\nCuturi, Marco, and Mathieu Blondel. 2017. “Soft-Dtw: A Differentiable Loss Function for Time-Series.” In International Conference on Machine Learning, 894–903. PMLR.\n\n\nHolder, Christopher, Anthony Bagnall, and Jason Lines. 2024. “On Time Series Clustering with k-Means.” arXiv Preprint arXiv:2410.14269.\n\n\nLahreche, Abdelmadjid, and Bachir Boucheham. 2021. “A Comparison Study of Dynamic Time Warping’s Variants for Time Series Classification.” International Journal of Informatics and Applied Mathematics 4 (1): 56–71.\n\n\nPaparrizos, John, Fan Yang, and Haojun Li. 2024. “Bridging the Gap: A Decade Review of Time-Series Clustering Methods.” arXiv Preprint arXiv:2412.20582.\n\n\nRoverso, Davide. 2002. “Plant Diagnostics by Transient Classification: The Aladdin Approach.” International Journal of Intelligent Systems 17 (8): 767–90.",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Time Series Clustering</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/3_1_timeseries_clustering.html#elbow-method-for-determining-the-number-of-clusters",
+    "href": "2_act2/3_1_timeseries_clustering.html#elbow-method-for-determining-the-number-of-clusters",
+    "title": "12  Time Series Clustering",
+    "section": "12.4 Elbow method for determining the number of clusters",
+    "text": "12.4 Elbow method for determining the number of clusters\nOne open question is how to determine the number of clusters \\(k\\). A common method is the elbow method, which plots the sum of distances to the nearest cluster center for different values of \\(k\\). The idea is to choose the value of \\(k\\) at which the rate of decrease sharply shifts, forming an elbow shape in the plot.\n\nsum_of_distances = []\nK = range(2, 10)\n\nfor k in K:\n    km = TimeSeriesKMeansTslearn(\n                          n_clusters=k,\n                          metric=\"euclidean\",\n                          random_state=1337,\n                          n_jobs=-1,\n    )\n    \n    km = km.fit(X)\n    sum_of_distances.append(km.inertia_)\n\n\nimport plotly.graph_objs as go\n\nfig = go.Figure()\n\nfig.add_trace(go.Scatter(\n    x=list(K),\n    y=sum_of_distances,\n    mode='lines+markers',\n    marker=dict(color='blue'),\n    line=dict(color='blue'),\n    name='Sum of distances'\n))\n\nfig.update_layout(\n    title='Elbow Method For Optimal k',\n    xaxis_title='k',\n    yaxis_title='Sum of distances'\n)\n\nfig.show()\n\n                                                    \n\n\nThe elbow method suggests that four clusters is a good choice for \\(k\\), which matches the true number of classes in the data.\nOften it makes sense to start with a larger number of clusters and then merge similar clusters later on. This allows to capture more subtle patterns in the data.",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Time Series Clustering</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/3_1_timeseries_clustering.html#additional-readings",
+    "href": "2_act2/3_1_timeseries_clustering.html#additional-readings",
+    "title": "12  Time Series Clustering",
+    "section": "12.5 Additional readings",
+    "text": "12.5 Additional readings\ntslearn dtw documentation (accessed: 29 09 2025) briefly introduces dynamic time warping, barycenters and soft-DTW. To learn more about different methods used to calculate barycenters, have a look at the tslearn barycenter documentation (accessed: 29 09 2025).\nTo learn more about dynamic time warping, the wikipedia article on dynamic time warping (accessed: 29 09 2025) is a good starting point.\n\\(k\\)-means clustering in time series is still a very active research area. A recent preprint by Holder, Bagnall, and Lines (2024) gives a nice overview over the variants of \\(k\\)-means for time series and discusses their pros and cons.",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Time Series Clustering</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/4_1_timeseries_classification.html",
+    "href": "2_act2/4_1_timeseries_classification.html",
+    "title": "13  Time Series Classification",
+    "section": "",
+    "text": "13.1 Time Series Forests\nTime series classification belongs to the class of supervised learning and is defined as the task of assigning a label to a time series.\nAgain, this is a very active research area and many different methods have been proposed. For a good overview, check e.g. Faouzi (2024), which divide time series classification methods into the following categories:\nWe can see that many of these categories already appeared in Section 12.1.\nA simple metric-based (distance-based) baseline method for time series classification is to use a nearest neighbor classifier with a suitable distance measure for time series, e.g. dynamic time warping (DTW). This is implemented in sktime as KNeighborsTimeSeriesClassifier or KNeighborsTimeSeriesClassifierTslearn (latter is just a wrapper for the implementation in tslearn). These classifiers work similar to the KNeighborsClassifier for tabular data from sklearn, but use a distance measure suitable for time series. We have learned about euclidean distance and DTW in Section 12.2.\nIn this section we will have a brief look at time series forests (tree-based) in the context of time series classification.",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Time Series Classification</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/4_1_timeseries_classification.html#time-series-forests",
+    "href": "2_act2/4_1_timeseries_classification.html#time-series-forests",
+    "title": "13  Time Series Classification",
+    "section": "",
+    "text": "A time series forest is an ensemble of time series decision trees. Each decision tree is built using a random set of intervals from the time series.\nFor each interval, summary statistics (mean, standard deviation, slope) are computed and used as features for the decision tree.\nThe final prediction is made by aggregating the predictions of all trees in ensemble (e.g. by majority vote for classification).\nHere is a simple example showing the feature extraction of three time series:\n\n\n\nTime Series Decision Tree Interval Example\n\n\n\n\n\n\nInterval\n\n\nCurve\n\n\nMean\n\n\nStd\n\n\nSlope\n\n\n\n\n\n\nInterval 1\n\n\nCurve 1\n\n\n1.07\n\n\n0.13\n\n\n0.61\n\n\n\n\nCurve 2\n\n\n-0.14\n\n\n0.30\n\n\n-1.17\n\n\n\n\nCurve 3\n\n\n-0.95\n\n\n0.05\n\n\n-0.22\n\n\n\n\nInterval 2\n\n\nCurve 1\n\n\n0.31\n\n\n0.25\n\n\n-1.72\n\n\n\n\nCurve 2\n\n\n-0.41\n\n\n0.21\n\n\n1.02\n\n\n\n\nCurve 3\n\n\n-0.91\n\n\n0.04\n\n\n0.25\n\n\n\n\nInterval 3\n\n\nCurve 1\n\n\n-0.89\n\n\n0.30\n\n\n1.11\n\n\n\n\nCurve 2\n\n\n-0.35\n\n\n0.19\n\n\n-0.04\n\n\n\n\nCurve 3\n\n\n0.43\n\n\n0.18\n\n\n0.65\n\n\n\n\nInterval 4\n\n\nCurve 1\n\n\n0.48\n\n\n0.03\n\n\n0.15\n\n\n\n\nCurve 2\n\n\n0.20\n\n\n0.21\n\n\n0.28\n\n\n\n\nCurve 3\n\n\n0.99\n\n\n0.03\n\n\n-0.01\n\n\n\n\nTimeSeriesForestClassifier as implemented in sktime in particular uses 200 trees (n_estimators) by default and samples sqrt(m) intervals per tree, where m is the length of the time series.\nMore configurable tree based ensembles are provided with ComposableTimeSeriesForestClassifier.\n\n13.1.1 Example\nWe will use the same dataset as in the clustering example from ?sec-act3-cluster-examples, the Trace dataset.\n\nimport matplotlib.pyplot as plt\nimport plotly.graph_objs as go\nimport plotly.io as pio\nimport seaborn as sns\n\nfrom sktime.classification.ensemble import ComposableTimeSeriesForestClassifier\nfrom sktime.classification.interval_based import TimeSeriesForestClassifier\nfrom sklearn.metrics import confusion_matrix\nfrom tslearn.datasets import CachedDatasets\n\npio.renderers.default = \"notebook\"  # set the default plotly renderer to \"notebook\" (necessary for quarto to render the plots)\n\n\nX_train, y_train, X_test, y_test = CachedDatasets().load_dataset(\"Trace\")\n\n# Fix shape for TimeSeriesForestClassifier\nX_train = X_train[:, :, 0]  \nX_test = X_test[:, :, 0]\n\nNote: Here, the dataset already comes split into training and test set. In practice, you would want to do a proper train-test split on your own dataset.\nWe set up the classifier and train on the training set \\((X_{train}, y_{train})\\) as follows.\n\nclf = TimeSeriesForestClassifier(random_state=42)  # here, we set the random state for reproducibility\nclf.fit(X_train, y_train)\n\nTimeSeriesForestClassifier(random_state=42)In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.TimeSeriesForestClassifieriFitted\n        \n            \n                Parameters\n                \n\n\n\n\nmin_interval \n3\n\n\n\nn_estimators \n200\n\n\n\ninner_series_length \nNone\n\n\n\nn_jobs \n1\n\n\n\nrandom_state \n42\n\n\n\n\n            \n        \n    \n\n\nHaving a fitted classifier model, we can predict the labels of the previously unseen test set \\(X_{test}\\).\n\ny_pred = clf.predict(X_test)\n\nThe confusion matrix shows that the classifier performs extraordinarily well on this dataset, achieving an accuracy of almost 100% on the test set.\n\ncm = confusion_matrix(y_test, y_pred)\nplt.figure(figsize=(6, 5))\nsns.heatmap(cm, annot=True, fmt='d', cmap='Blues')\nplt.xlabel('Predicted')\nplt.ylabel('True')\nplt.title('Confusion Matrix')\nplt.show()\n\n\n\n\n\n\n\n\nThe following shows the classified time series from the test set, colored by their predicted label.\n\n\nCode\nbase_colors = {1: '#0072B2', 2: '#E69F00', 3: '#009E73', 4: '#D55E00'}\n\nfig = go.Figure()\n\nlabels = sorted(set(y_test))\n\nfor label in labels:\n    idx = (y_test == label)\n    series = X_test[idx]\n    n = series.shape[0]\n    base_color = base_colors[label]\n    legendgroup = f\"Label {label}\"\n    # Plot each time series with low opacity\n    for i in range(n):\n        fig.add_trace(go.Scatter(\n            y=series[i],\n            mode='lines',\n            line=dict(color=base_color),\n            opacity=0.2,\n            showlegend=False,\n            legendgroup=legendgroup\n        ))\n    # Plot the mean line for each label\n    fig.add_trace(go.Scatter(\n        y=series.mean(axis=0),\n        mode='lines',\n        line=dict(color=base_color, width=3),\n        name=legendgroup,\n        opacity=1,\n        legendgroup=legendgroup\n    ))\n\nfig.update_layout(\n    title=\"Test Set Time Series by Label\",\n    xaxis_title=\"Time\",\n    yaxis_title=\"Value\",\n    legend_title=\"Label\",\n    width=900,\n    height=600\n)\nfig.show()\n\n\n                                                    \n\n\nLet us also visualize the two misclassified time series:\n\n\nCode\nmisclassified_idx = y_pred != y_test\nmisclassified_series = X_test[misclassified_idx]\nmisclassified_true = y_test[misclassified_idx]\nmisclassified_pred = y_pred[misclassified_idx]\n\nfig = go.Figure()\n\nfor i in range(len(misclassified_series)):\n    true_label = misclassified_true[i]\n    pred_label = misclassified_pred[i]\n    fig.add_trace(go.Scatter(\n        y=misclassified_series[i],\n        mode='lines',\n        line=dict(color=base_colors[true_label]),\n        name=f'True: {true_label}, Pred: {pred_label}',\n        opacity=0.7\n    ))\n\nfig.update_layout(\n    title=\"Misclassified Test Set Time Series\",\n    xaxis_title=\"Time\",\n    yaxis_title=\"Value\",\n    legend_title=\"True/Predicted Label\",\n    width=900,\n    height=600\n)\nfig.show()\n\n\n                                                    \n\n\nThe two misclassified time series actually belong to class 2 but were predicted class 1.\n\n\n\n\n\n\n\nExercise 13.1 (Discussing results)  \n\nWhy might these two time series have been misclassified?\n\n\n\n\n\n\n\n\n\nFaouzi, Johann. 2024. “Time Series Classification: A review of Algorithms and Implementations.” In Time Series Analysis - Recent Advances, New Perspectives and Applications, edited by Jorge Rocha, Sandra Oliveira, and Cláudia Viana, 298. https://doi.org/10.5772/intechopen.1004810.",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Time Series Classification</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/5_timeseries_regression.html",
+    "href": "2_act2/5_timeseries_regression.html",
+    "title": "14  Time Series Regression",
+    "section": "",
+    "text": "14.1 Convolutional Neural Network (CNN) Regressor\nTime series regression belongs to the class of supervised learning and is defined as the task of predicting a continuous target variable based on time series input data.\nThe github repository of sktime (accessed: 02 10 25) categorizes its implemented time series regression methods into the following categories: - Distance-based: Methods that use distance measures to compare time series (e.g., k-nearest neighbors). - Interval-based: Methods that extract features from intervals of the time series (e.g., Time Series Forest Regression). - Deep learning-based: Methods that use deep learning architectures. - Kernel-based: Methods that use kernel functions to measure similarity between time series (e.g. Time Series Support Vector Regression). - Composed methods: Methods that combine multiple models.\nAgain we observe that these categories can directly be mapped to those in Section 12.1 and Chapter 13.\nAn easy baseline method for time series regression is to use a \\(k\\)-nearest neighbors regressor with a suitable distance measure for time series, e.g. dynamic time warping (DTW). In contrast to nearest neighbor in classification, where the predicted label is determined by e.g. a majority vote of the nearest neighbors, in nearest neighbor regression the predicted value is typically computed as the average (or weighted average) of the target values of the nearest neighbors. This is implemented in sktime as KNeighborsTimeSeriesRegressor.\nAlso tree-based methods like Random Forests can be adapted for time series regression by simply taking e.g. the mean value of the target variable of the samples in a leaf node as the predicted value. This is implemented in sktime as TimeSeriesForestRegressor. Note that this is to date (02 10 2025) not a very parametrizable implementation; the only tunable parameter is the number of estimators (trees) and the minimum width of the intervals.\nIn this section we will have a brief look at a deep-learning based method in the context of time series regression, namely a convolutional neural network (CNN) based regressor.\nCNNs, by design, are able to capture local patterns in time series data through the use of convolutional layers. These layers apply filters that slide over the input data, allowing the model to learn local temporal patterns that are important. At the same time, CNNs can also capture global patterns by stacking multiple convolutional layers and using pooling operations. This hierarchical structure enables the model to learn both local and global features of the time series data, making CNNs versatile for various time series tasks.\nZhao et al. (2017) propose a CNN architecture specifically designed for time series classification. The architecture consists of a series of 1D convolutional layers followed by a pooling layer. The convolutional layers are responsible for extracting local features from the time series data, while the pooling layer helps to reduce the dimensionality and capture more global patterns. After the convolutional and pooling layers, the model includes a fully connected layer (the authors refer to it as a feature layer) that maps the extracted features to \\(n\\) output nodes, where \\(n\\) is the number of classes. The node with the highest value determines the predicted class.\nFor regression, sktime provides CNNRegressor, which is based on the architecture described in Zhao et al. (2017). To adapt the architecture for regression tasks, the final layer is modified to have a single output node with a linear activation function that predicts a continuous value instead of class probabilities.",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Time Series Regression</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/5_timeseries_regression.html#convolutional-neural-network-cnn-regressor",
+    "href": "2_act2/5_timeseries_regression.html#convolutional-neural-network-cnn-regressor",
+    "title": "14  Time Series Regression",
+    "section": "",
+    "text": "Note\n\n\n\nDue to the absence of suitable open datasets for time series regression, this section will not include an example notebook. However, in industry settings – usually restricted by confidentiality – time series regression is commonly employed, such as in predicting the lifespan of machinery parts based on sensor data.\n\n\n\n\n\n\n\n\n\n\n\nCurrently (sktime version 0.39.0), CNNRegressor unfortunately is not only changing the activation function of the last layer, but also of every other layer to linear. This effectively hinders the model’s ability to learn complex patterns in the data, as linear activations do not introduce non-linearity into the model. I have raised an issue to address this.\nTo avoid this bug, either perform a regression where the target variable is non-negative, allowing you to use the relu activation function in the output layer, which is also a good choice for the hidden layers.\nOr simply build your own CNN using pytorch.\n\n\n\n\n\n\n\nZhao, Bendong, Huanzhang Lu, Shangfeng Chen, Junliang Liu, and Dongya Wu. 2017. “Convolutional Neural Networks for Time Series Classification.” Journal of Systems Engineering and Electronics 28 (1): 162–69.",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Time Series Regression</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/x_self_study_session1.html",
+    "href": "2_act2/x_self_study_session1.html",
+    "title": "15  Self study - Session 1",
+    "section": "",
+    "text": "CautionStill under construction\n\n\n\nThis section is still under construction and will be completed in the near future. Please do not go beyond this point for now.",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Self study - Session 1</span>"
+    ]
+  },
+  {
+    "objectID": "2_act2/x_self_study_session2.html",
+    "href": "2_act2/x_self_study_session2.html",
+    "title": "16  Self study - Session 2",
+    "section": "",
+    "text": "CautionStill under construction\n\n\n\nThis section is still under construction and will be completed in the near future. Please do not go beyond this point for now.\n\n\nReal-world applications on industrial data face many challenges. One of them being that the data from machines is usually retrieved via communication protocols from programmable logic controllers (PLC). These communication protocols often lack standardization and can vary significantly between different manufacturers and even different models of PLCs This heterogeneity makes it difficult to integrate data from (multiple) sources and can lead to massive complexity in data processing and analysis.\nIn the following, you will read a review paper discussing challenges in introducing industrial data science to existing (brownfield) environments.\n\n\n\n\n\n\nWarningPredatory Journals\n\n\n\nPredatory journals exploit the academic publishing model for profit, often lacking rigorous peer review and editorial oversight. They may present themselves as legitimate outlets but prioritize financial gain over scholarly integrity. Researchers should be cautious when selecting journals for publication, ensuring they choose reputable venues that uphold high academic standards.\nWikipedia (accessed: 09 09 2025) states: MDPI’s business model is based on establishing entirely open access broad-discipline journals, with fast processing times from submission to publication and article processing charges paid by the author, their institutions or funders. MDPI’s business practices have attracted controversy, with critics suggesting it sacrifices editorial and academic rigor in favor of operational speed and business interests. MDPI was included on Jeffrey Beall’s list of predatory open access publishing companies in 2014; it was removed in 2015 following a successful appeal, while applying pressure on Beall’s employer. Some journals published by MDPI have also been noted by the Chinese Academy of Sciences (CAS) and Norwegian Scientific Index for lack of rigor and possible predatory practices, as of 2025, CAS no longer lists any MDPI journals on its Early Warning List. In 2024, Finland’s Public Forum, which classifies publication channels for academic research, downgraded 193 MDPI journals to its lowest, level 0 rating.\nPredatoryJournals.org published a blog post discussing MDPI in this regard.\n\n\n\n\n\n\n\n\n\nExercise 16.1 (Data Science on Industrial Data – Today’s Challenges in Brown Field Applications)  \n\nRead Klaeger, Gottschall, and Oehm (2021), published in MDPI. You should be able to discuss the following questions:\n\nWhat is the typical data flow from a machine to a data store?\nWhy is data acquisition harder in brownfield environments than in labs or new machines?\nWhy is ground truth data difficult to obtain in industrial settings and what are possible implications?\nHow does the long lifecycle of industrial machines complicate the adoption of AI technologies?\nWhy does data preparation in industry take even more effort than the often proclaimed 80% of the time needed for data preparation rule?\n\n\n\n\n\n\n\n\nKlaeger, Tilman, Sebastian Gottschall, and Lukas Oehm. 2021. “Data Science on Industrial Data—Today’s Challenges in Brown Field Applications.” Challenges 12 (1). https://doi.org/10.3390/challe12010002.",
+    "crumbs": [
+      "Act 2: Time series -- A Curated Collection",
+      "<span class='chapter-number'>16</span>  <span class='chapter-title'>Self study - Session 2</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/0_challenges.html",
+    "href": "3_act3/0_challenges.html",
+    "title": "17  Challenges",
+    "section": "",
+    "text": "CautionStill under construction\n\n\n\nThis section is still under construction and will be completed in the near future. Please do not go beyond this point for now.\n\n\nReal machine data is often messy and requires substantial preprocessing before it can be used for analysis. Challenges from a data engineering perspective that often arise include: - (Temporary) sensor failures - Data gaps due to communication issues or buffer overflows - Incomplete data - Datatype inconsistencies - Lack of documentation - High data volume\nOnce data is collected and transformed, additional challenges may arise during analysis: - Noisy or inconsistent measurements - Outliers or anomalies in the data - Variability in operating conditions - There may be variables that are not captured in the data but still relevant for the process - Complex relationships between variables - Lack of labeled data for supervised learning - Highly imbalanced data sets - Data privacy concerns\nUntil now, we have primarily focused on static analysis of historical data.\nHowever, many industrial applications require real-time data processing and analysis to enable timely decision-making and process optimization. Complexity increases significantly in real-time scenarios due to the need for low-latency processing, the handling of streaming data, and possibly the integration of data from multiple sources.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>17</span>  <span class='chapter-title'>Challenges</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/1_levels_of_system_integration.html",
+    "href": "3_act3/1_levels_of_system_integration.html",
+    "title": "18  Levels of system integration",
+    "section": "",
+    "text": "18.1 Historical Analysis\nThe most basic level of system integration involves working with historical data that has been collected and stored over time. It may provide insights, trends, or recommendations based solely on this data, but it lacks the ability to interact with live systems or influence real-time operations.\nE.g. analyzing historical production data to identify trends in equipment failures and recommending maintenance schedules.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Levels of system integration</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/1_levels_of_system_integration.html#monitoring-warning",
+    "href": "3_act3/1_levels_of_system_integration.html#monitoring-warning",
+    "title": "18  Levels of system integration",
+    "section": "18.2 Monitoring & Warning",
+    "text": "18.2 Monitoring & Warning\nThe second level of system integration focuses on monitoring live data streams. Data science products at this level can analyze real-time data to identify potential issues or deviations from expected behavior, supporting operators in maintaining system performance and reliability.\nE.g. detecting anomalies in the machine’s behaviour as it runs and alerting operators to investigate potential system failures.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Levels of system integration</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/1_levels_of_system_integration.html#feedback-loop",
+    "href": "3_act3/1_levels_of_system_integration.html#feedback-loop",
+    "title": "18  Levels of system integration",
+    "section": "18.3 Feedback Loop",
+    "text": "18.3 Feedback Loop\nThe third level of system integration introduces a feedback loop, allowing for more dynamic interactions with the system. It is not possible to achieve real-time control or immediate adjustments, but it is possible to adjust machine settings or parameters based on insights gained from the data.\nE.g. adjust machine parameters such as pressure, temperature, flow-rate for the next production batch based on an analysis of failures in post-inspection of previous batches.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Levels of system integration</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/1_levels_of_system_integration.html#real-time-autonomous-control",
+    "href": "3_act3/1_levels_of_system_integration.html#real-time-autonomous-control",
+    "title": "18  Levels of system integration",
+    "section": "18.4 Real-Time Autonomous Control",
+    "text": "18.4 Real-Time Autonomous Control\nThe fourth level of system integration enables real-time autonomous control of machines and processes. At this level, data science products can make decisions and take actions in real time, allowing for immediate adjustments and optimizations.\nE.g. automatically adjusting machine settings in real time based on live data inputs to optimize production efficiency.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>18</span>  <span class='chapter-title'>Levels of system integration</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/2_batch_vs_stream.html",
+    "href": "3_act3/2_batch_vs_stream.html",
+    "title": "19  Batch vs Stream Processing",
+    "section": "",
+    "text": "CautionStill under construction\n\n\n\nThis section is still under construction and will be completed in the near future. Please do not go beyond this point for now.\n\n\n\n\n\n\n\n\n\n\n\nBatch Processing\nStream Processing\n\n\n\n\nDefinition\nProcesses datasets in periodic chunks\nContinuously processes data arriving in a stream\n\n\nLatency\nHigh\nLow\n\n\nContext\nFull data available; supports complex operations\nLimited view (single event or window)\n\n\nTypical Use\nHistorical analyses, model training, reporting, ETL\nReal-time monitoring, anomaly detection, decision-making\n\n\nETL\nCollects data over a given period, performs transformations on the entire dataset, and loads it into a target system, such as a data warehouse, all at once.\nContinuously ingests and processes data as it arrives, applies transformations on the fly, and loads the processed data into a target system incrementally.\n\n\n\nThe time to insight is the most critical differentiator between batch and stream processing. Batch processing is best-suited for less time-sensitive tasks, such as end-of-day reports, historical data-analysis or model training. In contrast, stream processing is designed for scenarios where immediate insights and actions are crucial, such as real-time optimization of production processes.\nBatch processing tends to be less complex to manage because it operates on static datasets and follows a defined schedule, making it easier to plan and allocate resources. It is well-suited for scenarios where data consistency and completeness are more important than immediacy.\nStream processing, on the other hand, requires handling continuous data flows, which can introduce additional complexity in terms of system architecture, data consistency, and fault tolerance. Addressing these challenges necessitates a higher level of skill and expertise and might need specialized IT infrastructure.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>19</span>  <span class='chapter-title'>Batch vs Stream Processing</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/3_0_process_optimization_sensor_data.html",
+    "href": "3_act3/3_0_process_optimization_sensor_data.html",
+    "title": "20  Process optimization on sensor data via EDA",
+    "section": "",
+    "text": "20.1 Setting the stage\nIn this section, we will have a look at a more realistic example of industrial data.\nImagine a manufacturing chain which is dedicated to produce knifes with wooden handles. Various machines are interconnected and the process flow is as follows: - Machine A prepares the steel blade and shaft - Machine B applies epoxy to the grip area - Machine C inserts the wooden handle material. - Machine D is a curing oven, hardening the adhesive. - Machine E coats the knife with protective finish and completes the manufacturing process.\nOperators notice that the process is not running as smoothly as expected. The handle is not always properly bonded to the metal part and sometimes the wood is cracked. They find that the root cause of the issue lies in the epoxy application step of machine B. Common issues include excessive or insufficient epoxy application, uneven distribution, and occasional poor adhesion to the shaft. One clear economic impact is that these defect products can not be sold. But there is more to it: - Waste of material is not sustainable - The defect actually already happens in Machine B, but Machine C to E still process the faulty products, leading to further waste and costs, especially since the wooden handle is the most expensive part of the product and the curing oven is very energy-intensive.\nSince there is a new department focused on data science, they decide to manually inspect the epoxy application right after machine B and label the data accordingly. Additionally the machine collects some sensor data in a CSV file. This data set is given to the data science team and in tight collaboration with the operators the ambitious goal is to: - Optimize the epoxy application process to reduce defects and waste. - Human inspection is time-consuming and expensive. Find a way to predict defects occuring in Machine B before the product is handed over to machine C.\nOf course, this data science department is us.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Process optimization on sensor data via EDA</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/3_0_process_optimization_sensor_data.html#dataset",
+    "href": "3_act3/3_0_process_optimization_sensor_data.html#dataset",
+    "title": "20  Process optimization on sensor data via EDA",
+    "section": "20.2 Dataset",
+    "text": "20.2 Dataset\nThe data set consists of sensor readings of a simulated industrial process and consists of two files:\n\nsimulated_machine_data.csv stores the sensor data\nsimulated_inspection_data.csv stores the human inspection results\n\nThe sensor data includes the following features in a 200ms resolution:\n\nproduct_id: Unique identifier for each product.\nprocess_step_index: Index indicating the current step within the process. The machine performs three processing steps: Moving the nozzle to the shaft, applying epoxy, and blow out residual epoxy from nozzle while moving away.\ntimestamp: Timestamp of the sensor reading.\nair_temperature_C: Ambient air temperature in degrees Celsius.\nprocess_speed_mm_s: Set speed of the process in millimeters per second.\npressure_measured_bar: Measured pressure in bar.\npressure_setting_bar: Pressure setting in bar.\nmachine_temperature_C: Temperature of the machine in degrees Celsius.\n\nThe inspection data includes the product_id and the error_code:\n\nproduct_id: Unique identifier for each product.\nerror_code: Code indicating the type of error detected during inspection.\n\nThey used OK when there was no defect, NOK_1 (excessive epoxy), NOK_2 (insufficient epoxy), NOK_3 (poor adhesion), NOK_4 (uneven distribution).",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Process optimization on sensor data via EDA</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/3_0_process_optimization_sensor_data.html#additional-information",
+    "href": "3_act3/3_0_process_optimization_sensor_data.html#additional-information",
+    "title": "20  Process optimization on sensor data via EDA",
+    "section": "20.3 Additional information",
+    "text": "20.3 Additional information\nThe operators state that the epoxy application process is highly sensitive to variations in environmental conditions, such as temperature and humidity. They believe that incorporating additional sensor data, such as humidity levels, could further enhance understanding of the process. Also, the pressure settings are critical, since they directly influence the amount of epoxy applied to the product. The first processing step ensures the correct positioning of the nozzle and the final processing step is supposed to clean the nozzle, preparing it for the next application.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Process optimization on sensor data via EDA</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/3_0_process_optimization_sensor_data.html#loading-packages",
+    "href": "3_act3/3_0_process_optimization_sensor_data.html#loading-packages",
+    "title": "20  Process optimization on sensor data via EDA",
+    "section": "20.4 Loading packages",
+    "text": "20.4 Loading packages\n\nimport os\n\nimport pandas as pd              # used for data handling\nimport seaborn as sns            # used for statistical data visualization\nimport plotly.express as px      # used for performant plotting\nimport plotly.io as pio          # used to set the default plotly renderer\n\npio.renderers.default = \"notebook\"  # set the default plotly renderer to \"notebook\" (necessary for quarto to render the plots)",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Process optimization on sensor data via EDA</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/3_0_process_optimization_sensor_data.html#loading-the-dataset",
+    "href": "3_act3/3_0_process_optimization_sensor_data.html#loading-the-dataset",
+    "title": "20  Process optimization on sensor data via EDA",
+    "section": "20.5 Loading the dataset",
+    "text": "20.5 Loading the dataset\nThe dataset is available online in form of two csv files.\nSource: tba\n\npath_data = os.path.join(\"..\", \"data\", \"_assets\", \"act3\")\n\ndf_processes = pd.read_csv(os.path.join(path_data, \"simulated_machine_data.csv\"))\ndf_inspections = pd.read_csv(os.path.join(path_data, \"simulated_inspection_data.csv\"))",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Process optimization on sensor data via EDA</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/3_0_process_optimization_sensor_data.html#quick-check-data-integrity",
+    "href": "3_act3/3_0_process_optimization_sensor_data.html#quick-check-data-integrity",
+    "title": "20  Process optimization on sensor data via EDA",
+    "section": "20.6 Quick check data integrity",
+    "text": "20.6 Quick check data integrity\n\ndf_processes\n\n\n\n\n\n\n\n\nnr_iteration\nprocess_step_index\ntimestamp\nair_temperature_C\nprocess_speed_mm_s\npressure_measured_bar\npressure_setting_bar\nmachine_temperature_C\n\n\n\n\n0\n0\n0\n2024-06-01 21:00:00.000\n17.411810\n10\n17.566184\n5\n17.414191\n\n\n1\n0\n0\n2024-06-01 21:00:00.200\n17.411810\n10\n14.429097\n5\n17.414333\n\n\n2\n0\n0\n2024-06-01 21:00:00.400\n17.411810\n10\n9.850520\n5\n17.414431\n\n\n3\n0\n0\n2024-06-01 21:00:00.600\n17.411810\n10\n11.640714\n5\n17.414852\n\n\n4\n0\n0\n2024-06-01 21:00:00.800\n17.411810\n10\n9.947243\n5\n17.415521\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n199995\n4999\n2\n2024-06-02 08:06:39.000\n20.261769\n20\n28.809045\n20\n46.332291\n\n\n199996\n4999\n2\n2024-06-02 08:06:39.200\n20.261769\n20\n29.193165\n20\n46.332229\n\n\n199997\n4999\n2\n2024-06-02 08:06:39.400\n20.261769\n20\n26.315095\n20\n46.329780\n\n\n199998\n4999\n2\n2024-06-02 08:06:39.600\n20.261769\n20\n23.473967\n20\n46.327723\n\n\n199999\n4999\n2\n2024-06-02 08:06:39.800\n20.261769\n20\n28.281243\n20\n46.330598\n\n\n\n\n200000 rows × 8 columns\n\n\n\n\ndf_inspections\n\n\n\n\n\n\n\n\ntimestamp\nerror_code\n\n\n\n\n0\n2024-06-01 21:00:09.526317\nOK\n\n\n1\n2024-06-01 21:00:19.902254\nNOK_4\n\n\n2\n2024-06-01 21:00:26.956506\nNOK_4\n\n\n3\n2024-06-01 21:00:34.250145\nOK\n\n\n4\n2024-06-01 21:00:44.520231\nNOK_4\n\n\n...\n...\n...\n\n\n4995\n2024-06-02 08:06:12.105654\nOK\n\n\n4996\n2024-06-02 08:06:20.692947\nOK\n\n\n4997\n2024-06-02 08:06:28.295564\nOK\n\n\n4998\n2024-06-02 08:06:33.039826\nOK\n\n\n4999\n2024-06-02 08:06:42.151942\nOK\n\n\n\n\n5000 rows × 2 columns\n\n\n\n\nif df_processes.isna().sum().sum() &gt; 0 or \\\n   df_inspections.isna().sum().sum() &gt; 0 or \\\n   df_processes.duplicated().sum().sum() &gt; 0 or \\\n   df_inspections.duplicated().sum().sum() &gt; 0:\n     raise ValueError(\"Missing values or duplicates found in the dataframes.\")\nelse:\n    print(\"No missing values or duplicates found in the dataframes.\")\n\nNo missing values or duplicates found in the dataframes.\n\n\n\ndf_processes.describe().T\n\n\n\n\n\n\n\n\ncount\nmean\nstd\nmin\n25%\n50%\n75%\nmax\n\n\n\n\nnr_iteration\n200000.0\n2499.500000\n1443.379253\n0.000000\n1249.750000\n2499.500000\n3749.250000\n4999.000000\n\n\nprocess_step_index\n200000.0\n0.625000\n0.856959\n0.000000\n0.000000\n0.000000\n1.250000\n2.000000\n\n\nair_temperature_C\n200000.0\n13.240958\n2.849175\n10.000000\n10.648648\n12.539426\n15.382514\n20.261769\n\n\nprocess_speed_mm_s\n200000.0\n11.375000\n5.764941\n1.000000\n10.000000\n10.000000\n12.500000\n20.000000\n\n\npressure_measured_bar\n200000.0\n27.631799\n30.724554\n2.667229\n11.501248\n13.684438\n27.005894\n116.061456\n\n\npressure_setting_bar\n200000.0\n20.625000\n30.663318\n5.000000\n5.000000\n5.000000\n20.000000\n100.000000\n\n\nmachine_temperature_C\n200000.0\n37.337208\n4.591688\n17.414191\n36.019951\n37.328398\n39.323185\n46.359040\n\n\n\n\n\n\n\n\ndf_processes.dtypes\n\nnr_iteration               int64\nprocess_step_index         int64\ntimestamp                 object\nair_temperature_C        float64\nprocess_speed_mm_s         int64\npressure_measured_bar    float64\npressure_setting_bar       int64\nmachine_temperature_C    float64\ndtype: object\n\n\n\ndf_inspections.dtypes\n\ntimestamp     object\nerror_code    object\ndtype: object\n\n\n\ndf_processes.nunique()\n\nnr_iteration               5000\nprocess_step_index            3\ntimestamp                200000\nair_temperature_C           501\nprocess_speed_mm_s            3\npressure_measured_bar    200000\npressure_setting_bar          3\nmachine_temperature_C    200000\ndtype: int64\n\n\n\ndf_inspections.nunique()\n\ntimestamp     5000\nerror_code       5\ndtype: int64\n\n\n\ndf_inspections[\"error_code\"].value_counts()\n\nerror_code\nOK       4662\nNOK_4     265\nNOK_1      62\nNOK_3      10\nNOK_2       1\nName: count, dtype: int64\n\n\nNOK_2 and NOK_3 seem to be hardly ever happening. Let us mentally drop these error codes for this investigation, since &lt;= 10 samples give a very weak statistical basis and tend to distort plots.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Process optimization on sensor data via EDA</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/3_0_process_optimization_sensor_data.html#exploring-continuous-variables-by-simple-plots",
+    "href": "3_act3/3_0_process_optimization_sensor_data.html#exploring-continuous-variables-by-simple-plots",
+    "title": "20  Process optimization on sensor data via EDA",
+    "section": "20.7 Exploring continuous variables by simple plots",
+    "text": "20.7 Exploring continuous variables by simple plots\nHere, we visualize the continuous variables (one by one) against the timestamp to get an idea of their temporal behavior.\n\nCONTINUOUS_VARS = [\n    \"air_temperature_C\",\n    \"process_speed_mm_s\",\n    \"pressure_measured_bar\",\n    \"pressure_setting_bar\",\n    \"machine_temperature_C\",\n]\n\n\ndf_filtered = df_processes.query(\"nr_iteration &lt; 1000\").sort_values(\"timestamp\")  # for performance reasons, we filter to the first 1000 cycles.\n\nfig = px.line(\n    df_filtered,\n    x=\"timestamp\",\n    y=CONTINUOUS_VARS,\n    facet_col=\"variable\",\n    facet_col_wrap=1,\n    title=\"Continuous Variables Over Time\"\n)\n\nfig.update_xaxes(matches='x')    # share x-axis zoom/pan\nfig.update_yaxes(matches=None)   # do not share y-axis limits\nfig.update_layout(height=1200)   # increase figure height (y axis size)\n\nfig.show()\n\n                                                    \n\n\nThe plot is interactive. Zoom in to see more details. Observe that the set pressure is constant over time (within a processing step), while the measured pressure varies around the set pressure and also shows some systematic offset.\nLet us investigate this difference between set and measured pressure in more detail.\n\ndf_processes[\"pressure_difference_bar\"] = df_processes[\"pressure_measured_bar\"] - df_processes[\"pressure_setting_bar\"]\n\n\nsns.histplot(data=df_processes, x=\"pressure_difference_bar\", hue=\"process_step_index\", bins=50)\n\n\n\n\n\n\n\n\nIt appears like the pressure difference is roughly normally distributed and that the mean of the three processing steps is similar.\nAbsolute counts are visually harder to compare, so let us use relative frequencies instead and normalize each of the processing steps separately.\n\nsns.histplot(data=df_processes, x=\"pressure_difference_bar\", hue=\"process_step_index\", bins=50, common_norm=False, stat=\"percent\")  # common_norm is set to False to normalize each processing step separately, stat is set to \"percent\" to show relative frequencies in percent.\n\n\n\n\n\n\n\n\nApparently the pressure difference shares similar mean and standard deviation across the three processing steps. We can also show this by calculating the mean and standard deviation of the pressure difference for each processing step.\n\ndf_processes.groupby(\"process_step_index\")[\"pressure_difference_bar\"].mean()\n\nprocess_step_index\n0    7.008735\n1    6.997252\n2    7.006735\nName: pressure_difference_bar, dtype: float64\n\n\n\ndf_processes.groupby(\"process_step_index\")[\"pressure_difference_bar\"].std()\n\nprocess_step_index\n0    1.994644\n1    2.007884\n2    1.995821\nName: pressure_difference_bar, dtype: float64\n\n\nWe conclude that the pressure is not perfectly controlled (or measured) and have a systematic offset of 7 bar and a standard deviation of roughly 2 bar.\n\nfig = px.line(\n    df_processes.sample(10_000).sort_values(\"timestamp\"),  # for performance reasons, we sample 10,000 rows. Always remember to sort by timestamp after sampling.\n    x=\"timestamp\",\n    y=[\"machine_temperature_C\", \"air_temperature_C\"],\n    labels={\"value\": \"Temperature (°C)\", \"timestamp\": \"Timestamp\", \"variable\": \"Type\"},\n    title=\"Machine and Air Temperature Over Time\"\n)\nfig.show()\n\n                                                    \n\n\nWe observe that the machine is in a cold state when the data collection starts and heats up to a more stable plateau, where it still seems to follow the shape of the air temperature.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Process optimization on sensor data via EDA</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/3_0_process_optimization_sensor_data.html#aggregating-plots",
+    "href": "3_act3/3_0_process_optimization_sensor_data.html#aggregating-plots",
+    "title": "20  Process optimization on sensor data via EDA",
+    "section": "20.8 Aggregating plots",
+    "text": "20.8 Aggregating plots\nWe are looking at iterations of the same, identical process. Let us look at a plot where the processes overlap each other, colored by error code.\nFirst, we create a new index which starts at 0 for each piece that is manufactured and counts each timestamp within that process step. This index will be useful for plotting the different process iterations on top of each other.\n\ndf_processes['process_inner_index'] = df_processes.sort_values('timestamp').groupby('nr_iteration').cumcount()\n\n\n# Merge error_code from df_inspections into df_processes based on 'nr_iteration'. This assigns an errorcode to the entire process iteration.\ndf_plot = df_processes.merge(\n    df_inspections,\n    left_on=\"nr_iteration\",\n    right_index=True,\n    how=\"left\"\n)\n\nfig = px.line(\n    df_plot,\n    x=\"process_inner_index\",\n    y=\"pressure_measured_bar\",\n    line_group=\"nr_iteration\",\n    color=\"error_code\",\n    title=\"Pressure per Iteration (Overlapped, Colored by Error Code)\",\n    labels={\n        \"process_inner_index\": \"Inner-process timestamp\",\n        \"pressure_measured_bar\": \"Pressure (bar)\",\n        \"error_code\": \"Error Code\"\n    },\n)\n\n# Set opacity: 0.01 for 'OK', 0.5 for others\n# Setting opacity is always a bit tricky. Setting it too low makes the lines almost invisble, setting it too high makes the plot too crowded.\n# This settings were found in trial and error and work well for that case.\nfor trace in fig.data:\n    if trace.name == \"OK\":\n        trace.opacity = 0.01\n    else:\n        trace.opacity = 0.5\n\n# Unselect NOK_2 and NOK_3 by default, since they are very rare and would clutter the plot.\nfor i, trace in enumerate(fig.data):\n    if trace.name in [\"NOK_2\", \"NOK_3\"]:\n        fig.data[i].visible = \"legendonly\"\n\nfig.update_layout(showlegend=True)\nfig.show()\n\n                                                    \n\n\nKeep in mind that you can (de)select lines to plot when clicking on the according legend entry. Plotly also allows you to zoom in and pan around.\nFrom the plot, we can see that the second processing step’s pressure is elevated for NOK_1. NOK_4 shows no obvious difference to OK.\nWith this in mind, let us have a closer look at the mean pressure and its standard deviation per error code and processing step.\n\n# Aggregate: mean and std for each process_inner_index and error_code\nagg_df = df_plot.groupby(['process_inner_index', 'error_code'])['pressure_measured_bar'].agg(['mean', 'std']).reset_index()\n\nfig = px.line(\n    agg_df,\n    x=\"process_inner_index\",\n    y=\"mean\",\n    color=\"error_code\",\n    error_y=\"std\",\n    labels={\n        \"process_inner_index\": \"Inner-process timestamp\",\n        \"mean\": \"Pressure (bar)\",\n        \"error_code\": \"Error Code\"\n    },\n    title=\"Mean Pressure per Error Code with Deviation\"\n)\n\n# Unselect NOK_2 and NOK_3 by default\nfor i, trace in enumerate(fig.data):\n    if trace.name in [\"NOK_2\", \"NOK_3\"]:\n        fig.data[i].visible = \"legendonly\"\n        \nfig.update_layout(legend_title_text='Error Code')\nfig.show()\n\n                                                    \n\n\nThis plot confirms our previous observation that NOK_1 has a systematic higher mean pressure during the second processing step and NOK_4 does not differ notably from OK.\nWhile the first line plot shows every individual process iteration as a singe line and therefor does not accidentally filter relevant information, it is a bit crowded and hard to read. The second plot aggregates the individual lines by calculating the mean and standard deviation, therefore losing some information, but making it easier to comprehend.\nNow let us also check whether the machine temperature has an influence on failures.\n\ndf_agg = df_plot.groupby(['nr_iteration', 'error_code'])['machine_temperature_C'].agg(['mean']).reset_index()\n\nfig = px.box(\n    df_agg,\n    x=\"error_code\",\n    y=\"mean\",\n    title=\"Machine Temperature by Error Code\",\n    labels={\"mean\": \"Mean Machine Temperature (°C)\", \"error_code\": \"Error Code\"}\n)\n\nfig.show()\n\n                                                    \n\n\nAlso here, NOK_4 and NOK_1 do not show a notable difference to OK, while NOK_2 and NOK_3 can not be judged well due to the low sample size.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Process optimization on sensor data via EDA</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/3_0_process_optimization_sensor_data.html#sec-act3-eda-summary",
+    "href": "3_act3/3_0_process_optimization_sensor_data.html#sec-act3-eda-summary",
+    "title": "20  Process optimization on sensor data via EDA",
+    "section": "20.9 Summary of findings",
+    "text": "20.9 Summary of findings\nLet us summarize our findings so far in this data set: - The pressure during the second processing step is elevated for NOK_1 compared to OK. - The machine temperature does not show a notable difference between OK and NOK_x. - The source of NOK_4 failures was not identified in this analysis. - The error codes NOK_2 and NOK_3 are too rare to draw any conclusions.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Process optimization on sensor data via EDA</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/4_live_feedback.html",
+    "href": "3_act3/4_live_feedback.html",
+    "title": "21  Live Feedback",
+    "section": "",
+    "text": "CautionStill under construction\n\n\n\nThis section is still under construction and will be completed in the near future. Please do not go beyond this point for now.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Live Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/x_self_study_session1.html",
+    "href": "3_act3/x_self_study_session1.html",
+    "title": "22  Self study - Session 1",
+    "section": "",
+    "text": "CautionStill under construction\n\n\n\nThis section is still under construction and will be completed in the near future. Please do not go beyond this point for now.\n\n\nIn this session, we will revisit Chapter 20 and continue where we left off, trying to improve the process.\nThe findings in Section 20.9 were not sufficient to explain all defects, but we found a correlation between elevated pressure during the epoxy application step and excessive epoxy application (NOK_1). Regarding the uneven distribution of applied epoxy (NOK_4), the operators provided the information, that they suspect that this is caused by an insufficiently cleaned nozzle. The cleaning process happens at the end of the previous processing step, where the nozzle moves away from the product and blows out residual epoxy.\n\n\n\n\n\n\n\nExercise 22.1 (Investigating the blow out step)  \n\nInvestigate the pressure during the blow out step (process step index 3 of previous iteration) and see if you can find a correlation to NOK_4 defects.\n\n\n\nHaving more information about NOK_1 and NOK_4, we can now try to finetune the machine’s parameters to reduce the number of defects.\n\n\n\n\n\n\n\nExercise 22.2 (Finetuning the machine parameters)  \n\nThe accompanying Readme.md file contains information on how to run the machine again with different parameters. Try to improve the parameters to reduce the number of defects. Keep night shift and NUM_PIECES at the default values.\nYou experience new issues or want to further finetune the parameters? Feel free to have a look at the new csv files that the machine is producing.\nHint: The process is stochastic, so you can not expect to get rid of every single defect.\nHow do the results of the new parameters compare to the original ones?\nThe original data set had 5000 pieces with the following distribution:\n\n\n\nError Code\nCount\nPercentage\n\n\n\n\nOK\n4662\n93.24%\n\n\nNOK_1\n62\n1.24%\n\n\nNOK_2\n1\n0.02%\n\n\nNOK_3\n10\n0.20%\n\n\nNOK_4\n265\n5.30%\n\n\n\n\n\n\nGreat job? Everything looks good on the night shift?\n\n\n\n\n\n\n\nExercise 22.3 (Try the machine on day shift)  \n\nRun the machine again with your parameters, but this time during day shift.\nHow do the results of the new parameters compare to the ones from the night shift?\nInvestigate the root cause of this difference by looking at the produced csv files.\n\n\n\n\n\n\n\n\n\n\nExercise 22.4 (Finetune the parameters to work well for both shifts)  \n\nThe machine is not only telling you a defect summary, but also the duration it took to produce the parts. Try to finetune the parameters to achieve a good compromise between quality (few defects) and speed (short duration).\nHints:\n\nThe machine’s temperature depends on the ambient temperature, the processing speed and the pressure settings.\nThe duration it takes to produce knifes is determined by the processing speed.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Self study - Session 1</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/x_self_study_session2.html",
+    "href": "3_act3/x_self_study_session2.html",
+    "title": "23  Self study - Session 2",
+    "section": "",
+    "text": "CautionStill under construction\n\n\n\nThis section is still under construction and will be completed in the near future. Please do not go beyond this point for now.\n\n\nPlaceholder: Live-Machine",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>23</span>  <span class='chapter-title'>Self study - Session 2</span>"
+    ]
+  },
+  {
+    "objectID": "4_act4/0_index.html",
+    "href": "4_act4/0_index.html",
+    "title": "24  Still under construction",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\nThis section is still under construction and will be completed in the near future. Please do not go beyond this point for now.\n\n\n\n\nDifferent sampling rates\nReinforcement Learning\nMultimodal Data",
+    "crumbs": [
+      "Act 4: Lost Tapes",
+      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Still under construction</span>"
+    ]
+  },
+  {
+    "objectID": "5_references.html",
+    "href": "5_references.html",
+    "title": "References",
+    "section": "",
+    "text": "“AI4I 2020 Predictive Maintenance Dataset.”\n2020. UCI Machine Learning Repository. https://doi.org/10.24432/C5HS5C.\n\n\nCuturi, Marco, and Mathieu Blondel. 2017. “Soft-Dtw: A\nDifferentiable Loss Function for Time-Series.” In\nInternational Conference on Machine Learning, 894–903. PMLR.\n\n\nFaouzi, Johann. 2024. “Time Series\nClassification: A review of Algorithms and\nImplementations.” In Time Series\nAnalysis - Recent Advances, New Perspectives and\nApplications, edited by Jorge Rocha, Sandra Oliveira, and\nCláudia Viana, 298. https://doi.org/10.5772/intechopen.1004810.\n\n\nHolder, Christopher, Anthony Bagnall, and Jason Lines. 2024. “On\nTime Series Clustering with k-Means.” arXiv Preprint\narXiv:2410.14269.\n\n\nKlaeger, Tilman, Sebastian Gottschall, and Lukas Oehm. 2021. “Data\nScience on Industrial Data—Today’s Challenges in Brown Field\nApplications.” Challenges 12 (1). https://doi.org/10.3390/challe12010002.\n\n\nLahreche, Abdelmadjid, and Bachir Boucheham. 2021. “A Comparison\nStudy of Dynamic Time Warping’s Variants for Time Series\nClassification.” International Journal of Informatics and\nApplied Mathematics 4 (1): 56–71.\n\n\nMathur, Aeshita, Ameesha Dabas, and Nikhil Sharma. 2022.\n“Evolution from Industry 1.0 to Industry 5.0.” In 2022\n4th International Conference on Advances in Computing, Communication\nControl and Networking (ICAC3N), 1390–94. https://doi.org/10.1109/ICAC3N56670.2022.10074274.\n\n\nPaparrizos, John, Fan Yang, and Haojun Li. 2024. “Bridging the\nGap: A Decade Review of Time-Series Clustering Methods.”\narXiv Preprint arXiv:2412.20582.\n\n\nPeres, Ricardo Silva, Xiaodong Jia, Jay Lee, Keyi Sun, Armando Walter\nColombo, and Jose Barata. 2020. “Industrial Artificial\nIntelligence in Industry 4.0 - Systematic Review, Challenges and\nOutlook.” IEEE Access 8: 220121–39. https://doi.org/10.1109/ACCESS.2020.3042874.\n\n\nRoverso, Davide. 2002. “Plant Diagnostics by Transient\nClassification: The Aladdin Approach.” International Journal\nof Intelligent Systems 17 (8): 767–90.\n\n\nWallsberger, Raphael, Ricardo Knauer, and Stephan Matzka. 2023.\n“Explainable Artificial Intelligence in Mechanical Engineering: A\nSynthetic Dataset for Comprehensive Failure Mode Analysis.” In\n2023 Fifth International Conference on Transdisciplinary AI\n(TransAI), 249–52. https://doi.org/10.1109/TransAI60598.2023.00032.\n\n\nZhao, Bendong, Huanzhang Lu, Shangfeng Chen, Junliang Liu, and Dongya\nWu. 2017. “Convolutional Neural Networks for Time Series\nClassification.” Journal of Systems Engineering and\nElectronics 28 (1): 162–69.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]
