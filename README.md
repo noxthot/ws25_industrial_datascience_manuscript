@@ -1,7 +1,9 @@
 # Industrial Data Science Course Material
 This repository contains the course material for an Industrial Data Science course. 
 
-[![DOI](https://zenodo.org/badge/993841796.svg)](https://zenodo.org/badge/latestdoi/993841796)
+You can find the latest version of the course material [here](https://noxthot.github.io/ws25_industrial_datascience_manuscript/).
+
+[//]: # TODO - add DOI once published
 
 ## Citing this manuscript
 [//]: # TODO - update
