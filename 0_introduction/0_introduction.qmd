@@ -1,4 +1,4 @@
-# Introduction {#act0-sec-intro}
+# Introduction {#sec-act0-intro}
 
 In this module we will explore _Industrial Data Science_, a term that is not widely used, defined or standardized (yet).
 
