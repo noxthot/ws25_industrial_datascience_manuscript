@@ -18,7 +18,7 @@ According to @{peres2020}, Industrial AI distinguishes itself within the field o
 
 - **Objectives**: Targets value creation, such as e.g. reducing waste, improving quality, and boosting operational efficiency.
 
-Unlike typical courses that use clean, polished datasets, in this lecture we will get our hands dirty and work with (simulated) raw machine data with the ultimate goal to set up a data science product on a simulated machine using live data.
+Unlike typical courses that use clean, polished datasets, in this lecture we will get our hands dirty and work with (synthetic) raw machine data with the ultimate goal to set up a data science product on a simulated machine using live data.
 
 In @{sec-act0-intro} to @{sec-act0-applications}, we will start with an introduction to Industrial Data Science, its significance, its history, and its applications.
 
