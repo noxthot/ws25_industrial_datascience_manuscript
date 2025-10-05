@@ -14,7 +14,7 @@ Also the product variant is associated to the failure rate: When the product of 
 Are you able to verify this relationship by visualizations?
 :::
 
-Also, there seems that the description of `TWF` in @{sec-act1-1-reveal} is contradicting our observations.
+Also, it seems that the description of `TWF` in @{sec-act1-1-reveal} is contradicting our observations.
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
 :::: {#exr-basics-mv-space}
@@ -26,12 +26,13 @@ Identify where the description of `TWF` in @{sec-act1-1-reveal} does not align w
 So far we have used `seaborn` to visualize the data.
 `seaborn` is based on `matplotlib` and provides a high-level interface for drawing statistical graphics.
 While `matplotlib` supports interactive figures that can zoom, pan and update (see [here](https://mybinder.org/v2/gh/matplotlib/mpl-brochure-binder/main?labpath=MatplotlibExample.ipynb)), for richer interactive visualizations we can use `plotly`.
-`plotly` is open-source and built on top of the Plotly JavaScript library `plotly.js`, thus enables users to create interactive web-based visualizations that can be displayed in `Jupyter` notebooks as well as in standalone HTML files.
+`plotly` is open-source and built on top of the Plotly JavaScript library `plotly.js`.
+It enables users to create interactive web-based visualizations that can be displayed in `Jupyter` notebooks as well as in standalone HTML files.
 Especially for explorative data analysis, `plotly` offers a more user-friendly and flexible approach to create and explore complex visualizations.
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
 :::: {#exr-basics-mv-space}
-## Plotly introduction
+## Introducing Plotly
 ::::
 Consult the [Plotly documentation](https://plotly.com/python/) for more information on how to use the library.
 Start with the notebook from @{sec-act1-selfstudy1}, recreate the visualizations from @{sec-act1} using `plotly` and explore the data interactively.
@@ -45,6 +46,7 @@ Another approach could be to use [parallel coordinates plots](https://plotly.com
 ## Parallel coordinates plots
 ::::
 Use [parallel coordinates plots](https://plotly.com/python/parallel-coordinates-plot/) to visualize the relationships between multiple features and the machine failure types:
+
 1. Display every available continuous variable along with one selected failure type.
 1. Also add `Type` as a categorical variable to the plot.
 1. Make the failure type categorical.

@@ -8,16 +8,11 @@ The Jupyter ecosystem is widely used for interactive exploration and reporting p
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
 :::: {#exr-basics-mv-space}
-## Setup Jupyterlab
-::::
-Use (`pdm`)[https://pdm-project.org] to create a new environment and install (`jupyterlab`)[https://jupyter.org/install].
-:::
-
-::: {.callout-caution appearance="simple" collapse="true" icon=false}
-:::: {#exr-basics-mv-space}
-## Jupyterlab Introduction
+## Introducing JupyterLab
 ::::
 Study the [JupyterLab documentation](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html) to learn about its features and capabilities and experiment with them using your JupyterLab environment.
+
+Use [`pdm`](https://pdm-project.org) to create a new environment and install [`jupyterlab`](https://jupyter.org/install).
 
 After this exercise you should be able to answer the following questions:
 
@@ -36,9 +31,9 @@ And you should be able to do the following:
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
 :::: {#exr-basics-mv-space}
-## Use Jupyterlab
+## Using JupyterLab
 ::::
-- Create a notebook from the code provided @{sec-act1}.
+- Create a notebook from the code provided in @{sec-act1}.
   Be sure to divide the code into separate cells for each logical step.
 - Use markdown cells to explain and structure the code.
 - Ideally, each code cell is self-contained and focuses on a single task or concept.
