@@ -1,12 +1,13 @@
-# Introduction
+# Introduction {#act0-sec-intro}
 
 In this module we will explore _Industrial Data Science_, a term that is not widely used, defined or standardized (yet).
 
 Generally, it refers to the application of data science techniques within industrial and business domains.
 This includes optimizing processes, predictive maintenance, quality control, supply chain management and automation by leveraging large volumes of sensor and process data.
 
-The term _Industrial Artificial Intelligence_ is more common in literature and appears to be used interchangeably with the fuzzy definition of _Industrial Data Science_.
+The term _Industrial Artificial Intelligence_ (Industrial AI) is more common in literature and appears to be used interchangeably with the fuzzy definition of _Industrial Data Science_.
 According to @{peres2020}, Industrial AI distinguishes itself within the field of AI in five dimensions:
+
 - **Infrastructure**: Large emphasis on real-time processing capabilities.
 
 - **Data**: Often involves large volume diverse datasets from multiple sources.
@@ -17,16 +18,19 @@ According to @{peres2020}, Industrial AI distinguishes itself within the field o
 
 - **Objectives**: Targets value creation, such as e.g. reducing waste, improving quality, and boosting operational efficiency.
 
-Unlike typical classes that use clean, polished datasets, in this lecture we will get our hands dirty and work with raw machine data with the ultimate goal to set up a data science product on a simulated machine using live data.
+Unlike typical courses that use clean, polished datasets, in this lecture we will get our hands dirty and work with (simulated) raw machine data with the ultimate goal to set up a data science product on a simulated machine using live data.
 
-In @{sec-act1}, we will prepare ourselves by exploring curated data sets of machine sensors.
+In @{sec-act0-intro} to @{sec-act0-applications}, we will start with an introduction to Industrial Data Science, its significance, its history, and its applications.
 
-@{sec-act2} gives a brief overview over time series data, a common data type in industrial settings.
+In @{sec-act1} to @{sec-act1-selfstudy4}, we will prepare ourselves by exploring curated data sets of machine sensors.
 
-Finally in @{sec-act3}, we will spotlight a dataset which is the more typical case when facing data science challenges in industry and will use everything we have learned so far to control simulated machines.
+@{sec-act2} to @{sec-act2-selfstudy2} provide an overview of time series data, including common applications and methods.
 
-Please note that Industrial Data Science is a vast and rapidly evolving field, encompassing a wide range of industries, technologies, and specialized methods. Each industrial context presents unique challenges and data architectures.
+In @{sec-act3} to @{sec-act3-selfstudy2}, we will work directly with simple simulated machines.
+
+Finally, @{sec-act4} will give a brief outlook on selected topics in Industrial Data Science.
+
+Please note that Industrial Data Science is a vast and rapidly evolving field, encompassing a wide range of industries, technologies, and specialized methods.
+Each industrial context presents unique challenges and data architectures.
 Covering more of the relevant tools, algorithms, and real-world scenarios in depth would require far more time and resources than a single module allows.
-My focus, therefore, is to introduce key concepts and practical skills, laying a foundation 
-for further exploration.
-
+The focus of this material, therefore, is to introduce key concepts and practical skills, laying a foundation for further exploration.
