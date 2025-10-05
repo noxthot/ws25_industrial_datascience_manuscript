@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:1d78cfb575425cc123e0ea6943b38775f328eff636e65f862ffa4cf753aa225b"
+content_hash = "sha256:2cef75a5d9f3f72db613cc72f9571019eff868ff89f7f5b38973a1c557cfc0f3"
 
 [[metadata.targets]]
 requires_python = "==3.13.*"
@@ -1011,6 +1011,21 @@ files = [
 ]
 
 [[package]]
+name = "llvmlite"
+version = "0.45.0"
+requires_python = ">=3.10"
+summary = "lightweight wrapper around basic LLVM functionality"
+groups = ["default"]
+files = [
+    {file = "llvmlite-0.45.0-cp313-cp313-macosx_10_15_x86_64.whl", hash = "sha256:f719f98e4f3a6292b1a6495500b2cf668d3604907499c483b326da5ce2ff9f01"},
+    {file = "llvmlite-0.45.0-cp313-cp313-macosx_12_0_arm64.whl", hash = "sha256:4ffa899f7584ef48f1037308d92cb19460a0afb834aa1fe9db9d3e52d0e81a79"},
+    {file = "llvmlite-0.45.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:2c12fde908967e464b265554143c030ba4dcc2b981a815582d7708a30295018e"},
+    {file = "llvmlite-0.45.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:83567cbbf598eb57f108222dfc3dfee065c20a2aa004391360949f2e8ff2b8b4"},
+    {file = "llvmlite-0.45.0-cp313-cp313-win_amd64.whl", hash = "sha256:f68890ceb662e874933103e91e239389ff7275c4befba8e43ccd46ae3231b89e"},
+    {file = "llvmlite-0.45.0.tar.gz", hash = "sha256:ceb0bcd20da949178bd7ab78af8de73e9f3c483ac46b5bef39f06a4862aa8336"},
+]
+
+[[package]]
 name = "markupsafe"
 version = "3.0.2"
 requires_python = ">=3.9"
@@ -1220,6 +1235,25 @@ files = [
 ]
 
 [[package]]
+name = "numba"
+version = "0.62.0"
+requires_python = ">=3.10"
+summary = "compiling Python code using LLVM"
+groups = ["default"]
+dependencies = [
+    "llvmlite<0.46,>=0.45.0dev0",
+    "numpy<2.4,>=1.22",
+]
+files = [
+    {file = "numba-0.62.0-cp313-cp313-macosx_10_15_x86_64.whl", hash = "sha256:07e76ac7bcd47156a758df52e9752fdfb94ff5f80b78c4710cabc568d8d3d6ad"},
+    {file = "numba-0.62.0-cp313-cp313-macosx_12_0_arm64.whl", hash = "sha256:a972689dad64a7047f555d93ce829fe05ca2519ad0cf7af0071a64145c571039"},
+    {file = "numba-0.62.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:f789b1f2997fc34b1b88fcc4481886dcd44afcffbd3e28affedce54aec7fdcc1"},
+    {file = "numba-0.62.0-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:516525981f19f36d3a0bada0fb7479cf0bf925b5e389d03aac87f3758c5cfb9e"},
+    {file = "numba-0.62.0-cp313-cp313-win_amd64.whl", hash = "sha256:591a9c485904f219a129b0493f89d27de24286fb66dd5a577b11edc62fc78db4"},
+    {file = "numba-0.62.0.tar.gz", hash = "sha256:2afcc7899dc93fefecbb274a19c592170bc2dbfae02b00f83e305332a9857a5a"},
+]
+
+[[package]]
 name = "numpy"
 version = "2.3.3"
 requires_python = ">=3.11"
@@ -1327,6 +1361,20 @@ groups = ["default"]
 files = [
     {file = "parso-0.8.4-py2.py3-none-any.whl", hash = "sha256:a418670a20291dacd2dddc80c377c5c3791378ee1e8d12bffc35420643d43f18"},
     {file = "parso-0.8.4.tar.gz", hash = "sha256:eb3a7b58240fb99099a345571deecc0f9540ea5f4dd2fe14c2a99d6b281ab92d"},
+]
+
+[[package]]
+name = "patsy"
+version = "1.0.1"
+requires_python = ">=3.6"
+summary = "A Python package for describing statistical models and for building design matrices."
+groups = ["default"]
+dependencies = [
+    "numpy>=1.4",
+]
+files = [
+    {file = "patsy-1.0.1-py2.py3-none-any.whl", hash = "sha256:751fb38f9e97e62312e921a1954b81e1bb2bcda4f5eeabaf94db251ee791509c"},
+    {file = "patsy-1.0.1.tar.gz", hash = "sha256:e786a9391eec818c054e359b737bbce692f051aee4c661f4141cc88fb459c0c4"},
 ]
 
 [[package]]
@@ -1761,6 +1809,17 @@ files = [
 ]
 
 [[package]]
+name = "scikit-base"
+version = "0.12.6"
+requires_python = "<3.14,>=3.9"
+summary = "Base classes for sklearn-like parametric objects"
+groups = ["default"]
+files = [
+    {file = "scikit_base-0.12.6-py3-none-any.whl", hash = "sha256:68369cf633502e7649c6e029a78e30063154ee2eaccad34a48e19e64272a820f"},
+    {file = "scikit_base-0.12.6.tar.gz", hash = "sha256:553e2bafaf30cd91d873bf424a9d16772d7638ea02ded6fb649b5d4b4c236d14"},
+]
+
+[[package]]
 name = "scikit-learn"
 version = "1.7.2"
 requires_python = ">=3.10"
@@ -1867,6 +1926,26 @@ files = [
 ]
 
 [[package]]
+name = "sktime"
+version = "0.39.0"
+requires_python = "<3.14,>=3.10"
+summary = "A unified framework for machine learning with time series"
+groups = ["default"]
+dependencies = [
+    "joblib<1.6,>=1.2.0",
+    "numpy<2.4,>=1.21",
+    "packaging",
+    "pandas<2.4.0,>=1.1",
+    "scikit-base<0.13.0,>=0.6.1",
+    "scikit-learn<1.8.0,>=0.24",
+    "scipy<2.0.0,>=1.2",
+]
+files = [
+    {file = "sktime-0.39.0-py3-none-any.whl", hash = "sha256:4fa722866336d7f43f82c9239cd2c9d3a89aab553aa5c59ce4bfbc212d4d56bd"},
+    {file = "sktime-0.39.0.tar.gz", hash = "sha256:1ab976faa55b2a118f93d15828d1a13be3d963f693fdd05fdf82f882405b9d13"},
+]
+
+[[package]]
 name = "sniffio"
 version = "1.3.1"
 requires_python = ">=3.7"
@@ -1901,6 +1980,29 @@ dependencies = [
 files = [
     {file = "stack_data-0.6.3-py3-none-any.whl", hash = "sha256:d5558e0c25a4cb0853cddad3d77da9891a08cb85dd9f9f91b9f8cd66e511e695"},
     {file = "stack_data-0.6.3.tar.gz", hash = "sha256:836a778de4fec4dcd1dcd89ed8abff8a221f58308462e1c4aa2a3cf30148f0b9"},
+]
+
+[[package]]
+name = "statsmodels"
+version = "0.14.5"
+requires_python = ">=3.9"
+summary = "Statistical computations and models for Python"
+groups = ["default"]
+dependencies = [
+    "numpy<3,>=1.22.3",
+    "packaging>=21.3",
+    "pandas!=2.1.0,>=1.4",
+    "patsy>=0.5.6",
+    "scipy!=1.9.2,>=1.8",
+]
+files = [
+    {file = "statsmodels-0.14.5-cp313-cp313-macosx_10_13_x86_64.whl", hash = "sha256:906263134dd1a640e55ecb01fda4a9be7b9e08558dba9e4c4943a486fdb0c9c8"},
+    {file = "statsmodels-0.14.5-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:9118f76344f77cffbb3a9cbcff8682b325be5eed54a4b3253e09da77a74263d3"},
+    {file = "statsmodels-0.14.5-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl", hash = "sha256:9dc4ee159070557c9a6c000625d85f653de437772fe7086857cff68f501afe45"},
+    {file = "statsmodels-0.14.5-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:5a085d47c8ef5387279a991633883d0e700de2b0acc812d7032d165888627bef"},
+    {file = "statsmodels-0.14.5-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:9f866b2ebb2904b47c342d00def83c526ef2eb1df6a9a3c94ba5fe63d0005aec"},
+    {file = "statsmodels-0.14.5-cp313-cp313-win_amd64.whl", hash = "sha256:2a06bca03b7a492f88c8106103ab75f1a5ced25de90103a89f3a287518017939"},
+    {file = "statsmodels-0.14.5.tar.gz", hash = "sha256:de260e58cccfd2ceddf835b55a357233d6ca853a1aa4f90f7553a52cc71c6ddf"},
 ]
 
 [[package]]
@@ -1997,6 +2099,23 @@ groups = ["default"]
 files = [
     {file = "traitlets-5.14.3-py3-none-any.whl", hash = "sha256:b74e89e397b1ed28cc831db7aea759ba6640cb3de13090ca145426688ff1ac4f"},
     {file = "traitlets-5.14.3.tar.gz", hash = "sha256:9ed0579d3502c94b4b3732ac120375cda96f923114522847de4b3bb98b96b6b7"},
+]
+
+[[package]]
+name = "tslearn"
+version = "0.6.3"
+summary = "A machine learning toolkit dedicated to time-series data"
+groups = ["default"]
+dependencies = [
+    "joblib",
+    "numba",
+    "numpy",
+    "scikit-learn",
+    "scipy",
+]
+files = [
+    {file = "tslearn-0.6.3-py3-none-any.whl", hash = "sha256:18c3b1984b4be2af0e7579c0b914633f2220bba2b6610c11861c4563272e9169"},
+    {file = "tslearn-0.6.3.tar.gz", hash = "sha256:c855c0b784b42dc4c50f4eaf524ec7ed658037e86fc14af38ca3b66c75dd6adb"},
 ]
 
 [[package]]
