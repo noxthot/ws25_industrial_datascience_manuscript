@@ -1,4 +1,7 @@
 # Application areas {#sec-0-applications}
+::: {.callout-note}
+The following is a non-exhaustive list of common application areas of Industrial Data Science.
+:::
 
 ## Process optimization
 - Energy consumption prediction and optimization
