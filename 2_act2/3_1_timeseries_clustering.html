@@ -5010,8 +5010,8 @@ if (outputEl) {{
 </div>
 <p>Without class labels it is hard to count the number of classes in the data, but we can see that there are some patterns in the data.</p>
 <p>Since normalization and scaling is important for distance-based methods, we will use the <code>StandardScaler</code> from <code>sklearn</code> to standardize the data to have zero mean and unit variance.</p>
-<div id="3ab4b52e" class="cell" data-execution_count="160">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>X_scaled <span class="op">=</span> StandardScaler().fit_transform(X[:, :, <span class="dv">0</span>])  <span class="co"># In this case, the data set was already scaled beforehand, but we do it here explicitely for demonstration purposes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="3ab4b52e" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>X_scaled <span class="op">=</span> StandardScaler().fit_transform(X[:, :, <span class="dv">0</span>])  <span class="co"># In this case, the dataset was already scaled beforehand, but we do it here explicitely for demonstration purposes</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Let us also just visualize a few time series from the dataset to get a better idea of the data.</p>
 <div id="22ac6bd7" class="cell" data-execution_count="161">
@@ -5182,7 +5182,7 @@ if (outputEl) {{
                         })                };            </script>        </div>
 </div>
 </div>
-<p>The four classes from the original data set can be described as follows: - Class A (Cluster 1 in Figure): Time series that start high, rise to a huge peak around the middle, fall back to low and then gradually rise to high again. - Class B (Cluster 2 in Figure): Time series that start high, drop to a low point around the middle, and then rise back up. - Class C (Cluster 3 in Figure): Time series that start low, quickly rise to high around the middle, and then show some oscillations on high plateau - Class D (Cluster 4 in Figure): Similiar to Class C, but without oscillations.</p>
+<p>The four classes from the original dataset can be described as follows: - Class A (Cluster 1 in Figure): Time series that start high, rise to a huge peak around the middle, fall back to low and then gradually rise to high again. - Class B (Cluster 2 in Figure): Time series that start high, drop to a low point around the middle, and then rise back up. - Class C (Cluster 3 in Figure): Time series that start low, quickly rise to high around the middle, and then show some oscillations on high plateau - Class D (Cluster 4 in Figure): Similiar to Class C, but without oscillations.</p>
 <p>The clusters found by the <span class="math inline">\(k\)</span>-means algorithm do not correspond well to these classes: - Class A and B are mixed up in Cluster 2. - Class C and D are mixed up in Cluster 1, 3, and 4.</p>
 <p>This is due to the fact that the <span class="math inline">\(k\)</span>-means algorithm is based on minimizing the within-cluster distances based on the euclidean distance, which does not necessarily correspond to the true classes in the data.</p>
 <p>This also reflects when we visualize the cluster centers.</p>

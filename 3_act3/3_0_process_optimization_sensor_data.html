@@ -4484,12 +4484,12 @@ return Plotly;
 <h2 data-number="20.1" class="anchored" data-anchor-id="setting-the-stage"><span class="header-section-number">20.1</span> Setting the stage</h2>
 <p>Imagine a manufacturing chain which is dedicated to produce knifes with wooden handles. Various machines are interconnected and the process flow is as follows: - Machine A prepares the steel blade and shaft - Machine B applies epoxy to the grip area - Machine C inserts the wooden handle material. - Machine D is a curing oven, hardening the adhesive. - Machine E coats the knife with protective finish and completes the manufacturing process.</p>
 <p>Operators notice that the process is not running as smoothly as expected. The handle is not always properly bonded to the metal part and sometimes the wood is cracked. They find that the root cause of the issue lies in the epoxy application step of machine B. Common issues include excessive or insufficient epoxy application, uneven distribution, and occasional poor adhesion to the shaft. One clear economic impact is that these defect products can not be sold. But there is more to it: - Waste of material is not sustainable - The defect actually already happens in Machine B, but Machine C to E still process the faulty products, leading to further waste and costs, especially since the wooden handle is the most expensive part of the product and the curing oven is very energy-intensive.</p>
-<p>Since there is a new department focused on data science, they decide to manually inspect the epoxy application right after machine B and label the data accordingly. Additionally the machine collects some sensor data in a CSV file. This data set is given to the data science team and in tight collaboration with the operators the ambitious goal is to: - Optimize the epoxy application process to reduce defects and waste. - Human inspection is time-consuming and expensive. Find a way to predict defects occuring in Machine B before the product is handed over to machine C.</p>
+<p>Since there is a new department focused on data science, they decide to manually inspect the epoxy application right after machine B and label the data accordingly. Additionally the machine collects some sensor data in a CSV file. This dataset is given to the data science team and in tight collaboration with the operators the ambitious goal is to: - Optimize the epoxy application process to reduce defects and waste. - Human inspection is time-consuming and expensive. Find a way to predict defects occuring in Machine B before the product is handed over to machine C.</p>
 <p>Of course, this data science department is us.</p>
 </section>
 <section id="dataset" class="level2" data-number="20.2">
 <h2 data-number="20.2" class="anchored" data-anchor-id="dataset"><span class="header-section-number">20.2</span> Dataset</h2>
-<p>The data set consists of sensor readings of a simulated industrial process and consists of two files:</p>
+<p>The dataset consists of sensor readings of a simulated industrial process and consists of two files:</p>
 <ul>
 <li><code>simulated_machine_data.csv</code> stores the sensor data</li>
 <li><code>simulated_inspection_data.csv</code> stores the human inspection results</li>
@@ -5265,7 +5265,7 @@ if (outputEl) {{
 </section>
 <section id="sec-act3-eda-summary" class="level2" data-number="20.9">
 <h2 data-number="20.9" class="anchored" data-anchor-id="sec-act3-eda-summary"><span class="header-section-number">20.9</span> Summary of findings</h2>
-<p>Let us summarize our findings so far in this data set: - The pressure during the second processing step is elevated for <code>NOK_1</code> compared to <code>OK</code>. - The machine temperature does not show a notable difference between <code>OK</code> and <code>NOK_x</code>. - The source of <code>NOK_4</code> failures was not identified in this analysis. - The error codes <code>NOK_2</code> and <code>NOK_3</code> are too rare to draw any conclusions.</p>
+<p>Let us summarize our findings so far in this dataset: - The pressure during the second processing step is elevated for <code>NOK_1</code> compared to <code>OK</code>. - The machine temperature does not show a notable difference between <code>OK</code> and <code>NOK_x</code>. - The source of <code>NOK_4</code> failures was not identified in this analysis. - The error codes <code>NOK_2</code> and <code>NOK_3</code> are too rare to draw any conclusions.</p>
 </section>
 </div>
 
