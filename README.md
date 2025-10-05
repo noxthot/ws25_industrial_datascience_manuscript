@@ -23,11 +23,5 @@ If you use this material, please cite it by using the [citation information](./C
 ## Setup
 [//]: # TODO - update
 
-### Ubuntu
-`gymnasium[box2d]` needs some additional system dependencies to be installed. You can do this by running the following command:
-```bash
-sudo apt-get install -y swig clang
-```
-
 ### PDM 
 tbc
