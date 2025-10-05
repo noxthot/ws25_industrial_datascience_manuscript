@@ -1,4 +1,4 @@
 ## Preface {.unnumbered}
 
-@{sec-0-history} is heavily based on @{mathur2022}, @{sec-0-applications} on @{peres2020}.
+@{sec-act0-history} is heavily based on @{mathur2022}, @{sec-act0-applications} on @{peres2020}.
 
