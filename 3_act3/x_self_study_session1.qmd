@@ -39,7 +39,7 @@ _Hint: The process is stochastic, so you can not expect to get rid of every sing
 
 How do the results of the new parameters compare to the original ones?
 
-The original data set had 5000 pieces with the following distribution:
+The original dataset had 5000 pieces with the following distribution:
 
 | Error Code | Count | Percentage |
 |------------|-------|------------|

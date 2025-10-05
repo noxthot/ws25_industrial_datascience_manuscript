@@ -23,7 +23,7 @@ Once data is collected and transformed, additional challenges may arise during a
 - There may be variables that are not captured in the data but still relevant for the process
 - Complex relationships between variables
 - Lack of labeled data for supervised learning
-- Highly imbalanced data sets
+- Highly imbalanced datasets
 - Data privacy concerns
 
 Until now, we have primarily focused on static analysis of historical data.

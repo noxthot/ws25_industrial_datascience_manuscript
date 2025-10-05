@@ -29,7 +29,7 @@ But there is more to it:
 
 Since there is a new department focused on data science, they decide to manually inspect the epoxy application right after machine B and label the data accordingly.
 Additionally the machine collects some sensor data in a CSV file.
-This data set is given to the data science team and in tight collaboration with the operators the ambitious goal is to:
+This dataset is given to the data science team and in tight collaboration with the operators the ambitious goal is to:
 - Optimize the epoxy application process to reduce defects and waste.
 - Human inspection is time-consuming and expensive.
 Find a way to predict defects occuring in Machine B before the product is handed over to machine C.
@@ -37,7 +37,7 @@ Find a way to predict defects occuring in Machine B before the product is handed
 Of course, this data science department is us.
 
 ## Dataset
-The data set consists of sensor readings of a simulated industrial process and consists of two files:
+The dataset consists of sensor readings of a simulated industrial process and consists of two files:
 
 - `simulated_machine_data.csv` stores the sensor data
 - `simulated_inspection_data.csv` stores the human inspection results

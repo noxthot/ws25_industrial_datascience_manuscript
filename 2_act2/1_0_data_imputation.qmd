@@ -7,7 +7,7 @@ This section is still under construction and will be completed in the near futur
 Please do not go beyond this point for now.
 :::
 
-Real data sets often contain missing values or gaps due to various reasons such as sensor malfunctions, data corruption, or transmission errors.
+Real datasets often contain missing values or gaps due to various reasons such as sensor malfunctions, data corruption, or transmission errors.
 Handling these missing values is crucial for accurate analysis and modeling.
 
 In this section we will explore common techniques for imputing missing data in time series.
