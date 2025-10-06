@@ -1,7 +1,9 @@
 # Industrial Data Science Course Material
-This repository contains the course material for an Industrial Data Science course. 
+This repository contains the course material for an Industrial Data Science course.
 
-You can find the latest version of the course material [here](https://noxthot.github.io/ws25_industrial_datascience_manuscript/).
+[//]: # TODO - This material is still work in progress (expected to be ready to be released in autumn/winter 2025).
+
+You can find the latest version of the course material at https://noxthot.github.io/ws25_industrial_datascience_manuscript/.
 
 [//]: # TODO - add DOI once published
 
