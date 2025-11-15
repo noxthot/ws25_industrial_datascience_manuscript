@@ -20,6 +20,11 @@ jobs:
         with:
             args: check
 
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
       - name: Run ruff format (check)
         uses: astral-sh/ruff-action@v3
         with:

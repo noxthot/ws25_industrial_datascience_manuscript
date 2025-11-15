@@ -6,11 +6,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  formatlint:
     uses: ./.github/workflows/lint_and_format.yml
 
   publish:
-    needs: test
+    needs: formatlint
     runs-on: ubuntu-latest
     permissions:
       contents: write
