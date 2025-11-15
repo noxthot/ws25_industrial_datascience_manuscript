@@ -3,8 +3,6 @@ name: Quarto render and publish
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
