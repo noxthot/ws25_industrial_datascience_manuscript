@@ -354,7 +354,7 @@
     "href": "2_act2/2_1_timeseries_decomposition.html",
     "title": "11  Time Series Decomposition",
     "section": "",
-    "text": "11.1 Examples\nTime series data often exhibit patterns such as trends, seasonality, and cycles. Decomposing a time series into its components can help to better understand the underlying processes.\nTime series are usually decomposed into three components: - Trend: \\(T_t\\), long-term progression of the series (e.g., increasing or decreasing). - Seasonality: \\(S_t\\), regular patterns that repeat over a fixed period (e.g., daily, weekly, yearly). - Residual: \\(I_t\\), random noise or irregular component.\nAdditive models assume that the components add together to form the time series: \\[ Y_t = T_t + S_t + I_t \\]\nMultiplicative models assume that the components multiply together to form the time series: \\[ Y_t = T_t \\times S_t \\times I_t \\]",
+    "text": "11.1 Examples\nTime series data often exhibits patterns such as trends, seasonality, and cycles. Decomposing a time series into its components can help to better understand the underlying processes.\nTime series are usually decomposed into three components:\nAdditive models assume that the components add together to form the time series: \\[ Y_t = T_t + S_t + I_t \\]\nMultiplicative models assume that the components multiply together to form the time series: \\[ Y_t = T_t \\times S_t \\times I_t \\]",
     "crumbs": [
       "Act 2: Time series -- A Curated Collection",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Time Series Decomposition</span>"
