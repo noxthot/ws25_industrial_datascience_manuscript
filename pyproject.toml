@@ -9,11 +9,15 @@ requires-python = ">=3.13"
 readme = "README.md"
 license = { text = "-" }
 dependencies = [
+    "quarto-cli>=1.7.33",
+]
+
+[dependency-groups]
+dev = [
     "matplotlib>=3.10.5",
     "numpy>=2.3.2",
     "pandas>=2.3.1",
     "plotly>=6.3.0",
-    "quarto-cli>=1.7.33",
     "scikit-learn>=1.7.1",
     "seaborn>=0.13.2",
     "sktime>=0.39.0",
