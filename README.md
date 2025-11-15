@@ -23,8 +23,6 @@ If you use this material, please cite it by using the [citation information](./C
 
 
 ## Setup
-### uv 
-**Project setup**:
 `uv` is used to manage the virtual environment and dependencies.
 
 Then install the dependencies with:
