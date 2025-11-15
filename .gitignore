@@ -9,7 +9,6 @@ __pycache__/
 /.quarto/
 
 .py[cod]
-.pdm-python
 *.quarto_ipynb
 
 **/*.quarto_ipynb

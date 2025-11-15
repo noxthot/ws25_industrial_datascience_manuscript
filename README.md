@@ -23,7 +23,11 @@ If you use this material, please cite it by using the [citation information](./C
 
 
 ## Setup
-[//]: # TODO - update
+### uv 
+**Project setup**:
+`uv` is used to manage the virtual environment and dependencies.
 
-### PDM 
-tbc
+Then install the dependencies with:
+```bash
+uv sync
+```

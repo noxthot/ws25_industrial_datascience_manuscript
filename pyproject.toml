@@ -1,15 +1,22 @@
 [project]
-name = "ws25_mci_industrial_ds_manuscript"
+name = "ws25_industrial_datascience_manuscript"
 version = "0.1.0"
-description = "Default template for PDM package"
+description = "Industrial Data Science Manuscript"
 authors = [
-    {name = "Gregor Ehrensperger", email = "g@ehrensperger.dev"},
+    { name = "Gregor Ehrensperger", email = "g@ehrensperger.dev" },
 ]
-dependencies = ["quarto-cli>=1.7.33", "matplotlib>=3.10.5", "numpy>=2.3.2", "pandas>=2.3.1", "seaborn>=0.13.2", "scikit-learn>=1.7.1", "plotly>=6.3.0", "statsmodels>=0.14.5", "tslearn>=0.6.3", "sktime>=0.39.0"]
-requires-python = "==3.13.*"
+requires-python = ">=3.13"
 readme = "README.md"
-license = {text = "-"}
-
-
-[tool.pdm]
-distribution = false
+license = { text = "-" }
+dependencies = [
+    "matplotlib>=3.10.5",
+    "numpy>=2.3.2",
+    "pandas>=2.3.1",
+    "plotly>=6.3.0",
+    "quarto-cli>=1.7.33",
+    "scikit-learn>=1.7.1",
+    "seaborn>=0.13.2",
+    "sktime>=0.39.0",
+    "statsmodels>=0.14.5",
+    "tslearn>=0.6.3",
+]

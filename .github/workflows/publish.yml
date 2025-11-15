@@ -15,18 +15,19 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: Setup PDM
-        uses: pdm-project/setup-pdm@v4
+      - name: Install uv and prepare python environment
+        uses: astral-sh/setup-uv@v7
         with:
-          cache: true
-
-      - name: Install python dependencies
-        run: pdm install
+          enable-cache: true
+          python-version-file: ".python-version"
+          
+      - name: Install dependencies
+        run: uv sync --locked
 
       - name: Render document
-        run: pdm run quarto render --to html
+        run: uv run quarto render --to html
       
       - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@v4
