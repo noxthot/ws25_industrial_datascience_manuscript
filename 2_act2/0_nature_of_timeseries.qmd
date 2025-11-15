@@ -17,7 +17,7 @@ Time series are not only used in industrial contexts, but also in various other 
 [//]: # TODO - add sources
 
 ### Airline passenger numbers
-This data contains monthly totals of international airline passengers from 1949 to 1960.
+This time series shows the monthly totals of international airline passengers from 1949 to 1960.
 ![Airline passenger numbers](../data/assets/act2/airpassengers.png)
 
 ### Atmospheric CO2 concentrations
@@ -32,7 +32,6 @@ import numpy as np
 
 random_walk = np.cumsum(np.random.randn(200))
 ```
-
 ![Simulated Random Walk](../data/assets/act2/random_walk.png)
 
 ### S&P 500 index
