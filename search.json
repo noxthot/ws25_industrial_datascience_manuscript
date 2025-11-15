@@ -596,7 +596,7 @@
     "href": "3_act3/3_0_process_optimization_sensor_data.html#loading-the-dataset",
     "title": "20  Process optimization on sensor data via EDA",
     "section": "20.5 Loading the dataset",
-    "text": "20.5 Loading the dataset\nThe dataset is available online in form of two csv files.\nSource: tba\n\npath_data = os.path.join(\"..\", \"data\", \"_assets\", \"act3\")\n\ndf_processes = pd.read_csv(os.path.join(path_data, \"simulated_machine_data.csv\"))\ndf_inspections = pd.read_csv(os.path.join(path_data, \"simulated_inspection_data.csv\"))",
+    "text": "20.5 Loading the dataset\nThe dataset is available online in form of two csv files.\nSource: tba\n\npath_data = os.path.join(\"..\", \"data\", \"assets\", \"act3\")\n\ndf_processes = pd.read_csv(os.path.join(path_data, \"simulated_machine_data.csv\"))\ndf_inspections = pd.read_csv(os.path.join(path_data, \"simulated_inspection_data.csv\"))",
     "crumbs": [
       "Act 3: Real Machine Data",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Process optimization on sensor data via EDA</span>"
