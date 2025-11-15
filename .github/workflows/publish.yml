@@ -17,6 +17,9 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v5
 
+      - name: Lint and format check
+        uses: ./.github/workflows/lint_and_format.yml
+
       - name: Install uv and prepare python environment
         uses: astral-sh/setup-uv@v7
         with:
