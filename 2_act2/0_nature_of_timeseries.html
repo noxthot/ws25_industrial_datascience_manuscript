@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -598,18 +563,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="9.1" class="anchored" data-anchor-id="examples-of-time-series-data"><span class="header-section-number">9.1</span> Examples of Time Series Data</h2>
 <section id="airline-passenger-numbers" class="level3" data-number="9.1.1">
 <h3 data-number="9.1.1" class="anchored" data-anchor-id="airline-passenger-numbers"><span class="header-section-number">9.1.1</span> Airline passenger numbers</h3>
-<p>This time series shows the monthly totals of international airline passengers from 1949 to 1960. <img src="../data/assets/act2/airpassengers.png" class="img-fluid" alt="Airline passenger numbers"></p>
+<p>This time series shows the monthly totals of international airline passengers from 1949 to 1960. Source: <code>RDatasets</code> (https://vincentarelbundock.github.io/Rdatasets/doc/datasets/AirPassengers.html) (accessed via <code>statsmodels</code>).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../data/assets/act2/airpassengers.png" class="img-fluid figure-img"></p>
+<figcaption>Airline passenger numbers</figcaption>
+</figure>
+</div>
 </section>
 <section id="atmospheric-co2-concentrations" class="level3" data-number="9.1.2">
 <h3 data-number="9.1.2" class="anchored" data-anchor-id="atmospheric-co2-concentrations"><span class="header-section-number">9.1.2</span> Atmospheric CO2 concentrations</h3>
-<p>This time series shows the monthly average atmospheric CO2 concentrations measured at the Mauna Loa Observatory in Hawaii. <img src="../data/assets/act2/mauna_loa_co2.png" class="img-fluid" alt="Atmospheric CO2 concentrations"></p>
+<p>This time series shows the monthly average atmospheric CO2 concentrations measured at the Mauna Loa Observatory in Hawaii. Source: <code>statsmodels.datasets</code> (https://www.statsmodels.org/dev/datasets/generated/co2.html#source).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../data/assets/act2/mauna_loa_co2.png" class="img-fluid figure-img"></p>
+<figcaption>Atmospheric CO2 concentrations</figcaption>
+</figure>
+</div>
 </section>
 <section id="simulated-random-walk" class="level3" data-number="9.1.3">
 <h3 data-number="9.1.3" class="anchored" data-anchor-id="simulated-random-walk"><span class="header-section-number">9.1.3</span> Simulated Random Walk</h3>
 <p>Just a simulated random walk time series. Code:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>random_walk <span class="op">=</span> np.cumsum(np.random.randn(<span class="dv">200</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>import numpy as np
+
+random_walk = np.cumsum(np.random.randn(200))</code></pre>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="../data/assets/act2/random_walk.png" class="img-fluid figure-img"></p>
@@ -619,11 +596,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="sp-500-index" class="level3" data-number="9.1.4">
 <h3 data-number="9.1.4" class="anchored" data-anchor-id="sp-500-index"><span class="header-section-number">9.1.4</span> S&amp;P 500 index</h3>
-<p>This time series shows the daily closing prices of the S&amp;P 500 in 2020. <img src="../data/assets/act2/sandp_500_close_2020.png" class="img-fluid" alt="S&amp;P 500 index"></p>
+<p>This time series shows the daily closing prices of the S&amp;P 500 in 2020. Source: https://de.finance.yahoo.com/quote/%5EGSPC/ downloaded via <code>yfinance</code> package.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../data/assets/act2/sandp_500_close_2020.png" class="img-fluid figure-img"></p>
+<figcaption>S&amp;P 500 index</figcaption>
+</figure>
+</div>
 </section>
 <section id="electrocardiagram-ecg-signal" class="level3" data-number="9.1.5">
 <h3 data-number="9.1.5" class="anchored" data-anchor-id="electrocardiagram-ecg-signal"><span class="header-section-number">9.1.5</span> Electrocardiagram (ECG) Signal</h3>
-<p>This time series represents an electrocardiogram (ECG) signal, which measures the electrical activity of the heart over time. <img src="../data/assets/act2/electrocardiogram.png" class="img-fluid" alt="Electrocardiogram (ECG) Signal"></p>
+<p>This time series represents an electrocardiogram (ECG) signal, which measures the electrical activity of the heart over time. Source: <code>scipy.misc.electrocardiogram</code> (https://docs.scipy.org/doc/scipy-1.13.0/reference/generated/scipy.misc.electrocardiogram.html).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../data/assets/act2/electrocardiogram.png" class="img-fluid figure-img"></p>
+<figcaption>Electrocardiogram (ECG) Signal</figcaption>
+</figure>
+</div>
 
 
 </section>
