@@ -10,7 +10,7 @@ Please do not go beyond this point for now.
 Time series regression belongs to the class of supervised learning and is defined as the task of predicting a continuous target variable based on time series input data.
 
 The [github repository of sktime (accessed: 02 10 25)](https://github.com/sktime/sktime/tree/main/sktime/regression) categorizes its implemented time series regression methods into the following categories:
-- **Distance-based**: Methods that use distance measures to compare time series (e.g., k-nearest neighbors).
+- **Distance-based**: Methods that use distance measures to compare time series (e.g., $k$-nearest neighbors).
 - **Interval-based**: Methods that extract features from intervals of the time series (e.g., Time Series Forest Regression).
 - **Deep learning-based**: Methods that use deep learning architectures.
 - **Kernel-based**: Methods that use kernel functions to measure similarity between time series (e.g. Time Series Support Vector Regression).
@@ -52,11 +52,9 @@ For regression, `sktime` provides [`CNNRegressor`](https://www.sktime.net/en/lat
 To adapt the architecture for regression tasks, the final layer is modified to have a single output node with a linear activation function that predicts a continuous value instead of class probabilities.
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
-Currently (`sktime` version 0.39.0), `CNNRegressor` unfortunately is not only changing the activation function of the last layer, but also of every other layer to linear.
+Currently (`sktime` version 0.39.0; as of 16 11 25), `CNNRegressor` unfortunately is not only changing the activation function of the last layer, but also of every other layer to linear.
 This effectively hinders the model's ability to learn complex patterns in the data, as linear activations do not introduce non-linearity into the model.
-I have raised an [issue](https://github.com/sktime/sktime/issues/8878) to address this.
+An [issue](https://github.com/sktime/sktime/issues/8878) was raised to address this, the related pull request was merged but not yet released (as of 16 11 25).
 
-To avoid this bug, either perform a regression where the target variable is non-negative, allowing you to use the `relu` activation function in the output layer, which is also a good choice for the hidden layers.
-
-Or simply build your own CNN using `pytorch`.
+To avoid this bug for now one can build a CNN in `PyTorch` directly.
 :::
