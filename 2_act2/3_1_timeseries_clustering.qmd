@@ -23,7 +23,7 @@ Difficulties are:
 ## Clustering algorithms {#sec-act2-cluster-algorithms}
 Time series clustering algorithms can be broadly categorized into four main types:
 
-- **Distance-Based**: These algorithms rely on a distance measure to quantify the similarity between time series. Examples include k-means and k-median.
+- **Distance-Based**: These algorithms rely on a distance measure to quantify the similarity between time series. Examples include $k$-means and $k$-median.
 - **Distribution-Based**: These methods model the distribution (in a very general sense) of the time series data and cluster based on statistical properties or descriptive features that represent the characteristics of the time series. Examples include Gaussian Mixture Models (GMM) and DBSCAN.
 - **Subsequence-Based**: These algorithms focus on clustering representative subsequences of time series data rather than the entire series. Examples include methods based on shapelets and sliding windows.
 - **Representation-Learning-Based**: These methods use techniques like autoencoders or recurrent neural networks to learn a lower-dimensional representation of the time series data, which is then clustered using traditional clustering algorithms.
