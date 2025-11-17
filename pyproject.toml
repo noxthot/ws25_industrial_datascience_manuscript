@@ -20,12 +20,16 @@ dev = [
     "plotly>=6.3.0",
     "scikit-learn>=1.7.1",
     "seaborn>=0.13.2",
-    "sktime>=0.39.0",
+    "sktime",
     "statsmodels>=0.14.5",
     "tslearn>=0.6.3",
     "scipy>=1.16.3",
     "yfinance>=0.2.66",
+    "tensorflow>=2.20.0",
 ]
 
 [tool.ruff]
 line-length = 120
+
+[tool.uv.sources]
+sktime = { git = "https://github.com/sktime/sktime.git", rev = "8d99a90" }  # version 0.15.1 to 0.39.0 have a bug in CNNRegressor
