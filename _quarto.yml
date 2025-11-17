@@ -37,7 +37,7 @@ book:
         - 2_act2/2_1_timeseries_decomposition.qmd
         - 2_act2/3_1_timeseries_clustering.qmd
         - 2_act2/4_1_timeseries_classification.qmd
-        - 2_act2/5_timeseries_regression.qmd
+        - 2_act2/5_1_timeseries_regression.qmd
         - 2_act2/x_self_study_session1.qmd
         - 2_act2/x_self_study_session2.qmd
     - part: "Act 3: Real Machine Data"
