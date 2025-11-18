@@ -1,12 +1,5 @@
 # Time Series Decomposition
 
-::: {.callout-caution}
-## Still under construction
-
-This section is still under construction and will be completed in the near future.
-Please do not go beyond this point for now.
-:::
-
 Time series data often exhibits patterns such as trends, seasonality, and cycles.
 Decomposing a time series into its components can help to better understand the underlying processes.
 

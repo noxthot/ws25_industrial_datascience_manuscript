@@ -1,12 +1,5 @@
 # Time Series Regression
 
-::: {.callout-caution}
-## Still under construction
-
-This section is still under construction and will be completed in the near future.
-Please do not go beyond this point for now.
-:::
-
 Time series regression belongs to the class of supervised learning and is defined as the task of predicting a continuous target variable based on time series input data.
 
 The [github repository of sktime (accessed: 16 11 25)](https://github.com/sktime/sktime/tree/main/sktime/regression) categorizes its implemented time series regression methods into the following categories:

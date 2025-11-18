@@ -1,12 +1,5 @@
 # Time Series Classification {#sec-act2-classification}
 
-::: {.callout-caution}
-## Still under construction
-
-This section is still under construction and will be completed in the near future.
-Please do not go beyond this point for now.
-:::
-
 Time series classification belongs to the class of supervised learning and is defined as the task of assigning a label to a time series.
 
 Again, this is a very active research area and many different methods have been proposed.
