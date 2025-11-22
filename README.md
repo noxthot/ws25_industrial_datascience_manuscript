@@ -17,6 +17,9 @@ If you use this material, please cite it by using the [citation information](./C
 ## Content
 - Time series
 - Data imputation
+- Clustering
+- Classification
+- Regression
 - Batch and Stream Processing
 - Exploratory Data Analysis
 - Predictive Maintenance
@@ -27,5 +30,11 @@ If you use this material, please cite it by using the [citation information](./C
 
 Then install the dependencies with:
 ```bash
-uv sync
+uv sync --dev
+```
+
+## Local preview
+To preview the manuscript locally, run:
+```bash
+uv run quarto preview
 ```
