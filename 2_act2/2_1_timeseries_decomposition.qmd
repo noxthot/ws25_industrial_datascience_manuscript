@@ -1,4 +1,4 @@
-# Time Series Decomposition
+# Time Series Decomposition {#sec-act2-decomposition}
 
 Time series data often exhibits patterns such as trends, seasonality, and cycles.
 Decomposing a time series into its components can help to better understand the underlying processes.

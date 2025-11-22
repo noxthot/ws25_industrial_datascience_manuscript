@@ -1,4 +1,4 @@
-# Time Series Regression
+# Time Series Regression {#sec-act2-regression}
 
 Time series regression belongs to the class of supervised learning and is defined as the task of predicting a continuous target variable based on time series input data.
 
