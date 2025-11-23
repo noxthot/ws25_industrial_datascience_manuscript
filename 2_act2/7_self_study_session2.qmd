@@ -60,7 +60,7 @@ Now, we will work with multivariate time series, which are more common in real-w
 ::::
 - Load the [`UWaveGestureLibrary`](https://timeseriesclassification.com/description.php?Dataset=GesturePebbleZ1) data set.
 - Use the time series $k$ nearest neighbour algorithm to classify the time series.
-- Use the CNN classifier to classify the time series.
+- Use the CNN classifier to classify the time series (make sure to have `sktime>=0.40.0` installed).
 - How do the results compare?
 :::
 

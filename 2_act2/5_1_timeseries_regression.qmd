@@ -37,12 +37,4 @@ The node with the highest value determines the predicted class.
 For regression, `sktime` provides [`CNNRegressor`](https://www.sktime.net/en/latest/api_reference/auto_generated/sktime.regression.deep_learning.cnn.CNNRegressor.html), which is based on the architecture described in @{zhao2017}.
 To adapt the architecture for regression tasks, the final layer is modified to have a single output node with a linear activation function that predicts a continuous value instead of class probabilities.
 
-::: {.callout-caution appearance="simple" collapse="true" icon=false}
-Currently (`sktime` version 0.39.0; as of 16 11 25), `CNNRegressor` unfortunately is not only changing the activation function of the last layer, but also of every other layer to linear.
-This effectively hinders the model's ability to learn complex patterns in the data, as linear activations do not introduce non-linearity into the model.
-An [issue](https://github.com/sktime/sktime/issues/8878) was raised to address this, the related pull request was merged but not yet released (as of 16 11 25).
-
-To avoid this bug for now, install the `sktime` from the `main` branch where this bug was already fixed (in this course material the version is pinned to revision `8d99a90`).
-:::
-
 {{< embed /2_act2/5_2_timeseries_regression_examples.ipynb echo=true >}}
