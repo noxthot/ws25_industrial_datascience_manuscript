@@ -6,3 +6,85 @@
 This section is still under construction and will be completed in the near future.
 Please do not go beyond this point for now.
 :::
+
+In this session, we will revisit the chapters @{sec-act2-clustering}, @{sec-act2-classification}, and @{sec-act2-regression}.
+
+We have seen that the algorithms for all three tasks more or less can be categorized into the same categories:
+- Based on distances or metrics: E.g. trees and forests
+- Based on distributions, kernels: E.g. Gaussian Mixture Models, SVMs
+- Based on subsequences, shapelets: E.g. bags of words, shapelet-based methods
+- Based on deep learning: E.g. recurrent neural networks, or treating the time series as images using CNNs
+- Based on random convolutions: E.g. _Random Convolutional Kernel Transform_ (ROCKET)
+- Based on ensembles of the above.
+
+We have implemented nearest neighbors (distance-based) for clustering, time series forests (distance-based) for classification, and convolutional neural networks for regression (deep learning-based).
+
+Let us have a look at one additional algorithm for each task.
+
+::: {.callout-note}
+You can use `sktime`'s `load_UCR_UEA_dataset` function to load the data sets mentioned below, e.g.
+```python
+datasetname = "UWaveGestureLibrary"
+ret_type = "numpy3d"
+
+X_train, y_train = load_UCR_UEA_dataset(
+    name=datasetname,
+    split="train",
+    return_type=ret_type,
+)
+
+X_test, y_test = load_UCR_UEA_dataset(
+    name=datasetname,
+    split="test",
+    return_type=ret_type,
+)
+```
+:::
+
+::: {.callout-caution appearance="simple" collapse="true" icon=false}
+:::: {#exr-basics-mv-space}
+## Clustering with time series DBScan
+::::
+- Load the [`GesturePebbleZ1`](https://timeseriesclassification.com/description.php?Dataset=GesturePebbleZ1) data set.
+- Use the Time Series $k$ means algorithm to cluster the data.
+- Now, try to use the time series DBScan algorithm for clustering.
+- How do the results compare?
+:::
+
+In @{sec-act2-classification} and @{sec-act2-regression}, our input was univariate, meaning each sample consisted of exactly one time series.
+Now, we will work with multivariate time series, which are more common in real-world scenarios since typically multiple sensors are available.
+
+::: {.callout-caution appearance="simple" collapse="true" icon=false}
+:::: {#exr-basics-mv-space}
+## Classification of multivariate time series
+::::
+- Load the [`UWaveGestureLibrary`](https://timeseriesclassification.com/description.php?Dataset=GesturePebbleZ1) data set.
+- Use the time series $k$ nearest neighbour algorithm to classify the time series.
+- Use the CNN classifier to classify the time series.
+- How do the results compare?
+:::
+
+Note, that not all of the algorithms have implementations for multivariate time series, e.g. `sktime`'s `TimeSeriesForestClassifier` only works for univariate time series (and raises an exception when used with a multivariate series).
+Luckily, there are other implementations available, e.g. `aeon` offers a `TimeSeriesForestClassifier` that is compatible with multivariate time series.
+
+
+::: {.callout-note}
+`aeon` is quite strict about dependencies.
+In case you have problems installing it, consider to initialize a new project and first install `aeon` before adding further packages.
+:::
+
+::: {.callout-caution appearance="simple" collapse="true" icon=false}
+:::: {#exr-basics-mv-space}
+## Classification using aeon's Time Series Forest Classifier
+::::
+- Load the [`UWaveGestureLibrary`](https://timeseriesclassification.com/description.php?Dataset=GesturePebbleZ1) data set.
+- Use `aeon`'s `TimeSeriesForestClassifier` to classify the data set.
+- Are you able to achieve better results than with the previous algorithms?
+:::
+
+::: {.callout-caution appearance="simple" collapse="true" icon=false}
+:::: {#exr-basics-mv-space}
+## Regression of multivariate time series
+::::
+- tbc
+:::

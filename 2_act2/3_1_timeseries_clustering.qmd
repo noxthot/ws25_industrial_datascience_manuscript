@@ -1,4 +1,4 @@
-# Time Series Clustering
+# Time Series Clustering {#sec-act2-clustering}
 
 The goal of clustering is to group similar time series together based on their characteristics or patterns.
 
