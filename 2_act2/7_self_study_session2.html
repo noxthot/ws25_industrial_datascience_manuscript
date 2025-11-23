@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -81,6 +116,35 @@ ul.task-list li input[type="checkbox"] {
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -542,6 +606,120 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="callout-body-container callout-body">
 <p>This section is still under construction and will be completed in the near future. Please do not go beyond this point for now.</p>
+</div>
+</div>
+<p>In this session, we will revisit the chapters <a href="3_1_timeseries_clustering.html" class="quarto-xref"><span>Chapter 12</span></a>, <a href="4_1_timeseries_classification.html" class="quarto-xref"><span>Chapter 13</span></a>, and <a href="5_1_timeseries_regression.html" class="quarto-xref"><span>Chapter 14</span></a>.</p>
+<p>We have seen that the algorithms for all three tasks more or less can be categorized into the same categories: - Based on distances or metrics: E.g. trees and forests - Based on distributions, kernels: E.g. Gaussian Mixture Models, SVMs - Based on subsequences, shapelets: E.g. bags of words, shapelet-based methods - Based on deep learning: E.g. recurrent neural networks, or treating the time series as images using CNNs - Based on random convolutions: E.g. <em>Random Convolutional Kernel Transform</em> (ROCKET) - Based on ensembles of the above.</p>
+<p>We have implemented nearest neighbors (distance-based) for clustering, time series forests (distance-based) for classification, and convolutional neural networks for regression (deep learning-based).</p>
+<p>Let us have a look at one additional algorithm for each task.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can use <code>sktime</code>’s <code>load_UCR_UEA_dataset</code> function to load the data sets mentioned below, e.g.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>datasetname <span class="op">=</span> <span class="st">"UWaveGestureLibrary"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>ret_type <span class="op">=</span> <span class="st">"numpy3d"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>X_train, y_train <span class="op">=</span> load_UCR_UEA_dataset(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span>datasetname,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    split<span class="op">=</span><span class="st">"train"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    return_type<span class="op">=</span>ret_type,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>X_test, y_test <span class="op">=</span> load_UCR_UEA_dataset(</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span>datasetname,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    split<span class="op">=</span><span class="st">"test"</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    return_type<span class="op">=</span>ret_type,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-basics-mv-space" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 16.1 (Clustering with time series DBScan)</strong></span> &nbsp;</p>
+</div>
+<ul>
+<li>Load the <a href="https://timeseriesclassification.com/description.php?Dataset=GesturePebbleZ1"><code>GesturePebbleZ1</code></a> data set.</li>
+<li>Use the Time Series <span class="math inline">\(k\)</span> means algorithm to cluster the data.</li>
+<li>Now, try to use the time series DBScan algorithm for clustering.</li>
+<li>How do the results compare?</li>
+</ul>
+</div>
+</div>
+</div>
+<p>In <a href="4_1_timeseries_classification.html" class="quarto-xref"><span>Chapter 13</span></a> and <a href="5_1_timeseries_regression.html" class="quarto-xref"><span>Chapter 14</span></a>, our input was univariate, meaning each sample consisted of exactly one time series. Now, we will work with multivariate time series, which are more common in real-world scenarios since typically multiple sensors are available.</p>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-basics-mv-space" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 16.2 (Classification of multivariate time series)</strong></span> &nbsp;</p>
+</div>
+<ul>
+<li>Load the <a href="https://timeseriesclassification.com/description.php?Dataset=GesturePebbleZ1"><code>UWaveGestureLibrary</code></a> data set.</li>
+<li>Use the time series <span class="math inline">\(k\)</span> nearest neighbour algorithm to classify the time series.</li>
+<li>Use the CNN classifier to classify the time series.</li>
+<li>How do the results compare?</li>
+</ul>
+</div>
+</div>
+</div>
+<p>Note, that not all of the algorithms have implementations for multivariate time series, e.g.&nbsp;<code>sktime</code>’s <code>TimeSeriesForestClassifier</code> only works for univariate time series (and raises an exception when used with a multivariate series). Luckily, there are other implementations available, e.g.&nbsp;<code>aeon</code> offers a <code>TimeSeriesForestClassifier</code> that is compatible with multivariate time series.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>aeon</code> is quite strict about dependencies. In case you have problems installing it, consider to initialize a new project and first install <code>aeon</code> before adding further packages.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-basics-mv-space" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 16.3 (Classification using aeon’s Time Series Forest Classifier)</strong></span> &nbsp;</p>
+</div>
+<ul>
+<li>Load the <a href="https://timeseriesclassification.com/description.php?Dataset=GesturePebbleZ1"><code>UWaveGestureLibrary</code></a> data set.</li>
+<li>Use <code>aeon</code>’s <code>TimeSeriesForestClassifier</code> to classify the data set.</li>
+<li>Are you able to achieve better results than with the previous algorithms?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-basics-mv-space" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 16.4 (Regression of multivariate time series)</strong></span> &nbsp;</p>
+</div>
+<ul>
+<li>tbc</li>
+</ul>
+</div>
 </div>
 </div>
 
