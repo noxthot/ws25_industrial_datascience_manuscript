@@ -24,17 +24,19 @@ Let us have a look at one additional algorithm for each task.
 ::: {.callout-note}
 You can use `sktime`'s `load_UCR_UEA_dataset` function to load the data sets mentioned below, e.g.
 ```python
-datasetname = "UWaveGestureLibrary"
+from sktime.datasets import load_UCR_UEA_dataset
+
+ds_name = "UWaveGestureLibrary"
 ret_type = "numpy3d"
 
 X_train, y_train = load_UCR_UEA_dataset(
-    name=datasetname,
+    name=ds_name,
     split="train",
     return_type=ret_type,
 )
 
 X_test, y_test = load_UCR_UEA_dataset(
-    name=datasetname,
+    name=ds_name,
     split="test",
     return_type=ret_type,
 )
@@ -86,9 +88,25 @@ In case you have problems installing it, consider to initialize a new project an
 - Are you able to achieve better results than with the previous algorithms?
 :::
 
+::: {.callout-note}
+You can use `aeon`'s `load_regression` function to load the data sets mentioned below, e.g.
+```python
+from aeon.datasets import load_regression
+
+ds_name = "AppliancesEnergy"
+
+X_train, y_train = load_regression(ds_name, split="train")
+X_test, y_test = load_regression(ds_name, split="test")
+```
+:::
+
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
 :::: {#exr-basics-mv-space}
 ## Regression of multivariate time series
 ::::
-- tbc
+- Load the [`AppliancesEnergy`](https://archive.ics.uci.edu/dataset/374/appliances+energy+prediction) data set.
+- Use the time series $k$ nearest neighbour algorithm to predict the energy consumption of the appliances.
+- Use the time series random forest tree algorithm to predict the energy consumption of the appliances.
+- Use the CNN regressor to predict the energy consumption of the appliances (make sure to have `sktime>=0.40.0` installed).
+- How do the results compare?
 :::
