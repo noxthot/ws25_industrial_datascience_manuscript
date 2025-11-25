@@ -20,6 +20,7 @@ First, download the data set from [here](../data/assets/act2/selfstudysessions/s
 
 Here are some useful helper functions:
 ```python
+#| code-fold: true
 import plotly.graph_objects as go
 
 def plot_production_data(

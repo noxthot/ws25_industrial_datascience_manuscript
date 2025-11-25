@@ -10,6 +10,7 @@ Please do not go beyond this point for now.
 In this session, we will revisit the chapters @{sec-act2-clustering}, @{sec-act2-classification}, and @{sec-act2-regression}.
 
 We have seen that the algorithms for all three tasks more or less can be categorized into the same categories:
+
 - Based on distances or metrics: E.g. trees and forests
 - Based on distributions, kernels: E.g. Gaussian Mixture Models, SVMs
 - Based on subsequences, shapelets: E.g. bags of words, shapelet-based methods
@@ -57,7 +58,7 @@ y_test = pd.Series(y_test).astype("category")
 - How do the results compare?
 :::
 
-In @{sec-act2-classification} and @{sec-act2-regression}, our input was univariate, meaning each sample consisted of exactly one time series.
+In @{sec-act2-classification} and @{sec-act2-regression} our input was univariate, meaning each sample consisted of exactly one time series.
 Now, we will work with multivariate time series, which are more common in real-world scenarios since typically multiple sensors are available.
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
@@ -70,7 +71,7 @@ Now, we will work with multivariate time series, which are more common in real-w
 - How do the results compare?
 :::
 
-Note, that not all of the algorithms have implementations for multivariate time series, e.g. `sktime`'s `TimeSeriesForestClassifier` only works for univariate time series (and raises an exception when used with a multivariate series).
+Note that not all of the algorithms have implementations for multivariate time series, e.g. `sktime`'s `TimeSeriesForestClassifier` only works for univariate time series (and raises an exception when used with a multivariate series).
 Luckily, there are other implementations available, e.g. `aeon` offers a `TimeSeriesForestClassifier` that is compatible with multivariate time series.
 
 
@@ -89,7 +90,7 @@ In case you have problems installing it, consider to initialize a new project an
 :::
 
 ::: {.callout-note}
-You can use `aeon`'s `load_regression` function to load the data sets mentioned below, e.g.
+You can use `aeon`'s `load_regression` function to load the data set mentioned below, e.g.
 ```python
 from aeon.datasets import load_regression
 
