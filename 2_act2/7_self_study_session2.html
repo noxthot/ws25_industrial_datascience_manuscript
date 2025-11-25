@@ -595,21 +595,16 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Still under construction
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This section is still under construction and will be completed in the near future. Please do not go beyond this point for now.</p>
-</div>
-</div>
 <p>In this session, we will revisit the chapters <a href="3_1_timeseries_clustering.html" class="quarto-xref"><span>Chapter 12</span></a>, <a href="4_1_timeseries_classification.html" class="quarto-xref"><span>Chapter 13</span></a>, and <a href="5_1_timeseries_regression.html" class="quarto-xref"><span>Chapter 14</span></a>.</p>
-<p>We have seen that the algorithms for all three tasks more or less can be categorized into the same categories: - Based on distances or metrics: E.g. trees and forests - Based on distributions, kernels: E.g. Gaussian Mixture Models, SVMs - Based on subsequences, shapelets: E.g. bags of words, shapelet-based methods - Based on deep learning: E.g. recurrent neural networks, or treating the time series as images using CNNs - Based on random convolutions: E.g. <em>Random Convolutional Kernel Transform</em> (ROCKET) - Based on ensembles of the above.</p>
+<p>We have seen that the algorithms for all three tasks more or less can be categorized into the same categories:</p>
+<ul>
+<li>Based on distances or metrics: E.g. trees and forests</li>
+<li>Based on distributions, kernels: E.g. Gaussian Mixture Models, SVMs</li>
+<li>Based on subsequences, shapelets: E.g. bags of words, shapelet-based methods</li>
+<li>Based on deep learning: E.g. recurrent neural networks, or treating the time series as images using CNNs</li>
+<li>Based on random convolutions: E.g. <em>Random Convolutional Kernel Transform</em> (ROCKET)</li>
+<li>Based on ensembles of the above.</li>
+</ul>
 <p>We have implemented nearest neighbors (distance-based) for clustering, time series forests (distance-based) for classification, and convolutional neural networks for regression (deep learning-based).</p>
 <p>Let us have a look at one additional algorithm for each task.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -663,7 +658,7 @@ Note
 </div>
 </div>
 </div>
-<p>In <a href="4_1_timeseries_classification.html" class="quarto-xref"><span>Chapter 13</span></a> and <a href="5_1_timeseries_regression.html" class="quarto-xref"><span>Chapter 14</span></a>, our input was univariate, meaning each sample consisted of exactly one time series. Now, we will work with multivariate time series, which are more common in real-world scenarios since typically multiple sensors are available.</p>
+<p>In <a href="4_1_timeseries_classification.html" class="quarto-xref"><span>Chapter 13</span></a> and <a href="5_1_timeseries_regression.html" class="quarto-xref"><span>Chapter 14</span></a> our input was univariate, meaning each sample consisted of exactly one time series. Now, we will work with multivariate time series, which are more common in real-world scenarios since typically multiple sensors are available.</p>
 <div class="callout callout-style-simple callout-caution no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -682,7 +677,7 @@ Note
 </div>
 </div>
 </div>
-<p>Note, that not all of the algorithms have implementations for multivariate time series, e.g.&nbsp;<code>sktime</code>’s <code>TimeSeriesForestClassifier</code> only works for univariate time series (and raises an exception when used with a multivariate series). Luckily, there are other implementations available, e.g.&nbsp;<code>aeon</code> offers a <code>TimeSeriesForestClassifier</code> that is compatible with multivariate time series.</p>
+<p>Note that not all of the algorithms have implementations for multivariate time series, e.g.&nbsp;<code>sktime</code>’s <code>TimeSeriesForestClassifier</code> only works for univariate time series (and raises an exception when used with a multivariate series). Luckily, there are other implementations available, e.g.&nbsp;<code>aeon</code> offers a <code>TimeSeriesForestClassifier</code> that is compatible with multivariate time series.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -723,7 +718,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can use <code>aeon</code>’s <code>load_regression</code> function to load the data sets mentioned below, e.g.</p>
+<p>You can use <code>aeon</code>’s <code>load_regression</code> function to load the data set mentioned below, e.g.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> aeon.datasets <span class="im">import</span> load_regression</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>ds_name <span class="op">=</span> <span class="st">"AppliancesEnergy"</span></span>
