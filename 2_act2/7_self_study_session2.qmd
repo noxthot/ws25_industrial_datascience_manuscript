@@ -1,12 +1,5 @@
 # Self study - Session 2 {#sec-act2-selfstudy2}
 
-::: {.callout-caution}
-## Still under construction
-
-This section is still under construction and will be completed in the near future.
-Please do not go beyond this point for now.
-:::
-
 In this session, we will revisit the chapters @{sec-act2-clustering}, @{sec-act2-classification}, and @{sec-act2-regression}.
 
 We have seen that the algorithms for all three tasks more or less can be categorized into the same categories:

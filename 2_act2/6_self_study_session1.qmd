@@ -1,12 +1,5 @@
 # Self study - Session 1 {#sec-2-selfstudy1}
 
-::: {.callout-caution}
-## Still under construction
-
-This section is still under construction and will be completed in the near future.
-Please do not go beyond this point for now.
-:::
-
 In this session, we will revisit @{sec-act2-imputation} and @{sec-act2-decomposition}.
 
 In @{sec-act2-imputation}, we have explored different methods to handle missing data in time series and have seen that the choice of imputation method can significantly affect the results.
