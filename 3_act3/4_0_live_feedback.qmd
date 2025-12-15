@@ -1,0 +1,59 @@
+# Process optimization via Live Feedback {#sec-act3-livefeedback}
+
+::: {.callout-caution}
+## Still under construction
+
+This section is still under construction and will be completed in the near future.
+Please do not go beyond this point for now.
+:::
+
+In this section, we will have a look at a simulated example of a live feedback system in an industrial manufacturing context.
+
+## Setting the stage
+Imagine a pick and place machine in a manufacturing line that is responsible for placing components onto a circuit board.
+The machine has two axes (X and Y) to position the placement head accurately over the board and a vacuum system to pick up and release components.
+Additionally it has a camera system to verify the placement accuracy of each component once it is placed.
+A couple of sensors provide real-time measurements and variables that can be used to monitor the process.
+
+Unfortunately, the machine seems to be experiencing some issues with placement accuracy, leading to an increased number of defective boards.
+To address this, the engineers set up sandboxing mode where the machine performs four steps:
+
+1. Move to pick up a component with random weight placed at a random location.
+2. Pick up the component using the vacuum system.
+3. Move to the target placement location on the circuit board with random speed. This is always at the center of the board at (150, 150).
+4. Place the component and measure the placement accuracy using the camera system.
+
+Until the start of step 3 it is possible to adjust the placement parameters by providing a correction vector that modifies the target placement location.
+
+The goal is to optimize the placement parameters in real-time based on the feedback received from the camera system after each placement.
+
+## Accessible variables
+The following variables are accessible during the process:
+- Air temperature [K]: ambient temperature around the machine
+- Attached Weight [mg]: weight of the component picked up by the vacuum system
+- Position $x$ [mm]: target position in x direction
+- Position $y$ [mm]: target position in y direction
+- Process step: current step in the process (0 to 3)
+- Process temperature [K]: temperature inside the machine
+- Speed [mm/s]: speed of the current movement
+- Speed next [mm/s]: speed for the next movement
+- Error $x$ [mm]: placement error in x direction (only available at the end of the cycle)
+- Error $y$ [mm]: placement error in y direction (only available at the end of the cycle)
+
+## Data
+One cycle usually takes 3-6 seconds to complete and the sensor data is available in realtime via _OPC Unified Architecture_ (OPC UA).
+
+::: {.callout-note}
+OPC UA is a cross-platform, open-source communication protocol for data exchange in the industrial automation space developed by the OPC Foundation.
+It is a client-server architecture that allows for secure and reliable data transfer between devices and systems from different manufacturers.
+:::
+
+Luckily, the engineers already collected a dataset of 25.000 cycles coming in two files:
+- `simulated_opcua_machinedata.csv` stores the sensor data
+- `simulated_opcua_postinspection.csv` stores the placement error data
+
+The two datasets can be merged via `cycle` column.
+
+
+{{< embed /3_act3/4_1_inspect_data.ipynb echo=true >}}
+
