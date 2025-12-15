@@ -68,6 +68,4 @@ Also, the pressure settings are critical, since they directly influence the amou
 The first processing step ensures the correct positioning of the nozzle and the final processing step is supposed to clean the nozzle, preparing it for the next application.
 
 
-
 {{< embed /3_act3/3_1_eda.ipynb echo=true >}}
-
