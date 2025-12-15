@@ -592,14 +592,91 @@
     ]
   },
   {
-    "objectID": "3_act3/4_live_feedback.html",
-    "href": "3_act3/4_live_feedback.html",
-    "title": "21  Live Feedback",
+    "objectID": "3_act3/4_0_live_feedback.html",
+    "href": "3_act3/4_0_live_feedback.html",
+    "title": "21  Process optimization via Live Feedback",
     "section": "",
-    "text": "CautionStill under construction\n\n\n\nThis section is still under construction and will be completed in the near future. Please do not go beyond this point for now.",
+    "text": "21.1 Setting the stage\nIn this section, we will have a look at a simulated example of a live feedback system in an industrial manufacturing context.\nImagine a pick and place machine in a manufacturing line that is responsible for placing components onto a circuit board. The machine has two axes (X and Y) to position the placement head accurately over the board and a vacuum system to pick up and release components. Additionally it has a camera system to verify the placement accuracy of each component once it is placed. A couple of sensors provide real-time measurements and variables that can be used to monitor the process.\nUnfortunately, the machine seems to be experiencing some issues with placement accuracy, leading to an increased number of defective boards. To address this, the engineers set up sandboxing mode where the machine performs four steps:\nUntil the start of step 3 it is possible to adjust the placement parameters by providing a correction vector that modifies the target placement location.\nThe goal is to optimize the placement parameters in real-time based on the feedback received from the camera system after each placement.",
     "crumbs": [
       "Act 3: Real Machine Data",
-      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Live Feedback</span>"
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Process optimization via Live Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/4_0_live_feedback.html#setting-the-stage",
+    "href": "3_act3/4_0_live_feedback.html#setting-the-stage",
+    "title": "21  Process optimization via Live Feedback",
+    "section": "",
+    "text": "Move to pick up a component with random weight placed at a random location.\nPick up the component using the vacuum system.\nMove to the target placement location on the circuit board with random speed. This is always at the center of the board at (150, 150).\nPlace the component and measure the placement accuracy using the camera system.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Process optimization via Live Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/4_0_live_feedback.html#accessible-variables",
+    "href": "3_act3/4_0_live_feedback.html#accessible-variables",
+    "title": "21  Process optimization via Live Feedback",
+    "section": "21.2 Accessible variables",
+    "text": "21.2 Accessible variables\nThe following variables are accessible during the process: - Air temperature [K]: ambient temperature around the machine - Attached Weight [mg]: weight of the component picked up by the vacuum system - Position \\(x\\) [mm]: target position in x direction - Position \\(y\\) [mm]: target position in y direction - Process step: current step in the process (0 to 3) - Process temperature [K]: temperature inside the machine - Speed [mm/s]: speed of the current movement - Speed next [mm/s]: speed for the next movement - Error \\(x\\) [mm]: placement error in x direction (only available at the end of the cycle) - Error \\(y\\) [mm]: placement error in y direction (only available at the end of the cycle)",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Process optimization via Live Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/4_0_live_feedback.html#data",
+    "href": "3_act3/4_0_live_feedback.html#data",
+    "title": "21  Process optimization via Live Feedback",
+    "section": "21.3 Data",
+    "text": "21.3 Data\nOne cycle usually takes 3-6 seconds to complete and the sensor data is available in realtime via OPC Unified Architecture (OPC UA).\n\n\n\n\n\n\nNote\n\n\n\nOPC UA is a cross-platform, open-source communication protocol for data exchange in the industrial automation space developed by the OPC Foundation. It is a client-server architecture that allows for secure and reliable data transfer between devices and systems from different manufacturers.\n\n\nLuckily, the engineers already collected a dataset of 25.000 cycles coming in two files: - simulated_opcua_machinedata.csv stores the sensor data - simulated_opcua_postinspection.csv stores the placement error data\nThe two datasets can be merged via cycle column.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Process optimization via Live Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/4_0_live_feedback.html#loading-packages",
+    "href": "3_act3/4_0_live_feedback.html#loading-packages",
+    "title": "21  Process optimization via Live Feedback",
+    "section": "21.4 Loading packages",
+    "text": "21.4 Loading packages\n\nimport os\n\nimport pandas as pd  # used for data handling\nimport seaborn as sns  # used for statistical data visualization\nimport plotly.io as pio  # used to set the default plotly renderer\n\npio.renderers.default = (\n    \"notebook\"  # set the default plotly renderer to \"notebook\" (necessary for quarto to render the plots)\n)",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Process optimization via Live Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/4_0_live_feedback.html#loading-the-dataset",
+    "href": "3_act3/4_0_live_feedback.html#loading-the-dataset",
+    "title": "21  Process optimization via Live Feedback",
+    "section": "21.5 Loading the dataset",
+    "text": "21.5 Loading the dataset\nThe dataset is available online in form of two csv files.\nSource: tba\n\npath_data = os.path.join(\"..\", \"data\", \"assets\", \"act3\")\n\ndf_machinedata = pd.read_csv(os.path.join(path_data, \"simulated_opcua_machinedata.csv\"))\ndf_postinspection = pd.read_csv(os.path.join(path_data, \"simulated_opcua_postinspection.csv\"))",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Process optimization via Live Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/4_0_live_feedback.html#quick-check-data-integrity",
+    "href": "3_act3/4_0_live_feedback.html#quick-check-data-integrity",
+    "title": "21  Process optimization via Live Feedback",
+    "section": "21.6 Quick check data integrity",
+    "text": "21.6 Quick check data integrity\n\ndf_machinedata\n\n\n\n\n\n\n\n\nAir temperature [K]\nAttached Weight [mg]\nPosition x [mm]\nPosition y [mm]\nProcess step\nProcess temperature [K]\nSpeed [mm/s]\nSpeed next [mm/s]\ntimestamp\ncycle\n\n\n\n\n0\n24.606632\n0.000000\n68.124535\n65.789373\n0\n31.483151\n100.000000\n0.000000\n2025-12-15T14:07:38.673121\n1\n\n\n1\n23.958676\n417.173109\n68.124535\n65.789373\n1\n32.524906\n0.000000\n70.265797\n2025-12-15T14:07:39.867643\n1\n\n\n2\n25.858914\n417.173109\n150.000000\n150.000000\n2\n30.295518\n70.265797\n0.000000\n2025-12-15T14:07:40.387643\n1\n\n\n3\n24.852862\n0.000000\n150.000000\n150.000000\n3\n31.388396\n0.000000\n100.000000\n2025-12-15T14:07:42.079185\n1\n\n\n4\n22.561051\n0.000000\n233.123000\n123.150991\n0\n31.371059\n100.000000\n0.000000\n2025-12-15T14:07:42.099185\n2\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n99995\n8.845527\n0.000000\n150.000000\n150.000000\n3\n15.806539\n0.000000\n100.000000\n2025-12-16T22:31:16.208835\n24999\n\n\n99996\n11.444153\n0.000000\n104.567248\n264.506366\n0\n16.093692\n100.000000\n0.000000\n2025-12-16T22:31:16.228835\n25000\n\n\n99997\n9.295340\n480.272350\n104.567248\n264.506366\n1\n14.099441\n0.000000\n82.389574\n2025-12-16T22:31:17.480738\n25000\n\n\n99998\n9.364440\n480.272350\n150.000000\n150.000000\n2\n15.774856\n82.389574\n0.000000\n2025-12-16T22:31:18.000738\n25000\n\n\n99999\n7.113718\n0.000000\n150.000000\n150.000000\n3\n15.708472\n0.000000\n100.000000\n2025-12-16T22:31:19.515955\n25000\n\n\n\n\n100000 rows × 10 columns\n\n\n\n\ndf_postinspection\n\n\n\n\n\n\n\n\ncycle\nerror_x\nerror_y\n\n\n\n\n0\n1\n0.926427\n0.952850\n\n\n1\n2\n-1.071760\n0.346182\n\n\n2\n3\n0.935244\n0.958105\n\n\n3\n4\n-1.330248\n2.396199\n\n\n4\n5\n1.269216\n-0.984624\n\n\n...\n...\n...\n...\n\n\n24995\n24996\n-1.772174\n-1.043073\n\n\n24996\n24997\n2.629789\n0.122697\n\n\n24997\n24998\n-1.865141\n1.091747\n\n\n24998\n24999\n-0.679947\n1.311611\n\n\n24999\n25000\n0.684341\n-1.724778\n\n\n\n\n25000 rows × 3 columns\n\n\n\n\ndf = df_machinedata.merge(df_postinspection, on=\"cycle\", how=\"left\")\ndf\n\n\n\n\n\n\n\n\nAir temperature [K]\nAttached Weight [mg]\nPosition x [mm]\nPosition y [mm]\nProcess step\nProcess temperature [K]\nSpeed [mm/s]\nSpeed next [mm/s]\ntimestamp\ncycle\nerror_x\nerror_y\n\n\n\n\n0\n24.606632\n0.000000\n68.124535\n65.789373\n0\n31.483151\n100.000000\n0.000000\n2025-12-15T14:07:38.673121\n1\n0.926427\n0.952850\n\n\n1\n23.958676\n417.173109\n68.124535\n65.789373\n1\n32.524906\n0.000000\n70.265797\n2025-12-15T14:07:39.867643\n1\n0.926427\n0.952850\n\n\n2\n25.858914\n417.173109\n150.000000\n150.000000\n2\n30.295518\n70.265797\n0.000000\n2025-12-15T14:07:40.387643\n1\n0.926427\n0.952850\n\n\n3\n24.852862\n0.000000\n150.000000\n150.000000\n3\n31.388396\n0.000000\n100.000000\n2025-12-15T14:07:42.079185\n1\n0.926427\n0.952850\n\n\n4\n22.561051\n0.000000\n233.123000\n123.150991\n0\n31.371059\n100.000000\n0.000000\n2025-12-15T14:07:42.099185\n2\n-1.071760\n0.346182\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n99995\n8.845527\n0.000000\n150.000000\n150.000000\n3\n15.806539\n0.000000\n100.000000\n2025-12-16T22:31:16.208835\n24999\n-0.679947\n1.311611\n\n\n99996\n11.444153\n0.000000\n104.567248\n264.506366\n0\n16.093692\n100.000000\n0.000000\n2025-12-16T22:31:16.228835\n25000\n0.684341\n-1.724778\n\n\n99997\n9.295340\n480.272350\n104.567248\n264.506366\n1\n14.099441\n0.000000\n82.389574\n2025-12-16T22:31:17.480738\n25000\n0.684341\n-1.724778\n\n\n99998\n9.364440\n480.272350\n150.000000\n150.000000\n2\n15.774856\n82.389574\n0.000000\n2025-12-16T22:31:18.000738\n25000\n0.684341\n-1.724778\n\n\n99999\n7.113718\n0.000000\n150.000000\n150.000000\n3\n15.708472\n0.000000\n100.000000\n2025-12-16T22:31:19.515955\n25000\n0.684341\n-1.724778\n\n\n\n\n100000 rows × 12 columns",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Process optimization via Live Feedback</span>"
+    ]
+  },
+  {
+    "objectID": "3_act3/4_0_live_feedback.html#visualize-errors",
+    "href": "3_act3/4_0_live_feedback.html#visualize-errors",
+    "title": "21  Process optimization via Live Feedback",
+    "section": "21.7 Visualize Errors",
+    "text": "21.7 Visualize Errors\n\nsns.jointplot(data=df_postinspection, x=\"error_x\", y=\"error_y\", kind=\"kde\", fill=True, cmap=\"viridis\")\n\n\n\n\n\n\n\n\nThis is a rather interesting error distribution.\nChapter 23 will guide you through the optimization process aimed at reducing these errors and improving overall process accuracy.",
+    "crumbs": [
+      "Act 3: Real Machine Data",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Process optimization via Live Feedback</span>"
     ]
   },
   {
