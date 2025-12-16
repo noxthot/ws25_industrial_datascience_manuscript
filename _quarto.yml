@@ -47,8 +47,8 @@ book:
         - 3_act3/2_batch_vs_stream.qmd
         - 3_act3/3_0_process_optimization_sensor_data.qmd
         - 3_act3/4_0_live_feedback.qmd
-        - 3_act3/x_self_study_session1.qmd
-        - 3_act3/x_self_study_session2.qmd
+        - 3_act3/5_self_study_session1.qmd
+        - 3_act3/6_self_study_session2.qmd
     - part: "Act 4: Lost Tapes"
       chapters: 
         - 4_act4/0_index.qmd
