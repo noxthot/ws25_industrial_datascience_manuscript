@@ -4438,6 +4438,7 @@ return Plotly;
   <li><a href="#setting-the-stage" id="toc-setting-the-stage" class="nav-link active" data-scroll-target="#setting-the-stage"><span class="header-section-number">20.1</span> Setting the stage</a></li>
   <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset"><span class="header-section-number">20.2</span> Dataset</a></li>
   <li><a href="#additional-information" id="toc-additional-information" class="nav-link" data-scroll-target="#additional-information"><span class="header-section-number">20.3</span> Additional information</a></li>
+  <li><a href="#exploratory-data-analysis" id="toc-exploratory-data-analysis" class="nav-link" data-scroll-target="#exploratory-data-analysis"><span class="header-section-number">20.4</span> Exploratory Data Analysis</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/noxthot/ws25_mci_industrial_ds_manuscript/edit/main/3_act3/3_0_process_optimization_sensor_data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/noxthot/ws25_mci_industrial_ds_manuscript/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -4464,25 +4465,27 @@ return Plotly;
 </header>
 
 
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Still under construction
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This section is still under construction and will be completed in the near future. Please do not go beyond this point for now.</p>
-</div>
-</div>
 <p>In this section, we will have a look at a more realistic example of industrial data.</p>
 <section id="setting-the-stage" class="level2" data-number="20.1">
 <h2 data-number="20.1" class="anchored" data-anchor-id="setting-the-stage"><span class="header-section-number">20.1</span> Setting the stage</h2>
-<p>Imagine a manufacturing chain which is dedicated to produce knifes with wooden handles. Various machines are interconnected and the process flow is as follows: - Machine A prepares the steel blade and shaft - Machine B applies epoxy to the grip area - Machine C inserts the wooden handle material. - Machine D is a curing oven, hardening the adhesive. - Machine E coats the knife with protective finish and completes the manufacturing process.</p>
-<p>Operators notice that the process is not running as smoothly as expected. The handle is not always properly bonded to the metal part and sometimes the wood is cracked. They find that the root cause of the issue lies in the epoxy application step of machine B. Common issues include excessive or insufficient epoxy application, uneven distribution, and occasional poor adhesion to the shaft. One clear economic impact is that these defect products can not be sold. But there is more to it: - Waste of material is not sustainable - The defect actually already happens in Machine B, but Machine C to E still process the faulty products, leading to further waste and costs, especially since the wooden handle is the most expensive part of the product and the curing oven is very energy-intensive.</p>
-<p>Since there is a new department focused on data science, they decide to manually inspect the epoxy application right after machine B and label the data accordingly. Additionally the machine collects some sensor data in a CSV file. This dataset is given to the data science team and in tight collaboration with the operators the ambitious goal is to: - Optimize the epoxy application process to reduce defects and waste. - Human inspection is time-consuming and expensive. Find a way to predict defects occuring in Machine B before the product is handed over to machine C.</p>
+<p>Imagine a manufacturing chain which is dedicated to produce knifes with wooden handles. Various machines are interconnected and the process flow is as follows:</p>
+<ul>
+<li>Machine A prepares the steel blade and shaft.</li>
+<li>Machine B applies epoxy to the grip area.</li>
+<li>Machine C inserts the wooden handle material.</li>
+<li>Machine D is a curing oven, hardening the adhesive.</li>
+<li>Machine E coats the knife with protective finish and completes the manufacturing process.</li>
+</ul>
+<p>Operators notice that the process is not running as smoothly as expected. The handle is not always properly bonded to the metal part and sometimes the wood is cracked. They find that the root cause of the issue lies in the epoxy application step of machine B. Common issues include excessive or insufficient epoxy application, uneven distribution, and occasional poor adhesion to the shaft. One clear economic impact is that these defect products can not be sold. But there is more to it:</p>
+<ul>
+<li>Waste of material is not sustainable.</li>
+<li>The defect actually already happens in Machine B, but Machine C to E still process the faulty products, leading to further waste and costs, especially since the wooden handle is the most expensive part of the product and the curing oven is very energy-intensive.</li>
+</ul>
+<p>Since there is a new department focused on data science, they decide to manually inspect the epoxy application right after machine B and label the data accordingly. Additionally the machine collects some sensor data in a CSV file. This dataset is given to the data science team and in tight collaboration with the operators the ambitious goal is to:</p>
+<ul>
+<li>Optimize the epoxy application process to reduce defects and waste.</li>
+<li>Human inspection is time-consuming and expensive. Find a way to predict defects occuring in Machine B before the product is handed over to machine C.</li>
+</ul>
 <p>Of course, this data science department is us.</p>
 </section>
 <section id="dataset" class="level2" data-number="20.2">
@@ -4494,19 +4497,19 @@ return Plotly;
 </ul>
 <p>The sensor data includes the following features in a 200ms resolution:</p>
 <ul>
-<li><code>product_id</code>: Unique identifier for each product.</li>
-<li><code>process_step_index</code>: Index indicating the current step within the process. The machine performs three processing steps: Moving the nozzle to the shaft, applying epoxy, and blow out residual epoxy from nozzle while moving away.</li>
-<li><code>timestamp</code>: Timestamp of the sensor reading.</li>
 <li><code>air_temperature_C</code>: Ambient air temperature in degrees Celsius.</li>
-<li><code>process_speed_mm_s</code>: Set speed of the process in millimeters per second.</li>
+<li><code>machine_temperature_C</code>: Temperature of the machine in degrees Celsius.</li>
 <li><code>pressure_measured_bar</code>: Measured pressure in bar.</li>
 <li><code>pressure_setting_bar</code>: Pressure setting in bar.</li>
-<li><code>machine_temperature_C</code>: Temperature of the machine in degrees Celsius.</li>
+<li><code>process_speed_mm_s</code>: Set speed of the process in millimeters per second.</li>
+<li><code>process_step_index</code>: Index indicating the current step within the process.</li>
+<li><code>product_id</code>: Unique identifier for each product. The machine performs three processing steps: Moving the nozzle to the shaft, applying epoxy, and blow out residual epoxy from nozzle while moving away.</li>
+<li><code>timestamp</code>: Timestamp of the sensor reading.</li>
 </ul>
 <p>The inspection data includes the <code>product_id</code> and the <code>error_code</code>:</p>
 <ul>
-<li><code>product_id</code>: Unique identifier for each product.</li>
 <li><code>error_code</code>: Code indicating the type of error detected during inspection.</li>
+<li><code>product_id</code>: Unique identifier for each product.</li>
 </ul>
 <p>They used <code>OK</code> when there was no defect, <code>NOK_1</code> (excessive epoxy), <code>NOK_2</code> (insufficient epoxy), <code>NOK_3</code> (poor adhesion), <code>NOK_4</code> (uneven distribution).</p>
 </section>
@@ -4514,9 +4517,11 @@ return Plotly;
 <h2 data-number="20.3" class="anchored" data-anchor-id="additional-information"><span class="header-section-number">20.3</span> Additional information</h2>
 <p>The operators state that the epoxy application process is highly sensitive to variations in environmental conditions, such as temperature and humidity. They believe that incorporating additional sensor data, such as humidity levels, could further enhance understanding of the process. Also, the pressure settings are critical, since they directly influence the amount of epoxy applied to the product. The first processing step ensures the correct positioning of the nozzle and the final processing step is supposed to clean the nozzle, preparing it for the next application.</p>
 </section>
+<section id="exploratory-data-analysis" class="level2" data-number="20.4">
+<h2 data-number="20.4" class="anchored" data-anchor-id="exploratory-data-analysis"><span class="header-section-number">20.4</span> Exploratory Data Analysis</h2>
 <div class="quarto-embed-nb-cell" data-notebook="/home/runner/work/ws25_industrial_datascience_manuscript/ws25_industrial_datascience_manuscript/3_act3/3_1_eda.ipynb" data-notebook-title="Loading packages" data-notebook-cellid="ed0f92a3">
-<section id="loading-packages" class="level2" data-number="20.4">
-<h2 data-number="20.4" class="anchored" data-anchor-id="loading-packages"><span class="header-section-number">20.4</span> Loading packages</h2>
+<section id="loading-packages" class="level3" data-number="20.4.1">
+<h3 data-number="20.4.1" class="anchored" data-anchor-id="loading-packages"><span class="header-section-number">20.4.1</span> Loading packages</h3>
 <div id="ef3b093e" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -4530,8 +4535,8 @@ return Plotly;
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="loading-the-dataset" class="level2" data-number="20.5">
-<h2 data-number="20.5" class="anchored" data-anchor-id="loading-the-dataset"><span class="header-section-number">20.5</span> Loading the dataset</h2>
+<section id="loading-the-dataset" class="level3" data-number="20.4.2">
+<h3 data-number="20.4.2" class="anchored" data-anchor-id="loading-the-dataset"><span class="header-section-number">20.4.2</span> Loading the dataset</h3>
 <p>The dataset is available online in form of two <code>csv</code> files.</p>
 <p>Source: tba</p>
 <div id="20e5ab43" class="cell">
@@ -4541,8 +4546,8 @@ return Plotly;
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df_inspections <span class="op">=</span> pd.read_csv(os.path.join(path_data, <span class="st">"simulated_inspection_data.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="quick-check-data-integrity" class="level2" data-number="20.6">
-<h2 data-number="20.6" class="anchored" data-anchor-id="quick-check-data-integrity"><span class="header-section-number">20.6</span> Quick check data integrity</h2>
+<section id="quick-check-data-integrity" class="level3" data-number="20.4.3">
+<h3 data-number="20.4.3" class="anchored" data-anchor-id="quick-check-data-integrity"><span class="header-section-number">20.4.3</span> Quick check data integrity</h3>
 <div id="ff2affe1" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_processes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -4945,8 +4950,8 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p>NOK_2 and NOK_3 seem to be hardly ever happening. Let us mentally drop these error codes for this investigation, since &lt;= 10 samples give a very weak statistical basis and tend to distort plots.</p>
 </section>
-<section id="exploring-continuous-variables-by-simple-plots" class="level2" data-number="20.7">
-<h2 data-number="20.7" class="anchored" data-anchor-id="exploring-continuous-variables-by-simple-plots"><span class="header-section-number">20.7</span> Exploring continuous variables by simple plots</h2>
+<section id="exploring-continuous-variables-by-simple-plots" class="level3" data-number="20.4.4">
+<h3 data-number="20.4.4" class="anchored" data-anchor-id="exploring-continuous-variables-by-simple-plots"><span class="header-section-number">20.4.4</span> Exploring continuous variables by simple plots</h3>
 <p>Here, we visualize the continuous variables (one by one) against the timestamp to get an idea of their temporal behavior.</p>
 <div id="dac02ac8" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>CONTINUOUS_VARS <span class="op">=</span> [</span>
@@ -5101,8 +5106,8 @@ if (outputEl) {{
 </div>
 <p>We observe that the machine is in a cold state when the data collection starts and heats up to a more stable plateau, where it still seems to follow the shape of the air temperature.</p>
 </section>
-<section id="aggregating-plots" class="level2" data-number="20.8">
-<h2 data-number="20.8" class="anchored" data-anchor-id="aggregating-plots"><span class="header-section-number">20.8</span> Aggregating plots</h2>
+<section id="aggregating-plots" class="level3" data-number="20.4.5">
+<h3 data-number="20.4.5" class="anchored" data-anchor-id="aggregating-plots"><span class="header-section-number">20.4.5</span> Aggregating plots</h3>
 <p>We are looking at iterations of the same, identical process. Let us look at a plot where the processes overlap each other, colored by error code.</p>
 <p>First, we create a new index which starts at 0 for each piece that is manufactured and counts each timestamp within that process step. This index will be useful for plotting the different process iterations on top of each other.</p>
 <div id="920b2973" class="cell" data-execution_count="20">
@@ -5273,13 +5278,15 @@ if (outputEl) {{
 </div>
 <p>Also here, <code>NOK_4</code> and <code>NOK_1</code> do not show a notable difference to <code>OK</code>, while <code>NOK_2</code> and <code>NOK_3</code> can not be judged well due to the low sample size.</p>
 </section>
-<section id="sec-act3-eda-summary" class="level2" data-number="20.9">
-<h2 data-number="20.9" class="anchored" data-anchor-id="sec-act3-eda-summary"><span class="header-section-number">20.9</span> Summary of findings</h2>
+<section id="sec-act3-eda-summary" class="level3" data-number="20.4.6">
+<h3 data-number="20.4.6" class="anchored" data-anchor-id="sec-act3-eda-summary"><span class="header-section-number">20.4.6</span> Summary of findings</h3>
 <p>Let us summarize our findings so far in this dataset: - The pressure during the second processing step is elevated for <code>NOK_1</code> compared to <code>OK</code>. - The machine temperature does not show a notable difference between <code>OK</code> and <code>NOK_x</code>. - The source of <code>NOK_4</code> failures was not identified in this analysis. - The error codes <code>NOK_2</code> and <code>NOK_3</code> are too rare to draw any conclusions.</p>
+<p><a href="x_self_study_session1.html" class="quarto-xref"><span>Chapter 22</span></a> will dive deeper into the data and guide you through the process of optimizing the manufacturing process based on these findings.</p>
 </section>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

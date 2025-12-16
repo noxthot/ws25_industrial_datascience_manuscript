@@ -580,6 +580,7 @@ window.Quarto = {
   <li><a href="#setting-the-stage" id="toc-setting-the-stage" class="nav-link active" data-scroll-target="#setting-the-stage"><span class="header-section-number">21.1</span> Setting the stage</a></li>
   <li><a href="#accessible-variables" id="toc-accessible-variables" class="nav-link" data-scroll-target="#accessible-variables"><span class="header-section-number">21.2</span> Accessible variables</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">21.3</span> Data</a></li>
+  <li><a href="#loading-the-provided-data-set" id="toc-loading-the-provided-data-set" class="nav-link" data-scroll-target="#loading-the-provided-data-set"><span class="header-section-number">21.4</span> Loading the provided data set</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/noxthot/ws25_mci_industrial_ds_manuscript/edit/main/3_act3/4_0_live_feedback.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/noxthot/ws25_mci_industrial_ds_manuscript/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -606,19 +607,6 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Still under construction
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This section is still under construction and will be completed in the near future. Please do not go beyond this point for now.</p>
-</div>
-</div>
 <p>In this section, we will have a look at a simulated example of a live feedback system in an industrial manufacturing context.</p>
 <section id="setting-the-stage" class="level2" data-number="21.1">
 <h2 data-number="21.1" class="anchored" data-anchor-id="setting-the-stage"><span class="header-section-number">21.1</span> Setting the stage</h2>
@@ -635,7 +623,19 @@ window.Quarto = {
 </section>
 <section id="accessible-variables" class="level2" data-number="21.2">
 <h2 data-number="21.2" class="anchored" data-anchor-id="accessible-variables"><span class="header-section-number">21.2</span> Accessible variables</h2>
-<p>The following variables are accessible during the process: - Air temperature [K]: ambient temperature around the machine - Attached Weight [mg]: weight of the component picked up by the vacuum system - Position <span class="math inline">\(x\)</span> [mm]: target position in x direction - Position <span class="math inline">\(y\)</span> [mm]: target position in y direction - Process step: current step in the process (0 to 3) - Process temperature [K]: temperature inside the machine - Speed [mm/s]: speed of the current movement - Speed next [mm/s]: speed for the next movement - Error <span class="math inline">\(x\)</span> [mm]: placement error in x direction (only available at the end of the cycle) - Error <span class="math inline">\(y\)</span> [mm]: placement error in y direction (only available at the end of the cycle)</p>
+<p>The following variables are accessible during the process:</p>
+<ul>
+<li><code>Air temperature [K]</code>: ambient temperature around the machine.</li>
+<li><code>Attached Weight [mg]</code>: weight of the component picked up by the vacuum system.</li>
+<li><code>Position x [mm]</code>: target position in <span class="math inline">\(x\)</span> direction.</li>
+<li><code>Position y [mm]</code>: target position in <span class="math inline">\(y\)</span> direction.</li>
+<li><code>Process step</code>: current step in the process (0 to 3).</li>
+<li><code>Process temperature [K]</code>: temperature inside the machine.</li>
+<li><code>Speed [mm/s]</code>: speed of the current movement.</li>
+<li><code>Speed next [mm/s]</code>: speed for the next movement.</li>
+<li><code>Error x [mm]</code>: placement error in <span class="math inline">\(x\)</span> direction (only available at the end of the cycle).</li>
+<li><code>Error y [mm]</code>: placement error in <span class="math inline">\(y\)</span> direction (only available at the end of the cycle).</li>
+</ul>
 </section>
 <section id="data" class="level2" data-number="21.3">
 <h2 data-number="21.3" class="anchored" data-anchor-id="data"><span class="header-section-number">21.3</span> Data</h2>
@@ -653,12 +653,18 @@ Note
 <p>OPC UA is a cross-platform, open-source communication protocol for data exchange in the industrial automation space developed by the OPC Foundation. It is a client-server architecture that allows for secure and reliable data transfer between devices and systems from different manufacturers.</p>
 </div>
 </div>
-<p>Luckily, the engineers already collected a dataset of 25.000 cycles coming in two files: - <code>simulated_opcua_machinedata.csv</code> stores the sensor data - <code>simulated_opcua_postinspection.csv</code> stores the placement error data</p>
+<p>Luckily, the engineers already collected a dataset of 25.000 cycles coming in two files:</p>
+<ul>
+<li><code>simulated_opcua_machinedata.csv</code> stores the sensor data.</li>
+<li><code>simulated_opcua_postinspection.csv</code> stores the placement error data.</li>
+</ul>
 <p>The two datasets can be merged via <code>cycle</code> column.</p>
 </section>
+<section id="loading-the-provided-data-set" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="loading-the-provided-data-set"><span class="header-section-number">21.4</span> Loading the provided data set</h2>
 <div class="quarto-embed-nb-cell" data-notebook="/home/runner/work/ws25_industrial_datascience_manuscript/ws25_industrial_datascience_manuscript/3_act3/4_1_inspect_data.ipynb" data-notebook-title="Loading packages" data-notebook-cellid="ed0f92a3">
-<section id="loading-packages" class="level2" data-number="21.4">
-<h2 data-number="21.4" class="anchored" data-anchor-id="loading-packages"><span class="header-section-number">21.4</span> Loading packages</h2>
+<section id="loading-packages" class="level3" data-number="21.4.1">
+<h3 data-number="21.4.1" class="anchored" data-anchor-id="loading-packages"><span class="header-section-number">21.4.1</span> Loading packages</h3>
 <div id="ef3b093e" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -671,8 +677,8 @@ Note
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="loading-the-dataset" class="level2" data-number="21.5">
-<h2 data-number="21.5" class="anchored" data-anchor-id="loading-the-dataset"><span class="header-section-number">21.5</span> Loading the dataset</h2>
+<section id="loading-the-dataset" class="level3" data-number="21.4.2">
+<h3 data-number="21.4.2" class="anchored" data-anchor-id="loading-the-dataset"><span class="header-section-number">21.4.2</span> Loading the dataset</h3>
 <p>The dataset is available online in form of two <code>csv</code> files.</p>
 <p>Source: tba</p>
 <div id="20e5ab43" class="cell" data-execution_count="12">
@@ -682,8 +688,8 @@ Note
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df_postinspection <span class="op">=</span> pd.read_csv(os.path.join(path_data, <span class="st">"simulated_opcua_postinspection.csv"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="quick-check-data-integrity" class="level2" data-number="21.6">
-<h2 data-number="21.6" class="anchored" data-anchor-id="quick-check-data-integrity"><span class="header-section-number">21.6</span> Quick check data integrity</h2>
+<section id="quick-check-data-integrity" class="level3" data-number="21.4.3">
+<h3 data-number="21.4.3" class="anchored" data-anchor-id="quick-check-data-integrity"><span class="header-section-number">21.4.3</span> Quick check data integrity</h3>
 <div id="ff2affe1" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_machinedata</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
@@ -1145,8 +1151,8 @@ Note
 </div>
 </div>
 </section>
-<section id="visualize-errors" class="level2" data-number="21.7">
-<h2 data-number="21.7" class="anchored" data-anchor-id="visualize-errors"><span class="header-section-number">21.7</span> Visualize Errors</h2>
+<section id="visualize-errors" class="level3" data-number="21.4.4">
+<h3 data-number="21.4.4" class="anchored" data-anchor-id="visualize-errors"><span class="header-section-number">21.4.4</span> Visualize Errors</h3>
 <div id="1ad4655e" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sns.jointplot(data<span class="op">=</span>df_postinspection, x<span class="op">=</span><span class="st">"error_x"</span>, y<span class="op">=</span><span class="st">"error_y"</span>, kind<span class="op">=</span><span class="st">"kde"</span>, fill<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">"viridis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -1158,11 +1164,15 @@ Note
 </div>
 </div>
 <p>This is a rather interesting error distribution.</p>
+</section>
+<section id="next-steps" class="level3" data-number="21.4.5">
+<h3 data-number="21.4.5" class="anchored" data-anchor-id="next-steps"><span class="header-section-number">21.4.5</span> Next Steps</h3>
 <p><a href="x_self_study_session2.html" class="quarto-xref"><span>Chapter 23</span></a> will guide you through the optimization process aimed at reducing these errors and improving overall process accuracy.</p>
 </section>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
