@@ -1,12 +1,5 @@
 # Process optimization via Live Feedback {#sec-act3-livefeedback}
 
-::: {.callout-caution}
-## Still under construction
-
-This section is still under construction and will be completed in the near future.
-Please do not go beyond this point for now.
-:::
-
 In this section, we will have a look at a simulated example of a live feedback system in an industrial manufacturing context.
 
 ## Setting the stage
@@ -29,16 +22,17 @@ The goal is to optimize the placement parameters in real-time based on the feedb
 
 ## Accessible variables
 The following variables are accessible during the process:
-- Air temperature [K]: ambient temperature around the machine
-- Attached Weight [mg]: weight of the component picked up by the vacuum system
-- Position $x$ [mm]: target position in x direction
-- Position $y$ [mm]: target position in y direction
-- Process step: current step in the process (0 to 3)
-- Process temperature [K]: temperature inside the machine
-- Speed [mm/s]: speed of the current movement
-- Speed next [mm/s]: speed for the next movement
-- Error $x$ [mm]: placement error in x direction (only available at the end of the cycle)
-- Error $y$ [mm]: placement error in y direction (only available at the end of the cycle)
+
+- `Air temperature [K]`: ambient temperature around the machine.
+- `Attached Weight [mg]`: weight of the component picked up by the vacuum system.
+- `Position x [mm]`: target position in $x$ direction.
+- `Position y [mm]`: target position in $y$ direction.
+- `Process step`: current step in the process (0 to 3).
+- `Process temperature [K]`: temperature inside the machine.
+- `Speed [mm/s]`: speed of the current movement.
+- `Speed next [mm/s]`: speed for the next movement.
+- `Error x [mm]`: placement error in $x$ direction (only available at the end of the cycle).
+- `Error y [mm]`: placement error in $y$ direction (only available at the end of the cycle).
 
 ## Data
 One cycle usually takes 3-6 seconds to complete and the sensor data is available in realtime via _OPC Unified Architecture_ (OPC UA).
@@ -49,11 +43,13 @@ It is a client-server architecture that allows for secure and reliable data tran
 :::
 
 Luckily, the engineers already collected a dataset of 25.000 cycles coming in two files:
-- `simulated_opcua_machinedata.csv` stores the sensor data
-- `simulated_opcua_postinspection.csv` stores the placement error data
+
+- `simulated_opcua_machinedata.csv` stores the sensor data.
+- `simulated_opcua_postinspection.csv` stores the placement error data.
 
 The two datasets can be merged via `cycle` column.
 
+## Loading the provided data set
 
 {{< embed /3_act3/4_1_inspect_data.ipynb echo=true >}}
 

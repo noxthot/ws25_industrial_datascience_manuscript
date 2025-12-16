@@ -1,14 +1,7 @@
 # Levels of system integration
 
-::: {.callout-caution}
-## Still under construction
-
-This section is still under construction and will be completed in the near future.
-Please do not go beyond this point for now.
-:::
-
 | Level                                                  | Access & Action                            | Description                                                                                                                       |
-| ------------------------------------------------------ | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------------------ | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
 | **1. Historical Analysis (Passive Insight)**           | Data only -- no machine or data stream access | Work from static CSVs or logs, providing insights, trends, or recommendations based solely on historical data.                    |
 | **2. Monitoring & Warning (Observational)**            | Real-time data stream, no control          | Ingest live sensor or data feeds; support threshold alerts and anomaly detection but cannot affect machine behavior.              |
 | **3. Feedback Loop (Latent Influence)**                | Network access; non-real-time control      | Read from and write to systems remotely; can propose settings or adjustments (e.g., batch recalibration) but not apply instantly. |
