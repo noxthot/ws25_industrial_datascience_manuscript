@@ -19,7 +19,7 @@ Having more information about `NOK_1` and `NOK_4`, we can now try to finetune th
 :::: {#exr-basics-mv-space}
 ## Finetuning the machine parameters
 ::::
-The accompanying `Readme.md` file contains information on how to run the machine again with different parameters.
+The accompanying `readme.md` file shipped with the [`industrial_datascience_sim_machine_knifes` repository](https://github.com/noxthot/industrial_datascience_sim_machine_knifes/tree/v1.0.1) contains information on how to run the machine again with different parameters.
 Try to improve the parameters to reduce the number of defects.
 Keep `night` shift and `NUM_PIECES` at the default values.
 
