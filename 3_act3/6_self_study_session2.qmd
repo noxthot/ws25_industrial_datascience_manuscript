@@ -1,5 +1,3 @@
-[//]: # TODO - change filename
-
 # Self study - Session 2 {#sec-act3-selfstudy2}
 
 ::: {.callout-caution}
