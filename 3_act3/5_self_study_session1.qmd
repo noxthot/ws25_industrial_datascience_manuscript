@@ -1,13 +1,4 @@
-[//]: # TODO - change filename
-
 # Self study - Session 1 {#sec-act3-selfstudy1}
-
-::: {.callout-caution}
-## Still under construction
-
-This section is still under construction and will be completed in the near future.
-Please do not go beyond this point for now.
-:::
 
 In this session, we will revisit @sec-act3-eda and continue where we left off, trying to improve the process.
 
@@ -43,11 +34,11 @@ The original dataset had 5000 pieces with the following distribution:
 
 | Error Code | Count | Percentage |
 |------------|-------|------------|
-| OK         | 4662  | 93.24%     |
-| NOK_1      |   62  |  1.24%     |
+| OK         | 4628  | 92.56%     |
+| NOK_1      |   70  |  1.40%     |
 | NOK_2      |    1  |  0.02%     |
-| NOK_3      |   10  |  0.20%     |
-| NOK_4      |  265  |  5.30%     |
+| NOK_3      |    5  |  0.10%     |
+| NOK_4      |  296  |  5.92%     |
 
 :::
 
