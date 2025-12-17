@@ -31,6 +31,6 @@ In the following, we will briefly introduce distance-based clustering using two 
 {{< embed /2_act2/3_2_timeseries_similaritymeasures_examples.ipynb echo=true >}}
 
 
-## k-Means Clustering
+## k-Means Clustering {#sec-act2-cluster-examples}
 
 {{< embed /2_act2/3_3_timeseries_clustering_examples.ipynb echo=true >}}
