@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -4536,7 +4556,7 @@ return Plotly;
 <section id="loading-the-dataset" class="level3" data-number="20.4.2">
 <h3 data-number="20.4.2" class="anchored" data-anchor-id="loading-the-dataset"><span class="header-section-number">20.4.2</span> Loading the dataset</h3>
 <p>The dataset is available online in form of two <code>csv</code> files.</p>
-<p>It was released on <a href="https://doi.org/10.5281/zenodo.17956846">zenodo.org</a>, but you can also clone the source repository from <a href="https://github.com/noxthot/industrial_datascience_sim_machine_knifes/tree/v1.0.1">GitHub</a>.</p>
+<p>It was released on <a href="https://doi.org/10.5281/zenodo.18148106">zenodo.org</a> <span class="citation" data-cites="ehrensperger2026">Ehrensperger (<a href="../5_references.html#ref-ehrensperger2026" role="doc-biblioref">2026</a>)</span>, but you can also clone the source repository from <a href="https://github.com/noxthot/industrial_datascience_sim_machine_knifes/tree/v1.0.2">GitHub</a>.</p>
 <div id="20e5ab43" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_processes <span class="op">=</span> pd.read_csv(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://github.com/noxthot/industrial_datascience_sim_machine_knifes/raw/refs/tags/v1.0.1/data/simulated_machine_data.csv"</span></span>
@@ -5286,6 +5306,11 @@ if (outputEl) {{
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-ehrensperger2026" class="csl-entry" role="listitem">
+Ehrensperger, Gregor. 2026. <span>“Industrial_datascience_sim_machine_knifes: V1.0.2.”</span> Zenodo. <a href="https://doi.org/10.5281/zenodo.18148106">https://doi.org/10.5281/zenodo.18148106</a>.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
