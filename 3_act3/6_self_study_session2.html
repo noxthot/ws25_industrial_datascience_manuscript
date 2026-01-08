@@ -564,11 +564,11 @@ Note
 <p>Furthermore, engineers tell us that the rows where <code>Process step</code> is 1 should contain the necessary information to predict the placement error.</p>
 <p>Your task:</p>
 <ol type="1">
-<li>Split the provided dataset into a training and test set (depending on the chosen model, you will also need a validation set).</li>
-<li>Train a model that predicts <code>Error x [mm]</code> and <code>Error y [mm]</code>.</li>
-<li>Take a look at the model’s performance on the test set by looking at certain metrics, e.g.&nbsp;by calculating the Mean Absolute Error (MAE).</li>
-<li>Visualize the predictive capabilities by e.g.&nbsp;plotting a histogram showing the errors and residuals (predicted - true values).</li>
-<li>Persist the model to disk so that we can later load it in the live feedback system. In case you use a scaler, you will need to persist it as well.</li>
+<li><p>Split the provided dataset into a training and test set (depending on the chosen model, you will also need a validation set).</p></li>
+<li><p>Train a model that predicts <code>Error x [mm]</code> and <code>Error y [mm]</code>.</p></li>
+<li><p>Take a look at the model’s performance on the test set by looking at certain metrics, e.g.&nbsp;by calculating the Mean Absolute Error (MAE).</p></li>
+<li><p>Visualize the predictive capabilities by e.g.&nbsp;plotting a histogram showing the errors and residuals (predicted - true values).</p></li>
+<li><p>Persist the model to disk so that we can later load it in the live feedback system. In case you use a scaler, you will need to persist it as well.</p></li>
 </ol>
 </div>
 </div>
@@ -587,21 +587,21 @@ Note
 <p>Running the <code>opc-ua-server.py</code> or the provided docker-container will start the simulated pick and place machine that exposes the sensor data via OPC UA. The machine runs in real-time, meaning that one cycle takes 3-6 seconds to complete. You will see the process steps advancing in the console output. Simultaneously, the sensor data is streamed via the OPC UA protocol.</p>
 <p>Your task:</p>
 <ol type="1">
-<li>Start the machine and copy/paste the console output for the first 5 cycles.</li>
-<li>Use <a href="https://github.com/FreeOpcUa/opcua-client-gui">opcua-client</a> or any other OPC UA client of your choice to connect to the machine:
+<li><p>Start the machine and copy/paste the console output for the first 5 cycles.</p></li>
+<li><p>Use <a href="https://github.com/FreeOpcUa/opcua-client-gui">opcua-client</a> or any other OPC UA client of your choice to connect to the machine:</p>
 <ul>
 <li>Usually it should be enough to run <code>uv add opcua-client</code>, followed by <code>uv run opcua-client</code> (Windows might need an extra step to install the GUI dependencies; use Python <code>3.13</code> to avoid issues in the following steps).</li>
 <li>The server URL should be <code>opc.tcp://localhost:4840</code>, which is prefilled in the client. Simply click on <code>Connect</code> (the machine must be actively running in another terminal before connecting).</li>
 <li>Once connected, you should see a tree structure on the left side. Navigate to <code>0:Root,0:Objects,2:plcSimulator</code>.</li>
 <li>Provide a screenshot of the variable tree below <code>2:plcSimulator</code>.</li>
 </ul></li>
-<li>Look at the attributes of a variable:
+<li><p>Look at the attributes of a variable:</p>
 <ul>
 <li>Click through the variables and take a close look at the Attributes tab on the right side.</li>
 <li>The server is constantly streaming new values for each variable, but you need to hit the <code>Refresh</code> button to see the updated value.</li>
 <li>Provide a screenshot of the attributes of <code>position_x</code>.</li>
 </ul></li>
-<li>Subscribe to data changes:
+<li><p>Subscribe to data changes:</p>
 <ul>
 <li>Right-click on one of the variables (e.g.&nbsp;<code>position_x</code>) and select <code>Subscribe to data changes</code>.</li>
 <li>Subscribed variables will appear in the <code>Subscriptions</code> tab at the bottom.</li>
@@ -609,7 +609,7 @@ Note
 <li>Also observe that they are not updated at the very same time, but rather whenever there is a new measurement available.</li>
 <li>Provide a screenshot of the <code>Subscriptions</code> tab showing the data changes of <code>position_x</code>, <code>position_y</code>, and <code>cycle</code>.</li>
 </ul></li>
-<li>Look at the graph of subscribed variables:
+<li><p>Look at the graph of subscribed variables:</p>
 <ul>
 <li>This requires two more packages to be installed. If you are using <code>uv</code>, run <code>uv add numpy pyqtgraph</code> to add the necessary dependencies.</li>
 <li>Switch to the <code>Graphs</code> tab at the bottom.</li>
@@ -618,7 +618,7 @@ Note
 <li>Add the variables you want to visualize by right-clicking on them and selecting <code>Add to Graph</code>.</li>
 <li>Provide a screenshot of the graph showing <code>error_x</code> and <code>error_y</code> over time.</li>
 </ul></li>
-<li>Interact with the machine by writing values:
+<li><p>Interact with the machine by writing values:</p>
 <ul>
 <li>While looking at the graph, click on <code>correction_x</code> in the variable tree on the left side.</li>
 <li>In the Attributes tab, double click on the <code>Value</code> field to edit it.</li>
@@ -645,10 +645,10 @@ Note
 <p>Have a look at the provided <code>opc-ua-client.py</code> script, understand how it works and run it while the machine simulator is active.</p>
 <p>Your task:</p>
 <ol type="1">
-<li>For understanding, it is likely best to start by studying the <code>main()</code> function at the bottom of the script and then look at the <code>SubHandler</code> class that handles the data changes.</li>
-<li>Explain in your own words what the script is doing (a brief summary is sufficient).</li>
-<li>Run the script while the machine simulator is active and observe the printed output.</li>
-<li>Provide a screenshot of the console output showing the data changes received from the machine.</li>
+<li><p>For understanding, it is likely best to start by studying the <code>main()</code> function at the bottom of the script and then look at the <code>SubHandler</code> class that handles the data changes.</p></li>
+<li><p>Explain in your own words what the script is doing (a brief summary is sufficient).</p></li>
+<li><p>Run the script while the machine simulator is active and observe the printed output.</p></li>
+<li><p>Provide a screenshot of the console output showing the data changes received from the machine.</p></li>
 </ol>
 </div>
 </div>
@@ -708,14 +708,14 @@ Note
 </div>
 <p>Your task:</p>
 <ol type="1">
-<li>Ensure that the machine simulator is running.</li>
-<li>Ensure that your live feedback client is <em>not</em> running.</li>
-<li>Start the GUI client <code>opcua-client</code> once more and connect it to your machine.</li>
-<li>Add <code>error_x</code>, <code>error_y</code> to the graph and set the update interval to <code>1</code>s.</li>
-<li>Wait for a couple of cycles to see how the placement error evolves over time.</li>
-<li>Now, start your live feedback client.</li>
-<li>Observe how the placement error changes as your model provides corrections in real-time.</li>
-<li>Provide a screenshot of the graph showing the live placement error and the effect of your corrections: It should show both, the error before the feedback loop is started as well as the reduced error once the feedback loop is active.</li>
+<li><p>Ensure that the machine simulator is running.</p></li>
+<li><p>Ensure that your live feedback client is <em>not</em> running.</p></li>
+<li><p>Start the GUI client <code>opcua-client</code> once more and connect it to your machine.</p></li>
+<li><p>Add <code>error_x</code>, <code>error_y</code> to the graph and set the update interval to <code>1</code>s.</p></li>
+<li><p>Wait for a couple of cycles to see how the placement error evolves over time.</p></li>
+<li><p>Now, start your live feedback client.</p></li>
+<li><p>Observe how the placement error changes as your model provides corrections in real-time.</p></li>
+<li><p>Provide a screenshot of the graph showing the live placement error and the effect of your corrections: It should show both, the error before the feedback loop is started as well as the reduced error once the feedback loop is active.</p></li>
 </ol>
 </div>
 </div>
