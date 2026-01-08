@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -564,22 +544,19 @@ div.csl-indent {
 <p>This section is still under construction and will be completed in the near future. Please do not go beyond this point for now.</p>
 </div>
 </div>
-<p>Placeholder: Live-Machine</p>
-<p>Real-world applications on industrial data face many challenges. One of them being that the data from machines is usually retrieved via communication protocols from <em>programmable logic controllers</em> (PLC). These communication protocols often lack standardization and can vary significantly between different manufacturers and even different models of PLCs This heterogeneity makes it difficult to integrate data from (multiple) sources and can lead to massive complexity in data processing and analysis.</p>
-<p>In the following, you will read a review paper discussing challenges in introducing industrial data science to existing (brownfield) environments.</p>
-<div class="callout callout-style-simple callout-warning callout-titled">
+<p>In this session, we will revisit <a href="4_0_live_feedback.html" class="quarto-xref"><span>Chapter 21</span></a> and try to optimize the placement accuracy of the pick and place machine.</p>
+<p>Before we are touching the live machine, we will first try to find a suitable model based on the provided dataset.</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Predatory Journals
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Predatory journals exploit the academic publishing model for profit, often lacking rigorous peer review and editorial oversight. They may present themselves as legitimate outlets but prioritize financial gain over scholarly integrity. Researchers should be cautious when selecting journals for publication, ensuring they choose reputable venues that uphold high academic standards.</p>
-<p><a href="https://en.wikipedia.org/wiki/MDPI">Wikipedia</a> (accessed: 09 09 2025) states: <em>MDPI’s business model is based on establishing entirely open access broad-discipline journals, with fast processing times from submission to publication and article processing charges paid by the author, their institutions or funders. MDPI’s business practices have attracted controversy, with critics suggesting it sacrifices editorial and academic rigor in favor of operational speed and business interests. MDPI was included on Jeffrey Beall’s list of predatory open access publishing companies in 2014; it was removed in 2015 following a successful appeal, while applying pressure on Beall’s employer. Some journals published by MDPI have also been noted by the Chinese Academy of Sciences (CAS) and Norwegian Scientific Index for lack of rigor and possible predatory practices, as of 2025, CAS no longer lists any MDPI journals on its Early Warning List. In 2024, Finland’s Public Forum, which classifies publication channels for academic research, downgraded 193 MDPI journals to its lowest, level 0 rating.</em></p>
-<p><a href="https://www.predatoryjournals.org/">PredatoryJournals.org</a> published a <a href="https://www.predatoryjournals.org/news/is-mdpi-predatory">blog post discussing MDPI</a> in this regard.</p>
+<p>Since we are working with a live feedback system, we will need multiple terminals/consoles at the same time: 1. One terminal to run the simulated pick and place machine (the OPC UA server). 2. Optionally, one terminal to run the OPC UA client that connects to the machine and provides real-time. 3. Optionally, one terminal to run the <code>opcua-client</code> GUI to visualize the live data.</p>
 </div>
 </div>
 <div class="callout callout-style-simple callout-caution no-icon">
@@ -589,24 +566,86 @@ div.csl-indent {
 </div>
 <div class="callout-body-container">
 <div id="exr-basics-mv-space" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 23.1 (Data Science on Industrial Data – Today’s Challenges in Brown Field Applications)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Exercise 23.1 (Train a model to predict placement error)</strong></span> &nbsp;</p>
 </div>
-<p>Read <span class="citation" data-cites="klaeger2021">Klaeger, Gottschall, and Oehm (<a href="../5_references.html#ref-klaeger2021" role="doc-biblioref">2021</a>)</span>, published in MDPI. You should be able to discuss the following questions:</p>
-<ul>
-<li>What is the typical data flow from a machine to a data store?</li>
-<li>Why is data acquisition harder in brownfield environments than in labs or new machines?</li>
-<li>Why is ground truth data difficult to obtain in industrial settings and what are possible implications?</li>
-<li>How does the long lifecycle of industrial machines complicate the adoption of AI technologies?</li>
-<li>Why does data preparation in industry take even more effort than the often proclaimed <em>80% of the time needed for data preparation rule</em>?</li>
-</ul>
+<p>We are told that the placement can be adjusted until the end of step 2 by providing a correction vector that modifies the target placement location. This means that we need to predict the placement error (<code>Error x [mm]</code> and <code>Error y [mm]</code>) and provide the correction vector based on the available variables until the end of step 2.</p>
+<p>Furthermore, engineers tell us that the rows where <code>Process step</code> is 1 should contain the necessary information to predict the placement error.</p>
+<p>Your task: 1. Split the provided dataset into a training and test set (depending on the chosen model, you will also need a validation set). 2. Train a model that predicts <code>Error x [mm]</code> and <code>Error y [mm]</code>. 3. Take a look at the model’s performance on the test set by looking at certain metrics, e.g.&nbsp;by calculating the Mean Absolute Error (MAE). 4. Visualize the predictive capabilities by e.g.&nbsp;plotting a histogram showing the errors and residuals (predicted - true values). 5. Persist the model to disk so that we can later load it in the live feedback system. In case you use a scaler, you will need to persist it as well.</p>
 </div>
 </div>
+</div>
+<p>Once you have a model that performs well on the test set, we can work on integrating it in the live feedback system.</p>
+<p>But first, let us understand how to interact with the simulator. The accompanying <code>readme.md</code> file shipped with the <a href="https://github.com/noxthot/industrial_datascience_live_machine/tree/v1.0.0"><code>industrial_datascience_live_machine</code> repository</a> contains all necessary information.</p>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-basics-mv-space" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 23.2 (First encounter with the live machine simulator)</strong></span> &nbsp;</p>
+</div>
+<p>Running the <code>opc-ua-server.py</code> or the provided docker-container will start the simulated pick and place machine that exposes the sensor data via OPC UA. The machine runs in real-time, meaning that one cycle takes 3-6 seconds to complete. You will see the process steps advancing in the console output. Simultaneously, the sensor data is streamed via the OPC UA protocol.</p>
+<p>Your task: 1. Start the machine and copy/paste the console output for the first 5 cycles. 2. Use <a href="https://github.com/FreeOpcUa/opcua-client-gui">opcua-client</a> or any other OPC UA client of your choice to connect to the machine: - Usually it should be enough to run <code>uv add opcua-client</code>, followed by <code>uv run opcua-client</code> (Windows might need an extra step to install the GUI dependencies; use Python <code>3.13</code> to avoid issues in the following steps). - The server URL should be <code>opc.tcp://localhost:4840</code>, which is prefilled in the client. Simply click on <code>Connect</code> (the machine must be actively running in another terminal before connecting). - Once connected, you should see a tree structure on the left side. Navigate to <code>0:Root,0:Objects,2:plcSimulator</code>. - Provide a screenshot of the variable tree below <code>2:plcSimulator</code>. 3. Look at the attributes of a variable: - Click through the variables and take a close look at the Attributes tab on the right side. - The server is constantly streaming new values for each variable, but you need to hit the <code>Refresh</code> button to see the updated value. - Provide a screenshot of the attributes of <code>position_x</code>. 4. Subscribe to data changes: - Right-click on one of the variables (e.g.&nbsp;<code>position_x</code>) and select <code>Subscribe to data changes</code>. - Subscribed variables will appear in the <code>Subscriptions</code> tab at the bottom. - Observe that the values are changing in real-time as the machine is running. - Also observe that they are not updated at the very same time, but rather whenever there is a new measurement available. - Provide a screenshot of the <code>Subscriptions</code> tab showing the data changes of <code>position_x</code>, <code>position_y</code>, and <code>cycle</code>. 5. Look at the graph of subscribed variables: - This requires two more packages to be installed. If you are using <code>uv</code>, run <code>uv add numpy pyqtgraph</code> to add the necessary dependencies. - Switch to the <code>Graphs</code> tab at the bottom. - Change update interval to <code>1</code>s (unfortunately it appears that it is not possible to go below 1 second in this client). - Contrary to subscribing to data changes, this graph will poll the server for new values at the specified interval (meaning that we might miss some updates if the frequency is higher). - Add the variables you want to visualize by right-clicking on them and selecting <code>Add to Graph</code>. - Provide a screenshot of the graph showing <code>error_x</code> and <code>error_y</code> over time. 6. Interact with the machine by writing values: - While looking at the graph, click on <code>correction_x</code> in the variable tree on the left side. - In the Attributes tab, double click on the <code>Value</code> field to edit it. - Provide a correction value (e.g.&nbsp;<code>10.0</code>) and hit <code>ENTER</code> to write the new value to the server. - Observe how the machine reacts to the provided correction in the graph (note that the server always resets the correction values to <code>0.0</code> after applying them). - Provide a screenshot of the graph showing the effect of your correction on <code>error_x</code>. - Have a look at the console output of the running machine simulator to see how the correction was applied. - Provide a screenshot of the console output showing the application of your correction.</p>
+</div>
+</div>
+</div>
+<p>Now that we know how to interact with the live machine simulator, in a first step we will set up a Python script <code>opc-ua-client.py</code> that connects to the machine and subscribes to the data changes of the necessary variables.</p>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-basics-mv-space" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 23.3 (Set up an OPC UA client in Python)</strong></span> &nbsp;</p>
+</div>
+<p>Have a look at the provided <code>opc-ua-client.py</code> script, understand how it works and run it while the machine simulator is active.</p>
+<p>Your task: 1. For understanding, it is likely best to start by studying the <code>main()</code> function at the bottom of the script and then look at the <code>SubHandler</code> class that handles the data changes. 2. Explain in your own words what the script is doing (a brief summary is sufficient). 3. Run the script while the machine simulator is active and observe the printed output. 4. Provide a screenshot of the console output showing the data changes received from the machine.</p>
+</div>
+</div>
+</div>
+<p>Great! It is now time to integrate our trained model into the live feedback system and hope that the chosen model generalizes well to the live data and is fast enough to provide corrections in real-time.</p>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-basics-mv-space" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 23.4 (Integrate the trained model into the live feedback system)</strong></span> The <code>opc-ua-client.py</code> script contains various placeholders (marked with <code># &gt;&gt;&gt; Exercise</code>) where you need to integrate your trained model to provide real-time corrections to the pick and place machine. Your task: <em>Load model</em>: 1. Part 1: Load your model (and optionally scaler) from the first exercise. 2. Part 2: Select and order the features that your model needs to make predictions (they must be in the very same order as during training).</p>
+<p><em>Use the model to compute correction values</em>: 3. Part 3 - Optional: Scale your data, if you used a scaler during training. 4. Part 4: Predict the placement error using your model. 5. Part 5: Based on your prediction, compute the necessary correction values.</p>
+<p><em>Integrate the model into the live feedback loop</em>: 6. Part 6: Print the collected variables (this is for debugging purposes in case you need it). 7. Part 7: Use the previously implemented function <code>predict_error</code> to get correction values for <code>x</code> and <code>y</code>. 8. Part 8: Write the computed correction values back to the OPC UA server to adjust the placement in real-time. 9. Part 9: Now remove the <code>pass</code> statement to enable your implementation.</p>
+<p><em>Test your implementation</em>: 10. Run the modified <code>opc-ua-client.py</code> script while the machine simulator is active. 11. In case it is working fine: Well done. Otherwise, debug your implementation until it is working as expected. 12. Part 10: Remove datachange notification to reduce console output clutter.</p>
+<p><em>Proof of work</em>: 13. Provide a screenshot of the client’s console output showing the computed correction values being sent to the server. 14. Provide a screenshot of the machine simulator’s console output showing the effect of your corrections on the placement error.</p>
+</div>
+<p>This is it! Almost.</p>
+<p>Visualizations are almost always nicer to look at than raw console output.</p>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exr-basics-mv-space" class="theorem exercise">
+<p><span class="theorem-title"><strong>Exercise 23.5 (Visualize the live placement error and corrections)</strong></span> &nbsp;</p>
+<ol type="1">
+<li>Ensure that the machine simulator is running.</li>
+<li>Ensure that your live feedback client is <em>not</em> running.</li>
+<li>Start the GUI client <code>opcua-client</code> once more and connect it to your machine.</li>
+<li>Add <code>error_x</code>, <code>error_y</code> to the graph and set the update interval to <code>1</code>s.</li>
+<li>Wait for a couple of cycles to see how the placement error evolves over time.</li>
+<li>Now, start your live feedback client.</li>
+<li>Observe how the placement error changes as your model provides corrections in real-time.</li>
+<li>Provide a screenshot of the graph showing the live placement error and the effect of your corrections: It should show both, the error before the feedback loop is started as well as the reduced error once the feedback loop is active.</li>
+</ol>
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-klaeger2021" class="csl-entry" role="listitem">
-Klaeger, Tilman, Sebastian Gottschall, and Lukas Oehm. 2021. <span>“Data Science on Industrial Data—Today’s Challenges in Brown Field Applications.”</span> <em>Challenges</em> 12 (1). <a href="https://doi.org/10.3390/challe12010002">https://doi.org/10.3390/challe12010002</a>.
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
