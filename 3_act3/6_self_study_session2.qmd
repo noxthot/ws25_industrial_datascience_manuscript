@@ -116,7 +116,9 @@ It is now time to integrate our trained model into the live feedback system and 
 ## Integrate the trained model into the live feedback system
 ::::
 The `opc-ua-client.py` script contains various placeholders (marked with `# >>> Exercise`) where you need to integrate your trained model to provide real-time corrections to the pick and place machine.
+
 Your task:
+
 *Load model*:
 
 1. Part 1: Load your model (and optionally scaler) from the first exercise.
