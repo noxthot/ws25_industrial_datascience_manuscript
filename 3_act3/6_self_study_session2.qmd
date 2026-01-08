@@ -1,12 +1,5 @@
 # Self study - Session 2 {#sec-act3-selfstudy2}
 
-::: {.callout-caution}
-## Still under construction
-
-This section is still under construction and will be completed in the near future.
-Please do not go beyond this point for now.
-:::
-
 In this session, we will revisit @{sec-act3-livefeedback} and try to optimize the placement accuracy of the pick and place machine.
 
 Before we are touching the live machine, we will first try to find a suitable model based on the provided dataset.
@@ -109,6 +102,7 @@ It is now time to integrate our trained model into the live feedback system and 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
 :::: {#exr-basics-mv-space}
 ## Integrate the trained model into the live feedback system
+::::
 The `opc-ua-client.py` script contains various placeholders (marked with `# >>> Exercise`) where you need to integrate your trained model to provide real-time corrections to the pick and place machine.
 Your task:
 *Load model*:
@@ -139,7 +133,7 @@ Your task:
 
 13. Provide a screenshot of the client's console output showing the computed correction values being sent to the server.
 14. Provide a screenshot of the machine simulator's console output showing the effect of your corrections on the placement error.
-::::
+:::
 
 This is it!
 Almost.
@@ -149,6 +143,7 @@ Visualizations are almost always nicer to look at than raw console output.
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
 :::: {#exr-basics-mv-space}
 ## Visualize the live placement error and corrections
+::::
 Your task:
 
 1. Ensure that the machine simulator is running.
@@ -159,4 +154,4 @@ Your task:
 6. Now, start your live feedback client.
 7. Observe how the placement error changes as your model provides corrections in real-time.
 8. Provide a screenshot of the graph showing the live placement error and the effect of your corrections: It should show both, the error before the feedback loop is started as well as the reduced error once the feedback loop is active.
-::::
+:::
