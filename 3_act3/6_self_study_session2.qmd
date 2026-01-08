@@ -13,6 +13,7 @@ Before we are touching the live machine, we will first try to find a suitable mo
 
 ::: {.callout-note}
 Since we are working with a live feedback system, we will need multiple terminals/consoles at the same time:
+
 1. One terminal to run the simulated pick and place machine (the OPC UA server).
 2. Optionally, one terminal to run the OPC UA client that connects to the machine and provides real-time.
 3. Optionally, one terminal to run the `opcua-client` GUI to visualize the live data.
@@ -28,6 +29,7 @@ This means that we need to predict the placement error (`Error x [mm]` and `Erro
 Furthermore, engineers tell us that the rows where `Process step` is 1 should contain the necessary information to predict the placement error.
 
 Your task:
+
 1. Split the provided dataset into a training and test set (depending on the chosen model, you will also need a validation set).
 2. Train a model that predicts `Error x [mm]` and `Error y [mm]`.
 3. Take a look at the model's performance on the test set by looking at certain metrics, e.g. by calculating the Mean Absolute Error (MAE).
@@ -51,6 +53,7 @@ You will see the process steps advancing in the console output.
 Simultaneously, the sensor data is streamed via the OPC UA protocol.
 
 Your task:
+
 1. Start the machine and copy/paste the console output for the first 5 cycles.
 2. Use [opcua-client](https://github.com/FreeOpcUa/opcua-client-gui) or any other OPC UA client of your choice to connect to the machine:
     - Usually it should be enough to run `uv add opcua-client`, followed by `uv run opcua-client` (Windows might need an extra step to install the GUI dependencies; use Python `3.13` to avoid issues in the following steps).
@@ -93,6 +96,7 @@ Now that we know how to interact with the live machine simulator, in a first ste
 Have a look at the provided `opc-ua-client.py` script, understand how it works and run it while the machine simulator is active.
 
 Your task:
+
 1. For understanding, it is likely best to start by studying the `main()` function at the bottom of the script and then look at the `SubHandler` class that handles the data changes.
 2. Explain in your own words what the script is doing (a brief summary is sufficient).
 3. Run the script while the machine simulator is active and observe the printed output.
@@ -108,26 +112,31 @@ It is now time to integrate our trained model into the live feedback system and 
 The `opc-ua-client.py` script contains various placeholders (marked with `# >>> Exercise`) where you need to integrate your trained model to provide real-time corrections to the pick and place machine.
 Your task:
 *Load model*:
+
 1. Part 1: Load your model (and optionally scaler) from the first exercise.
 2. Part 2: Select and order the features that your model needs to make predictions (they must be in the very same order as during training).
 
 *Use the model to compute correction values*:
+
 3. Part 3 - Optional: Scale your data, if you used a scaler during training.
 4. Part 4: Predict the placement error using your model.
 5. Part 5: Based on your prediction, compute the necessary correction values.
 
 *Integrate the model into the live feedback loop*:
+
 6. Part 6: Print the collected variables (this is for debugging purposes in case you need it).
 7. Part 7: Use the previously implemented function `predict_error` to get correction values for `x` and `y`.
 8. Part 8: Write the computed correction values back to the OPC UA server to adjust the placement in real-time.
 9. Part 9: Now remove the `pass` statement to enable your implementation.
 
 *Test your implementation*:
+
 10. Run the modified `opc-ua-client.py` script while the machine simulator is active.
 11. In case it is working fine: Well done. Otherwise, debug your implementation until it is working as expected.
 12. Part 10: Remove datachange notification to reduce console output clutter.
 
 *Proof of work*:
+
 13. Provide a screenshot of the client's console output showing the computed correction values being sent to the server.
 14. Provide a screenshot of the machine simulator's console output showing the effect of your corrections on the placement error.
 ::::
@@ -140,6 +149,8 @@ Visualizations are almost always nicer to look at than raw console output.
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
 :::: {#exr-basics-mv-space}
 ## Visualize the live placement error and corrections
+Your task:
+
 1. Ensure that the machine simulator is running.
 2. Ensure that your live feedback client is *not* running.
 3. Start the GUI client `opcua-client` once more and connect it to your machine.
