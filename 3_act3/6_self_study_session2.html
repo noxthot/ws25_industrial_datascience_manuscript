@@ -556,7 +556,12 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Since we are working with a live feedback system, we will need multiple terminals/consoles at the same time: 1. One terminal to run the simulated pick and place machine (the OPC UA server). 2. Optionally, one terminal to run the OPC UA client that connects to the machine and provides real-time. 3. Optionally, one terminal to run the <code>opcua-client</code> GUI to visualize the live data.</p>
+<p>Since we are working with a live feedback system, we will need multiple terminals/consoles at the same time:</p>
+<ol type="1">
+<li>One terminal to run the simulated pick and place machine (the OPC UA server).</li>
+<li>Optionally, one terminal to run the OPC UA client that connects to the machine and provides real-time.</li>
+<li>Optionally, one terminal to run the <code>opcua-client</code> GUI to visualize the live data.</li>
+</ol>
 </div>
 </div>
 <div class="callout callout-style-simple callout-caution no-icon">
@@ -570,7 +575,14 @@ Note
 </div>
 <p>We are told that the placement can be adjusted until the end of step 2 by providing a correction vector that modifies the target placement location. This means that we need to predict the placement error (<code>Error x [mm]</code> and <code>Error y [mm]</code>) and provide the correction vector based on the available variables until the end of step 2.</p>
 <p>Furthermore, engineers tell us that the rows where <code>Process step</code> is 1 should contain the necessary information to predict the placement error.</p>
-<p>Your task: 1. Split the provided dataset into a training and test set (depending on the chosen model, you will also need a validation set). 2. Train a model that predicts <code>Error x [mm]</code> and <code>Error y [mm]</code>. 3. Take a look at the model’s performance on the test set by looking at certain metrics, e.g.&nbsp;by calculating the Mean Absolute Error (MAE). 4. Visualize the predictive capabilities by e.g.&nbsp;plotting a histogram showing the errors and residuals (predicted - true values). 5. Persist the model to disk so that we can later load it in the live feedback system. In case you use a scaler, you will need to persist it as well.</p>
+<p>Your task:</p>
+<ol type="1">
+<li>Split the provided dataset into a training and test set (depending on the chosen model, you will also need a validation set).</li>
+<li>Train a model that predicts <code>Error x [mm]</code> and <code>Error y [mm]</code>.</li>
+<li>Take a look at the model’s performance on the test set by looking at certain metrics, e.g.&nbsp;by calculating the Mean Absolute Error (MAE).</li>
+<li>Visualize the predictive capabilities by e.g.&nbsp;plotting a histogram showing the errors and residuals (predicted - true values).</li>
+<li>Persist the model to disk so that we can later load it in the live feedback system. In case you use a scaler, you will need to persist it as well.</li>
+</ol>
 </div>
 </div>
 </div>
@@ -586,7 +598,50 @@ Note
 <p><span class="theorem-title"><strong>Exercise 23.2 (First encounter with the live machine simulator)</strong></span> &nbsp;</p>
 </div>
 <p>Running the <code>opc-ua-server.py</code> or the provided docker-container will start the simulated pick and place machine that exposes the sensor data via OPC UA. The machine runs in real-time, meaning that one cycle takes 3-6 seconds to complete. You will see the process steps advancing in the console output. Simultaneously, the sensor data is streamed via the OPC UA protocol.</p>
-<p>Your task: 1. Start the machine and copy/paste the console output for the first 5 cycles. 2. Use <a href="https://github.com/FreeOpcUa/opcua-client-gui">opcua-client</a> or any other OPC UA client of your choice to connect to the machine: - Usually it should be enough to run <code>uv add opcua-client</code>, followed by <code>uv run opcua-client</code> (Windows might need an extra step to install the GUI dependencies; use Python <code>3.13</code> to avoid issues in the following steps). - The server URL should be <code>opc.tcp://localhost:4840</code>, which is prefilled in the client. Simply click on <code>Connect</code> (the machine must be actively running in another terminal before connecting). - Once connected, you should see a tree structure on the left side. Navigate to <code>0:Root,0:Objects,2:plcSimulator</code>. - Provide a screenshot of the variable tree below <code>2:plcSimulator</code>. 3. Look at the attributes of a variable: - Click through the variables and take a close look at the Attributes tab on the right side. - The server is constantly streaming new values for each variable, but you need to hit the <code>Refresh</code> button to see the updated value. - Provide a screenshot of the attributes of <code>position_x</code>. 4. Subscribe to data changes: - Right-click on one of the variables (e.g.&nbsp;<code>position_x</code>) and select <code>Subscribe to data changes</code>. - Subscribed variables will appear in the <code>Subscriptions</code> tab at the bottom. - Observe that the values are changing in real-time as the machine is running. - Also observe that they are not updated at the very same time, but rather whenever there is a new measurement available. - Provide a screenshot of the <code>Subscriptions</code> tab showing the data changes of <code>position_x</code>, <code>position_y</code>, and <code>cycle</code>. 5. Look at the graph of subscribed variables: - This requires two more packages to be installed. If you are using <code>uv</code>, run <code>uv add numpy pyqtgraph</code> to add the necessary dependencies. - Switch to the <code>Graphs</code> tab at the bottom. - Change update interval to <code>1</code>s (unfortunately it appears that it is not possible to go below 1 second in this client). - Contrary to subscribing to data changes, this graph will poll the server for new values at the specified interval (meaning that we might miss some updates if the frequency is higher). - Add the variables you want to visualize by right-clicking on them and selecting <code>Add to Graph</code>. - Provide a screenshot of the graph showing <code>error_x</code> and <code>error_y</code> over time. 6. Interact with the machine by writing values: - While looking at the graph, click on <code>correction_x</code> in the variable tree on the left side. - In the Attributes tab, double click on the <code>Value</code> field to edit it. - Provide a correction value (e.g.&nbsp;<code>10.0</code>) and hit <code>ENTER</code> to write the new value to the server. - Observe how the machine reacts to the provided correction in the graph (note that the server always resets the correction values to <code>0.0</code> after applying them). - Provide a screenshot of the graph showing the effect of your correction on <code>error_x</code>. - Have a look at the console output of the running machine simulator to see how the correction was applied. - Provide a screenshot of the console output showing the application of your correction.</p>
+<p>Your task:</p>
+<ol type="1">
+<li>Start the machine and copy/paste the console output for the first 5 cycles.</li>
+<li>Use <a href="https://github.com/FreeOpcUa/opcua-client-gui">opcua-client</a> or any other OPC UA client of your choice to connect to the machine:
+<ul>
+<li>Usually it should be enough to run <code>uv add opcua-client</code>, followed by <code>uv run opcua-client</code> (Windows might need an extra step to install the GUI dependencies; use Python <code>3.13</code> to avoid issues in the following steps).</li>
+<li>The server URL should be <code>opc.tcp://localhost:4840</code>, which is prefilled in the client. Simply click on <code>Connect</code> (the machine must be actively running in another terminal before connecting).</li>
+<li>Once connected, you should see a tree structure on the left side. Navigate to <code>0:Root,0:Objects,2:plcSimulator</code>.</li>
+<li>Provide a screenshot of the variable tree below <code>2:plcSimulator</code>.</li>
+</ul></li>
+<li>Look at the attributes of a variable:
+<ul>
+<li>Click through the variables and take a close look at the Attributes tab on the right side.</li>
+<li>The server is constantly streaming new values for each variable, but you need to hit the <code>Refresh</code> button to see the updated value.</li>
+<li>Provide a screenshot of the attributes of <code>position_x</code>.</li>
+</ul></li>
+<li>Subscribe to data changes:
+<ul>
+<li>Right-click on one of the variables (e.g.&nbsp;<code>position_x</code>) and select <code>Subscribe to data changes</code>.</li>
+<li>Subscribed variables will appear in the <code>Subscriptions</code> tab at the bottom.</li>
+<li>Observe that the values are changing in real-time as the machine is running.</li>
+<li>Also observe that they are not updated at the very same time, but rather whenever there is a new measurement available.</li>
+<li>Provide a screenshot of the <code>Subscriptions</code> tab showing the data changes of <code>position_x</code>, <code>position_y</code>, and <code>cycle</code>.</li>
+</ul></li>
+<li>Look at the graph of subscribed variables:
+<ul>
+<li>This requires two more packages to be installed. If you are using <code>uv</code>, run <code>uv add numpy pyqtgraph</code> to add the necessary dependencies.</li>
+<li>Switch to the <code>Graphs</code> tab at the bottom.</li>
+<li>Change update interval to <code>1</code>s (unfortunately it appears that it is not possible to go below 1 second in this client).</li>
+<li>Contrary to subscribing to data changes, this graph will poll the server for new values at the specified interval (meaning that we might miss some updates if the frequency is higher).</li>
+<li>Add the variables you want to visualize by right-clicking on them and selecting <code>Add to Graph</code>.</li>
+<li>Provide a screenshot of the graph showing <code>error_x</code> and <code>error_y</code> over time.</li>
+</ul></li>
+<li>Interact with the machine by writing values:
+<ul>
+<li>While looking at the graph, click on <code>correction_x</code> in the variable tree on the left side.</li>
+<li>In the Attributes tab, double click on the <code>Value</code> field to edit it.</li>
+<li>Provide a correction value (e.g.&nbsp;<code>10.0</code>) and hit <code>ENTER</code> to write the new value to the server.</li>
+<li>Observe how the machine reacts to the provided correction in the graph (note that the server always resets the correction values to <code>0.0</code> after applying them).</li>
+<li>Provide a screenshot of the graph showing the effect of your correction on <code>error_x</code>.</li>
+<li>Have a look at the console output of the running machine simulator to see how the correction was applied.</li>
+<li>Provide a screenshot of the console output showing the application of your correction.</li>
+</ul></li>
+</ol>
 </div>
 </div>
 </div>
@@ -601,7 +656,13 @@ Note
 <p><span class="theorem-title"><strong>Exercise 23.3 (Set up an OPC UA client in Python)</strong></span> &nbsp;</p>
 </div>
 <p>Have a look at the provided <code>opc-ua-client.py</code> script, understand how it works and run it while the machine simulator is active.</p>
-<p>Your task: 1. For understanding, it is likely best to start by studying the <code>main()</code> function at the bottom of the script and then look at the <code>SubHandler</code> class that handles the data changes. 2. Explain in your own words what the script is doing (a brief summary is sufficient). 3. Run the script while the machine simulator is active and observe the printed output. 4. Provide a screenshot of the console output showing the data changes received from the machine.</p>
+<p>Your task:</p>
+<ol type="1">
+<li>For understanding, it is likely best to start by studying the <code>main()</code> function at the bottom of the script and then look at the <code>SubHandler</code> class that handles the data changes.</li>
+<li>Explain in your own words what the script is doing (a brief summary is sufficient).</li>
+<li>Run the script while the machine simulator is active and observe the printed output.</li>
+<li>Provide a screenshot of the console output showing the data changes received from the machine.</li>
+</ol>
 </div>
 </div>
 </div>
@@ -613,11 +674,35 @@ Note
 </div>
 <div class="callout-body-container">
 <div id="exr-basics-mv-space" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 23.4 (Integrate the trained model into the live feedback system)</strong></span> The <code>opc-ua-client.py</code> script contains various placeholders (marked with <code># &gt;&gt;&gt; Exercise</code>) where you need to integrate your trained model to provide real-time corrections to the pick and place machine. Your task: <em>Load model</em>: 1. Part 1: Load your model (and optionally scaler) from the first exercise. 2. Part 2: Select and order the features that your model needs to make predictions (they must be in the very same order as during training).</p>
-<p><em>Use the model to compute correction values</em>: 3. Part 3 - Optional: Scale your data, if you used a scaler during training. 4. Part 4: Predict the placement error using your model. 5. Part 5: Based on your prediction, compute the necessary correction values.</p>
-<p><em>Integrate the model into the live feedback loop</em>: 6. Part 6: Print the collected variables (this is for debugging purposes in case you need it). 7. Part 7: Use the previously implemented function <code>predict_error</code> to get correction values for <code>x</code> and <code>y</code>. 8. Part 8: Write the computed correction values back to the OPC UA server to adjust the placement in real-time. 9. Part 9: Now remove the <code>pass</code> statement to enable your implementation.</p>
-<p><em>Test your implementation</em>: 10. Run the modified <code>opc-ua-client.py</code> script while the machine simulator is active. 11. In case it is working fine: Well done. Otherwise, debug your implementation until it is working as expected. 12. Part 10: Remove datachange notification to reduce console output clutter.</p>
-<p><em>Proof of work</em>: 13. Provide a screenshot of the client’s console output showing the computed correction values being sent to the server. 14. Provide a screenshot of the machine simulator’s console output showing the effect of your corrections on the placement error.</p>
+<p><span class="theorem-title"><strong>Exercise 23.4 (Integrate the trained model into the live feedback system)</strong></span> The <code>opc-ua-client.py</code> script contains various placeholders (marked with <code># &gt;&gt;&gt; Exercise</code>) where you need to integrate your trained model to provide real-time corrections to the pick and place machine. Your task: <em>Load model</em>:</p>
+<ol type="1">
+<li>Part 1: Load your model (and optionally scaler) from the first exercise.</li>
+<li>Part 2: Select and order the features that your model needs to make predictions (they must be in the very same order as during training).</li>
+</ol>
+<p><em>Use the model to compute correction values</em>:</p>
+<ol start="3" type="1">
+<li>Part 3 - Optional: Scale your data, if you used a scaler during training.</li>
+<li>Part 4: Predict the placement error using your model.</li>
+<li>Part 5: Based on your prediction, compute the necessary correction values.</li>
+</ol>
+<p><em>Integrate the model into the live feedback loop</em>:</p>
+<ol start="6" type="1">
+<li>Part 6: Print the collected variables (this is for debugging purposes in case you need it).</li>
+<li>Part 7: Use the previously implemented function <code>predict_error</code> to get correction values for <code>x</code> and <code>y</code>.</li>
+<li>Part 8: Write the computed correction values back to the OPC UA server to adjust the placement in real-time.</li>
+<li>Part 9: Now remove the <code>pass</code> statement to enable your implementation.</li>
+</ol>
+<p><em>Test your implementation</em>:</p>
+<ol start="10" type="1">
+<li>Run the modified <code>opc-ua-client.py</code> script while the machine simulator is active.</li>
+<li>In case it is working fine: Well done. Otherwise, debug your implementation until it is working as expected.</li>
+<li>Part 10: Remove datachange notification to reduce console output clutter.</li>
+</ol>
+<p><em>Proof of work</em>:</p>
+<ol start="13" type="1">
+<li>Provide a screenshot of the client’s console output showing the computed correction values being sent to the server.</li>
+<li>Provide a screenshot of the machine simulator’s console output showing the effect of your corrections on the placement error.</li>
+</ol>
 </div>
 <p>This is it! Almost.</p>
 <p>Visualizations are almost always nicer to look at than raw console output.</p>
@@ -628,7 +713,7 @@ Note
 </div>
 <div class="callout-body-container">
 <div id="exr-basics-mv-space" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 23.5 (Visualize the live placement error and corrections)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Exercise 23.5 (Visualize the live placement error and corrections)</strong></span> Your task:</p>
 <ol type="1">
 <li>Ensure that the machine simulator is running.</li>
 <li>Ensure that your live feedback client is <em>not</em> running.</li>
