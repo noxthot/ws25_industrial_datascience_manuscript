@@ -11,12 +11,12 @@ A couple of sensors provide real-time measurements and variables that can be use
 Unfortunately, the machine seems to be experiencing some issues with placement accuracy, leading to an increased number of defective boards.
 To address this, the engineers set up sandboxing mode where the machine performs four steps:
 
-1. Move to pick up a component with random weight placed at a random location.
-2. Pick up the component using the vacuum system.
-3. Move to the target placement location on the circuit board with random speed. This is always at the center of the board at (150, 150).
-4. Place the component and measure the placement accuracy using the camera system.
+0. Move to pick up a component with random weight placed at a random location.
+1. Pick up the component using the vacuum system.
+2. Move to the target placement location on the circuit board with random speed. This is always at the center of the board at (150, 150).
+3. Place the component and measure the placement accuracy using the camera system.
 
-Until the start of step 3 it is possible to adjust the placement parameters by providing a correction vector that modifies the target placement location.
+Until the end of step 2 it is possible to adjust the placement parameters by providing a correction vector that modifies the target placement location.
 
 The goal is to optimize the placement parameters in real-time based on the feedback received from the camera system after each placement.
 
@@ -25,14 +25,15 @@ The following variables are accessible during the process:
 
 - `Air temperature [K]`: ambient temperature around the machine.
 - `Attached Weight [mg]`: weight of the component picked up by the vacuum system.
+- `Cycle`: unique identifier for each cycle.
+- `Error x [mm]`: placement error in $x$ direction (only available at the end of the cycle).
+- `Error y [mm]`: placement error in $y$ direction (only available at the end of the cycle).
 - `Position x [mm]`: target position in $x$ direction.
 - `Position y [mm]`: target position in $y$ direction.
 - `Process step`: current step in the process (0 to 3).
 - `Process temperature [K]`: temperature inside the machine.
 - `Speed [mm/s]`: speed of the current movement.
 - `Speed next [mm/s]`: speed for the next movement.
-- `Error x [mm]`: placement error in $x$ direction (only available at the end of the cycle).
-- `Error y [mm]`: placement error in $y$ direction (only available at the end of the cycle).
 
 ## Data
 One cycle usually takes 3-6 seconds to complete and the sensor data is available in realtime via _OPC Unified Architecture_ (OPC UA).
