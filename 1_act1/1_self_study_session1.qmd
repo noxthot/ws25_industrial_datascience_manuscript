@@ -12,7 +12,7 @@ The Jupyter ecosystem is widely used for interactive exploration and reporting p
 ::::
 Study the [JupyterLab documentation](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html) to learn about its features and capabilities and experiment with them using your JupyterLab environment.
 
-Use [`pdm`](https://pdm-project.org) to create a new environment and install [`jupyterlab`](https://jupyter.org/install).
+Use [`uv`](https://docs.astral.sh/uv/) to create a new environment and install [`jupyterlab`](https://jupyter.org/install).
 
 After this exercise you should be able to answer the following questions:
 
