@@ -53,6 +53,7 @@ book:
       chapters: 
         - 4_act4/0_index.qmd
         - 4_act4/1_resampling.ipynb
+        - 4_act4/2_brownfield_environments.qmd
     - 5_references.qmd
   date: last-modified
   license: "CC BY-NC-SA 4.0"
