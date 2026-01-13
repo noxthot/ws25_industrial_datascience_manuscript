@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>16&nbsp; Self study - Session 2 – Industrial Data Science</title>
+<title>26&nbsp; Optional Self study Session – Industrial Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,42 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
 }
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
 }
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
 }
-</style>
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -65,8 +50,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../3_act3/0_challenges.html" rel="next">
-<link href="../2_act2/6_self_study_session1.html" rel="prev">
+<link href="../5_references.html" rel="next">
+<link href="../4_act4/1_resampling.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -116,35 +101,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -319,7 +275,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../2_act2/0_nature_of_timeseries.html">Act 2: Time series – A Curated Collection</a></li><li class="breadcrumb-item"><a href="../2_act2/7_self_study_session2.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Self study - Session 2</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../4_act4/0_index.html">Act 4: Lost Tapes</a></li><li class="breadcrumb-item"><a href="../4_act4/2_brownfield_environments.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Optional Self study Session</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -482,7 +438,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../2_act2/7_self_study_session2.html" class="sidebar-item-text sidebar-link active">
+  <a href="../2_act2/7_self_study_session2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Self study - Session 2</span></span></a>
   </div>
 </li>
@@ -564,7 +520,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../4_act4/2_brownfield_environments.html" class="sidebar-item-text sidebar-link">
+  <a href="../4_act4/2_brownfield_environments.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Optional Self study Session</span></span></a>
   </div>
 </li>
@@ -588,9 +544,9 @@ window.Quarto = {
 <main class="content column-page-right" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../2_act2/0_nature_of_timeseries.html">Act 2: Time series – A Curated Collection</a></li><li class="breadcrumb-item"><a href="../2_act2/7_self_study_session2.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Self study - Session 2</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../4_act4/0_index.html">Act 4: Lost Tapes</a></li><li class="breadcrumb-item"><a href="../4_act4/2_brownfield_environments.html"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Optional Self study Session</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-act2-selfstudy2" class="quarto-section-identifier"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Self study - Session 2</span></span></h1>
+<h1 class="title"><span id="sec-act4-selfstudy" class="quarto-section-identifier"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Optional Self study Session</span></span></h1>
 </div>
 
 
@@ -607,49 +563,21 @@ window.Quarto = {
 </header>
 
 
-<p>In this session, we will revisit the chapters <a href="3_1_timeseries_clustering.html" class="quarto-xref"><span>Chapter 12</span></a>, <a href="4_1_timeseries_classification.html" class="quarto-xref"><span>Chapter 13</span></a>, and <a href="5_1_timeseries_regression.html" class="quarto-xref"><span>Chapter 14</span></a>.</p>
-<p>We have seen that the algorithms for all three tasks more or less can be categorized into the same categories:</p>
-<ul>
-<li>Based on distances or metrics: E.g. trees and forests</li>
-<li>Based on distributions, kernels: E.g. Gaussian Mixture Models, SVMs</li>
-<li>Based on subsequences, shapelets: E.g. bags of words, shapelet-based methods</li>
-<li>Based on deep learning: E.g. recurrent neural networks, or treating the time series as images using CNNs</li>
-<li>Based on random convolutions: E.g. <em>Random Convolutional Kernel Transform</em> (ROCKET)</li>
-<li>Based on ensembles of the above.</li>
-</ul>
-<p>We have implemented nearest neighbors (distance-based) for clustering, time series forests (distance-based) for classification, and convolutional neural networks for regression (deep learning-based).</p>
-<p>Let us have a look at one additional algorithm for each task.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<p>Real-world applications on industrial data face many challenges. One of them being that the data from machines is usually retrieved via communication protocols from <em>programmable logic controllers</em> (PLC). These communication protocols often lack standardization and can vary significantly between different manufacturers and even different models of PLCs This heterogeneity makes it difficult to integrate data from (multiple) sources and can lead to massive complexity in data processing and analysis.</p>
+<p>In the following, you will read a review paper discussing challenges in introducing industrial data science to existing (brownfield) environments.</p>
+<div class="callout callout-style-simple callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Warning</span>Predatory Journals
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can use <code>sktime</code>’s <code>load_UCR_UEA_dataset</code> function to load the data sets mentioned below, e.g.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sktime.datasets <span class="im">import</span> load_UCR_UEA_dataset</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ds_name <span class="op">=</span> <span class="st">"UWaveGestureLibrary"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>ret_type <span class="op">=</span> <span class="st">"numpy3d"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>X_train, y_train <span class="op">=</span> load_UCR_UEA_dataset(</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span>ds_name,</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    split<span class="op">=</span><span class="st">"train"</span>,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    return_type<span class="op">=</span>ret_type,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>X_test, y_test <span class="op">=</span> load_UCR_UEA_dataset(</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span>ds_name,</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    split<span class="op">=</span><span class="st">"test"</span>,</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    return_type<span class="op">=</span>ret_type,</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># For classification, convert y to categorical</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>y_train <span class="op">=</span> pd.Series(y_train).astype(<span class="st">"category"</span>)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>y_test <span class="op">=</span> pd.Series(y_test).astype(<span class="st">"category"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Predatory journals exploit the academic publishing model for profit, often lacking rigorous peer review and editorial oversight. They may present themselves as legitimate outlets but prioritize financial gain over scholarly integrity. Researchers should be cautious when selecting journals for publication, ensuring they choose reputable venues that uphold high academic standards.</p>
+<p><a href="https://en.wikipedia.org/wiki/MDPI">Wikipedia</a> (accessed: 09 09 2025) states: <em>MDPI’s business model is based on establishing entirely open access broad-discipline journals, with fast processing times from submission to publication and article processing charges paid by the author, their institutions or funders. MDPI’s business practices have attracted controversy, with critics suggesting it sacrifices editorial and academic rigor in favor of operational speed and business interests. MDPI was included on Jeffrey Beall’s list of predatory open access publishing companies in 2014; it was removed in 2015 following a successful appeal, while applying pressure on Beall’s employer. Some journals published by MDPI have also been noted by the Chinese Academy of Sciences (CAS) and Norwegian Scientific Index for lack of rigor and possible predatory practices, as of 2025, CAS no longer lists any MDPI journals on its Early Warning List. In 2024, Finland’s Public Forum, which classifies publication channels for academic research, downgraded 193 MDPI journals to its lowest, level 0 rating.</em></p>
+<p><a href="https://www.predatoryjournals.org/">PredatoryJournals.org</a> published a <a href="https://www.predatoryjournals.org/news/is-mdpi-predatory">blog post discussing MDPI</a> in this regard.</p>
 </div>
 </div>
 <div class="callout callout-style-simple callout-caution no-icon">
@@ -659,107 +587,26 @@ Note
 </div>
 <div class="callout-body-container">
 <div id="exr-basics-mv-space" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 16.1 (Clustering with time series DBScan)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Exercise 26.1 (Data Science on Industrial Data – Today’s Challenges in Brown Field Applications)</strong></span> &nbsp;</p>
 </div>
+<p>Read <span class="citation" data-cites="klaeger2021">Klaeger, Gottschall, and Oehm (<a href="../5_references.html#ref-klaeger2021" role="doc-biblioref">2021</a>)</span>, published in MDPI. You should be able to discuss the following questions:</p>
 <ul>
-<li>Load the <a href="https://timeseriesclassification.com/description.php?Dataset=GesturePebbleZ1"><code>GesturePebbleZ1</code></a> data set.</li>
-<li>Use the Time Series <span class="math inline">\(k\)</span> means algorithm to cluster the data.</li>
-<li>Now, try to use the time series DBScan algorithm for clustering.</li>
-<li>How do the results compare?</li>
-</ul>
-</div>
-</div>
-</div>
-<p>In <a href="4_1_timeseries_classification.html" class="quarto-xref"><span>Chapter 13</span></a> and <a href="5_1_timeseries_regression.html" class="quarto-xref"><span>Chapter 14</span></a> our input was univariate, meaning each sample consisted of exactly one time series. Now, we will work with multivariate time series, which are more common in real-world scenarios since typically multiple sensors are available.</p>
-<div class="callout callout-style-simple callout-caution no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-basics-mv-space" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 16.2 (Classification of multivariate time series)</strong></span> &nbsp;</p>
-</div>
-<ul>
-<li>Load the <a href="https://timeseriesclassification.com/description.php?Dataset=GesturePebbleZ1"><code>UWaveGestureLibrary</code></a> data set.</li>
-<li>Use the time series <span class="math inline">\(k\)</span> nearest neighbour algorithm to classify the time series.</li>
-<li>Use the CNN classifier to classify the time series (make sure to have <code>sktime&gt;=0.40.0</code> installed).</li>
-<li>How do the results compare?</li>
-</ul>
-</div>
-</div>
-</div>
-<p>Note that not all of the algorithms have implementations for multivariate time series, e.g.&nbsp;<code>sktime</code>’s <code>TimeSeriesForestClassifier</code> only works for univariate time series (and raises an exception when used with a multivariate series). Luckily, there are other implementations available, e.g.&nbsp;<code>aeon</code> offers a <code>TimeSeriesForestClassifier</code> that is compatible with multivariate time series.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><code>aeon</code> is quite strict about dependencies. In case you have problems installing it, consider to initialize a new project and first install <code>aeon</code> before adding further packages.</p>
-</div>
-</div>
-<div class="callout callout-style-simple callout-caution no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-basics-mv-space" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 16.3 (Classification using aeon’s Time Series Forest Classifier)</strong></span> &nbsp;</p>
-</div>
-<ul>
-<li>Load the <a href="https://timeseriesclassification.com/description.php?Dataset=GesturePebbleZ1"><code>UWaveGestureLibrary</code></a> data set.</li>
-<li>Use <code>aeon</code>’s <code>TimeSeriesForestClassifier</code> to classify the data set.</li>
-<li>Are you able to achieve better results than with the previous algorithms?</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You can use <code>aeon</code>’s <code>load_regression</code> function to load the data set mentioned below, e.g.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> aeon.datasets <span class="im">import</span> load_regression</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>ds_name <span class="op">=</span> <span class="st">"AppliancesEnergy"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>X_train, y_train <span class="op">=</span> load_regression(ds_name, split<span class="op">=</span><span class="st">"train"</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>X_test, y_test <span class="op">=</span> load_regression(ds_name, split<span class="op">=</span><span class="st">"test"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<div class="callout callout-style-simple callout-caution no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<div id="exr-basics-mv-space" class="theorem exercise">
-<p><span class="theorem-title"><strong>Exercise 16.4 (Regression of multivariate time series)</strong></span> &nbsp;</p>
-</div>
-<ul>
-<li>Load the <a href="https://archive.ics.uci.edu/dataset/374/appliances+energy+prediction"><code>AppliancesEnergy</code></a> data set.</li>
-<li>Use the time series <span class="math inline">\(k\)</span> nearest neighbour algorithm to predict the energy consumption of the appliances.</li>
-<li>Use the time series random forest tree algorithm to predict the energy consumption of the appliances.</li>
-<li>Use the CNN regressor to predict the energy consumption of the appliances (make sure to have <code>sktime&gt;=0.40.0</code> installed).</li>
-<li>How do the results compare?</li>
+<li>What is the typical data flow from a machine to a data store?</li>
+<li>Why is data acquisition harder in brownfield environments than in labs or new machines?</li>
+<li>Why is ground truth data difficult to obtain in industrial settings and what are possible implications?</li>
+<li>How does the long lifecycle of industrial machines complicate the adoption of AI technologies?</li>
+<li>Why does data preparation in industry take even more effort than the often proclaimed <em>80% of the time needed for data preparation rule</em>?</li>
 </ul>
 </div>
 </div>
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-klaeger2021" class="csl-entry" role="listitem">
+Klaeger, Tilman, Sebastian Gottschall, and Lukas Oehm. 2021. <span>“Data Science on Industrial Data—Today’s Challenges in Brown Field Applications.”</span> <em>Challenges</em> 12 (1). <a href="https://doi.org/10.3390/challe12010002">https://doi.org/10.3390/challe12010002</a>.
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1177,13 +1024,13 @@ Note
   </script>
 <nav class="page-navigation column-page-right">
   <div class="nav-page nav-page-previous">
-      <a href="../2_act2/6_self_study_session1.html" class="pagination-link" aria-label="Self study - Session 1">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Self study - Session 1</span></span>
+      <a href="../4_act4/1_resampling.html" class="pagination-link" aria-label="Resampling">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Resampling</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../3_act3/0_challenges.html" class="pagination-link" aria-label="Challenges">
-        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Challenges</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../5_references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1195,7 +1042,7 @@ Note
 </div>   
     <div class="nav-footer-center">
 <p>Gregor Ehrensperger</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/noxthot/ws25_mci_industrial_ds_manuscript/edit/main/2_act2/7_self_study_session2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/noxthot/ws25_mci_industrial_ds_manuscript/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/noxthot/ws25_mci_industrial_ds_manuscript/edit/main/4_act4/2_brownfield_environments.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/noxthot/ws25_mci_industrial_ds_manuscript/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Manuscript designed with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
