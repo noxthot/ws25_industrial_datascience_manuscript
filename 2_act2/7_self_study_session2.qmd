@@ -77,7 +77,7 @@ In case you have problems installing it, consider to initialize a new project an
 :::: {#exr-basics-mv-space}
 ## Classification using aeon's Time Series Forest Classifier
 ::::
-- Load the [`UWaveGestureLibrary`](https://timeseriesclassification.com/description.php?Dataset=GesturePebbleZ1) data set.
+- Load the [`UWaveGestureLibrary`](https://timeseriesclassification.com/description.php?Dataset=UWaveGestureLibrary) data set.
 - Use `aeon`'s `TimeSeriesForestClassifier` to classify the data set.
 - Are you able to achieve better results than with the previous algorithms?
 :::
