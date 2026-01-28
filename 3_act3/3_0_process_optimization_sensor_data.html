@@ -4434,7 +4434,7 @@ return Plotly;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../4_act4/0_index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Still under construction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">0_index.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -4451,8 +4451,14 @@ return Plotly;
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../4_act4/4_brownfield_environments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Optional Self study Session</span></span></a>
+  <a href="../4_act4/3_reinforcement_learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Reinforcement Learning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../4_act4/4_self_study_session.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Optional Self study Session</span></span></a>
   </div>
 </li>
       </ul>
@@ -4506,7 +4512,7 @@ return Plotly;
 <p>In this section, we will have a look at a more realistic example of industrial data.</p>
 <section id="setting-the-stage" class="level2" data-number="20.1">
 <h2 data-number="20.1" class="anchored" data-anchor-id="setting-the-stage"><span class="header-section-number">20.1</span> Setting the stage</h2>
-<p>Imagine a manufacturing chain which is dedicated to produce knifes with wooden handles. Various machines are interconnected and the process flow is as follows:</p>
+<p>Imagine a manufacturing chain which is dedicated to producing knives with wooden handles. Various machines are interconnected and the process flow is as follows:</p>
 <ul>
 <li>Machine A prepares the steel blade and shaft.</li>
 <li>Machine B applies epoxy to the grip area.</li>
@@ -4514,12 +4520,12 @@ return Plotly;
 <li>Machine D is a curing oven, hardening the adhesive.</li>
 <li>Machine E coats the knife with protective finish and completes the manufacturing process.</li>
 </ul>
-<p>Operators notice that the process is not running as smoothly as expected. The handle is not always properly bonded to the metal part and sometimes the wood is cracked. They find that the root cause of the issue lies in the epoxy application step of machine B. Common issues include excessive or insufficient epoxy application, uneven distribution, and occasional poor adhesion to the shaft. One clear economic impact is that these defect products can not be sold. But there is more to it:</p>
+<p>Operators notice that the process is not running as smoothly as expected. The handle is not always properly bonded to the metal part and sometimes the wood is cracked. They find that the root cause of the issue lies in the epoxy application step of Machine B. Common issues include excessive or insufficient epoxy application, uneven distribution, and occasional poor adhesion to the shaft. One clear economic impact is that these defective products cannot be sold. But there is more to it:</p>
 <ul>
 <li>Waste of material is not sustainable.</li>
-<li>The defect actually already happens in Machine B, but Machine C to E still process the faulty products, leading to further waste and costs, especially since the wooden handle is the most expensive part of the product and the curing oven is very energy-intensive.</li>
+<li>The defect actually already happens in Machine B, but Machines C to E still process the faulty products, leading to further waste and costs, especially since the wooden handle is the most expensive part of the product and the curing oven is very energy-intensive.</li>
 </ul>
-<p>Since there is a new department focused on data science, they decide to manually inspect the epoxy application right after machine B and label the data accordingly. Additionally the machine collects some sensor data in a CSV file. This dataset is given to the data science team and in tight collaboration with the operators the ambitious goal is to:</p>
+<p>Since there is a new department focused on data science, they decide to manually inspect the epoxy application right after Machine B and label the data accordingly. Additionally the machine collects some sensor data in a CSV file. This dataset is given to the data science team and in tight collaboration with the operators the ambitious goal is to:</p>
 <ul>
 <li>Optimize the epoxy application process to reduce defects and waste.</li>
 <li>Human inspection is time-consuming and expensive. Find a way to predict defects occuring in Machine B before the product is handed over to machine C.</li>
@@ -4541,7 +4547,7 @@ return Plotly;
 <li><code>pressure_setting_bar</code>: Pressure setting in bar.</li>
 <li><code>process_speed_mm_s</code>: Set speed of the process in millimeters per second.</li>
 <li><code>process_step_index</code>: Index indicating the current step within the process.</li>
-<li><code>product_id</code>: Unique identifier for each product. The machine performs three processing steps: Moving the nozzle to the shaft, applying epoxy, and blow out residual epoxy from nozzle while moving away.</li>
+<li><code>product_id</code>: Unique identifier for each product. The machine performs three processing steps: moving the nozzle to the shaft, applying epoxy, and blowing out residual epoxy from the nozzle while moving away.</li>
 <li><code>timestamp</code>: Timestamp of the sensor reading.</li>
 </ul>
 <p>The inspection data includes the <code>product_id</code> and the <code>error_code</code>:</p>
@@ -4549,7 +4555,7 @@ return Plotly;
 <li><code>error_code</code>: Code indicating the type of error detected during inspection.</li>
 <li><code>product_id</code>: Unique identifier for each product.</li>
 </ul>
-<p>They used <code>OK</code> when there was no defect, <code>NOK_1</code> (excessive epoxy), <code>NOK_2</code> (insufficient epoxy), <code>NOK_3</code> (poor adhesion), <code>NOK_4</code> (uneven distribution).</p>
+<p>They used <code>OK</code> when there was no defect, <code>NOK_1</code> (excessive epoxy), <code>NOK_2</code> (insufficient epoxy), <code>NOK_3</code> (poor adhesion), and <code>NOK_4</code> (uneven distribution).</p>
 </section>
 <section id="additional-information" class="level2" data-number="20.3">
 <h2 data-number="20.3" class="anchored" data-anchor-id="additional-information"><span class="header-section-number">20.3</span> Additional information</h2>
@@ -4573,7 +4579,7 @@ return Plotly;
 </section>
 <section id="loading-the-dataset" class="level3" data-number="20.4.2">
 <h3 data-number="20.4.2" class="anchored" data-anchor-id="loading-the-dataset"><span class="header-section-number">20.4.2</span> Loading the dataset</h3>
-<p>The dataset is available online in form of two <code>csv</code> files.</p>
+<p>The dataset is available online in the form of two <code>csv</code> files.</p>
 <p>It was released at <span class="citation" data-cites="ehrensperger2026">Ehrensperger (<a href="../5_references.html#ref-ehrensperger2026" role="doc-biblioref">2026</a>)</span>, but you can also clone the source repository from <a href="https://github.com/noxthot/industrial_datascience_sim_machine_knifes/tree/v1.0.2">GitHub</a>.</p>
 <div id="20e5ab43" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_processes <span class="op">=</span> pd.read_csv(</span>
@@ -5761,7 +5767,7 @@ Ehrensperger, Gregor. 2026. <span>“Industrial_datascience_sim_machine_knifes: 
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Industrial Data Science - 2025 - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+<p>Industrial Data Science - 2026 - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
 </div>   
     <div class="nav-footer-center">
 <p>Gregor Ehrensperger</p>

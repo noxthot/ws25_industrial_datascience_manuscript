@@ -576,7 +576,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../4_act4/0_index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Still under construction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">0_index.html</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -593,8 +593,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../4_act4/4_brownfield_environments.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Optional Self study Session</span></span></a>
+  <a href="../4_act4/3_reinforcement_learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Reinforcement Learning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../4_act4/4_self_study_session.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Optional Self study Session</span></span></a>
   </div>
 </li>
       </ul>
@@ -651,7 +657,7 @@ window.Quarto = {
 <li><strong>Kernel-based</strong>: Methods that use kernel functions to measure similarity between time series (e.g.&nbsp;time series support vector regression).</li>
 <li><strong>Composed methods</strong>: Methods that combine multiple models.</li>
 </ul>
-<p>Again we observe that these categories can directly be mapped to those in <a href="3_1_timeseries_clustering.html#sec-act2-cluster-algorithms" class="quarto-xref"><span>Section 12.1</span></a> and <a href="4_1_timeseries_classification.html" class="quarto-xref"><span>Chapter 13</span></a>.</p>
+<p>Again, we observe that these categories can directly be mapped to those in <a href="3_1_timeseries_clustering.html#sec-act2-cluster-algorithms" class="quarto-xref"><span>Section 12.1</span></a> and <a href="4_1_timeseries_classification.html" class="quarto-xref"><span>Chapter 13</span></a>.</p>
 <p>An easy baseline method for time series regression is to use a <span class="math inline">\(k\)</span>-nearest neighbors regressor with a suitable distance measure for time series, e.g.&nbsp;dynamic time warping. In contrast to nearest neighbor in classification, where the predicted label is determined by e.g.&nbsp;a majority vote of the nearest neighbors, in nearest neighbor regression the predicted value is typically computed as the average (or weighted average) of the target values of the nearest neighbors. This is implemented in <code>sktime</code> as <a href="https://www.sktime.net/en/latest/api_reference/auto_generated/sktime.regression.distance_based.KNeighborsTimeSeriesRegressor.html"><code>KNeighborsTimeSeriesRegressor</code></a>.</p>
 <p>Also tree-based methods like random forests can be adapted for time series regression by simply taking e.g.&nbsp;the mean value of the target variable of the samples in a leaf node as the predicted value. This is implemented in <code>sktime</code> as <a href="https://www.sktime.net/en/latest/api_reference/auto_generated/sktime.regression.interval_based.TimeSeriesForestRegressor.html"><code>TimeSeriesForestRegressor</code></a>. Note that this is to date (16 11 2025) not a very parametrizable implementation; the only tunable parameter is the number of estimators (trees) and the minimum width of the intervals.</p>
 <p>In this section we will have a brief look at a deep-learning based method in the context of time series regression, namely a convolutional neural network (CNN) based regressor.</p>
@@ -2181,7 +2187,7 @@ Zhao, Bendong, Huanzhang Lu, Shangfeng Chen, Junliang Liu, and Dongya Wu. 2017. 
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Industrial Data Science - 2025 - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
+<p>Industrial Data Science - 2026 - <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p>
 </div>   
     <div class="nav-footer-center">
 <p>Gregor Ehrensperger</p>
