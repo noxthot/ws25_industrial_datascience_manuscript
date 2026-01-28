@@ -33,7 +33,7 @@ random_walk = np.cumsum(np.random.randn(200))
 
 ### S&P 500 index
 This time series shows the daily closing prices of the S&P 500 in 2020.
-Source: https://de.finance.yahoo.com/quote/%5EGSPC/ downloaded via `yfinance` package.
+Source: https://de.finance.yahoo.com/quote/%5EGSPC/ downloaded via the `yfinance` package.
 
 ![S&P 500 index](../data/assets/act2/sandp_500_close_2020.png)
 

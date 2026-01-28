@@ -9,7 +9,7 @@
 | **ETL**            | Collects data over a given period, performs transformations on the entire dataset, and loads it into a target system, such as a data warehouse, all at once. | Continuously ingests and processes data as it arrives, applies transformations on the fly, and loads the processed data into a target system incrementally. | 
 
 The time to insight is the most critical differentiator between batch and stream processing.
-Batch processing is best-suited for less time-sensitive tasks, such as end-of-day reports, historical data-analysis or model training.
+Batch processing is best suited for less time-sensitive tasks, such as end-of-day reports, historical data analysis, or model training.
 In contrast, stream processing is designed for scenarios where immediate insights and actions are crucial, such as real-time optimization of production processes.
 
 Batch processing tends to be less complex to manage because it operates on static datasets and follows a defined schedule, making it easier to plan and allocate resources.

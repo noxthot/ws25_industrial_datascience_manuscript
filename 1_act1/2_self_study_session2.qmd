@@ -8,7 +8,7 @@ However, we could have done better for `OSF`.
 :::: {#exr-basics-mv-space}
 ## Overstrain failure
 ::::
-According to @{sec-act1-1-reveal}, the failure type _overstrain failure_ (`OSF`) occurs when the machine is subjected to excessive torque when a worn out tool is used.
+According to @{sec-act1-1-reveal}, the failure type _overstrain failure_ (`OSF`) occurs when the machine is subjected to excessive torque when a worn-out tool is used.
 Also the product variant is associated to the failure rate: When the product of torque and tool wear exceeds 11.000 minNm for the L product variant (12.000 for M, 13.000 for H), the process fails due to overstrain.
 
 Are you able to verify this relationship by visualizations?
@@ -35,10 +35,10 @@ Especially for explorative data analysis, `plotly` offers a more user-friendly a
 ## Introducing Plotly
 ::::
 Consult the [Plotly documentation](https://plotly.com/python/) for more information on how to use the library.
-Start with the notebook from @{sec-act1-selfstudy1}, recreate the visualizations from @{sec-act1} using `plotly` and explore the data interactively.
+Start with the notebook from @{sec-act1-selfstudy1}, recreate the visualizations from @{sec-act1} using `plotly`, and explore the data interactively.
 :::
 
-In @{sec-act1-1-machinefailures} we used pair plots, boxplots and decision trees to investigate the relationship between different features and the machine failure types.
+In @{sec-act1-1-machinefailures}, we used pair plots, boxplots, and decision trees to investigate the relationship between different features and the machine failure types.
 Another approach could be to use [parallel coordinates plots](https://plotly.com/python/parallel-coordinates-plot/).
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}

@@ -13,7 +13,7 @@ However, it also precipitated sociocultural shifts, replacing manual labor with 
 ## Industry 2.0 -- Electrification (late 19th century)
 During the late 19th century, the Second Industrial Revolution brought mass production enabled by electricity.
 
-This era also saw the usage of electricity as a key source of energy, which was more efficient and less costly than earlier steam and water-powered systems.
+This era also saw the use of electricity as a key source of energy, which was more efficient and less costly than earlier steam and water-powered systems.
 The introduction of the integrated assembly line further streamlined production.
 
 Despite the efficiency gains and increased output, this industrial shift also resulted in significant job losses due to automation.
@@ -22,7 +22,7 @@ Consequently, while productivity increased drastically and goods became cheaper,
 ## Industry 3.0 -- Automation (mid to late 20th century)
 The Digital Revolution, which began in the 1970s, marked the transition to extensive use of digital technologies such as computers, microprocessors, and the Internet.
 
-This era led to significant automation across various industries, enhancing speed, accuracy, and reducing human labor through inventions like the  _Programmable Logic Controller_ (PLC).
+This era led to significant automation across various industries, enhancing speed, accuracy, and reducing human labor through inventions like the _Programmable Logic Controller_ (PLC).
 The integration of electronic hardware necessitated complementary advancements in software, boosting the software development industry and enabling improved management systems in enterprises, including resource planning and logistics.
 As a result, industries increasingly automated and globalized production, which contributed to the development of Supply Chain Management.
 
@@ -32,7 +32,7 @@ However, this period also created significant environmental challenges, includin
 Industry 4.0 represents a significant transformation in manufacturing and production, embracing digital technologies such as the _Internet of Things_ (IoT), cloud computing, and smart devices.
 
 This evolution builds on the automation introduced in the Third Industrial Revolution but pushes further towards a fully integrated digital industrial environment, aiming for seamlessly integrated solutions.
-Key features of Industry include the interconnection of machines, devices and sensors, enabling real-time data exchange and intelligent decision-making, allowing for self-monitoring, predictive maintenance, and adaptive manufacturing processes.
+Key features of Industry 4.0 include the interconnection of machines, devices, and sensors, enabling real-time data exchange and intelligent decision-making, allowing for self-monitoring, predictive maintenance, and adaptive manufacturing processes.
 Advanced analytics and artificial intelligence are leveraged to optimize production, improve quality, and reduce downtime.
 Industry 4.0 not only increases efficiency and productivity but also enables new business models, such as mass customization and service-oriented manufacturing.
 

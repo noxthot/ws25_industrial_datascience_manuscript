@@ -51,7 +51,7 @@ y_test = pd.Series(y_test).astype("category")
 - How do the results compare?
 :::
 
-In @{sec-act2-classification} and @{sec-act2-regression} our input was univariate, meaning each sample consisted of exactly one time series.
+In @{sec-act2-classification} and @{sec-act2-regression}, our input was univariate, meaning each sample consisted of exactly one time series.
 Now, we will work with multivariate time series, which are more common in real-world scenarios since typically multiple sensors are available.
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}

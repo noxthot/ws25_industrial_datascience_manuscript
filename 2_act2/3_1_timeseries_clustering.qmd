@@ -21,7 +21,7 @@ Time series clustering algorithms can be broadly categorized into four main type
 - **Subsequence-Based**: These algorithms focus on clustering representative subsequences of time series data rather than the entire series. Examples include methods based on shapelets and sliding windows.
 - **Representation-Learning-Based**: These methods use techniques like autoencoders or recurrent neural networks to learn a lower-dimensional representation of the time series data, which is then clustered using traditional clustering algorithms.
 
-@paparrizos2024 gives a good overview of different time series clustering methods.
+@{paparrizos2024} gives a good overview of different time series clustering methods.
 
 In the following, we will briefly introduce distance-based clustering using two common similarity measures: Euclidean distance and Dynamic Time Warping (DTW).
 

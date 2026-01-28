@@ -10,7 +10,7 @@ The [github repository of sktime (accessed: 16 11 25)](https://github.com/sktime
 - **Kernel-based**: Methods that use kernel functions to measure similarity between time series (e.g. time series support vector regression).
 - **Composed methods**: Methods that combine multiple models.
 
-Again we observe that these categories can directly be mapped to those in @{sec-act2-cluster-algorithms} and @{sec-act2-classification}.
+Again, we observe that these categories can directly be mapped to those in @{sec-act2-cluster-algorithms} and @{sec-act2-classification}.
 
 An easy baseline method for time series regression is to use a $k$-nearest neighbors regressor with a suitable distance measure for time series, e.g. dynamic time warping.
 In contrast to nearest neighbor in classification, where the predicted label is determined by e.g. a majority vote of the nearest neighbors, in nearest neighbor regression the predicted value is typically computed as the average (or weighted average) of the target values of the nearest neighbors.

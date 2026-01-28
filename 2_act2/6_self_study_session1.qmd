@@ -173,7 +173,7 @@ Let us try to impute the missing values in a second step.
 - Discuss the results.
 :::
 
-Of course we have only seen the tip of the iceberg when it comes to imputation methods for time series.
+Of course, we have only seen the tip of the iceberg when it comes to imputation methods for time series.
 Especially for seasonal data, more advanced methods such as STL can be very effective.
 We have had a look at STL in @{sec-act2-decomposition}, where we decomposed a time series into its components.
 Now we will use it for imputation to not lose the seasonal structure of the data while filling the gaps.

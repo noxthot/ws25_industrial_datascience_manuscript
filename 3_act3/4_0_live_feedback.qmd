@@ -3,7 +3,7 @@
 In this section, we will have a look at a simulated example of a live feedback system in an industrial manufacturing context.
 
 ## Setting the stage
-Imagine a pick and place machine in a manufacturing line that is responsible for placing components onto a circuit board.
+Imagine a pick-and-place machine in a manufacturing line that is responsible for placing components onto a circuit board.
 The machine has two axes (X and Y) to position the placement head accurately over the board and a vacuum system to pick up and release components.
 Additionally it has a camera system to verify the placement accuracy of each component once it is placed.
 A couple of sensors provide real-time measurements and variables that can be used to monitor the process.
@@ -16,7 +16,7 @@ To address this, the engineers set up sandboxing mode where the machine performs
 2. Move to the target placement location on the circuit board with random speed. This is always at the center of the board at (150, 150).
 3. Place the component and measure the placement accuracy using the camera system.
 
-Until the end of step 2 it is possible to adjust the placement parameters by providing a correction vector that modifies the target placement location.
+Until the end of step 2, it is possible to adjust the placement parameters by providing a correction vector that modifies the target placement location.
 
 The goal is to optimize the placement parameters in real-time based on the feedback received from the camera system after each placement.
 

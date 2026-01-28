@@ -1,29 +1,29 @@
 # Self study - Session 1 {#sec-act3-selfstudy1}
 
-In this session, we will revisit @sec-act3-eda and continue where we left off, trying to improve the process.
+In this session, we will revisit @{sec-act3-eda} and continue where we left off, trying to improve the process.
 
-The findings in @sec-act3-eda-summary were not sufficient to explain all defects, but we found a correlation between elevated pressure during the epoxy application step and excessive epoxy application (`NOK_1`).
-Regarding the uneven distribution of applied epoxy (`NOK_4`), the operators provided the information, that they suspect that this is caused by an insufficiently cleaned nozzle.
+The findings in @{sec-act3-eda-summary} were not sufficient to explain all defects, but we found a correlation between elevated pressure during the epoxy application step and excessive epoxy application (`NOK_1`).
+Regarding the uneven distribution of applied epoxy (`NOK_4`), the operators provided the information that they suspect that this is caused by an insufficiently cleaned nozzle.
 The cleaning process happens at the end of the previous processing step, where the nozzle moves away from the product and blows out residual epoxy.
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
 :::: {#exr-basics-mv-space}
-## Investigating the blow out step
+## Investigating the blow-out step
 ::::
-Investigate the pressure during the blow out step (process step index 3 of previous iteration) and see if you can find a correlation to `NOK_4` defects.
+Investigate the pressure during the blow-out step (process step index 3 of the previous iteration) and see if you can find a correlation to `NOK_4` defects.
 :::
 
-Having more information about `NOK_1` and `NOK_4`, we can now try to finetune the machine's parameters to reduce the number of defects.
+Having more information about `NOK_1` and `NOK_4`, we can now try to fine-tune the machine's parameters to reduce the number of defects.
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
 :::: {#exr-basics-mv-space}
-## Finetuning the machine parameters
+## Fine-tuning the machine parameters
 ::::
 The accompanying `readme.md` file shipped with the [`industrial_datascience_sim_machine_knifes` repository](https://github.com/noxthot/industrial_datascience_sim_machine_knifes/tree/v1.0.2) contains information on how to run the machine again with different parameters.
 Try to improve the parameters to reduce the number of defects.
-Keep `night` shift and `NUM_PIECES` at the default values.
+Keep the `night` shift and `NUM_PIECES` at the default values.
 
-You experience new issues or want to further finetune the parameters?
+You experience new issues or want to further fine-tune the parameters?
 Feel free to have a look at the new `csv` files that the machine is producing.
 
 _Hint: The process is stochastic, so you can not expect to get rid of every single defect._
@@ -57,10 +57,10 @@ Investigate the root cause of this difference by looking at the produced `csv` f
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
 :::: {#exr-basics-mv-space}
-## Finetune the parameters to work well for both shifts
+## Fine-tune the parameters to work well for both shifts
 ::::
 The machine is not only telling you a defect summary, but also the duration it took to produce the parts.
-Try to finetune the parameters to achieve a good compromise between quality (few defects) and speed (short duration).
+Try to fine-tune the parameters to achieve a good compromise between quality (few defects) and speed (short duration).
 
 _Hints:_
 

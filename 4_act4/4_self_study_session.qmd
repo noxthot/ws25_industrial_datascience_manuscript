@@ -2,7 +2,7 @@
 
 Real-world applications on industrial data face many challenges.
 One of them being that the data from machines is usually retrieved via communication protocols from _programmable logic controllers_ (PLC).
-These communication protocols often lack standardization and can vary significantly between different manufacturers and even different models of PLCs
+These communication protocols often lack standardization and can vary significantly between different manufacturers and even different models of PLCs.
 This heterogeneity makes it difficult to integrate data from (multiple) sources and can lead to massive complexity in data processing and analysis.
 
 In the following, you will read a review paper discussing challenges in introducing industrial data science to existing (brownfield) environments.
