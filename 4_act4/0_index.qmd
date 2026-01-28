@@ -1,1 +1,2 @@
-This chapter should serve as an outlook into further topics in industrial data science, which are not covered in detail in this course.
+# Outlook {#sec-act4-outlook}
+The remaining chapters should serve as an outlook into further topics in industrial data science, which are not covered in detail in this course.
