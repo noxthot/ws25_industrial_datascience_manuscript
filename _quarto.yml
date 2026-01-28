@@ -54,12 +54,13 @@ book:
         - 4_act4/0_index.qmd
         - 4_act4/1_resampling.ipynb
         - 4_act4/2_0_multimodal.qmd
-        - 4_act4/4_brownfield_environments.qmd
+        - 4_act4/3_reinforcement_learning.qmd
+        - 4_act4/4_self_study_session.qmd
     - 5_references.qmd
   date: last-modified
   license: "CC BY-NC-SA 4.0"
   page-footer:
-    left: Industrial Data Science - 2025 - [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 
+    left: Industrial Data Science - 2026 - [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 
     center: "Gregor Ehrensperger"
     right: Manuscript designed with <a href="https://quarto.org/">Quarto</a>.
   reader-mode: true
