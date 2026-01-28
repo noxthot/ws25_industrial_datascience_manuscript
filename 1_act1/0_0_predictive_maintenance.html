@@ -576,7 +576,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../4_act4/0_index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">0_index.html</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Outlook</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1257,7 +1257,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<p><code>describe</code> provides a summary of the numerical features in the dataset, including count, mean, standard deviation, min, max, and quartiles.</p>
+<p><code>describe</code> provides a summary of the numerical features in the dataset, including count, mean, standard deviation, minimum, maximum, and quartiles.</p>
 <p>There are no obvious outliers or anomalies in the data based on this summary.</p>
 <div id="377c1633" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df.dtypes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1280,7 +1280,7 @@ dtype: object</code></pre>
 </div>
 </div>
 <p><code>dtypes</code> provides the data types of each feature in the dataset.</p>
-<p><code>object</code> types are typically storing <code>text data</code>. Here are no additional surprises, as we already noticed the oddities previously.</p>
+<p><code>object</code> types are typically storing <code>text data</code> in <code>pandas 2.x</code>. Here are no additional surprises, as we already noticed the oddities previously.</p>
 <div id="c14c59b2" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df.nunique()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
@@ -1599,8 +1599,14 @@ dtype: int64</code></pre>
 </section>
 <section id="conclusion" class="level3" data-number="4.1.8">
 <h3 data-number="4.1.8" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">4.1.8</span> Conclusion</h3>
-<p>Many roads lead to Rome. We successfully recovered most of the key factors for failure from the dataset, using clever visualizations and making use of easy to interpret AI tools.</p>
-<p>These insights can help improving the reliability of the processes and reduce the likelihood of failures in the future. E.g. the tool wear failure could be mitigated by implementing more frequent tool replacements, while the heat dissipation failure could be addressed by not allowing rotational speeds below 1380rpm. The power failure could be prevented by ensuring that the product of torque and rotational speed stays within the specified limits, and the overstrain failure could be avoided by monitoring the tool wear and torque closely.</p>
+<p>Many roads lead to Rome. We successfully recovered most of the key factors for failure from the dataset, using clever visualizations and making use of an interpretable machine learning algorithm.</p>
+<p>These insights can help improving the reliability of the processes and reduce the likelihood of failures in the future:</p>
+<ul>
+<li>The tool wear failure could be mitigated by implementing more frequent tool replacements.</li>
+<li>The heat dissipation failure could be addressed by not allowing rotational speeds below 1380rpm.</li>
+<li>The power failure could be prevented by ensuring that the product of torque and rotational speed stays within the specified limits.</li>
+<li>The overstrain failure could be avoided by monitoring the tool wear and torque closely.</li>
+</ul>
 </section>
 </div>
 
