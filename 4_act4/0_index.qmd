@@ -1,16 +1,1 @@
-::: {.callout-caution collapse="true"}
-## Still under construction {#sec-act4}
-
-This section is still under construction and will be completed in the near future.
-Please do not go beyond this point for now.
-:::
-
-
-
-[//]: # TODO - Fill
-
-- Different sampling rates
-
-- Reinforcement Learning
-
-- Multimodal Data
+This chapter should serve as an outlook into further topics in industrial data science, which are not covered in detail in this course.
