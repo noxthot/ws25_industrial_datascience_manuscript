@@ -12,7 +12,7 @@ Various machines are interconnected and the process flow is as follows:
 - Machine E coats the knife with protective finish and completes the manufacturing process.
 
 Operators notice that the process is not running as smoothly as expected.
-The handle is not always properly bonded to the metal part and sometimes the wood is cracked.
+The handle is not always properly bonded to the metal piece and sometimes the wood is cracked.
 They find that the root cause of the issue lies in the epoxy application step of Machine B.
 Common issues include excessive or insufficient epoxy application, uneven distribution, and occasional poor adhesion to the shaft.
 One clear economic impact is that these defective products cannot be sold.

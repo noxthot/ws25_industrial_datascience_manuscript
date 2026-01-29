@@ -50,7 +50,5 @@ Luckily, the engineers already collected a dataset of 25.000 cycles coming in tw
 
 The two datasets can be merged via `cycle` column.
 
-## Loading the provided data set
-
 {{< embed /3_act3/4_1_inspect_data.ipynb echo=true >}}
 
