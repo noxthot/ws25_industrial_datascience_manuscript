@@ -624,7 +624,6 @@ window.Quarto = {
   <li><a href="#setting-the-stage" id="toc-setting-the-stage" class="nav-link active" data-scroll-target="#setting-the-stage"><span class="header-section-number">21.1</span> Setting the stage</a></li>
   <li><a href="#accessible-variables" id="toc-accessible-variables" class="nav-link" data-scroll-target="#accessible-variables"><span class="header-section-number">21.2</span> Accessible variables</a></li>
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">21.3</span> Data</a></li>
-  <li><a href="#loading-the-provided-data-set" id="toc-loading-the-provided-data-set" class="nav-link" data-scroll-target="#loading-the-provided-data-set"><span class="header-section-number">21.4</span> Loading the provided data set</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/noxthot/ws25_mci_industrial_ds_manuscript/edit/main/3_act3/4_0_live_feedback.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/noxthot/ws25_mci_industrial_ds_manuscript/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -705,11 +704,9 @@ Note
 </ul>
 <p>The two datasets can be merged via <code>cycle</code> column.</p>
 </section>
-<section id="loading-the-provided-data-set" class="level2" data-number="21.4">
-<h2 data-number="21.4" class="anchored" data-anchor-id="loading-the-provided-data-set"><span class="header-section-number">21.4</span> Loading the provided data set</h2>
 <div class="quarto-embed-nb-cell" data-notebook="/home/runner/work/ws25_industrial_datascience_manuscript/ws25_industrial_datascience_manuscript/3_act3/4_1_inspect_data.ipynb" data-notebook-title="Loading packages" data-notebook-cellid="ed0f92a3">
-<section id="loading-packages" class="level3" data-number="21.4.1">
-<h3 data-number="21.4.1" class="anchored" data-anchor-id="loading-packages"><span class="header-section-number">21.4.1</span> Loading packages</h3>
+<section id="loading-packages" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="loading-packages"><span class="header-section-number">21.4</span> Loading packages</h2>
 <div id="ef3b093e" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd  <span class="co"># used for data handling</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns  <span class="co"># used for statistical data visualization</span></span>
@@ -720,8 +717,8 @@ Note
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="loading-the-dataset" class="level3" data-number="21.4.2">
-<h3 data-number="21.4.2" class="anchored" data-anchor-id="loading-the-dataset"><span class="header-section-number">21.4.2</span> Loading the dataset</h3>
+<section id="loading-the-dataset" class="level2" data-number="21.5">
+<h2 data-number="21.5" class="anchored" data-anchor-id="loading-the-dataset"><span class="header-section-number">21.5</span> Loading the dataset</h2>
 <p>The dataset was released alongside the simulated machine at <span class="citation" data-cites="ehrensperger_livemachine2026">Ehrensperger (<a href="../5_references.html#ref-ehrensperger_livemachine2026" role="doc-biblioref">2026</a>)</span>, but you can also clone the repository directly from <a href="https://github.com/noxthot/industrial_datascience_live_machine/tree/v1.0.0">GitHub</a>. In this section, we will look at the provided <code>csv</code> files.</p>
 <div id="20e5ab43" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_machinedata <span class="op">=</span> pd.read_csv(</span>
@@ -731,9 +728,8 @@ Note
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://raw.githubusercontent.com/noxthot/industrial_datascience_live_machine/refs/tags/v1.0.0/data/simulated_opcua_postinspection.csv"</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
-<section id="quick-check-data-integrity" class="level3" data-number="21.4.3">
-<h3 data-number="21.4.3" class="anchored" data-anchor-id="quick-check-data-integrity"><span class="header-section-number">21.4.3</span> Quick check data integrity</h3>
+<section id="data-integrity-check" class="level3" data-number="21.5.1">
+<h3 data-number="21.5.1" class="anchored" data-anchor-id="data-integrity-check"><span class="header-section-number">21.5.1</span> Data integrity check</h3>
 <div id="ff2affe1" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_machinedata</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -1195,8 +1191,9 @@ Note
 </div>
 </div>
 </section>
-<section id="visualize-errors" class="level3" data-number="21.4.4">
-<h3 data-number="21.4.4" class="anchored" data-anchor-id="visualize-errors"><span class="header-section-number">21.4.4</span> Visualize Errors</h3>
+</section>
+<section id="error-visualization" class="level2" data-number="21.6">
+<h2 data-number="21.6" class="anchored" data-anchor-id="error-visualization"><span class="header-section-number">21.6</span> Error Visualization</h2>
 <div id="1ad4655e" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sns.jointplot(data<span class="op">=</span>df_postinspection, x<span class="op">=</span><span class="st">"error_x"</span>, y<span class="op">=</span><span class="st">"error_y"</span>, kind<span class="op">=</span><span class="st">"kde"</span>, fill<span class="op">=</span><span class="va">True</span>, cmap<span class="op">=</span><span class="st">"viridis"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -1209,8 +1206,8 @@ Note
 </div>
 <p>This is a rather interesting error distribution.</p>
 </section>
-<section id="next-steps" class="level3" data-number="21.4.5">
-<h3 data-number="21.4.5" class="anchored" data-anchor-id="next-steps"><span class="header-section-number">21.4.5</span> Next Steps</h3>
+<section id="next-steps" class="level2" data-number="21.7">
+<h2 data-number="21.7" class="anchored" data-anchor-id="next-steps"><span class="header-section-number">21.7</span> Next Steps</h2>
 <p><a href="6_self_study_session2.html" class="quarto-xref"><span>Chapter 23</span></a> will guide you through the optimization process aimed at reducing these errors and improving overall process accuracy.</p>
 </section>
 </div>
@@ -1221,7 +1218,6 @@ Note
 Ehrensperger, Gregor. 2026. <span>“Industrial_datascience_live_machine: V1.0.0.”</span> Zenodo. <a href="https://doi.org/10.5281/zenodo.18183373">https://doi.org/10.5281/zenodo.18183373</a>.
 </div>
 </div>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

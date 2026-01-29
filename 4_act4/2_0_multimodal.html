@@ -627,11 +627,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-equipment-health-monitoring-with-time-series-and-images" class="level2" data-number="26.3">
 <h2 data-number="26.3" class="anchored" data-anchor-id="example-equipment-health-monitoring-with-time-series-and-images"><span class="header-section-number">26.3</span> Example: Equipment Health Monitoring with Time Series and Images</h2>
 <p>In this example, we will simulate an industrial scenario where we monitor machine health using both vibration sensor data (time series) and thermal camera images.</p>
-<div class="quarto-embed-nb-cell" data-notebook="/home/runner/work/ws25_industrial_datascience_manuscript/ws25_industrial_datascience_manuscript/4_act4/2_1_multimodal_example.ipynb" data-notebook-title="Imports and setup" data-notebook-cellid="7b15f153">
+<div class="quarto-embed-nb-cell" data-notebook="/home/runner/work/ws25_industrial_datascience_manuscript/ws25_industrial_datascience_manuscript/4_act4/2_1_multimodal_example.ipynb" data-notebook-title="Loading Packages" data-notebook-cellid="7b15f153">
 <p>In this example, we simulate a scenario where we monitor equipment health using: - <strong>Time series data</strong>: Vibration sensor readings over time - <strong>Image data</strong>: Thermal camera images of the equipment</p>
 <p>We’ll classify equipment into three states: <strong>Normal</strong>, <strong>Warning</strong>, and <strong>Critical</strong>.</p>
-<section id="imports-and-setup" class="level3" data-number="26.3.1">
-<h3 data-number="26.3.1" class="anchored" data-anchor-id="imports-and-setup"><span class="header-section-number">26.3.1</span> Imports and setup</h3>
+<section id="loading-packages" class="level3" data-number="26.3.1">
+<h3 data-number="26.3.1" class="anchored" data-anchor-id="loading-packages"><span class="header-section-number">26.3.1</span> Loading Packages</h3>
 <div id="86ed16c3" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
@@ -656,8 +656,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-generation" class="level3" data-number="26.3.2">
 <h3 data-number="26.3.2" class="anchored" data-anchor-id="data-generation"><span class="header-section-number">26.3.2</span> Data Generation</h3>
-<p>We will simulate 500 equipment monitoring samples to demonstrate the value of multimodal fusion: - A vibration time series (80 time steps) - A thermal image (32x32 pixels) - A health status label (0=Normal, 1=Warning, 2=Critical)</p>
-<p><strong>Key challenge</strong>: Some warning cases have ambiguous single-modality signals: - <strong>Type A</strong>: High vibration (looks critical) but moderate temperature → actually warning - <strong>Type B</strong>: Low vibration (looks normal) but elevated temperature → actually warning</p>
+<p>We will simulate 500 equipment monitoring samples to demonstrate the value of multimodal fusion:</p>
+<ul>
+<li>A vibration time series (80 time steps)</li>
+<li>A thermal image (32x32 pixels)</li>
+<li>A health status label (0=Normal, 1=Warning, 2=Critical)</li>
+</ul>
+<p><strong>Key challenge</strong>: Some warning cases have ambiguous single-modality signals:</p>
+<ul>
+<li><strong>Type A</strong>: High vibration (looks critical) but moderate temperature → actually warning</li>
+<li><strong>Type B</strong>: Low vibration (looks normal) but elevated temperature → actually warning</li>
+</ul>
 <div id="6615042e" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
@@ -829,8 +838,8 @@ Class distribution:
 </div>
 </div>
 </section>
-<section id="visualization-of-sample-data" class="level3" data-number="26.3.3">
-<h3 data-number="26.3.3" class="anchored" data-anchor-id="visualization-of-sample-data"><span class="header-section-number">26.3.3</span> Visualization of Sample Data</h3>
+<section id="visualization" class="level3" data-number="26.3.3">
+<h3 data-number="26.3.3" class="anchored" data-anchor-id="visualization"><span class="header-section-number">26.3.3</span> Visualization</h3>
 <p>Let us visualize examples from each health status class:</p>
 <div id="7263faa0" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">10</span>))</span>
@@ -1233,7 +1242,7 @@ Late Fusion:       0.920</code></pre>
 </section>
 <section id="confusion-matrices" class="level3" data-number="26.3.9">
 <h3 data-number="26.3.9" class="anchored" data-anchor-id="confusion-matrices"><span class="header-section-number">26.3.9</span> Confusion Matrices</h3>
-<p>Let’s visualize the confusion matrices for all three approaches:</p>
+<p>Let us visualize the confusion matrices for all approaches:</p>
 <div id="6bfc157f" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">4</span>, figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">4</span>))</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>

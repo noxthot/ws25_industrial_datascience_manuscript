@@ -666,10 +666,11 @@ window.Quarto = {
 <p><em>Convolutional Neural Networks</em> (CNN), by design, are able to capture local patterns in time series data through the use of convolutional layers. These layers apply filters that slide over the input data, allowing the model to learn local temporal patterns that are important. At the same time, CNNs can also capture global patterns by stacking multiple convolutional layers and using pooling operations. This hierarchical structure enables the model to learn both local and global features of the time series data, making CNNs versatile for various time series tasks.</p>
 <p><span class="citation" data-cites="zhao2017">Zhao et al. (<a href="../5_references.html#ref-zhao2017" role="doc-biblioref">2017</a>)</span> propose a CNN architecture specifically designed for time series classification. The architecture consists of a series of 1D convolutional layers followed by a pooling layer. The convolutional layers are responsible for extracting local features from the time series data, while the pooling layer helps to reduce the dimensionality and capture more global patterns. After the convolutional and pooling layers, the model includes a fully connected layer (the authors refer to it as a <em>feature layer</em>) that maps the extracted features to <span class="math inline">\(n\)</span> output nodes, where <span class="math inline">\(n\)</span> is the number of classes. The node with the highest value determines the predicted class.</p>
 <p>For regression, <code>sktime</code> provides <a href="https://www.sktime.net/en/latest/api_reference/auto_generated/sktime.regression.deep_learning.cnn.CNNRegressor.html"><code>CNNRegressor</code></a>, which is based on the architecture described in <span class="citation" data-cites="zhao2017">Zhao et al. (<a href="../5_references.html#ref-zhao2017" role="doc-biblioref">2017</a>)</span>. To adapt the architecture for regression tasks, the final layer is modified to have a single output node with a linear activation function that predicts a continuous value instead of class probabilities.</p>
-<div class="quarto-embed-nb-cell" data-notebook="/home/runner/work/ws25_industrial_datascience_manuscript/ws25_industrial_datascience_manuscript/2_act2/5_2_timeseries_regression_examples.ipynb" data-notebook-cellid="78d053c0">
+<div class="quarto-embed-nb-cell" data-notebook="/home/runner/work/ws25_industrial_datascience_manuscript/ws25_industrial_datascience_manuscript/2_act2/5_2_timeseries_regression_examples.ipynb" data-notebook-title="Imports" data-notebook-cellid="78d053c0">
 <p>In this example, we will use the IEEEPPG dataset <span class="citation" data-cites="tan2020">Tan et al. (<a href="../5_references.html#ref-tan2020" role="doc-biblioref">2020</a>)</span>, which focuses on heart rate monitoring during physical exercise using wrist-type <em>photoplethysmographic</em> (PPG) signals. The dataset consists of two PPG signals and three-axis acceleration signals. The goal is to predict ECG values from the PPG and acceleration signals. All signals were sampled at 125 Hz.</p>
-<p><em>Imports</em></p>
-<div id="218cac6d" class="cell" data-execution_count="1">
+<section id="imports" class="level3" data-number="14.1.1">
+<h3 data-number="14.1.1" class="anchored" data-anchor-id="imports"><span class="header-section-number">14.1.1</span> Imports</h3>
+<div id="218cac6d" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
@@ -686,8 +687,10 @@ window.Quarto = {
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tslearn.preprocessing <span class="im">import</span> TimeSeriesScalerMinMax</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<p><em>Download and load data</em></p>
-<div id="9384fd68" class="cell" data-execution_count="2">
+</section>
+<section id="loading-the-dataset" class="level3" data-number="14.1.2">
+<h3 data-number="14.1.2" class="anchored" data-anchor-id="loading-the-dataset"><span class="header-section-number">14.1.2</span> Loading the dataset</h3>
+<div id="9384fd68" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> download_data(url):</span>
@@ -922,6 +925,9 @@ window.Quarto = {
 (1328, 5, 1000)</code></pre>
 </div>
 </div>
+</section>
+<section id="regressor" class="level3" data-number="14.1.3">
+<h3 data-number="14.1.3" class="anchored" data-anchor-id="regressor"><span class="header-section-number">14.1.3</span> Regressor</h3>
 <p>The <code>CNNRegressor</code> from <code>sktime</code> can now be used to create and train the convolutional neural network for time series regression.</p>
 <div id="d605d9bc" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>regressor <span class="op">=</span> CNNRegressor(</span>
@@ -1741,6 +1747,7 @@ RMSE: 28.7418
 </div>
 <p>The model is able to fit the training data quite well, indicating that the code is implemented correctly and the model architecture is complex enough to capture the underlying patterns in the data. Still, the performance on the test set is significantly worse than on the training set. This suggests that the model is likely overfitting the data, which could be due to various factors such as e.g.&nbsp;insufficient training data, or lack of regularization or that the test data distribution differs significantly from the training data distribution.</p>
 <p>While these results are not fully satisfying, the results align with those reported by <span class="citation" data-cites="tan2021">Tan et al. (<a href="../5_references.html#ref-tan2021" role="doc-biblioref">2021</a>)</span> for other simpler neural network architectures on this dataset.</p>
+</section>
 </div>
 
 

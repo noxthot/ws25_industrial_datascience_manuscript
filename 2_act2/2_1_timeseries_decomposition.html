@@ -4539,10 +4539,13 @@ Note
 </div>
 <section id="examples" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="examples"><span class="header-section-number">11.1</span> Examples</h2>
-<div class="quarto-embed-nb-cell" data-notebook="/home/runner/work/ws25_industrial_datascience_manuscript/ws25_industrial_datascience_manuscript/2_act2/2_2_timeseries_decomposition_example.ipynb" data-notebook-title="Add outliers with a probability of 0.05" data-notebook-cellid="ed4847bc">
+<div class="quarto-embed-nb-cell" data-notebook="/home/runner/work/ws25_industrial_datascience_manuscript/ws25_industrial_datascience_manuscript/2_act2/2_2_timeseries_decomposition_example.ipynb" data-notebook-title="Imports" data-notebook-cellid="ed4847bc">
 <p>This example uses the package <a href="https://www.statsmodels.org/"><code>statsmodels</code></a> for time series decomposition.</p>
-<p><em>Imports</em></p>
-<div id="2dcccd0d" class="cell" data-execution_count="1">
+<section id="imports" class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="imports"><span class="header-section-number">11.1.1</span> Imports</h3>
+<div id="2dcccd0d" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -4560,9 +4563,14 @@ Note
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"ignore"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
-<p><em>Generating Example Data</em></p>
-<div id="7d48bb3f" class="cell" data-execution_count="2">
+</section>
+<section id="generating-example-data" class="level3" data-number="11.1.2">
+<h3 data-number="11.1.2" class="anchored" data-anchor-id="generating-example-data"><span class="header-section-number">11.1.2</span> Generating Example Data</h3>
+<div id="7d48bb3f" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)  <span class="co"># for reproducibility</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>date_range <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">"2010-01-01"</span>, end<span class="op">=</span><span class="st">"2024-12-31"</span>, freq<span class="op">=</span><span class="st">"MS"</span>)</span>
@@ -4580,6 +4588,7 @@ Note
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>sales <span class="op">=</span> trend <span class="op">+</span> seasonality <span class="op">+</span> noise  <span class="co"># final data as sum of all components</span></span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">"Date"</span>: date_range, <span class="st">"Sales"</span>: sales}).set_index(<span class="st">"Date"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <div id="2b32f750" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.line(df, y<span class="op">=</span><span class="st">"Sales"</span>, title<span class="op">=</span><span class="st">"Sales Over Time"</span>)</span>
@@ -4654,6 +4663,9 @@ if (outputEl) {{
 </div>
 </div>
 <p>Now it is apparent that there is a yearly seasonal pattern, with peaks around mid-year.</p>
+</section>
+<section id="algorithmic-decomposition" class="level3" data-number="11.1.3">
+<h3 data-number="11.1.3" class="anchored" data-anchor-id="algorithmic-decomposition"><span class="header-section-number">11.1.3</span> Algorithmic Decomposition</h3>
 <p>Algorithmic decomposition of a time series into its components is not a trivial task. Many algorithms exist to achieve this, each with its own advantages and disadvantages.</p>
 <p>In the following, we use a very simple additive model based on moving averages to decompose our time series. First, the trend is estimated using a moving average with a smaller window size. Then, the detrended series is calculated by subtracting the trend from the original series. The seasonal component is estimated by averaging the values for each season (e.g., each month, year, ..) in the detrended time series. Finally, the residual component is calculated by subtracting both the trend and seasonal components from the original series.</p>
 <p>Note that this is a very naive approach and according to the documentation of <code>seasonal_decompose</code> a more sophisticated method should be preferred. However, it is easy to understand and serves well for demonstration purposes.</p>
@@ -4670,8 +4682,10 @@ if (outputEl) {{
 </div>
 </div>
 </div>
-<p>Here is a helper function to create a plotly figure with four plots.</p>
-<div id="ba790756" class="cell" data-execution_count="7">
+<p><em>Helper function to create a plotly figure with four plots</em></p>
+<div id="ba790756" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> seasonal_decompose_plotly(decomposed_ts, title):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Plots a time series decomposition using Plotly.</span></span>
@@ -4709,6 +4723,7 @@ if (outputEl) {{
 <span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>    fig_decomp.update_layout(height<span class="op">=</span><span class="dv">900</span>, title_text<span class="op">=</span>title)</span>
 <span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> fig_decomp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <p>Please note the different <span class="math inline">\(y\)</span>-axes scales in the following plot.</p>
 <div id="7201aa11" class="cell" data-execution_count="8">
@@ -4741,7 +4756,7 @@ if (outputEl) {{
                         })                };            </script>        </div>
 </div>
 </div>
-<p>A more robust method for time series decomposition is STL (Seasonal and Trend decomposition using Loess).</p>
+<p>A more robust method for time series decomposition is STL (<em>Seasonal and Trend decomposition using Loess</em>).</p>
 <p>It not only allows for more flexibility in the decomposition process (e.g.&nbsp;look at seasonal changes over time), but is also more robust to outliers.</p>
 <div id="11ce60de" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>decomp_stl <span class="op">=</span> STL(df, robust<span class="op">=</span><span class="va">True</span>).fit()  <span class="co"># robust=True to be less sensitive to expected outliers</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -4777,8 +4792,9 @@ if (outputEl) {{
 </div>
 </div>
 <p>Having the decomposed components at hand, opens a variety of applications.</p>
-<section id="denoising" class="level3" data-number="11.1.1">
-<h3 data-number="11.1.1" class="anchored" data-anchor-id="denoising"><span class="header-section-number">11.1.1</span> Denoising</h3>
+</section>
+<section id="denoising" class="level3" data-number="11.1.4">
+<h3 data-number="11.1.4" class="anchored" data-anchor-id="denoising"><span class="header-section-number">11.1.4</span> Denoising</h3>
 <p>Using the trend and seasonal components from the STL decomposition, we can create a denoised version of the original time series.</p>
 <div id="548dbb42" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>decomp_stl_estimated <span class="op">=</span> decomp_stl.seasonal <span class="op">+</span> decomp_stl.trend</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -4823,8 +4839,8 @@ if (outputEl) {{
 </div>
 <p>In previous plot, we can see that the estimated values follow the observed values quite closely, indicating that the STL decomposition has effectively captured the underlying patterns in the data. But we can also see some points with larger deviations, which are likely outliers in the original data.</p>
 </section>
-<section id="anomaly-detection" class="level3" data-number="11.1.2">
-<h3 data-number="11.1.2" class="anchored" data-anchor-id="anomaly-detection"><span class="header-section-number">11.1.2</span> Anomaly Detection</h3>
+<section id="anomaly-detection" class="level3" data-number="11.1.5">
+<h3 data-number="11.1.5" class="anchored" data-anchor-id="anomaly-detection"><span class="header-section-number">11.1.5</span> Anomaly Detection</h3>
 <p>One way to quantify outliers is to apply a threshold to the residuals (e.g., 3 times the standard deviation of the residuals, also known as the 3-sigma rule).</p>
 <div id="fc35f676" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>resid <span class="op">=</span> decomp_stl.resid</span>
@@ -4988,8 +5004,8 @@ if (outputEl) {{
 </div>
 </div>
 </section>
-<section id="detrending" class="level3" data-number="11.1.3">
-<h3 data-number="11.1.3" class="anchored" data-anchor-id="detrending"><span class="header-section-number">11.1.3</span> Detrending</h3>
+<section id="detrending" class="level3" data-number="11.1.6">
+<h3 data-number="11.1.6" class="anchored" data-anchor-id="detrending"><span class="header-section-number">11.1.6</span> Detrending</h3>
 <p>Using the decomposed components also allows for detrending the time series, which can be useful for further analysis.</p>
 <div id="2e6d0587" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detrend the observed series by subtracting the trend component</span></span>
@@ -5030,8 +5046,8 @@ if (outputEl) {{
 </div>
 </div>
 </section>
-<section id="deseasonalizing" class="level3" data-number="11.1.4">
-<h3 data-number="11.1.4" class="anchored" data-anchor-id="deseasonalizing"><span class="header-section-number">11.1.4</span> Deseasonalizing</h3>
+<section id="deseasonalizing" class="level3" data-number="11.1.7">
+<h3 data-number="11.1.7" class="anchored" data-anchor-id="deseasonalizing"><span class="header-section-number">11.1.7</span> Deseasonalizing</h3>
 <p>Another important application is to deseasonalize the time series, which is often a prerequisite for forecasting models.</p>
 <div id="94a46f3f" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Deseasonalize the observed series by subtracting the seasonal component</span></span>

@@ -4666,7 +4666,8 @@ More configurable tree based ensembles are provided with <code>ComposableTimeSer
 <section id="example" class="level3" data-number="13.1.1">
 <h3 data-number="13.1.1" class="anchored" data-anchor-id="example"><span class="header-section-number">13.1.1</span> Example</h3>
 <p>We will use the same dataset as in the clustering example from <a href="3_1_timeseries_clustering.html#sec-act2-cluster-examples" class="quarto-xref"><span>Section 12.3</span></a>, the <code>Trace</code> dataset.</p>
-<p><em>Imports</em></p>
+<section id="imports" class="level4" data-number="13.1.1.1">
+<h4 data-number="13.1.1.1" class="anchored" data-anchor-id="imports"><span class="header-section-number">13.1.1.1</span> Imports</h4>
 <div id="c76cbdf4" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -4720,7 +4721,9 @@ More configurable tree based ensembles are provided with <code>ComposableTimeSer
 <span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    fig.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<p><em>Load data set</em></p>
+</section>
+<section id="loading-the-dataset" class="level4" data-number="13.1.1.2">
+<h4 data-number="13.1.1.2" class="anchored" data-anchor-id="loading-the-dataset"><span class="header-section-number">13.1.1.2</span> Loading the dataset</h4>
 <div id="6dc00b94" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>X_train, y_train, X_test, y_test <span class="op">=</span> CachedDatasets().load_dataset(<span class="st">"Trace"</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -4728,7 +4731,10 @@ More configurable tree based ensembles are provided with <code>ComposableTimeSer
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>X_train <span class="op">=</span> X_train[:, :, <span class="dv">0</span>]</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>X_test <span class="op">=</span> X_test[:, :, <span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><em>Visualize training set clusters</em></p>
+</section>
+</section>
+<section id="visualization" class="level3" data-number="13.1.2">
+<h3 data-number="13.1.2" class="anchored" data-anchor-id="visualization"><span class="header-section-number">13.1.2</span> Visualization</h3>
 <div id="0a36d00c" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plot_clusters(X_train, y_train, <span class="st">"Training Set Clusters"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -4760,6 +4766,8 @@ if (outputEl) {{
 </div>
 </div>
 <p><em>Note: Here, the dataset already comes split into training and test set. In practice, you would want to do a proper train-test split on your own dataset.</em></p>
+<section id="classifier" class="level4" data-number="13.1.2.1">
+<h4 data-number="13.1.2.1" class="anchored" data-anchor-id="classifier"><span class="header-section-number">13.1.2.1</span> Classifier</h4>
 <p>We set up the classifier and train on the training set <span class="math inline">\((X_{train}, y_{train})\)</span> as follows.</p>
 <div id="422e69a3" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>clf <span class="op">=</span> TimeSeriesForestClassifier(random_state<span class="op">=</span><span class="dv">42</span>)</span>
@@ -5498,6 +5506,7 @@ if (outputEl) {{
 </div>
 </div>
 </div>
+</section>
 </section>
 </div>
 

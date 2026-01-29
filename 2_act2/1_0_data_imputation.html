@@ -4454,11 +4454,24 @@ return Plotly;
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#examples-for-time-series-imputation" id="toc-examples-for-time-series-imputation" class="nav-link active" data-scroll-target="#examples-for-time-series-imputation"><span class="header-section-number">10.1</span> Examples for time series imputation</a>
+  <ul class="collapse">
+  <li><a href="#imports" id="toc-imports" class="nav-link" data-scroll-target="#imports"><span class="header-section-number">10.1.1</span> Imports</a></li>
+  <li><a href="#data-loading" id="toc-data-loading" class="nav-link" data-scroll-target="#data-loading"><span class="header-section-number">10.1.2</span> Data loading</a></li>
+  <li><a href="#imputation-methods" id="toc-imputation-methods" class="nav-link" data-scroll-target="#imputation-methods"><span class="header-section-number">10.1.3</span> Imputation methods</a></li>
+  <li><a href="#data-smoothing" id="toc-data-smoothing" class="nav-link" data-scroll-target="#data-smoothing"><span class="header-section-number">10.1.4</span> Data smoothing</a></li>
+  <li><a href="#applying-smoothing-prior-to-interpolation" id="toc-applying-smoothing-prior-to-interpolation" class="nav-link" data-scroll-target="#applying-smoothing-prior-to-interpolation"><span class="header-section-number">10.1.5</span> Applying smoothing prior to interpolation</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/noxthot/ws25_mci_industrial_ds_manuscript/edit/main/2_act2/1_0_data_imputation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/noxthot/ws25_mci_industrial_ds_manuscript/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content column-page-right" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../2_act2/0_nature_of_timeseries.html">Act 2: Time series – A Curated Collection</a></li><li class="breadcrumb-item"><a href="../2_act2/1_0_data_imputation.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data imputation</span></a></li></ol></nav>
@@ -4468,7 +4481,7 @@ return Plotly;
 
 
 
-<div class="quarto-title-meta column-page-right">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -4482,12 +4495,12 @@ return Plotly;
 
 <p>Real datasets often contain missing values or gaps due to various reasons such as sensor malfunctions, data corruption, or transmission errors. Handling these missing values is crucial for accurate analysis and modeling.</p>
 <p>In this section we will explore common techniques for imputing missing data in time series.</p>
-<div class="quarto-embed-nb-cell" data-notebook="/home/runner/work/ws25_industrial_datascience_manuscript/ws25_industrial_datascience_manuscript/2_act2/1_1_timeseries_imputation_examples.ipynb" data-notebook-title="Examples for time series imputation" data-notebook-cellid="b788ad65">
-<section id="examples-for-time-series-imputation" class="level2" data-number="10.1">
+<section id="examples-for-time-series-imputation" class="level2 quarto-embed-nb-cell" data-notebook="/home/runner/work/ws25_industrial_datascience_manuscript/ws25_industrial_datascience_manuscript/2_act2/1_1_timeseries_imputation_examples.ipynb" data-notebook-title="Examples for time series imputation" data-notebook-cellid="b788ad65" data-number="10.1">
 <h2 data-number="10.1" class="anchored" data-anchor-id="examples-for-time-series-imputation"><span class="header-section-number">10.1</span> Examples for time series imputation</h2>
 <p>We again look at the data set from <a href="../1_act1/0_0_predictive_maintenance.html" class="quarto-xref"><span>Chapter 4</span></a> and introduce some missing values to then demonstrate different imputation techniques.</p>
 <p>The collapsed code cells include the imports, helper functions, and data loading.</p>
-<p><em>Imports</em></p>
+<section id="imports" class="level3" data-number="10.1.1">
+<h3 data-number="10.1.1" class="anchored" data-anchor-id="imports"><span class="header-section-number">10.1.1</span> Imports</h3>
 <div id="0b28cd40" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
@@ -4507,7 +4520,9 @@ return Plotly;
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"ignore"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<p><em>Data loading</em></p>
+</section>
+<section id="data-loading" class="level3" data-number="10.1.2">
+<h3 data-number="10.1.2" class="anchored" data-anchor-id="data-loading"><span class="header-section-number">10.1.2</span> Data loading</h3>
 <div id="c64c9878" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
@@ -4838,8 +4853,7 @@ return Plotly;
 <span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a>    fig.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<section id="visualization-of-the-temperature-data-with-and-without-gaps" class="level3" data-number="10.1.1">
-<h3 data-number="10.1.1" class="anchored" data-anchor-id="visualization-of-the-temperature-data-with-and-without-gaps"><span class="header-section-number">10.1.1</span> Visualization of the temperature data with and without gaps</h3>
+<p><em>Visualization of the temperature data with and without gaps</em></p>
 <div id="cb728343" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>plot_temperature_data(dftemp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -4871,8 +4885,10 @@ if (outputEl) {{
 </div>
 </div>
 </section>
-<section id="forward-fill-imputation" class="level3" data-number="10.1.2">
-<h3 data-number="10.1.2" class="anchored" data-anchor-id="forward-fill-imputation"><span class="header-section-number">10.1.2</span> Forward fill imputation</h3>
+<section id="imputation-methods" class="level3" data-number="10.1.3">
+<h3 data-number="10.1.3" class="anchored" data-anchor-id="imputation-methods"><span class="header-section-number">10.1.3</span> Imputation methods</h3>
+<section id="forward-fill-imputation" class="level4" data-number="10.1.3.1">
+<h4 data-number="10.1.3.1" class="anchored" data-anchor-id="forward-fill-imputation"><span class="header-section-number">10.1.3.1</span> Forward fill imputation</h4>
 <p><em>Forward fill imputation</em> (also known as <em>last observation carried forward</em>) is a simple and commonly used method for handling missing data in time series. It involves replacing missing values with the most recent non-missing value prior to the gap.</p>
 <p>Advantages:</p>
 <ul>
@@ -4922,8 +4938,8 @@ if (outputEl) {{
 </div>
 </div>
 </section>
-<section id="backward-fill-imputation" class="level3" data-number="10.1.3">
-<h3 data-number="10.1.3" class="anchored" data-anchor-id="backward-fill-imputation"><span class="header-section-number">10.1.3</span> Backward fill imputation</h3>
+<section id="backward-fill-imputation" class="level4" data-number="10.1.3.2">
+<h4 data-number="10.1.3.2" class="anchored" data-anchor-id="backward-fill-imputation"><span class="header-section-number">10.1.3.2</span> Backward fill imputation</h4>
 <p><em>Backward fill imputation</em> (also known as <em>next observation carried backward</em>) is another simple method for handling missing data in time series. It involves replacing missing values with the next non-missing value that follows the gap.</p>
 <p>Advantages:</p>
 <ul>
@@ -4973,8 +4989,8 @@ if (outputEl) {{
 </div>
 </div>
 </section>
-<section id="linear-interpolation" class="level3" data-number="10.1.4">
-<h3 data-number="10.1.4" class="anchored" data-anchor-id="linear-interpolation"><span class="header-section-number">10.1.4</span> Linear Interpolation</h3>
+<section id="linear-interpolation" class="level4" data-number="10.1.3.3">
+<h4 data-number="10.1.3.3" class="anchored" data-anchor-id="linear-interpolation"><span class="header-section-number">10.1.3.3</span> Linear Interpolation</h4>
 <p><em>Linear interpolation</em> is a method used to estimate missing values in a time series by connecting two known data points with a straight line and using that line to fill in the gaps.</p>
 <p>Advantages:</p>
 <ul>
@@ -5022,8 +5038,8 @@ if (outputEl) {{
 </div>
 </div>
 </section>
-<section id="polynomial-interpolation" class="level3" data-number="10.1.5">
-<h3 data-number="10.1.5" class="anchored" data-anchor-id="polynomial-interpolation"><span class="header-section-number">10.1.5</span> Polynomial interpolation</h3>
+<section id="polynomial-interpolation" class="level4" data-number="10.1.3.4">
+<h4 data-number="10.1.3.4" class="anchored" data-anchor-id="polynomial-interpolation"><span class="header-section-number">10.1.3.4</span> Polynomial interpolation</h4>
 <p><em>Polynomial interpolation</em> is a method used to estimate missing values in a time series by fitting a polynomial function of a given order to the known data points and using that function to fill in the gaps.</p>
 <p>Advantages:</p>
 <ul>
@@ -5106,8 +5122,8 @@ if (outputEl) {{
 </div>
 </div>
 </section>
-<section id="spline-interpolation" class="level3" data-number="10.1.6">
-<h3 data-number="10.1.6" class="anchored" data-anchor-id="spline-interpolation"><span class="header-section-number">10.1.6</span> Spline interpolation</h3>
+<section id="spline-interpolation" class="level4" data-number="10.1.3.5">
+<h4 data-number="10.1.3.5" class="anchored" data-anchor-id="spline-interpolation"><span class="header-section-number">10.1.3.5</span> Spline interpolation</h4>
 <p><em>Spline interpolation</em> is a method used to estimate missing values in a time series by fitting piecewise polynomial functions (splines) to the known data points and using those functions to fill in the gaps.</p>
 <p>The specific type <em>Piecewise Cubic Hermite Interpolating Polynomial</em> (PCHIP) in particular preserves the monotonicity of the data and avoids overshooting, making it suitable for many real-world applications.</p>
 <p>Advantages:</p>
@@ -5156,13 +5172,13 @@ if (outputEl) {{
 </div>
 </section>
 </section>
-<section id="data-smoothing" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="data-smoothing"><span class="header-section-number">10.2</span> Data smoothing</h2>
+<section id="data-smoothing" class="level3" data-number="10.1.4">
+<h3 data-number="10.1.4" class="anchored" data-anchor-id="data-smoothing"><span class="header-section-number">10.1.4</span> Data smoothing</h3>
 <p>Especially for noisy data and higher-order methods like splines or polynomials, interpolation methods can produce unrealistic results, such as overshooting or oscillations between known data points. Smoothing the time series prior to interpolation can help to mitigate this issue by reducing noise and capturing the underlying trend of the data.</p>
 <p>Smoothing techniques, such as moving averages or rolling medians, can be applied to the time series before performing interpolation. Rolling median, by design, is more robust to outliers and preserves edges better than rolling mean. Rolling mean tends to smooth out the data more uniformly but is more sensitive to outliers.</p>
 <p>When applying smoothing, it is important to choose an appropriate window size. The window-size determines the number of consecutive data points used to calculate the smoothed value at each point in the time series. The larger the window size, the smoother the resulting time series will be, but it may also lead to a loss of detail and important features in the data.</p>
-<section id="rolling-mean-smoothing" class="level3" data-number="10.2.1">
-<h3 data-number="10.2.1" class="anchored" data-anchor-id="rolling-mean-smoothing"><span class="header-section-number">10.2.1</span> Rolling mean smoothing</h3>
+<section id="rolling-mean-smoothing" class="level4" data-number="10.1.4.1">
+<h4 data-number="10.1.4.1" class="anchored" data-anchor-id="rolling-mean-smoothing"><span class="header-section-number">10.1.4.1</span> Rolling mean smoothing</h4>
 <p>Rolling mean with a window size of 3:</p>
 <div id="0aeb25bb" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>dftemp[<span class="st">"temp_mean_rolling3"</span>] <span class="op">=</span> dftemp[<span class="st">"process_temperature_K"</span>].rolling(window<span class="op">=</span><span class="dv">3</span>, center<span class="op">=</span><span class="va">True</span>).mean()</span>
@@ -5260,8 +5276,8 @@ if (outputEl) {{
 </div>
 </div>
 </section>
-<section id="rolling-median-smoothing" class="level3" data-number="10.2.2">
-<h3 data-number="10.2.2" class="anchored" data-anchor-id="rolling-median-smoothing"><span class="header-section-number">10.2.2</span> Rolling median smoothing</h3>
+<section id="rolling-median-smoothing" class="level4" data-number="10.1.4.2">
+<h4 data-number="10.1.4.2" class="anchored" data-anchor-id="rolling-median-smoothing"><span class="header-section-number">10.1.4.2</span> Rolling median smoothing</h4>
 <p><em>Rolling median with a window size of 3</em></p>
 <div id="4e4b4309" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>dftemp[<span class="st">"temp_median_rolling3"</span>] <span class="op">=</span> dftemp[<span class="st">"process_temperature_K"</span>].rolling(window<span class="op">=</span><span class="dv">3</span>, center<span class="op">=</span><span class="va">True</span>).median()</span>
@@ -5360,10 +5376,10 @@ if (outputEl) {{
 </div>
 </section>
 </section>
-<section id="applying-smoothing-prior-to-interpolation" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="applying-smoothing-prior-to-interpolation"><span class="header-section-number">10.3</span> Applying smoothing prior to interpolation</h2>
+<section id="applying-smoothing-prior-to-interpolation" class="level3" data-number="10.1.5">
+<h3 data-number="10.1.5" class="anchored" data-anchor-id="applying-smoothing-prior-to-interpolation"><span class="header-section-number">10.1.5</span> Applying smoothing prior to interpolation</h3>
 <p>Applying smoothing prior to interpolation can help to reduce noise and improve the accuracy of the imputed values, especially for noisy data. Note that smoothing is applied on the gapped data, not on the original data.</p>
-<p><em>The argument <strong>min_periods=2</strong> in the rolling mean function ensures that at least two non-NaN values are required to compute the mean, which helps to not further erode the gapped series.</em> <em>PCHIP interpolation is then applied on the smoothed series to fill the gaps.</em></p>
+<p><em>The argument <code>min_periods=2</code> in the rolling mean function ensures that at least two non-NaN values are required to compute the mean, which helps to not further erode the gapped series.</em> <em>PCHIP interpolation is then applied on the smoothed series to fill the gaps.</em></p>
 <div id="8f343329" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>dftemp.loc[:, <span class="st">"process_temperature_K_gaps_smoothed"</span>] <span class="op">=</span> (</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    dftemp[<span class="st">"process_temperature_K_gaps"</span>].rolling(window<span class="op">=</span><span class="dv">7</span>, center<span class="op">=</span><span class="va">True</span>, min_periods<span class="op">=</span><span class="dv">2</span>).mean()</span>
@@ -5417,7 +5433,7 @@ if (outputEl) {{
 </div>
 </div>
 </section>
-</div>
+</section>
 
 
 
@@ -5835,7 +5851,7 @@ if (outputEl) {{
     }
   });
   </script>
-<nav class="page-navigation column-page-right">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../2_act2/0_nature_of_timeseries.html" class="pagination-link" aria-label="Nature of Time Series">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Nature of Time Series</span></span>
@@ -5855,7 +5871,7 @@ if (outputEl) {{
 </div>   
     <div class="nav-footer-center">
 <p>Gregor Ehrensperger</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/noxthot/ws25_mci_industrial_ds_manuscript/edit/main/2_act2/1_0_data_imputation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/noxthot/ws25_mci_industrial_ds_manuscript/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/noxthot/ws25_mci_industrial_ds_manuscript/edit/main/2_act2/1_0_data_imputation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/noxthot/ws25_mci_industrial_ds_manuscript/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Manuscript designed with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
