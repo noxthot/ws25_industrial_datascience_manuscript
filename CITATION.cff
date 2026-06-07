@@ -1,12 +1,12 @@
 cff-version: 1.2.0
-message: If you use this repository or its content, please cite it using these metadata.
-title: Industrial Data Science Course Material (2026)
-abstract: This is the course material for a 3*15 hours introductory Industrial Data Science course. It covers various topics in data science with a focus on practical applications.
+message: "If you use this repository or its content, please cite it using these metadata."
+title: "Industrial Data Science Course Material (2026)"
+abstract: "This is the course material for a 3*15 hours introductory Industrial Data Science course. It covers various topics in data science with a focus on practical applications."
 authors:
   - family-names: Ehrensperger
     given-names: Gregor
     orcid: "https://orcid.org/0000-0003-4816-0233"
 version: 1.0.0
-date-released: 2026-06-07
-license: CC BY-NC-SA 4.0
+date-released: "2026-06-07"
+license: CC-BY-NC-SA-4.0
 repository-code: "https://github.com/noxthot/ws25_industrial_datascience_manuscript/"
