@@ -6,10 +6,7 @@ authors:
   - family-names: Ehrensperger
     given-names: Gregor
     orcid: "https://orcid.org/0000-0003-4816-0233"
-identifiers:
-  - type: doi
-    value: TODO - Will be added once released on zenodo.
-version: TODO - x.x.x
-date-released: TODO - "2026-xx-xx"
-license: TODO - Will be added once released on zenodo.
+version: 1.0.0
+date-released: 2026-06-07
+license: CC BY-NC-SA 4.0
 repository-code: "https://github.com/noxthot/ws25_industrial_datascience_manuscript/"
