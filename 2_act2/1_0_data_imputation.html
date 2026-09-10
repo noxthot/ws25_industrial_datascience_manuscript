@@ -79,9 +79,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-02a849aaf8c6865a31b2dc6bd3c511a1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-733fbcdfda57ed24c3dc0d32a792ec9c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-02a849aaf8c6865a31b2dc6bd3c511a1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-8ed013dfc02587135391d8403b56e420.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e80614c04c16c891bf141dbe51f02ead.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-8ed013dfc02587135391d8403b56e420.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -4510,14 +4510,13 @@ return Plotly;
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.io <span class="im">as</span> pio</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotly.subplots <span class="im">import</span> make_subplots</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>pio.renderers.default <span class="op">=</span> (</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">"notebook"</span>  <span class="co"># set the default plotly renderer to "notebook" (necessary for quarto to render the plots)</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"ignore"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotly.subplots <span class="im">import</span> make_subplots</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>pio.renderers.default <span class="op">=</span> (</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"notebook"</span>  <span class="co"># set the default plotly renderer to "notebook" (necessary for quarto to render the plots)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">"ignore"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -4710,7 +4709,7 @@ return Plotly;
 <span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>                y<span class="op">=</span>dftemp[orig_data_column],</span>
 <span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>                mode<span class="op">=</span><span class="st">"lines"</span>,</span>
 <span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>                name<span class="op">=</span><span class="st">"Original"</span>,</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>                line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"lightgrey"</span>),</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>                line<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"lightgrey"</span>},</span>
 <span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>            ),</span>
 <span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>            row<span class="op">=</span><span class="dv">1</span>,</span>
 <span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>            col<span class="op">=</span><span class="dv">1</span>,</span>
@@ -4733,7 +4732,7 @@ return Plotly;
 <span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>                y<span class="op">=</span>dff[int_column],</span>
 <span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>                mode<span class="op">=</span><span class="st">"lines"</span>,</span>
 <span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>                name<span class="op">=</span><span class="st">"Imputed"</span>,</span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>                line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"blue"</span>),</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>                line<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"blue"</span>},</span>
 <span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>            ),</span>
 <span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>            row<span class="op">=</span><span class="dv">1</span>,</span>
 <span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>            col<span class="op">=</span><span class="dv">1</span>,</span>
@@ -4746,7 +4745,7 @@ return Plotly;
 <span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>                y<span class="op">=</span>diff,</span>
 <span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>                mode<span class="op">=</span><span class="st">"lines"</span>,</span>
 <span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>                name<span class="op">=</span><span class="st">"Original - Imputed"</span>,</span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>                line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"green"</span>),</span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>                line<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"green"</span>},</span>
 <span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>            ),</span>
 <span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>            row<span class="op">=</span><span class="dv">2</span>,</span>
 <span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>            col<span class="op">=</span><span class="dv">1</span>,</span>
@@ -4768,7 +4767,7 @@ return Plotly;
 <span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>                y<span class="op">=</span>dftemp[orig_data_column],</span>
 <span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>                mode<span class="op">=</span><span class="st">"lines"</span>,</span>
 <span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>                name<span class="op">=</span><span class="st">"Original"</span>,</span>
-<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>                line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"lightgrey"</span>),</span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>                line<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"lightgrey"</span>},</span>
 <span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>            )</span>
 <span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a>        )</span>
 <span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a>        fig.add_trace(</span>
@@ -4812,7 +4811,7 @@ return Plotly;
 <span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a>            y<span class="op">=</span>dftemp[<span class="st">"process_temperature_K"</span>],</span>
 <span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a>            mode<span class="op">=</span><span class="st">"lines"</span>,</span>
 <span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>            name<span class="op">=</span><span class="st">"Original"</span>,</span>
-<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>            line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"lightgrey"</span>),</span>
+<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>            line<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"lightgrey"</span>},</span>
 <span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a>        ),</span>
 <span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>        row<span class="op">=</span><span class="dv">1</span>,</span>
 <span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>        col<span class="op">=</span><span class="dv">1</span>,</span>
@@ -4823,7 +4822,7 @@ return Plotly;
 <span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>            y<span class="op">=</span>dftemp[smoothed_column],</span>
 <span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a>            mode<span class="op">=</span><span class="st">"lines"</span>,</span>
 <span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a>            name<span class="op">=</span><span class="st">"Smoothed"</span>,</span>
-<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a>            line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"blue"</span>),</span>
+<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a>            line<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"blue"</span>},</span>
 <span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a>        ),</span>
 <span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a>        row<span class="op">=</span><span class="dv">1</span>,</span>
 <span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a>        col<span class="op">=</span><span class="dv">1</span>,</span>
@@ -4836,7 +4835,7 @@ return Plotly;
 <span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a>            y<span class="op">=</span>diff,</span>
 <span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a>            mode<span class="op">=</span><span class="st">"lines"</span>,</span>
 <span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a>            name<span class="op">=</span><span class="st">"Original - Smoothed"</span>,</span>
-<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a>            line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"green"</span>),</span>
+<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a>            line<span class="op">=</span>{<span class="st">"color"</span>: <span class="st">"green"</span>},</span>
 <span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a>        ),</span>
 <span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a>        row<span class="op">=</span><span class="dv">2</span>,</span>
 <span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a>        col<span class="op">=</span><span class="dv">1</span>,</span>
