@@ -15,7 +15,7 @@ from statsmodels.datasets import get_rdataset
 try:
     air = get_rdataset("AirPassengers").data
     air_series = pd.Series(air["value"].values, index=pd.date_range("1949-01", periods=len(air), freq="MS"))
-except Exception:
+except OSError:
     air_series = pd.Series()
 
 # Mauna Loa CO2 (from statsmodels)
@@ -25,7 +25,7 @@ try:
     mauna = sm_co2.load_pandas().data
     mauna.index = pd.date_range("1958-03", periods=len(mauna), freq="W")
     mauna_series = mauna["co2"]
-except Exception:
+except OSError:
     mauna_series = pd.Series()
 
 # Random Walk (synthetic)
@@ -37,7 +37,7 @@ random_walk_series = pd.Series(random_walk, index=pd.RangeIndex(len(random_walk)
 try:
     sp500 = yf.download("^GSPC", start="2020-01-01", end="2021-01-01", auto_adjust=True)
     sp500_series = sp500["Close"]
-except Exception:
+except OSError:
     sp500_series = pd.Series()
 
 # Health Sciences Example (e.g., Heart Rate from scipy.misc.electrocardiogram)
