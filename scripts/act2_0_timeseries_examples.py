@@ -5,10 +5,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import yfinance as yf
-
 from scipy.datasets import electrocardiogram
 from statsmodels.datasets import get_rdataset
-
 
 # %%
 # Example datasets: AirPassengers, Synthetic Sine Wave, CO2, Mauna Loa, Random Walk, Stock Market, Health Sciences
