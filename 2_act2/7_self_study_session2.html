@@ -674,9 +674,10 @@ Note
 <p><span class="theorem-title"><strong>Exercise 16.1 (Clustering with time series DBScan)</strong></span> &nbsp;</p>
 </div>
 <ul>
-<li>Load the <a href="https://timeseriesclassification.com/description.php?Dataset=GesturePebbleZ1"><code>GesturePebbleZ1</code></a> data set.</li>
-<li>Use the Time Series <span class="math inline">\(k\)</span> means algorithm to cluster the data.</li>
-<li>Now, try to use the time series DBScan algorithm for clustering.</li>
+<li>Load the <a href="https://timeseriesclassification.com/description.php?Dataset=GesturePebbleZ1"><code>GesturePebbleZ1</code></a> data set. Note that it is a variable-length time series dataset and you need to either use <code>ret_type="df-list"</code> or <code>ret_type="nested_univ"</code> to load it (using the example above).</li>
+<li>Bring the data into a suitable format and explore the data set visually (using plots).</li>
+<li>Use the Time Series <span class="math inline">\(k\)</span> means algorithm to cluster the data. Do you need to reshape the data for this algorithm?</li>
+<li>Now, try to use the time series DBScan algorithm for clustering. Do you need to reshape the data for this algorithm?</li>
 <li>How do the results compare?</li>
 </ul>
 </div>
@@ -693,7 +694,7 @@ Note
 <p><span class="theorem-title"><strong>Exercise 16.2 (Classification of multivariate time series)</strong></span> &nbsp;</p>
 </div>
 <ul>
-<li>Load the <a href="https://timeseriesclassification.com/description.php?Dataset=GesturePebbleZ1"><code>UWaveGestureLibrary</code></a> data set.</li>
+<li>Load the <a href="https://timeseriesclassification.com/description.php?Dataset=UWaveGestureLibrary"><code>UWaveGestureLibrary</code></a> data set.</li>
 <li>Use the time series <span class="math inline">\(k\)</span> nearest neighbour algorithm to classify the time series.</li>
 <li>Use the CNN classifier to classify the time series (make sure to have <code>sktime&gt;=0.40.0</code> installed).</li>
 <li>How do the results compare?</li>
