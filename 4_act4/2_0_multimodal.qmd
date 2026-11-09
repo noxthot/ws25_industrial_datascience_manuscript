@@ -18,18 +18,19 @@ Traditional machine learning typically focuses on a single data type. However, i
 - operator logs
 
 By combining these modalities, models can capture complementary information.
-For instance, a sensor might indicate elevated temperature, while an image shows visible wear patterns - together providing stronger evidence of impending failure than either signal alone.
+For instance, a sensor might indicate elevated temperature, while an image shows visible wear patterns, together providing stronger evidence of impending failure than either signal alone.
 
 ## Fusion Strategies
 
 There are three main approaches to combining multimodal data:
 
-1. **Early fusion**: Concatenate raw features from all modalities before feeding into a single model
-2. **Late fusion**: Train separate models for each modality and combine their predictions
-3. **Intermediate fusion**: Process each modality to extract features, then combine these features for joint modeling.
+1. **Early fusion**: Concatenate raw features from all modalities before feeding them into a single model.
+2. **Intermediate fusion**: Process each modality to extract features, then combine these features for joint modeling.
+3. **Late fusion**: Train separate models for each modality and combine their predictions.
 
 ## Example: Equipment Health Monitoring with Time Series and Images
 
 In this example, we will simulate an industrial scenario where we monitor machine health using both vibration sensor data (time series) and thermal camera images.
+We compare intermediate and late fusion against models that use only one modality.
 
 {{< embed /4_act4/2_1_multimodal_example.ipynb echo=true >}}
