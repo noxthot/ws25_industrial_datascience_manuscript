@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>20&nbsp; Process optimization on sensor data via EDA – Industrial Data Science</title>
+<title>20&nbsp; Process Optimization on Sensor Data via EDA – Industrial Data Science</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -99,9 +99,9 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-8ed013dfc02587135391d8403b56e420.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-e80614c04c16c891bf141dbe51f02ead.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-8ed013dfc02587135391d8403b56e420.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-652ded6771ff2e596c80ee2435a309c7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-122de67b7e8cbf5ed91394d137a23798.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-652ded6771ff2e596c80ee2435a309c7.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -4026,6 +4026,35 @@ return Plotly;
 }));</script>
 
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -4200,7 +4229,7 @@ return Plotly;
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../3_act3/0_challenges.html">Act 3: Real Machine Data</a></li><li class="breadcrumb-item"><a href="../3_act3/3_0_process_optimization_sensor_data.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Process optimization on sensor data via EDA</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../3_act3/0_challenges.html">Act 3: Real Machine Data</a></li><li class="breadcrumb-item"><a href="../3_act3/3_0_process_optimization_sensor_data.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Process Optimization on Sensor Data via EDA</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -4264,7 +4293,7 @@ return Plotly;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../0_introduction/2_applications.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Application areas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Application Areas</span></span></a>
   </div>
 </li>
       </ul>
@@ -4287,25 +4316,25 @@ return Plotly;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../1_act1/1_self_study_session1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Self study - Session 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Self-Study Session 1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../1_act1/2_self_study_session2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Self study - Session 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Self-Study Session 2</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../1_act1/3_self_study_session3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Self study - Session 3</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Self-Study Session 3</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../1_act1/4_self_study_session4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Self study - Session 4</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Self-Study Session 4</span></span></a>
   </div>
 </li>
       </ul>
@@ -4328,7 +4357,7 @@ return Plotly;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../2_act2/1_0_data_imputation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data imputation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Data Imputation</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -4358,13 +4387,13 @@ return Plotly;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../2_act2/6_self_study_session1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Self study - Session 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Self-Study Session 1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../2_act2/7_self_study_session2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Self study - Session 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Self-Study Session 2</span></span></a>
   </div>
 </li>
       </ul>
@@ -4387,37 +4416,37 @@ return Plotly;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../3_act3/1_levels_of_system_integration.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Levels of system integration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Levels of System Integration</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../3_act3/2_batch_vs_stream.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Batch vs Stream Processing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Batch vs.&nbsp;Stream Processing</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../3_act3/3_0_process_optimization_sensor_data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Process optimization on sensor data via EDA</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Process Optimization on Sensor Data via EDA</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../3_act3/4_0_live_feedback.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Process optimization via Live Feedback</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Process Optimization via Live Feedback</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../3_act3/5_self_study_session1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Self study - Session 1</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Self-Study Session 1</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../3_act3/6_self_study_session2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Self study - Session 2</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Self-Study Session 2</span></span></a>
   </div>
 </li>
       </ul>
@@ -4458,7 +4487,7 @@ return Plotly;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../4_act4/4_self_study_session.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Optional Self study Session</span></span></a>
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Optional Self-Study Session</span></span></a>
   </div>
 </li>
       </ul>
@@ -4490,9 +4519,9 @@ return Plotly;
 <main class="content column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../3_act3/0_challenges.html">Act 3: Real Machine Data</a></li><li class="breadcrumb-item"><a href="../3_act3/3_0_process_optimization_sensor_data.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Process optimization on sensor data via EDA</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../3_act3/0_challenges.html">Act 3: Real Machine Data</a></li><li class="breadcrumb-item"><a href="../3_act3/3_0_process_optimization_sensor_data.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Process Optimization on Sensor Data via EDA</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-act3-eda" class="quarto-section-identifier"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Process optimization on sensor data via EDA</span></span></h1>
+<h1 class="title"><span id="sec-act3-eda" class="quarto-section-identifier"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Process Optimization on Sensor Data via EDA</span></span></h1>
 </div>
 
 
@@ -4512,7 +4541,7 @@ return Plotly;
 <p>In this section, we will have a look at a more realistic example of industrial data.</p>
 <section id="setting-the-stage" class="level2" data-number="20.1">
 <h2 data-number="20.1" class="anchored" data-anchor-id="setting-the-stage"><span class="header-section-number">20.1</span> Setting the stage</h2>
-<p>Imagine a manufacturing chain which is dedicated to producing knives with wooden handles. Various machines are interconnected and the process flow is as follows:</p>
+<p>Imagine a production line dedicated to producing knives with wooden handles. Various machines are interconnected and the process flow is as follows:</p>
 <ul>
 <li>Machine A prepares the steel blade and shaft.</li>
 <li>Machine B applies epoxy to the grip area.</li>
@@ -4528,34 +4557,34 @@ return Plotly;
 <p>Since there is a new department focused on data science, they decide to manually inspect the epoxy application right after Machine B and label the data accordingly. Additionally the machine collects some sensor data in a CSV file. This dataset is given to the data science team and in tight collaboration with the operators the ambitious goal is to:</p>
 <ul>
 <li>Optimize the epoxy application process to reduce defects and waste.</li>
-<li>Human inspection is time-consuming and expensive. Find a way to predict defects occuring in Machine B before the product is handed over to machine C.</li>
+<li>Predict defects occurring in Machine B before the product is handed over to Machine C, replacing the time-consuming and expensive human inspection.</li>
 </ul>
 <p>Of course, this data science department is us.</p>
 </section>
 <section id="dataset" class="level2" data-number="20.2">
 <h2 data-number="20.2" class="anchored" data-anchor-id="dataset"><span class="header-section-number">20.2</span> Dataset</h2>
-<p>The dataset consists of sensor readings of a simulated industrial process and consists of two files:</p>
+<p>The dataset consists of sensor readings of a simulated industrial process and comes in two files:</p>
 <ul>
-<li><code>simulated_machine_data.csv</code> stores the sensor data</li>
-<li><code>simulated_inspection_data.csv</code> stores the human inspection results</li>
+<li><code>simulated_machine_data.csv</code> stores the sensor data.</li>
+<li><code>simulated_inspection_data.csv</code> stores the human inspection results.</li>
 </ul>
-<p>The sensor data includes the following features in a 200ms resolution:</p>
+<p>The sensor data includes the following features at a 200 ms resolution:</p>
 <ul>
 <li><code>air_temperature_C</code>: Ambient air temperature in degrees Celsius.</li>
 <li><code>machine_temperature_C</code>: Temperature of the machine in degrees Celsius.</li>
+<li><code>nr_iteration</code>: Index of the manufactured piece (each iteration produces one knife).</li>
 <li><code>pressure_measured_bar</code>: Measured pressure in bar.</li>
 <li><code>pressure_setting_bar</code>: Pressure setting in bar.</li>
 <li><code>process_speed_mm_s</code>: Set speed of the process in millimeters per second.</li>
-<li><code>process_step_index</code>: Index indicating the current step within the process.</li>
-<li><code>product_id</code>: Unique identifier for each product. The machine performs three processing steps: moving the nozzle to the shaft, applying epoxy, and blowing out residual epoxy from the nozzle while moving away.</li>
+<li><code>process_step_index</code>: Index of the current processing step (0, 1, or 2). The machine performs three processing steps: moving the nozzle to the shaft (0), applying epoxy (1), and blowing out residual epoxy from the nozzle while moving away (2).</li>
 <li><code>timestamp</code>: Timestamp of the sensor reading.</li>
 </ul>
-<p>The inspection data includes the <code>product_id</code> and the <code>error_code</code>:</p>
+<p>The inspection data contains one row per manufactured piece in production order, i.e., row <span class="math inline">\(i\)</span> belongs to <code>nr_iteration</code> <span class="math inline">\(i\)</span>:</p>
 <ul>
 <li><code>error_code</code>: Code indicating the type of error detected during inspection.</li>
-<li><code>product_id</code>: Unique identifier for each product.</li>
+<li><code>timestamp</code>: Timestamp of the inspection.</li>
 </ul>
-<p>They used <code>OK</code> when there was no defect, <code>NOK_1</code> (excessive epoxy), <code>NOK_2</code> (insufficient epoxy), <code>NOK_3</code> (poor adhesion), and <code>NOK_4</code> (uneven distribution).</p>
+<p>The inspectors used <code>OK</code> when there was no defect, <code>NOK_1</code> (excessive epoxy), <code>NOK_2</code> (insufficient epoxy), <code>NOK_3</code> (poor adhesion), and <code>NOK_4</code> (uneven distribution).</p>
 </section>
 <section id="additional-information" class="level2" data-number="20.3">
 <h2 data-number="20.3" class="anchored" data-anchor-id="additional-information"><span class="header-section-number">20.3</span> Additional information</h2>
@@ -4580,7 +4609,7 @@ return Plotly;
 <section id="loading-the-dataset" class="level3" data-number="20.4.2">
 <h3 data-number="20.4.2" class="anchored" data-anchor-id="loading-the-dataset"><span class="header-section-number">20.4.2</span> Loading the dataset</h3>
 <p>The dataset is available online in the form of two <code>csv</code> files.</p>
-<p>It was released at <span class="citation" data-cites="ehrensperger2026">Ehrensperger (<a href="../5_references.html#ref-ehrensperger2026" role="doc-biblioref">2026</a>)</span>, but you can also clone the source repository from <a href="https://github.com/noxthot/industrial_datascience_sim_machine_knifes/tree/v1.0.2">GitHub</a>.</p>
+<p>It was released in <span class="citation" data-cites="ehrensperger2026">Ehrensperger (<a href="../5_references.html#ref-ehrensperger2026" role="doc-biblioref">2026</a>)</span>, but you can also clone the source repository from <a href="https://github.com/noxthot/industrial_datascience_sim_machine_knifes/tree/v1.0.2">GitHub</a>.</p>
 <div id="20e5ab43" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df_processes <span class="op">=</span> pd.read_csv(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://github.com/noxthot/industrial_datascience_sim_machine_knifes/raw/refs/tags/v1.0.2/data/simulated_machine_data.csv"</span></span>
@@ -4992,7 +5021,7 @@ NOK_2       1
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<p>NOK_2 and NOK_3 seem to be hardly ever happening. Let us mentally drop these error codes for this investigation, since &lt;= 10 samples give a very weak statistical basis and tend to distort plots.</p>
+<p><code>NOK_2</code> and <code>NOK_3</code> occur only rarely. Let us mentally drop these error codes for this investigation, since &lt;= 10 samples give a very weak statistical basis and tend to distort plots.</p>
 </section>
 <section id="exploring-continuous-variables-by-simple-plots" class="level3" data-number="20.4.4">
 <h3 data-number="20.4.4" class="anchored" data-anchor-id="exploring-continuous-variables-by-simple-plots"><span class="header-section-number">20.4.4</span> Exploring continuous variables by simple plots</h3>
@@ -5068,7 +5097,7 @@ if (outputEl) {{
 </div>
 </div>
 </div>
-<p>It appears like the pressure difference is roughly normally distributed and that the mean of the three processing steps is similar.</p>
+<p>It appears that the pressure difference is roughly normally distributed and that the mean of the three processing steps is similar.</p>
 <p>Absolute counts are visually harder to compare, so let us use relative frequencies instead and normalize each of the processing steps separately.</p>
 <div id="a90cefdb" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>sns.histplot(</span>
@@ -5108,7 +5137,7 @@ Name: pressure_difference_bar, dtype: float64</code></pre>
 Name: pressure_difference_bar, dtype: float64</code></pre>
 </div>
 </div>
-<p>We conclude that the pressure is not perfectly controlled (or measured) and have a systematic offset of 7 bar and a standard deviation of roughly 2 bar.</p>
+<p>We conclude that the pressure is not perfectly controlled (or measured) and has a systematic offset of 7 bar and a standard deviation of roughly 2 bar.</p>
 <div id="cb6576bc" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.line(</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    df_processes.sample(<span class="dv">10_000</span>).sort_values(</span>
@@ -5152,13 +5181,13 @@ if (outputEl) {{
 </section>
 <section id="aggregating-plots" class="level3" data-number="20.4.5">
 <h3 data-number="20.4.5" class="anchored" data-anchor-id="aggregating-plots"><span class="header-section-number">20.4.5</span> Aggregating plots</h3>
-<p>We are looking at iterations of the same, identical process. Let us look at a plot where the processes overlap each other, colored by error code.</p>
-<p>First, we create a new index which starts at 0 for each piece that is manufactured and counts each timestamp within that process step. This index will be useful for plotting the different process iterations on top of each other.</p>
+<p>We are looking at repeated iterations of the same process. Let us look at a plot where the processes overlap each other, colored by error code.</p>
+<p>First, we create a new index which starts at 0 for each piece that is manufactured and counts each timestamp within that iteration. This index will be useful for plotting the different process iterations on top of each other.</p>
 <div id="920b2973" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>df_processes[<span class="st">"process_inner_index"</span>] <span class="op">=</span> df_processes.sort_values(<span class="st">"timestamp"</span>).groupby(<span class="st">"nr_iteration"</span>).cumcount()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="82d9446d" class="cell" data-execution_count="21">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge error_code from df_inspections into df_processes based on 'nr_iteration'. This assigns an errorcode to the entire process iteration.</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge error_code from df_inspections into df_processes based on 'nr_iteration'. This assigns an error code to the entire process iteration.</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>df_plot <span class="op">=</span> df_processes.merge(df_inspections, left_on<span class="op">=</span><span class="st">"nr_iteration"</span>, right_index<span class="op">=</span><span class="va">True</span>, how<span class="op">=</span><span class="st">"left"</span>)</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.line(</span>
@@ -5176,8 +5205,8 @@ if (outputEl) {{
 <span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Set opacity: 0.01 for 'OK', 0.5 for others</span></span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting opacity is always a bit tricky. Setting it too low makes the lines almost invisble, setting it too high makes the plot too crowded.</span></span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a><span class="co"># This settings were found in trial and error and work well for that case.</span></span>
+<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting opacity is always a bit tricky. Setting it too low makes the lines almost invisible, setting it too high makes the plot too crowded.</span></span>
+<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a><span class="co"># These settings were found by trial and error and work well in this case.</span></span>
 <span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> trace <span class="kw">in</span> fig.data:</span>
 <span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> trace.name <span class="op">==</span> <span class="st">"OK"</span>:</span>
 <span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>        trace.opacity <span class="op">=</span> <span class="fl">0.01</span></span>
@@ -5219,7 +5248,7 @@ if (outputEl) {{
                         })                };            </script>        </div>
 </div>
 </div>
-<p>Keep in mind that you can (de)select lines to plot when clicking on the according legend entry. Plotly also allows you to zoom in and pan around.</p>
+<p>Keep in mind that you can (de)select lines to plot by clicking on the corresponding legend entry. Plotly also allows you to zoom in and pan around.</p>
 <p>From the plot, we can see that the second processing step’s pressure is elevated for <code>NOK_1</code>. <code>NOK_4</code> shows no obvious difference to <code>OK</code>.</p>
 <p>With this in mind, let us have a closer look at the mean pressure and its standard deviation per error code and processing step.</p>
 <div id="5e8b2ce4" class="cell" data-execution_count="22">
@@ -5277,8 +5306,8 @@ if (outputEl) {{
                         })                };            </script>        </div>
 </div>
 </div>
-<p>This plot confirms our previous observation that <code>NOK_1</code> has a systematic higher mean pressure during the second processing step and <code>NOK_4</code> does not differ notably from <code>OK</code>.</p>
-<p>While the first line plot shows every individual process iteration as a singe line and therefor does not accidentally filter relevant information, it is a bit crowded and hard to read. The second plot aggregates the individual lines by calculating the mean and standard deviation, therefore losing some information, but making it easier to comprehend.</p>
+<p>This plot confirms our previous observation that <code>NOK_1</code> has a systematically higher mean pressure during the second processing step and <code>NOK_4</code> does not differ notably from <code>OK</code>.</p>
+<p>While the first line plot shows every individual process iteration as a single line and therefore does not accidentally filter relevant information, it is a bit crowded and hard to read. The second plot aggregates the individual lines by calculating the mean and standard deviation, therefore losing some information, but making it easier to comprehend.</p>
 <p>Now let us also check whether the machine temperature has an influence on failures.</p>
 <div id="78767f6d" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>df_agg <span class="op">=</span> df_plot.groupby([<span class="st">"nr_iteration"</span>, <span class="st">"error_code"</span>])[<span class="st">"machine_temperature_C"</span>].agg([<span class="st">"mean"</span>]).reset_index()</span>
@@ -5320,7 +5349,7 @@ if (outputEl) {{
                         })                };            </script>        </div>
 </div>
 </div>
-<p>Also here, <code>NOK_4</code> and <code>NOK_1</code> do not show a notable difference to <code>OK</code>, while <code>NOK_2</code> and <code>NOK_3</code> can not be judged well due to the low sample size.</p>
+<p>Also here, <code>NOK_4</code> and <code>NOK_1</code> do not show a notable difference to <code>OK</code>, while <code>NOK_2</code> and <code>NOK_3</code> cannot be judged well due to the low sample size.</p>
 </section>
 <section id="sec-act3-eda-summary" class="level3" data-number="20.4.6">
 <h3 data-number="20.4.6" class="anchored" data-anchor-id="sec-act3-eda-summary"><span class="header-section-number">20.4.6</span> Summary of findings</h3>
@@ -5759,13 +5788,13 @@ Ehrensperger, Gregor. 2026. <span>“Industrial_datascience_sim_machine_knifes: 
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../3_act3/2_batch_vs_stream.html" class="pagination-link" aria-label="Batch vs Stream Processing">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Batch vs Stream Processing</span></span>
+      <a href="../3_act3/2_batch_vs_stream.html" class="pagination-link" aria-label="Batch vs. Stream Processing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Batch vs.&nbsp;Stream Processing</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../3_act3/4_0_live_feedback.html" class="pagination-link" aria-label="Process optimization via Live Feedback">
-        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Process optimization via Live Feedback</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../3_act3/4_0_live_feedback.html" class="pagination-link" aria-label="Process Optimization via Live Feedback">
+        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Process Optimization via Live Feedback</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
