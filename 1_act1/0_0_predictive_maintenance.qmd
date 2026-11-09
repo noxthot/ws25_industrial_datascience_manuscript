@@ -3,12 +3,13 @@
 In this section, we will explore the concept of predictive maintenance using a synthetic dataset that reflects real predictive maintenance data encountered in industry.
 
 You can download the dataset @{ai4i2020} at [this link](https://doi.org/10.24432/C5HS5C).
+It was introduced by @{matzka2020}.
 
 Here is a summary of the variables present in the dataset:
 
 | Variable Name       | Role     | Type        | Units | Description                                                                                                            | Target |
 |---------------------|----------|-------------|:-----:|------------------------------------------------------------------------------------------------------------------------|:------:|
-| UID                 | ID       | Integer     |       | Unique identifier                                                                                                      |        |
+| UDI                 | ID       | Integer     |       | Unique identifier                                                                                                      |        |
 | Product ID          | ID       | Categorical |       | Consists of Type and a variant-specific serial number                                                                  |        |
 | Type                | Feature  | Categorical |       | Product quality variant given by letter L (low), M (medium), or H (high) variants                                      |        |
 | Air temperature     | Feature  | Continuous  | K     |                                                                                                                        |        |
@@ -25,14 +26,14 @@ Here is a summary of the variables present in the dataset:
 : {.striped .hover tbl-colwidths="[15,10,15,10,40,10]"} 
 
 ::: {.callout-note}
-Unfortunately the documentation neither provides details on the type of machine that is simulated nor the product it is thought to produce.
+Unfortunately, the documentation provides details neither on the type of machine that is simulated nor on the product it is meant to produce.
 For the sake of imagination, we will think of a very simple milling machine that produces parts in three quality variants: low, medium, and high.
 :::
 
-The table shows various error types and our task is to gain insights on when they occur.
+The table lists various failure types; our task is to find out when they occur.
 
 ::: {.callout-note}
-This is a warmup task with a polished, synthetic dataset and luckily we are provided with a description of the nature of the different failures.
+This is a warm-up task with a polished, synthetic dataset and luckily we are provided with a description of the nature of the different failures.
 :::
 
 ## Notebook

@@ -10,11 +10,11 @@ According to @{peres2020}, Industrial AI distinguishes itself within the field o
   
 - **Algorithms**: Combines physical, digital, and heuristic models, requiring complex management and deployment.
 
-- **Data**: Often involves large volume diverse datasets from multiple sources.
+- **Data**: Often involves large, diverse datasets from multiple sources.
   
 - **Decision-making**: Demands high reliability, low error tolerance, and efficient handling of uncertainty.
 
-- **Infrastructure**: Large emphasis on real-time processing capabilities.
+- **Infrastructure**: Strong emphasis on real-time processing capabilities.
 
 - **Objectives**: Targets value creation, such as reducing waste, improving quality, and boosting operational efficiency.
 
