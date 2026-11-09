@@ -1,5 +1,5 @@
-# Self study - Session 1 {#sec-act1-selfstudy1}
-This class contains self-study sessions to reinforce your understanding of the material and explore other aspects of the topic in a self-guided manner.
+# Self-Study Session 1 {#sec-act1-selfstudy1}
+This course contains self-study sessions to reinforce your understanding of the material and explore other aspects of the topic in a self-guided manner.
 This session introduces [JupyterLab and Jupyter Notebook](https://docs.jupyter.org/en/latest/).
 
 Jupyter Notebook is an open-source web application that allows users to create and share documents containing live code (supports over 40 programming languages including `Python`, `Julia`, `R`), visualizations, and narrative text.
@@ -7,12 +7,12 @@ JupyterLab is a web-based _interactive development environment_ (IDE) for Jupyte
 The Jupyter ecosystem is widely used for interactive exploration and reporting purposes.
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
-:::: {#exr-basics-mv-space}
+:::: {#exr-act1-ss1-introducing-jupyterlab}
 ## Introducing JupyterLab
 ::::
-Study the [JupyterLab documentation](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html) to learn about its features and capabilities and experiment with them using your JupyterLab environment.
-
 Use [`uv`](https://docs.astral.sh/uv/) to create a new environment and install [`jupyterlab`](https://jupyter.org/install).
+
+Then study the [JupyterLab documentation](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html) to learn about its features and capabilities, and experiment with them in your new environment.
 
 After this exercise you should be able to answer the following questions:
 
@@ -23,25 +23,25 @@ After this exercise you should be able to answer the following questions:
 And you should be able to do the following:
 
 1. Create notebooks.
-1. Export notebooks to other file formats (like e.g. HTML and PDF).
-1. Create and run code cells
-1. Create and format markdown cells
-1. Use raw cells for unformatted text
+1. Export notebooks to other file formats (e.g., HTML and PDF).
+1. Create and run code cells.
+1. Create and format markdown cells.
+1. Use raw cells for unformatted text.
 :::
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
-:::: {#exr-basics-mv-space}
+:::: {#exr-act1-ss1-using-jupyterlab}
 ## Using JupyterLab
 ::::
 - Create a notebook from the code provided in @{sec-act1}.
   Be sure to divide the code into separate cells for each logical step.
 - Use markdown cells to explain and structure the code.
 - Ideally, each code cell is self-contained and focuses on a single task or concept.
-E.g. it is good practice to define and alter variables only within the same cell; especially multiple calls of a cell should not cause different results.
+  For example, it is good practice to define and alter a variable within the same cell; in particular, running a cell multiple times should not change the result.
 :::
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
-:::: {#exr-basics-mv-space}
+:::: {#exr-act1-ss1-interactive-plotting}
 ## Interactive plotting
 ::::
 `seaborn` plots are not interactive by default.

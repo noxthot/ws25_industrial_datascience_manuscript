@@ -1,19 +1,21 @@
-# Self study - Session 1 {#sec-2-selfstudy1}
+# Self-Study Session 1 {#sec-act2-selfstudy1}
 
 In this session, we will revisit @{sec-act2-imputation} and @{sec-act2-decomposition}.
 
 In @{sec-act2-imputation}, we have explored different methods to handle missing data in time series and have seen that the choice of imputation method can significantly affect the results.
 
-The data set we will rely on in this session is a synthetic time series that simulates weekly production data of a manufacturing plant over 20 years.
+The dataset we will rely on in this session is a synthetic time series that simulates weekly production data of a manufacturing plant over 20 years.
 Unfortunately, some data points are missing due to frequent outages in the data collection system and sometimes we observe huge outliers due to temporary errors in the counting process.
 
-Your task is to impute the missing values and handle the outliers appropriately to prepare the data for a 20 years jubilee management report.
+Your task is to impute the missing values and handle the outliers appropriately to prepare the data for a 20-year anniversary management report.
 
-First, download the data set from [here](../data/assets/act2/selfstudysessions/sss1_production_data.csv).
+First, download the [dataset](../data/assets/act2/selfstudysessions/sss1_production_data.csv).
 
 Here are some useful helper functions:
 ```python
 import plotly.graph_objects as go
+import plotly.subplots as sp
+
 
 def plot_production_data(
     df,
@@ -33,7 +35,6 @@ def plot_production_data(
         dff = df[[gap_column, imp_column]].copy()
         dff.loc[~df[gap_column].isna(), imp_column] = None
 
-        # Only create the upper subplot (single plot)
         fig = go.Figure()
 
         # Original data
@@ -68,11 +69,10 @@ def plot_production_data(
 
         fig.update_layout(
             height=400,
-            title_text="#pieces with and without Gaps",
-            xaxis_title="date",
+            title_text="#pieces with and without gaps",
+            xaxis_title="Date",
             yaxis_title="pieces",
         )
-        fig.update_yaxes(title_text="pieces")
     else:
         fig = go.Figure()
         fig.add_trace(
@@ -108,6 +108,7 @@ def seasonal_decompose_plotly(decomposed_ts, title):
 
     Parameters:
     decomposed_ts (DecomposeResult): Decomposed time series result.
+    title (str): Title of the figure.
 
     Returns:
     plotly object
@@ -146,13 +147,13 @@ def seasonal_decompose_plotly(decomposed_ts, title):
 In a first step, we will focus on getting rid of the outliers.
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
-:::: {#exr-basics-mv-space}
+:::: {#exr-act2-ss1-load-the-data-with-gaps-and-get-rid-of}
 ## Load the data with gaps and get rid of outliers
 ::::
 - Download and load the dataset.
   It has three columns: `Date`, `pieces` and `pieces_gaps`.
-  The column `pieces` contains the full data set without gaps, while `pieces_gaps` contains the same data set with several missing values (NaNs).
-  The period covered by the data set is from 2005-01-01 to 2024-12-31 in weekly frequency.
+  The column `pieces` contains the full dataset without gaps, while `pieces_gaps` contains the same dataset with several missing values (NaNs).
+  The period covered by the dataset is from 2005-01-01 to 2024-12-31 in weekly frequency.
 - Visualize both time series (`pieces` and `pieces_gaps`) using the provided `plot_production_data` function.
 - Smooth the `pieces_gaps` time series using a rolling window with appropriate window size and decide whether it is better to use `mean` or `median` as aggregation function.
 Discuss your choice.
@@ -163,7 +164,7 @@ Ideally the resulting smoothed time series should have the same gaps as the orig
 Let us try to impute the missing values in a second step.
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
-:::: {#exr-basics-mv-space}
+:::: {#exr-act2-ss1-impute-the-missing-values-with-known-methods}
 ## Impute the missing values with known methods
 ::::
 - Use the smoothed time series with gaps from the previous exercise as input.
@@ -173,12 +174,12 @@ Let us try to impute the missing values in a second step.
 :::
 
 Of course, we have only seen the tip of the iceberg when it comes to imputation methods for time series.
-Especially for seasonal data, more advanced methods such as STL can be very effective.
+Especially for seasonal data, more advanced methods such as _Seasonal-Trend decomposition using LOESS_ (STL) can be very effective.
 We have had a look at STL in @{sec-act2-decomposition}, where we decomposed a time series into its components.
 Now we will use it for imputation to not lose the seasonal structure of the data while filling the gaps.
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
-:::: {#exr-basics-mv-space}
+:::: {#exr-act2-ss1-impute-the-missing-values-with-stl}
 ## Impute the missing values with STL
 ::::
 - Use the smoothed time series with gaps from the first exercise as input.
@@ -194,15 +195,15 @@ Now we will use it for imputation to not lose the seasonal structure of the data
 :::
 
 Great job, you have provided the graphs in time for the management report and the board liked the results.
-In the meanwhile your colleagues have found the original data set without gaps on some old dusty server and would like to know the number of outliers in the data set.
+Meanwhile, your colleagues have found the original dataset without gaps on some old dusty server and would like to know the number of outliers in the dataset.
 
 ::: {.callout-caution appearance="simple" collapse="true" icon=false}
-:::: {#exr-basics-mv-space}
-## Count the number of outliers in the original data set
+:::: {#exr-act2-ss1-count-the-number-of-outliers-in-the-original}
+## Count the number of outliers in the original dataset
 ::::
-- Use the original data set without gaps (`pieces` column) as input.
-- Use an appropriate method to identify the outliers in the data set.
-- Visualize the outliers and the original data set.
+- Use the original dataset without gaps (`pieces` column) as input.
+- Use an appropriate method to identify the outliers in the dataset.
+- Visualize the outliers and the original dataset.
 - Count the number of detected outliers.
 - Discuss the results.
 :::
