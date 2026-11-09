@@ -60,14 +60,14 @@ book:
   date: last-modified
   license: "CC BY-NC-SA 4.0"
   page-footer:
-    left: Industrial Data Science - 2026 - [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 
+    left: Industrial Data Science - WS 2025 - [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) - [![DOI](https://zenodo.org/badge/1035638412.svg)](https://zenodo.org/badge/latestdoi/1035638412)
     center: "Gregor Ehrensperger"
     right: Manuscript designed with <a href="https://quarto.org/">Quarto</a>.
   reader-mode: true
   repo-actions: [edit, issue]
   repo-branch: main
   repo-url: https://github.com/noxthot/ws25_mci_industrial_ds_manuscript
-  title: Industrial Data Science
+  title: Industrial Data Science WS 2025
 
 format:
   html:
