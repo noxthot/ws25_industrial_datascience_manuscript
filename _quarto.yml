@@ -15,7 +15,8 @@ book:
       corresponding: true
       email: g@ehrensperger.dev
       affiliations:
-        - ehrensperger.dev
+        - name: ehrensperger.dev
+          url: https://ehrensperger.dev
   chapters:
     - index.qmd
     - part: "Introduction"
