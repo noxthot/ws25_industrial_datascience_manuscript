@@ -1,4 +1,4 @@
-# Process optimization via Live Feedback {#sec-act3-livefeedback}
+# Process Optimization via Live Feedback {#sec-act3-livefeedback}
 
 In this section, we will have a look at a simulated example of a live feedback system in an industrial manufacturing context.
 
@@ -9,7 +9,7 @@ Additionally it has a camera system to verify the placement accuracy of each com
 A couple of sensors provide real-time measurements and variables that can be used to monitor the process.
 
 Unfortunately, the machine seems to be experiencing some issues with placement accuracy, leading to an increased number of defective boards.
-To address this, the engineers set up sandboxing mode where the machine performs four steps:
+To address this, the engineers set up a sandbox mode in which the machine performs four steps:
 
 0. Move to pick up a component with random weight placed at a random location.
 1. Pick up the component using the vacuum system.
@@ -36,19 +36,19 @@ The following variables are accessible during the process:
 - `Speed next [mm/s]`: speed for the next movement.
 
 ## Data
-One cycle usually takes 3-6 seconds to complete and the sensor data is available in realtime via _OPC Unified Architecture_ (OPC UA).
+One cycle usually takes 3-6 seconds to complete and the sensor data is available in real time via _OPC Unified Architecture_ (OPC UA).
 
 ::: {.callout-note}
 OPC UA is a cross-platform, open-source communication protocol for data exchange in the industrial automation space developed by the OPC Foundation.
 It is a client-server architecture that allows for secure and reliable data transfer between devices and systems from different manufacturers.
 :::
 
-Luckily, the engineers already collected a dataset of 25.000 cycles coming in two files:
+Luckily, the engineers already collected a dataset of 25,000 cycles coming in two files:
 
 - `simulated_opcua_machinedata.csv` stores the sensor data.
-- `simulated_opcua_postinspection.csv` stores the placement error data.
+- `simulated_opcua_postinspection.csv` stores the placement errors (`error_x`, `error_y`).
 
-The two datasets can be merged via `cycle` column.
+The two datasets can be merged via the `cycle` column.
 
 {{< embed /3_act3/4_1_inspect_data.ipynb echo=true >}}
 
