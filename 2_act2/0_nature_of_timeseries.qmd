@@ -37,7 +37,7 @@ Source: [Yahoo Finance](https://de.finance.yahoo.com/quote/%5EGSPC/) (downloaded
 
 ![S&P 500 index](../data/assets/act2/sandp_500_close_2020.png)
 
-### Electrocardiagram (ECG) Signal
+### Electrocardiogram (ECG) Signal
 This time series represents an electrocardiogram (ECG) signal, which measures the electrical activity of the heart over time.
 Source: [`scipy.misc.electrocardiogram`](https://docs.scipy.org/doc/scipy-1.13.0/reference/generated/scipy.misc.electrocardiogram.html).
 
